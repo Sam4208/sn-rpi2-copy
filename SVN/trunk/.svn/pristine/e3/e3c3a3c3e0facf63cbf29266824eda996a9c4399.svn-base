@@ -1,0 +1,123 @@
+#!/usr/bin/python
+
+import serial as s
+import UsefulFunctions as uf
+import argparse
+import sys
+
+# ------------------------------------------------------------- #
+# Python script for reading set point values from Haake.
+# Lauren Dawson, 10.03.2016
+# ------------------------------------------------------------- #
+
+# command line parameters
+parser = argparse.ArgumentParser(description='Select Readout')
+parser.add_argument('input', metavar='SR', type=str, choices = ['T','S0','d'],
+                   help='Desired Variable Readout')
+
+args = parser.parse_args()
+input = args.input
+
+# Get data from the Haake over serial interface :
+ser = s.Serial(port='/dev/haake', baudrate=4800, timeout=2.0, parity=s.PARITY_NONE)
+
+# Get the date and time :
+report_msg = uf.get_date_time()
+
+# Get Active Set Values :
+# -----------------------
+ser.write("S0\r")
+ser.flush()
+
+# Reformat response for reporting :
+msg = ser.readline().replace("\r\n", '')
+set_point_0 = msg[5:].replace("$", '')
+if input == "S0" :
+	# Need to check if message is blank, if so return '999', out of range value
+	if set_point_0 == "" :
+		print 999
+		sys.exit()
+	else :
+		print set_point_0.strip()
+		sys.exit()
+
+# Get Current Sensor Reading :
+# ----------------------------
+ser.write("I\r")
+ser.flush()
+msg = ser.readline().replace("\r\n", '')
+internal_sensor = msg[5:].replace("$", '')
+if input == "T" :
+	if internal_sensor == "" :
+		print 999
+		sys.exit()
+	else :
+		print internal_sensor.strip()
+		sys.exit()
+
+if input == 'd' :
+	ser.write("S1\r")
+	ser.flush()	
+	msg = ser.readline().replace("\r\n", '')
+	set_point_1 = msg[5:].replace("$", '')
+
+	ser.write("S2\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')
+	set_point_2 = msg[5:].replace("$", '')
+
+	ser.write("S3\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')
+	set_point_3 = msg[5:].replace("$", '')
+
+	# Get RTA Correction Factors :
+	# ----------------------------
+	ser.write("IS\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')        
+	correction_factor_0 = msg[3:].replace("$", '')
+
+	ser.write("I1\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')
+	correction_factor_1 = msg[3:].replace("$", '')
+
+	ser.write("I2\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')
+	correction_factor_2 = msg[3:].replace("$", '')
+
+	ser.write("I3\r")
+	ser.flush()
+	msg = ser.readline().replace("\r\n", '')
+	correction_factor_3 = msg[3:].replace("$", '')
+
+
+# Format and write the final report message :
+# -------------------------------------------
+report_msg += "Temp: " +internal_sensor + " " + "C" + " "
+report_msg += "S0: " +set_point_0 + " "
+report_msg += "S1: " +set_point_1 + " "
+report_msg += "S2: " +set_point_2 + " "
+report_msg += "S3: " +set_point_3 + " "
+report_msg += "I0: " +correction_factor_0 + " "
+report_msg += "I1: " +correction_factor_1 + " "
+report_msg += "I2: " +correction_factor_2 + " "
+report_msg += "I3: " +correction_factor_3
+report_msg += "\n"
+
+# To screen for interactive use :
+if input == "d" :
+	if internal_sensor == "" or set_point_0 == "" or set_point_1 == "" or  \
+	set_point_2 == "" or set_point_3 == "" or correction_factor_0 == "" or  \
+	correction_factor_1 == "" or correction_factor_2 == "" or correction_factor_3 == "" :
+		print "Error reading haake values"
+	else :
+		print report_msg
+
+# To separate files for the log (appending) and current values :
+f_log = open('/home/supernemo/HaakeDL30Monitoring/HaakeValues_log.txt','a')
+f_cur = open('/home/supernemo/HaakeDL30Monitoring/HaakeValues_cur.txt','w')
+f_log.write(report_msg)
+f_cur.write(report_msg)

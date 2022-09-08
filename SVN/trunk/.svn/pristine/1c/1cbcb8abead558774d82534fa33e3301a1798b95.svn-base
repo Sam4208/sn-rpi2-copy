@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ******************************************************************************************* -->
+<!-- **** file : XML for Gas System Monitoring                                               *** -->
+<!-- **** description :                                                                      *** -->
+<!-- **** author      : Lauren Dawson                                                        *** -->
+<!-- **** date        : 11/03/16                                                             *** -->
+<!-- ******************************************************************************************* -->
+
+
+<OPCUA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://lappweb.in2p3.fr/~panazol/xsd/v2_0_0/dict_device.xsd">
+        <Name>MOS_server</Name>
+        <SimpleDevice>
+            <Name>GAS_System</Name>
+            <Plugins>
+ 		<Location>/home/supernemo/OPCUAtest/testGasSystem/Plugin_Shell/libPlugin_Shell.so</Location>
+                <Name>ptr_Plugin</Name>
+            </Plugins>
+
+    <!-- Define Instruction list containg all python scripts and locations -->
+	    <Instruction_set>
+            	<Instruction>
+                    <Name>GetTempProbe</Name>
+                    <Cmd>/home/supernemo/ADC_Monitoring/TempReadout.py</Cmd>
+                </Instruction>
+	        <Instruction>
+		    <Name>GetFlowRate</Name>
+		    <Cmd>/home/supernemo/FlowRateMonitoring/PR4000B.py</Cmd>
+	        </Instruction>
+                <Instruction>
+                    <Name>GetFlowStatus</Name>
+                    <Cmd>/home/supernemo/FlowRateMonitoring/FlowStatus.py</Cmd>
+                </Instruction>
+		<Instruction>
+                    <Name>GetFlowRangeScale</Name>
+                    <Cmd>/home/supernemo/FlowRateMonitoring/RangeScale.py</Cmd>
+                </Instruction>
+	        <Instruction>
+		    <Name>SetSP1Flow</Name>
+		    <Cmd>/home/supernemo/FlowRateMonitoring/SetSP1.py</Cmd>
+		</Instruction>
+		<Instruction>
+		     <Name>SetSC2Flow</Name>
+		     <Cmd>/home/supernemo/FlowRateMonitoring/SetCh2Scale.py</Cmd>
+		</Instruction>
+                <Instruction>
+                    <Name>TurnOffFlowCh</Name>
+                    <Cmd>/home/supernemo/FlowRateMonitoring/TurnOff.py</Cmd>
+                </Instruction>
+                <Instruction>
+                    <Name>TurnOnFlowCh</Name>
+                    <Cmd>/home/supernemo/FlowRateMonitoring/TurnOn.py</Cmd>
+                </Instruction>
+                <Instruction>
+		    <Name>GetHaakeVals</Name>
+		    <Cmd>/home/supernemo/HaakeDL30Monitoring/HaakeValues.py</Cmd>
+		</Instruction>
+                <Instruction>
+                    <Name>SetS0Haake</Name>
+                    <Cmd>/home/supernemo/HaakeDL30Monitoring/SetS0.py</Cmd>
+                </Instruction>
+                <Instruction>
+                    <Name>GetPressure</Name>
+                    <Cmd>/home/supernemo/PressureMonitoring/EV94.py</Cmd>
+                </Instruction>
+                <Instruction>
+                    <Name>GetOperatingStatus</Name>
+                    <Cmd>/home/supernemo/HaakeDL30Monitoring/OperatingStatus.py</Cmd>
+                </Instruction>
+                <Instruction>
+                    <Name>GetTempLimits</Name>
+                    <Cmd>/home/supernemo/HaakeDL30Monitoring/ReadLimits.py</Cmd>
+                </Instruction>
+                <Instruction>
+                    <Name>ResetHaakeUnit</Name>
+                    <Cmd>/home/supernemo/HaakeDL30Monitoring/ResetUnit.py</Cmd>
+                </Instruction>
+	    </Instruction_set>
+			
+    <!-- Define Monitoring datapoint containing all variables to be monitored -->
+        <CompoundDatapoint>
+            <Name>Monitoring</Name>	
+            <CompoundDatapoint>
+                <Name>BP</Name>
+                    <CompoundDatapoint>
+			        <Name>Temperature</Name>
+                    <SimpleDatapoint>
+			            <Name>Temp_Ch2</Name>
+			            <Type>float</Type>
+			            <MonitoringRate>60</MonitoringRate>
+			            <Historizing>1</Historizing>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>channel</Name>
+                                    <Type>int8</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>2</DefaultValue>
+                                    <Description>ADC Channel Default:2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>retour</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Temp in Celsius</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetTempProbe</Value>
+                            </DeviceInstruction>
+                        </Method>
+		          </SimpleDatapoint>
+	           </CompoundDatapoint>
+
+                <CompoundDatapoint>
+                    <Name>FlowRate</Name>
+                    <SimpleDatapoint>
+                        <Name>SetPoint_Ch1</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>SP1</DefaultValue>
+                                    <Description>Selected Readout Default:SP1</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>SP1 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRate</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>SetPoint_Ch2</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>SP2</DefaultValue>
+                                    <Description>Selected Readout Default:SP2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>SP2 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRate</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>FlowStatus</Name>
+                        <Type>string</Type>
+                        <MonitoringRate>60</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>"Error"</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>string</Type>
+                                    <Access>Output</Access>
+                                    <Description>Flow Status</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowStatus</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>FlowRate_Ch1</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>FR1</DefaultValue>
+                                    <Description>Selected Readout Default:FR1</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>FR1 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRate</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>FlowRate_Ch2</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>FR2</DefaultValue>
+                                    <Description>Selected Readout Default:FR2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>FR2 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRate</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>Range_Ch1</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>R1</DefaultValue>
+                                    <Description>Selected Readout Default:R1</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>R1 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRangeScale</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>Range_Ch2</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>R2</DefaultValue>
+                                    <Description>Selected Readout Default:R2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>R2 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRangeScale</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>Scale_Ch2</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>SC2</DefaultValue>
+                                    <Description>Selected Readout Default:SC2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>string</Type>
+                                    <Access>Output</Access>
+                                    <Description>SC2 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRangeScale</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>Status_Ch2</Name>
+                        <Type>string</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>"Error"</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>ST2</DefaultValue>
+                                    <Description>Selected Readout Default:ST2</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>string</Type>
+                                    <Access>Output</Access>
+                                    <Description>ST2 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetFlowRangeScale</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+                </CompoundDatapoint>
+
+                <SimpleDatapoint>
+                        <Name>Pressure</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>0</DefaultValue>
+                                    <Description>Selected Readout Mode Default:0</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Pressure Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetPressure</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+            </CompoundDatapoint>
+
+            <CompoundDatapoint>
+                <Name>FG</Name>
+                <CompoundDatapoint>
+                    <Name>HaakeDL30</Name>
+                    <SimpleDatapoint>
+                        <Name>SensorTemp</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_LimitHigh>
+                                <Value>25</Value>
+                                <Message>Value Over Limit</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_LimitHigh>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>T</DefaultValue>
+                                    <Description>Selected Readout Default:T</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Sensor Temp in Celsius</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetHaakeVals</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>SetPoint0</Name>
+                        <Type>float</Type>
+                        <!-- <MonitoringRate>900</MonitoringRate> -->
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>S0</DefaultValue>
+                                    <Description>Selected Readout Default:S0</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>SP0 Value</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetHaakeVals</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>OperatingStatus</Name>
+                        <Type>string</Type>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>"Error"</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>0</DefaultValue>
+                                    <Description>Selected Readout Default:0</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>string</Type>
+                                    <Access>Output</Access>
+                                    <Description>Error Values</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetOperatingStatus</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>TempHighLimit</Name>
+                        <Type>float</Type>
+                        <!-- <MonitoringRate>900</MonitoringRate> -->
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>H</DefaultValue>
+                                    <Description>Selected Readout Default:H</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>High Limit</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetTempLimits</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+
+                    <SimpleDatapoint>
+                        <Name>TempLowLimit</Name>
+                        <Type>float</Type>
+                        <!-- <MonitoringRate>900</MonitoringRate> -->
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>readout</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>L</DefaultValue>
+                                    <Description>Selected Readout Default:L</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>return</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Low Limit</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetTempLimits</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+                </CompoundDatapoint>
+
+                <CompoundDatapoint>
+                    <Name>Temperature</Name>
+                    <SimpleDatapoint>
+                        <Name>Temp_Ch0</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>60</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                   <Name>channel</Name>
+                                    <Type>int8</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>0</DefaultValue>
+                                    <Description>ADC Channel Default:0</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>retour</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Temp in Celsius</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetTempProbe</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+        
+                    <SimpleDatapoint>
+                        <Name>Temp_Ch1</Name>
+                        <Type>float</Type>
+                        <MonitoringRate>900</MonitoringRate>
+                        <Historizing>1</Historizing>
+                        <Alarm>
+                            <Alarm_Equal>
+                                <Value>999</Value>
+                                <Message>Value Is Undefined</Message>
+                                <Severity>700</Severity>
+                                <Acknowledge>true</Acknowledge>
+                            </Alarm_Equal>
+                        </Alarm>
+                        <Method>
+                            <Name>get</Name>
+                            <Argument>
+                                    <Name>channel</Name>
+                                    <Type>int8</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>1</DefaultValue>
+                                    <Description>ADC Channel Default:1</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>retour</Name>
+                                    <Type>float</Type>
+                                    <Access>Output</Access>
+                                    <Description>Temp in Celsius</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>GetTempProbe</Value>
+                            </DeviceInstruction>
+                        </Method>
+                    </SimpleDatapoint>
+                </CompoundDatapoint>
+            </CompoundDatapoint>
+        </CompoundDatapoint>
+	
+    <!-- Define Configuration as a compound datapoint containing all input variables and cmds -->
+	    <CompoundDatapoint>
+            <Name>Configuration</Name>
+            <CompoundDatapoint>
+                <Name>BP</Name>
+                <CompoundDatapoint>
+		          <Name>FlowRate</Name>
+                    <Method>
+                        <Name>TurnOn</Name>
+                        <Argument>
+                                <Name>readout</Name>
+                                <Type>string</Type>
+                                <Access>Input</Access>
+                                <DefaultValue>0</DefaultValue>
+                                <Description>Readout Mode Default:0</Description>
+                        </Argument>
+                        <Argument>
+                                <Name>return</Name>
+                                <Type>int8</Type>
+                                <Access>Output</Access>
+                                <Description>Response</Description>
+                        </Argument>
+                        <DeviceInstruction>
+                                <Value>TurnOnFlowCh</Value>
+                        </DeviceInstruction>
+                        <Event>
+                            <Message>Both Channels Turned On</Message>
+                        </Event>
+                    </Method>
+                    <Method>
+                        <Name>TurnOff</Name>
+                        <Argument>
+                                <Name>readout</Name>
+                                <Type>string</Type>
+                                <Access>Input</Access>
+                                <DefaultValue>0</DefaultValue>
+                                <Description>Readout Mode Default:0</Description>
+                        </Argument>
+                        <Argument>
+                                <Name>return</Name>
+                                <Type>int8</Type>
+                                <Access>Output</Access>
+                                <Description>Response</Description>
+                        </Argument>
+                        <DeviceInstruction>
+                                <Value>TurnOffFlowCh</Value>
+                        </DeviceInstruction>
+                        <Event>
+                            <Message>Both Channels Turned Off</Message>
+                        </Event>
+                    </Method>
+		
+		            <SimpleDatapoint>
+			            <Name>SP1_Consign</Name>
+			            <Type>string</Type>
+			            <Method>
+                            <Name>set</Name>
+                            <Argument>
+                                    <Name>param1</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <Description>Desired SP1 value</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>param2</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+					               <DefaultValue>0</DefaultValue>
+                                    <Description>Selected Readout Mode Default:0</Description>
+                            </Argument>
+				            <DeviceInstruction>
+                                    <Value>SetSP1Flow</Value>
+                            </DeviceInstruction>
+                            <Event>
+                                <Message>SP1 Value Changed</Message>
+                            </Event>
+                        </Method>
+		            </SimpleDatapoint>
+		
+	       	        <SimpleDatapoint>
+                        <Name>SC2_Consign</Name>
+                        <Type>string</Type>
+                        <Method>
+                            <Name>set</Name>
+                            <Argument>
+                                    <Name>param1</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <Description>Desired SC2 value</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>param2</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>0</DefaultValue>
+                                    <Description>Selected Readout Mode Default:0</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>SetSC2Flow</Value>
+                            </DeviceInstruction>
+                            <Event>
+                                <Message>SC2 Value Changed</Message>
+                            </Event>
+                        </Method>
+                    </SimpleDatapoint>
+	           </CompoundDatapoint>
+            </CompoundDatapoint>
+
+            <CompoundDatapoint>
+                <Name>FG</Name>
+                <CompoundDatapoint>
+                    <Name>HaakeDL30</Name>
+                    <Method>
+                        <Name>ResetUnit</Name>
+                        <Argument>
+                                <Name>readout</Name>
+                                <Type>string</Type>
+                                <Access>Input</Access>
+                                <DefaultValue>0</DefaultValue>
+                                <Description>Readout Mode Default:0</Description>
+                        </Argument>
+                        <Argument>
+                                <Name>return</Name>
+                                <Type>string</Type>
+                                <Access>Output</Access>
+                                <Description>Response</Description>
+                        </Argument>
+                        <DeviceInstruction>
+                                <Value>ResetHaakeUnit</Value>
+                        </DeviceInstruction>
+                        <Event>
+                            <Message>Haake Unit Reset</Message>
+                        </Event>
+                    </Method>
+                    <SimpleDatapoint>
+                        <Name>S0_Consign</Name>
+                        <Type>string</Type>
+                        <Method>
+                            <Name>set</Name>
+                            <Argument>
+                                    <Name>param1</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <Description>Desired S0 value</Description>
+                            </Argument>
+                            <Argument>
+                                    <Name>param2</Name>
+                                    <Type>string</Type>
+                                    <Access>Input</Access>
+                                    <DefaultValue>0</DefaultValue>
+                                    <Description>Selected Readout Mode Default:0</Description>
+                            </Argument>
+                            <DeviceInstruction>
+                                    <Value>SetS0Haake</Value>
+                            </DeviceInstruction>
+                            <Event>
+                                <Message>S0 Value Changed</Message>
+                            </Event>
+                        </Method>
+                    </SimpleDatapoint>
+                </CompoundDatapoint>
+            </CompoundDatapoint>
+        </CompoundDatapoint>
+        </SimpleDevice>
+</OPCUA>

@@ -1,0 +1,500 @@
+  224  13/03/18 12:16:42 sudo apt-get install golang-go
+  225  13/03/18 12:17:25 go get -u github.com/erroneousboat/slack-term
+  226  13/03/18 12:17:32 sudo go get -u github.com/erroneousboat/slack-term
+  227  13/03/18 12:22:50 nano slack-term.json
+  228  13/03/18 12:23:15 nano slack-term.json
+  229  13/03/18 12:24:10 slack-term
+  230  13/03/18 12:25:48 apt-cache search go context
+  231  13/03/18 12:25:58 apt-cache search golang context
+  232  13/03/18 12:27:00 apt-cache search golang 1.7
+  233  13/03/18 12:27:06 apt-cache search golang 7
+  234  13/03/18 12:27:38 sudo nano /etc/dpkg/dpkg.cfg
+  235  13/03/18 12:28:03 sudo nano /etc/apt/sources.list
+  236  13/03/18 12:28:35 sudo nano /etc/apt/sources.list
+  237  13/03/18 12:31:57 sudo apt-get update
+  238  13/03/18 12:32:23 sudo apt-get install golang-go
+  239  13/03/18 12:32:42 sudo apt-get upgrade golang-go
+  240  13/03/18 12:33:05 apt-cache search golang
+  241  13/03/18 12:33:41 sudo apt-get install golang-1.7-go    golang-1.7-go
+  242  13/03/18 12:33:47 sudo apt-get install golang-1.7-go 
+  243  13/03/18 12:33:52 sudo nano /etc/apt/sources.list
+  244  13/03/18 12:34:14 sudo apt-get update
+  245  13/03/18 12:34:33 sudo apt-get install golang-1.7-go 
+  246  13/03/18 12:34:45 sudo nano /etc/apt/sources.list
+  247  13/03/18 12:35:00 sudo apt-get update
+  248  13/03/18 12:35:46 sudo apt-get install golang-1.7-go 
+  249  13/03/18 12:36:39 sudo apt-get install golang-go 
+  250  13/03/18 12:37:14 sudo go get -u github.com/erroneousboat/slack-term
+  251  13/03/18 12:37:37 sudo apt-get install golang-go 
+  252  13/03/18 12:38:00 sudo go get -u github.com/erroneousboat/slack-term
+  253  13/03/18 12:38:26 sudo nano /etc/apt/sources.list
+  254  13/03/18 12:38:46 sudo apt-get rm golang-go 
+  255  13/03/18 12:38:52 sudo apt-get remove golang-go 
+  256  13/03/18 12:39:05 sudo apt-get update
+  257  13/03/18 12:40:02 sudo apt-get remove golang-go 
+  258  13/03/18 12:40:25 sudo apt-get reinstall golang-go 
+  259  13/03/18 12:40:29 sudo apt-get install golang-go 
+  260  13/03/18 12:40:50 sudo apt-get install --force golang-go 
+  261  13/03/18 12:40:52 sudo apt-get install golang-go 
+  262  13/03/18 12:42:15 sudo dpkg --remove --force-remove-reinstreq golang-go
+  263  13/03/18 12:42:27 sudo apt-get remove golang-go 
+  264  13/03/18 12:42:36 apt-get autoremove
+  265  13/03/18 12:42:42 sudo apt-get autoremove
+  266  13/03/18 12:42:52 go
+  267  13/03/18 12:43:00 sudo apt-get remove golang-1.7-go 
+  268  13/03/18 12:43:11 sudo apt-get autoremove
+  269  13/03/18 12:44:55 wget https://dl.google.com/go/go1.10.linux-armv6l.tar.gz
+  270  13/03/18 12:45:30 sudo tar -C /usr/local go1.10.linux-armv6l.tar.gz
+  271  13/03/18 12:47:40 sudo tar -C /usr/local go1.10.linux-armv6l.tar.gz
+  272  13/03/18 12:48:35 sudo tar -xvf /usr/local go1.10.linux-armv6l.tar.gz
+  273  13/03/18 12:48:53 sudo tar -C /usr/local -xzvf go1.10.linux-armv6l.tar.gz
+  274  13/03/18 12:49:16 export PATH=$PATH:/usr/local/go/bin
+  275  13/03/18 12:49:30 sudo go get -u github.com/erroneousboat/slack-term
+  276  13/03/18 12:49:43 ls /usr/local/go/bin
+  277  13/03/18 12:49:56 sudo /usr/local/go/bin/go get -u github.com/erroneousboat/slack-term
+  278  13/03/18 12:53:42 ls /usr/local/go/bin
+  279  13/03/18 12:53:52 go
+  280  13/03/18 12:54:03 ls /usr/local/go/
+  281  13/03/18 12:55:02 find /usr/local/go/ -iname slack-term
+  282  13/03/18 12:55:22 slack-term
+  283  13/03/18 12:55:29 find /usr/local/go/ -iname slack
+  284  13/03/18 12:55:33 find /usr/local/ -iname slack
+  285  13/03/18 12:55:38 find /usr/ -iname slack
+  286  13/03/18 12:56:04 ls /usr/share/go/src/pkg/github.com/erroneousboat/slack-term/vendor/github.com/nl
+  287  13/03/18 12:56:17 find /usr/ -iname slack-term
+  288  13/03/18 12:56:31 ls /usr/share/go/src/pkg/github.com/erroneousboat/slack-term
+  289  13/03/18 12:56:34 ls 
+  290  13/03/18 12:56:36 ls 
+  291  13/03/18 12:56:42 ls /usr/share/go/src/pkg/github.com/erroneousboat/slack-term
+  292  13/03/18 12:57:02 display /usr/share/go/src/pkg/github.com/erroneousboat/slack-term/screenshot.png 
+  293  13/03/18 13:00:47 ls /usr/share/binfmts/pytho
+  294  13/03/18 13:01:02 find / -iname slack-term
+  295  13/03/18 13:01:12 /usr/share/go/src/pkg/github.com/erroneousboat/slack-term
+  296  13/03/18 13:01:52 cd /usr/share/go/src/pkg/github.com/erroneousboat/slack-term/
+  297  13/03/18 13:01:56 go build
+  298  13/03/18 13:02:02 cd sr
+  299  13/03/18 13:02:07 ls
+  300  13/03/18 13:02:14 cd components/
+  301  13/03/18 13:02:16 ls
+  302  13/03/18 13:02:23 cd ..
+  303  13/03/18 13:02:24 ls
+  304  13/03/18 13:02:32 cat README.md 
+  305  25/10/18 16:28:44 ls
+  306  22/07/21 11:29:38 ifconfig
+  307  22/07/21 11:29:38 ls
+  308  22/07/21 11:29:38 ifconfig
+  309  22/07/21 11:29:38 arp
+  310  22/07/21 11:29:38 ifconfig
+  311  22/07/21 11:29:38 ping lsmpc35.in2p3.fr
+  312  22/07/21 11:29:38 less /etc/network/interfaces
+  313  22/07/21 11:29:38 less /etc/network/interfaces_dhcp 
+  314  22/07/21 11:29:38 less /etc/wpa_supplicant/wpa_supplicant.conf 
+  315  22/07/21 11:29:38 ifconfig
+  316  22/07/21 11:29:38 ping plus2.hep.ucl.ac.uk
+  317  22/07/21 11:29:38 ssh wquinn@ plus2.hep.ucl.ac.uk
+  318  22/07/21 11:29:38 ssh wquinn@plus2.hep.ucl.ac.uk
+  319  22/07/21 11:29:38 which python
+  320  22/07/21 11:29:38 python -- version#
+  321  22/07/21 11:29:38 python -- version
+  322  22/07/21 11:29:38 python --version
+  323  22/07/21 11:29:38 python3 --version
+  324  22/07/21 11:29:38 python3
+  325  22/07/21 11:29:38 less /etc/networks
+  326  22/07/21 11:29:38 less /etc/network/interfaces
+  327  22/07/21 11:29:38 less /etc/network/interfaces.bck 
+  328  22/07/21 11:29:38 ifconfig
+  329  22/07/21 11:29:38 shutdown -r now
+  330  22/07/21 11:29:38 su shutdown -r now
+  331  22/07/21 11:29:38 su
+  332  19/02/20 18:34:24 ping
+  333  19/02/20 18:34:26 arp
+  334  22/07/21 11:29:38 ifconfig
+  335  22/07/21 11:29:38 ping plus1.hep.ucl.ac.uk
+  336  22/07/21 11:29:38 ssh wquinn@plus1.hep.ucl.ac.uk
+  337  17/06/20 14:34:39 ls
+  338  17/06/20 18:45:44 clear
+  339  17/06/20 18:45:44 ls
+  340  17/06/20 18:45:45 cd
+  341  02/07/20 10:25:53 ls
+  342  08/07/20 13:38:59 ls
+  343  08/07/20 13:39:08 less OverallStatus.py 
+  344  08/07/20 13:39:16 ls
+  345  08/07/20 13:39:37 ls -ald *
+  346  08/07/20 13:39:54 less OverallStatus_log.txt 
+  347  08/07/20 13:40:06 lq
+  348  08/07/20 13:40:09 less OverallStatus_log.txt 
+  349  08/07/20 13:40:22 ls
+  350  08/07/20 13:40:53 df
+  351  08/07/20 13:40:58 ls
+  352  08/07/20 13:41:00 cd MOS_Server/
+  353  08/07/20 13:41:01 ls
+  354  08/07/20 13:41:04 less Gas_System_testV2.xml 
+  355  08/07/20 13:41:12 pwd
+  356  08/07/20 14:14:15 cd /home/supernemo/MOS_Server
+  357  08/07/20 14:14:28 ls
+  358  08/07/20 14:14:34 less Gas_System_testV2.xml 
+  359  08/07/20 14:15:24 ls ..
+  360  08/07/20 14:15:31 ls ../FlowRateMonitoring/
+  361  08/07/20 14:15:44 less ../FlowRateMonitoring/FlowStatus.py 
+  362  08/07/20 14:26:02 less ../FlowRateMonitoring/SetCh2Scale.py 
+  363  08/07/20 14:28:43 ls
+  364  08/07/20 14:28:47 less Gas_System_testV2.xml 
+  365  08/07/20 14:29:16 less /home/supernemo/ADC_Monitoring/TempReadout.py
+  366  29/06/21 12:31:45 uptime
+  367  29/06/21 12:31:48 date
+  368  29/06/21 12:31:53 ls
+  369  29/06/21 16:56:12 uptime
+  370  29/06/21 16:56:15 du -sh *
+  371  29/06/21 16:56:43 ls -altrd *
+  372  29/06/21 16:57:01 cd SVN/
+  373  29/06/21 16:57:01 l
+  374  29/06/21 16:57:04 ls
+  375  29/06/21 16:57:10 ls -altrd *
+  376  29/06/21 16:57:20 cd ..
+  377  29/06/21 16:57:28 find . -follow -name "*.py*"
+  378  29/06/21 16:58:45 less OverallStatus.py 
+  379  06/07/21 11:58:25 ls
+  380  06/07/21 11:58:58 cd HaakeDL30Monitoring/
+  381  06/07/21 11:58:59 ls
+  382  06/07/21 12:00:34 which python
+  383  06/07/21 12:00:37 date
+  384  06/07/21 12:18:11 cd ../FlowRateMonitoring/
+  385  06/07/21 12:18:11 ls
+  386  07/07/21 16:44:14 w
+  387  07/07/21 16:44:16 ls
+  388  07/07/21 16:46:36 ls HaakeDL30Monitoring/
+  389  07/07/21 16:46:41 emacs -nw HaakeDL30Monitoring/SetS0.py 
+  390  07/07/21 16:50:17 ls FlowRateMonitoring/
+  391  07/07/21 16:50:45 emacs -nw FlowRateMonitoring/PR4000B.py 
+  392  07/07/21 16:51:06 ls
+  393  08/07/21 10:39:25 ls
+  394  08/07/21 10:40:09 less lvl\ measure.txt 
+  395  08/07/21 10:40:14 less lvcl\ measure.txt 
+  396  08/07/21 10:40:38 ls -altrd *
+  397  08/07/21 10:41:30 cd updated_scripts/
+  398  08/07/21 10:41:30 ls
+  399  08/07/21 10:41:35 ls -ald *
+  400  08/07/21 10:41:53 cd ../
+  401  08/07/21 10:41:53 ls
+  402  08/07/21 10:42:07 cd HaakeDL30Monitoring/
+  403  08/07/21 10:42:07 ls
+  404  08/07/21 10:43:48 less SetS0.py 
+  405  08/07/21 10:43:52 less HaakeValues.py 
+  406  08/07/21 10:44:05 ls
+  407  08/07/21 10:44:07 cd ..
+  408  08/07/21 10:44:07 ls
+  409  08/07/21 10:44:12 cd SVN/
+  410  08/07/21 10:44:12 ls
+  411  08/07/21 10:44:13 cd trunk/
+  412  08/07/21 10:44:14 ls
+  413  08/07/21 10:44:20 cd source/
+  414  08/07/21 10:44:21 ls
+  415  08/07/21 10:44:22 cd scripts/
+  416  08/07/21 10:44:22 ls
+  417  08/07/21 13:18:58 cd
+  418  08/07/21 13:18:58 ls
+  419  08/07/21 13:44:19 ls FlowRateMonitoring/
+  420  08/07/21 13:44:34 ls HaakeDL30Monitoring/
+  421  08/07/21 13:46:44 less FlowRateMonitoring/TurnOff.py 
+  422  16/07/21 15:49:31 ls
+  423  16/07/21 15:50:52 ls -altrd *
+  424  16/07/21 15:51:05 less OverallStatus_cur.txt 
+  425  16/07/21 15:52:44 less OverallStatus.py 
+  426  16/07/21 15:53:26 python /home/supernemo/ADC_Monitoring/TempReadout.py d
+  427  16/07/21 15:53:53 python /home/supernemo/FlowRateMonitoring/PR4000B.py d
+  428  16/07/21 15:55:31 python OverallStatus.py d
+  429  16/07/21 15:55:52 l
+  430  16/07/21 15:55:53 ls
+  431  16/07/21 15:55:56 ls -altrd *
+  432  16/07/21 15:56:00 less OverallStatus_log.txt 
+  433  16/07/21 15:56:12 lqq
+  434  16/07/21 16:01:02 ls
+  435  16/07/21 16:01:17 ls -ald *Overall*
+  436  16/07/21 16:01:25 less OverallStatus_cur.txt 
+  437  16/07/21 16:01:40 crontab
+  438  16/07/21 16:01:42 ls
+  439  16/07/21 16:02:09 crontab -l
+  440  16/07/21 16:02:28 python /home/supernemo/OverallStatus.py t
+  441  16/07/21 16:02:34 less OverallStatus.py 
+  442  16/07/21 16:02:54 python /home/supernemo/ADC_Monitoring/TempReadout.py d
+  443  16/07/21 16:02:57 python /home/supernemo/ADC_Monitoring/TempReadout.py t
+  444  16/07/21 16:03:07 less /home/supernemo/ADC_Monitoring/TempReadout.py 
+  445  16/07/21 16:18:31 python /home/supernemo/ADC_Monitoring/TempReadout.py t
+  446  16/07/21 16:18:33 python /home/supernemo/ADC_Monitoring/TempReadout.py d
+  447  16/07/21 16:25:42 less /home/supernemo/ADC_Monitoring/TempReadout.py d
+  448  16/07/21 16:26:32 less /home/supernemo/ADC_Monitoring/TempReadout.py d
+  449  16/07/21 16:26:36 less /home/supernemo/ADC_Monitoring/TempReadout.py 
+  450  16/07/21 16:26:37 less /home/supernemo/ADC_Monitoring/TempReadout.py 
+  451  16/07/21 16:29:26 which emacs
+  452  16/07/21 16:29:31 emacs -nw /home/supernemo/ADC_Monitoring/TempReadout.py 
+  453  16/07/21 16:30:28 python /home/supernemo/ADC_Monitoring/TempReadout.py d
+  454  16/07/21 16:31:25 less/home/supernemo/ADC_Monitoring/TempReadout.py 
+  455  16/07/21 16:31:30 less /home/supernemo/ADC_Monitoring/TempReadout.py 
+  456  16/07/21 16:32:54 less /home/supernemo/ADC_Monitoring/TempReadout.py 
+  457  16/07/21 16:45:02 python /home/supernemo/ADC_Monitoring/TempReadout.py d
+  458  16/07/21 16:50:29 less OverallStatus.py 
+  459  16/07/21 16:50:40 less PressureMonitoring/EV94.py 
+  460  16/07/21 16:51:07 grep -i rs PressureMonitoring/EV94.py 
+  461  16/07/21 16:51:14 grep -i rs PressureMonitoring/EV94.py 
+  462  16/07/21 16:51:24 grep -i 485 PressureMonitoring/EV94.py 
+  463  16/07/21 16:51:29 grep -i usb PressureMonitoring/EV94.py 
+  464  16/07/21 16:51:39 less  PressureMonitoring/EV94.py 
+  465  16/07/21 16:53:15 python PressureMonitoring/EV94.py d
+  466  16/07/21 17:10:27 less OverallStatus.py 
+  467  16/07/21 17:10:40 python /home/supernemo/FlowRateMonitoring/PR4000B.py d
+  468  16/07/21 17:29:49 less OverallStatus.py 
+  469  16/07/21 17:30:15 python /home/supernemo/HaakeDL30Monitoring/OperatingStatus.py d
+  470  16/07/21 17:30:28 less /home/supernemo/HaakeDL30Monitoring/OperatingStatus.py d
+  471  16/07/21 17:30:44 less /home/supernemo/HaakeDL30Monitoring/OperatingStatus_cur.txt
+  472  16/07/21 17:30:52 less /home/supernemo/HaakeDL30Monitoring/OperatingStatus_log.txt 
+  473  16/07/21 17:31:05 less /home/supernemo/HaakeDL30Monitoring/OperatingStatus.py
+  474  16/07/21 17:31:32 ls
+  475  16/07/21 17:31:36 less OverallStatus.py 
+  476  16/07/21 17:33:03 less /home/supernemo/HaakeDL30Monitoring/OperatingStatus.py
+  477  16/07/21 17:33:36 python /home/supernemo/HaakeDL30Monitoring/HaakeValues.py d
+  478  16/07/21 17:34:50 ls
+  479  16/07/21 17:34:52 cd FlowRateMonitoring/
+  480  16/07/21 17:34:52 ls
+  481  16/07/21 17:34:59 less RangeScale.py 
+  482  16/07/21 17:35:07 ls -altrd *
+  483  16/07/21 17:35:41 less GetGAIN.py
+  484  16/07/21 17:35:48 ls
+  485  16/07/21 17:35:54 less SetCh2Scale.py 
+  486  16/07/21 17:35:56 clear
+  487  16/07/21 17:35:57 less SetCh2Scale.py 
+  488  16/07/21 17:41:10 less SetCh2Scale.py 
+  489  16/07/21 17:42:58 python SetCh2Scale.py  200 d
+  490  16/07/21 17:43:15 python PR4000B.py d
+  491  16/07/21 17:44:22 python SetSP1.py 10.0 d
+  492  16/07/21 17:44:38 python PR4000B.py d
+  493  16/07/21 17:46:00 less SetSP1.py
+  494  16/07/21 17:46:58 python SetCh2Scale.py  200 d
+  495  16/07/21 17:47:08 python PR4000B.py d
+  496  16/07/21 17:47:19 less SetCh2Scale.py 
+  497  16/07/21 17:54:12 python SetCh2Scale.py  200 d
+  498  16/07/21 17:54:23 python PR4000B.py d
+  499  16/07/21 17:54:50 python SetCh2Scale.py 200 d
+  500  16/07/21 17:54:59 python PR4000B.py d
+  501  22/07/21 11:29:40 ls
+  502  22/07/21 11:30:25 python /home/supernemo/FlowRateMonitoring/PR4000B.py d
+  503  22/07/21 11:39:30 cd FlowRateMonitoring/
+  504  22/07/21 11:39:31 ls
+  505  22/07/21 11:39:39 python TurnOn.py d
+  506  22/07/21 11:41:41 python TurnOff.py d
+  507  22/07/21 11:46:28 python TurnOn.py d
+  508  22/07/21 11:47:30 python PR4000B.py d
+  509  22/07/21 11:56:59 pwd
+  510  22/07/21 11:56:59 ls
+  511  22/07/21 11:57:03 pwd
+  512  22/07/21 11:57:05 cd ..
+  513  22/07/21 11:57:05 ls
+  514* 22/07/21 11:57:14 python
+  515  22/07/21 11:59:21 ls
+  516  22/07/21 11:59:49 pwd
+  517  22/07/21 11:59:50 cd FlowRateMonitoring/
+  518  22/07/21 11:59:51 ls
+  519  22/07/21 12:00:31 python SetSP1.py 15 d
+  520  22/07/21 12:00:40 python PR4000B.py d
+  521  22/07/21 12:00:46 python SetSP1.py 15 d
+  522  22/07/21 12:00:50 python PR4000B.py d
+  523  22/07/21 12:01:16 python TurnOff.py d
+  524  22/07/21 12:01:20 python PR4000B.py d
+  525  22/07/21 12:01:37 python TurnOff.py 
+  526  22/07/21 12:01:42 python TurnOff.py d
+  527  22/07/21 12:01:55 python SetSP1.py 15 d
+  528  22/07/21 12:02:02 python PR4000B.py d
+  529  22/07/21 12:02:06 python SetSP1.py 15 d
+  530  22/07/21 12:02:17 python TurnOn.py d
+  531  22/07/21 12:04:45 python PR4000B.py d
+  532  22/07/21 12:04:54 python TurnOff.py d
+  533  22/07/21 12:05:05 python PR4000B.py d
+  534  22/07/21 12:05:13 python TurnOn.py 
+  535  22/07/21 12:05:16 python TurnOn.py d
+  536  22/07/21 12:05:26 python PR4000B.py d
+  537  22/07/21 12:06:05 python PR4000B.py d
+  538  22/07/21 12:06:15 python TurnOff.py d
+  539  22/07/21 12:06:23 python PR4000B.py d
+  540  22/07/21 12:10:41 python TurnOn.py d
+  541  22/07/21 12:10:57 python PR4000B.py d
+  542  22/07/21 12:11:34 python TurnOff.py 
+  543  22/07/21 12:11:37 python TurnOff.py d
+  544  22/07/21 12:11:47 less TurnOff.py 
+  545  22/07/21 12:12:06 less TurnOn.py 
+  546  22/07/21 12:12:17 ls
+  547  22/07/21 12:12:22 less UsefulFunctions.py
+  548  22/07/21 12:12:53 python PR4000B.py d
+  549  22/07/21 12:13:06 python TurnOn.py d
+  550  22/07/21 12:13:17 python TurnOff.py 
+  551  22/07/21 12:13:19 python TurnOff.py d
+  552  22/07/21 12:13:38 python PR4000B.py d
+  553  22/07/21 12:13:43 python TurnOn.py d
+  554  22/07/21 12:14:05 python PR4000B.py d
+  555  22/07/21 12:14:10 python TurnOn.py d
+  556  22/07/21 12:14:16 python PR4000B.py d
+  557  22/07/21 12:14:29 less UsefulFunctions.py
+  558  22/07/21 12:15:46 python PR4000B.py d
+  559  22/07/21 12:16:14 pwd
+  560  22/07/21 12:16:14 ls
+  561  22/07/21 12:16:19 cd ..
+  562  22/07/21 12:16:19 ls
+  563  22/07/21 12:16:24 cd Pressure
+  564  22/07/21 12:16:31 cd PressureMonitoring/
+  565  22/07/21 12:16:32 ls
+  566  22/07/21 12:16:34 ls -ald *
+  567  22/07/21 12:16:40 less gradient20170227.txt
+  568  22/07/21 12:17:00 less UsefulFunctionsPressure.py
+  569  22/07/21 12:17:39 ls
+  570  22/07/21 12:17:41 ls -ald *
+  571  22/07/21 12:17:54 less UsefulFunctionsPressure.py
+  572  22/07/21 12:18:11 ls
+  573  22/07/21 12:18:17 less EV94_test.py 
+  574  22/07/21 12:18:39 crontab
+  575  22/07/21 12:18:47 sudo crontab
+  576  22/07/21 12:19:35 man crontab
+  577  22/07/21 12:19:43 crontab -l
+  578  22/07/21 12:20:00 ls
+  579  22/07/21 12:20:02 cd
+  580  22/07/21 12:20:02 ls
+  581  22/07/21 12:20:12 ls -ald *Overall*
+  582  22/07/21 12:20:22 less OverallStatus.log
+  583  22/07/21 12:20:27 tail -f 500 OverallStatus_log.txt 
+  584  22/07/21 12:20:35 ls
+  585  22/07/21 12:20:38 ls -ald *Overall*
+  586  22/07/21 12:20:43 du -sh *Overall*
+  587  22/07/21 12:20:51 less OverallStatus_cur.txt 
+  588  22/07/21 12:20:57 less OverallStatus_log.txt 
+  589  22/07/21 12:21:36 ls
+  590  22/07/21 12:21:40 df
+  591  22/07/21 12:21:45 df -h
+  592  22/07/21 12:22:21 ls
+  593  22/07/21 12:22:24 ls
+  594  22/07/21 12:22:33 ls
+  595  22/07/21 12:22:38 pwd
+  596  22/07/21 12:22:39 ls
+  597  22/07/21 12:22:49 emacs -nw OverallStatus.py 
+  598  22/07/21 12:23:28 ls
+  599  22/07/21 12:23:48 mv OverallStatus_log.txt OverallStatus_log_upto_22.07.21.txt 
+  600  22/07/21 12:23:52 python OverallStatus.py d
+  601  22/07/21 12:24:14 less OverallStatus_cur.txt 
+  602  22/07/21 12:24:17 ls
+  603  22/07/21 12:24:25 emacs -nw OverallStatus.py 
+  604  22/07/21 12:25:24 python OverallStatus.py d
+  605  22/07/21 12:25:38 less OverallStatus_log.txt 
+  606  22/07/21 12:25:43 python OverallStatus.py d
+  607  22/07/21 12:25:53 python OverallStatus.py d
+  608  22/07/21 12:25:59 python OverallStatus.py d
+  609  22/07/21 12:26:05 python OverallStatus.py d
+  610  22/07/21 12:26:10 python OverallStatus.py d
+  611  22/07/21 12:26:15 python OverallStatus.py d
+  612  22/07/21 12:26:20 python OverallStatus.py d
+  613  22/07/21 12:26:31 python OverallStatus.py d
+  614  22/07/21 12:26:36 python OverallStatus.py d
+  615  22/07/21 12:26:41 python OverallStatus.py d
+  616  22/07/21 12:26:47 python OverallStatus.py d
+  617  22/07/21 12:26:52 python OverallStatus.py d
+  618  22/07/21 12:26:58 python OverallStatus.py d
+  619  22/07/21 12:27:04 python OverallStatus.py d
+  620* 22/07/21 12:27:13 cd FlowRateMonitoring
+  621  22/07/21 12:27:30 python SetSP1.py 10 d
+  622  22/07/21 12:27:39 cd ..
+  623  22/07/21 12:27:41 python OverallStatus.py d
+  624  22/07/21 12:27:48 python OverallStatus.py d
+  625  22/07/21 12:27:53 python OverallStatus.py d
+  626  22/07/21 12:27:58 python OverallStatus.py d
+  627  22/07/21 12:28:14 python OverallStatus.py d
+  628  22/07/21 12:28:20 python OverallStatus.py d
+  629  22/07/21 12:28:26 python OverallStatus.py d
+  630  22/07/21 12:28:31 python OverallStatus.py d
+  631  22/07/21 12:28:36 python OverallStatus.py d
+  632  22/07/21 12:28:42 python OverallStatus.py d
+  633  22/07/21 12:28:47 python OverallStatus.py d
+  634  22/07/21 12:28:53 python OverallStatus.py d
+  635  22/07/21 12:28:58 python OverallStatus.py d
+  636  22/07/21 12:29:22 python OverallStatus.py d
+  637  22/07/21 12:29:29 python OverallStatus.py d
+  638  22/07/21 12:29:35 python OverallStatus.py d
+  639  22/07/21 12:29:42 python OverallStatus.py d
+  640  22/07/21 12:29:48 python OverallStatus.py d
+  641  22/07/21 12:29:54 python OverallStatus.py d
+  642  22/07/21 12:30:00 python OverallStatus.py d
+  643  22/07/21 12:30:06 python OverallStatus.py d
+  644  22/07/21 12:30:12 python OverallStatus.py d
+  645  22/07/21 12:30:19 ls
+  646  22/07/21 12:30:25 less OverallStatus_log.txt 
+  647  22/07/21 12:30:40 python OverallStatus.py d
+  648  22/07/21 12:30:54 python OverallStatus.py d
+  649  22/07/21 12:31:00 python OverallStatus.py d
+  650  22/07/21 12:31:25 python FlowRateMonitoring/SetSP1.py 5 d
+  651  22/07/21 12:31:30 python FlowRateMonitoring/SetSP1.py 5 d
+  652  22/07/21 12:31:46 python OverallStatus.py d
+  653  22/07/21 12:31:52 python OverallStatus.py d
+  654  22/07/21 12:31:58 python OverallStatus.py d
+  655  22/07/21 12:32:07 python OverallStatus.py d
+  656  22/07/21 12:32:12 python OverallStatus.py d
+  657  22/07/21 12:32:18 python OverallStatus.py d
+  658  22/07/21 12:32:23 python OverallStatus.py d
+  659  22/07/21 12:32:28 python OverallStatus.py d
+  660  22/07/21 12:32:34 python OverallStatus.py d
+  661  22/07/21 12:32:40 python OverallStatus.py d
+  662  22/07/21 12:32:47 python OverallStatus.py d
+  663  22/07/21 12:32:53 python OverallStatus.py d
+  664  22/07/21 12:32:59 python OverallStatus.py d
+  665  22/07/21 12:33:05 python OverallStatus.py d
+  666  22/07/21 12:33:11 python OverallStatus.py d
+  667  22/07/21 12:34:35 python OverallStatus.py d
+  668  22/07/21 12:34:43 python OverallStatus.py d
+  669  22/07/21 12:34:56 python FlowRateMonitoring/SetSP1.py 20 d
+  670  22/07/21 12:35:04 python OverallStatus.py d
+  671  22/07/21 12:35:10 python OverallStatus.py d
+  672  22/07/21 12:35:15 python OverallStatus.py d
+  673  22/07/21 12:35:20 python OverallStatus.py d
+  674  22/07/21 12:35:25 python OverallStatus.py d
+  675  22/07/21 12:35:30 python OverallStatus.py d
+  676  22/07/21 12:35:36 python OverallStatus.py d
+  677  22/07/21 12:35:41 python OverallStatus.py d
+  678  22/07/21 12:35:47 python OverallStatus.py d
+  679  22/07/21 12:35:53 python OverallStatus.py d
+  680  22/07/21 12:35:58 python OverallStatus.py d
+  681  22/07/21 12:36:04 python OverallStatus.py d
+  682  22/07/21 12:36:16 python OverallStatus.py d
+  683  22/07/21 12:36:21 python OverallStatus.py d
+  684  22/07/21 12:36:27 python OverallStatus.py d
+  685  22/07/21 12:36:44 python OverallStatus.py d
+  686  22/07/21 12:36:50 python OverallStatus.py d
+  687  22/07/21 12:36:56 python OverallStatus.py d
+  688  22/07/21 12:37:02 python OverallStatus.py d
+  689  22/07/21 12:37:26 python OverallStatus.py d
+  690  22/07/21 12:37:36 python OverallStatus.py d
+  691  22/07/21 12:38:50 python OverallStatus.py d
+  692  22/07/21 12:39:08 python FlowRateMonitoring/TurnOff.py d
+  693  22/07/21 12:39:19 python OverallStatus.py d
+  694  22/07/21 12:39:34 python FlowRateMonitoring/SetSP1.py 10 d
+  695  22/07/21 12:39:36 python FlowRateMonitoring/SetSP1.py 10 d
+  696  22/07/21 12:39:46 python OverallStatus.py d
+  697  22/07/21 12:41:23 python FlowRateMonitoring/TurnOn.py d
+  698  22/07/21 12:41:28 python FlowRateMonitoring/TurnOn.py d
+  699  22/07/21 12:41:50 python OverallStatus.py d
+  700  22/07/21 12:41:55 python OverallStatus.py d
+  701  22/07/21 12:42:00 python OverallStatus.py d
+  702  22/07/21 12:42:06 python OverallStatus.py d
+  703  22/07/21 12:42:58 python OverallStatus.py d
+  704  22/07/21 12:43:05 python OverallStatus.py d
+  705  22/07/21 12:51:16 python OverallStatus.py d
+  706  22/07/21 12:51:23 python OverallStatus.py d
+  707  22/07/21 12:51:43 python OverallStatus.py d
+  708  22/07/21 12:52:09 python OverallStatus.py d
+  709  22/07/21 12:52:38 python FlowRateMonitoring/TurnOff.py 
+  710  22/07/21 12:52:40 python FlowRateMonitoring/TurnOff.py d
+  711  22/07/21 12:52:51 python FlowRateMonitoring/TurnOn.py 
+  712  22/07/21 12:52:52 python FlowRateMonitoring/TurnOn.py d
+  713  22/07/21 12:53:02 python FlowRateMonitoring/TurnOff.py 
+  714  22/07/21 12:53:04 python FlowRateMonitoring/TurnOff.py d
+  715  22/07/21 12:53:17 python FlowRateMonitoring/TurnOn.py d
+  716  22/07/21 12:53:47 python OverallStatus.py d
+  717  22/07/21 12:53:59 python OverallStatus.py d
+  718  22/07/21 12:54:07 python OverallStatus.py d
+  719  22/07/21 12:54:12 python OverallStatus.py d
+  720  22/07/21 12:54:19 python OverallStatus.py d
+  721  22/07/21 12:54:24 python OverallStatus.py d
+  722  22/07/21 12:54:29 python OverallStatus.py d
+  723  22/07/21 12:54:55 history > history_22.07.21.txt

@@ -1,0 +1,11 @@
+
+(MOS) : Info : 2016-06-20.12:18:12 : LogFile=./MOS.log
+(MOS) : Info : 2016-06-20.12:18:12 : Config File=ServerConfig.xml
+(MOS) : Info : 2016-06-20.12:18:12 : Description File=OPCUAtest/testGasSystem/NewGas/trunk/resources/config/Gas_System_testV2.xml
+(MOS) : Info : 2016-06-20.12:18:12 : Verification of XML file :
+
+(MOS) : Info : 2016-06-20.12:18:13 : open plugin : /home/supernemo/OPCUAtest/testGasSystem/NewGas/trunk/cmake/Plugin_GasFactory/build/libPlugin_Shell.so
+(MOS) : Error : 2016-06-20.12:18:13 : dlopen : libPluginBase.so: cannot open shared object file: No such file or directory
+(MOS) : Info : 2016-06-20.12:18:13 : Connected to Server : opc.tcp://sn-rpi1:48010
+(MOS) : Info : 2016-06-20.12:18:13 : Connected to Server : opc.tcp://sn-rpi1:48010
+(MOS) : Info : 2016-06-20.12:18:23 : close the MOS application

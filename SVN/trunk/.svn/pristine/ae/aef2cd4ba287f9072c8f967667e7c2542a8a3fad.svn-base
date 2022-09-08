@@ -1,0 +1,112 @@
+#!/usr/bin/python
+
+# ------------------------------------------------------------- #
+# Python script for talking to Adafruit_ADS1x15.
+# Lauren Dawson, 03.12.2015
+# ------------------------------------------------------------- #
+
+import time
+import csv
+import argparse
+
+#import Adafruit library to use relevant functions
+from Adafruit_ADS1x15 import ADS1x15
+
+# command line parameters
+parser = argparse.ArgumentParser(description='Select Readout')
+parser.add_argument('input1', metavar='SR', type=str, choices = ['0','1','2','d'], 
+                   help='Desired Readout Channel, d - default')
+
+args = parser.parse_args()
+input = args.input1
+
+#Set date and time
+date_msg = time.strftime("%d/%m/%Y")
+time_msg = time.strftime("%H:%M:%S")
+
+#read in slope, intercept and correction factors from csv
+with open("/home/supernemo/ADC_Monitoring/CalibInput.csv", "rb") as csvfile:
+	reader = csv.reader(csvfile, delimiter=':', quoting=csv.QUOTE_NONE)		
+	for row in reader:
+		if row[0] == "Intercept":
+			intercept = float(row[1])
+		if row[0] == "Slope":
+			slope = float(row[1])
+		if row[0] == "Correction Ch0":
+			correction0 = float(row[1])
+		if row[0] == "Correction Ch1":
+			correction1 = float(row[1])
+		if row[0] == "Correction Ch2":
+			correction2 = float(row[1])
+	csvfile.close()
+
+ADS1115 = 0x01	# 16-bit ADC
+
+#Set gain (pga) and samples per second (sps) as constants
+gain = 4096  # +/- 4.096V
+sps = 250  # 250 samples per second
+
+# Initialise the ADC using the default mode (use default I2C address)
+adc = ADS1x15(ic=ADS1115)
+
+#create and fill report string
+if input == 'd':
+	report_msg = ""
+	for ch in range(0,4):
+		volts = adc.readADCSingleEnded(ch, gain, sps) / 1000
+		#convert to temperature using values given
+		temp = (volts - intercept)/slope
+
+		#apply correction factor for agreement with display
+		if ch == 0:
+			temp *= correction0
+		elif ch == 1:
+			temp *= correction1
+		elif ch == 2:
+			temp *= correction2
+
+		t_msg = "%6fC" % temp
+  		volt_msg = "%.6fV" % volts
+  		ch_msg = "ch %d:" % ch
+
+  		if t_msg == "" or volt_msg == "" or ch_msg == "" :
+  			print "Error: Cannot read values from ADC"
+
+		#add formatting for nice print out of each channel
+   		if ch == 0:
+     			temp_msg = date_msg+" "+time_msg+" :"+ch_msg+" "+volt_msg+" "+t_msg
+    		elif ch == 3:
+       			temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg+"\n"
+    		else:
+       			temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg
+
+	    	report_msg += temp_msg
+
+	print report_msg
+
+	#write to logs
+	f_log = open('/home/supernemo/ADC_Monitoring/ADS1x15_log.txt','a')
+	f_cur = open('/home/supernemo/ADC_Monitoring/ADS1x15_cur.txt','w') 
+	f_log.write(report_msg)
+	f_cur.write(report_msg)
+
+if intercept and slope != 'd' :
+	intercept = float(intercept)
+	slope = float(slope)
+
+if input == '0' :
+	volts0 = adc.readADCSingleEnded(0, gain, sps) / 1000
+	temp0 = (volts0 - intercept)/slope
+	print temp0
+if input == '1' :
+	volts1 = adc.readADCSingleEnded(1, gain, sps) / 1000
+        temp1 = (volts1 - intercept)/slope
+        print temp1
+if input == '2' :
+        volts2 = adc.readADCSingleEnded(2, gain, sps) / 1000
+        temp2 = (volts2 - intercept)/slope
+        print temp2
+
+
+
+

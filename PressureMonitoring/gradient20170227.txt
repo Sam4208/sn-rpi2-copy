@@ -1,0 +1,6 @@
+16:27 0.00151457736726 (filled with ~6L of ethanol, backpressure ~0.77)
+
+16:40 no gradient from GUI - forgot to close valve between BP and pump (filled with ~11L of ethanol)
+
+
+

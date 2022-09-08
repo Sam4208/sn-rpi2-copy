@@ -1,0 +1,4 @@
+SensorTemp  2
+Temp_Ch2  3
+Temp_Ch0  0
+Temp_Ch1  2

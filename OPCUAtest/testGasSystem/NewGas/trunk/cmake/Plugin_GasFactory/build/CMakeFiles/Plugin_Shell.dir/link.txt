@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libPlugin_Shell.so -o libPlugin_Shell.so CMakeFiles/Plugin_Shell.dir/shell.cpp.o  -L/home/user/dev/NewGas/trunk/cmake/Plugin_GasFactory/share -lPluginBase -Wl,-rpath,/home/user/dev/NewGas/trunk/cmake/Plugin_GasFactory/share: 

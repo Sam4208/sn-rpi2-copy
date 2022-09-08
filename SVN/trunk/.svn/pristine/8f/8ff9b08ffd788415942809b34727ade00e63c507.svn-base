@@ -1,0 +1,137 @@
+#!/usr/bin/python
+
+import argparse
+import sys
+import time
+from time import sleep
+sys.path.insert(0, "..")
+from opcua import Client
+from opcua import ua
+from datetime import timedelta
+import datetime
+import re
+
+# ------------------------------------------------------------- #
+# Python script for history readout from the client.
+# Lauren Dawson, 01.07.2016
+# ------------------------------------------------------------- #
+
+# command line parameters
+parser = argparse.ArgumentParser(description='Time Period')
+parser.add_argument('variable', type=str,
+                   help='Requested variable')
+parser.add_argument('--duration', type=int,
+                   help='How long a history requested, hours')
+parser.add_argument('--start', nargs='?', type=str,
+                   help='Start time of requested period')
+parser.add_argument('--end', nargs='?', type=str,
+                   help='End time of requested period')
+
+args = parser.parse_args()
+variable = args.variable
+start = args.start
+end = args.end
+duration = args.duration
+
+if args.duration is None and args.start is not None and args.end is not None :
+	start = start.replace("_", " ")
+	end = end.replace("_", " ")
+
+if __name__ == "__main__":
+
+	# Define client address
+	client = Client("opc.tcp://sn-rpi1.holmbury.hep.ucl.ac.uk:48010/freeopcua/server")
+
+	try:
+		# Establish connection to client
+		client.connect()
+
+		# Fetch intial node
+		root = client.get_root_node()
+
+		# Get directory locations for all variables
+		sensorData = root.get_child(["0:Objects", "2:CMS", "2:GAS_System", "2:Monitoring", 
+		            "2:FG", "2:HaakeDL30", "2:SensorTemp", "2:SensorTemp_v"])
+
+		pressureData = root.get_child(["0:Objects", "2:CMS", "2:GAS_System", "2:Monitoring",
+					"2:BP", "2:Pressure", "2:Pressure_v"]) 
+
+		# Define an end time as the current time (GMT)
+		if args.end is not None :
+			end_time = datetime.datetime.strptime(end, "%Y-%m-%d %H:%M:%S.%f")
+		
+		# Get a start time
+		if args.start is not None :
+			start_time = datetime.datetime.strptime(start, "%Y-%m-%d %H:%M:%S.%f")
+
+		history = []
+		start_pos1 = []
+		end_pos1 = []
+		values = []
+
+		# Read raw history using specified time period or number of hours
+		if variable == "SensorTemp" :
+			if args.start is not None and args.end is not None :
+				history.append(sensorData.read_raw_history(start_time, end_time))
+			elif args.duration is not None :
+				end_time = datetime.datetime.utcnow()
+				start_time = end_time - timedelta(hours = duration)
+				history.append(sensorData.read_raw_history(start_time, end_time))
+		elif variable == "Pressure" :
+			if args.start is not None and args.end is not None :
+				history.append(pressureData.read_raw_history(start_time, end_time))
+			elif args.duration is not None :
+				end_time = datetime.datetime.utcnow()
+				start_time = end_time - timedelta(hours = duration)
+				history.append(pressureData.read_raw_history(start_time, end_time))
+
+		# Convert list to string to search
+		strHist = str(history[0])
+
+		for i in re.finditer('val', strHist):
+			start_pos1.append(i.start())
+
+		for j in start_pos1: 
+			end_pos1.append(strHist.find(',',j))
+
+		# Extract value phrases using start and end positions
+		for k, l in zip(start_pos1, end_pos1):
+				values.append(strHist[k:l])
+
+		start_pos2 = []
+		end_pos2 = []
+		timestamps = []
+
+		for i in re.finditer('SourceTimestamp', strHist):
+			start_pos2.append(i.start())
+
+		for j in start_pos2:
+			end_pos2.append(strHist.find(',',j))
+
+		# Extract timestamp phrases using start and end positions
+		for k, l in zip(start_pos2, end_pos2):
+				timestamps.append(strHist[k:l])
+
+		raw_values = []
+		raw_times = []
+
+		for i in values:
+			value = i.replace("val:","")
+			raw_values.append(value)
+
+		for i in timestamps:
+			time = i.replace("SourceTimestamp:", "")
+			raw_times.append(time)
+
+		# Combine time stamps and values in to one array
+		complete_data = []
+
+		for i,j in zip(raw_times,raw_values):
+			complete_data.append(i)
+			complete_data.append(j)
+
+		print complete_data
+
+	finally:
+    		client.disconnect()
+

@@ -1,0 +1,103 @@
+#!/usr/bin/python
+
+import serial as s
+import argparse
+import sys
+
+# ------------------------------------------------------------- #
+# Python script for reading out range and scale from unit PR4000B.
+# Lauren Dawson, 15.03.2016
+# ------------------------------------------------------------- #
+
+# command line parameters
+parser = argparse.ArgumentParser(description='Select Readout')
+parser.add_argument('input', metavar='SR', type=str, choices = ['R1','R2','SC2','ST2'],
+                   help='Desired Variable Readout')
+
+args = parser.parse_args()
+input = args.input
+
+# Get data from the PR4000B over serial interface :
+# -------------------------------------------------
+ser = s.Serial(port='/dev/mfc', baudrate=115000, timeout=2.0, parity=s.PARITY_NONE)
+
+# Returns range followed by the unit :
+ser.write("@03?RG1\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        if input == 'R1' :
+            print 999
+            sys.exit()
+        else :
+            print "Error reading RG1 from MFC"
+            sys.exit()
+else :
+        range_msg = (msg.replace("\r", " ")).split(",")
+# Separate message out in to range and unit :
+range_ch1, unit_ch1 = range_msg
+
+if input == "R1" :
+	print range_ch1.strip()
+	sys.exit()
+
+# Get RG2 :
+ser.write("@03?RG2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        if input == 'R2' :
+            print 999
+            sys.exit()
+        else :
+            print "Error reading RG2 from MFC"
+            sys.exit()
+else :
+        range_msg = (msg.replace("\r", " ")).split(",")
+range_ch2, unit_ch2 = range_msg
+
+if input == "R2" :
+	print range_ch2.strip()
+	sys.exit()
+
+# Slave status of channel 2 :
+ser.write("@03?SM2\r");
+msg = ser.readline()
+if msg == "":
+        print "Error"
+        sys.exit()
+else :
+        status = (msg.replace("\r", " ")).strip()
+        # Assign status : 
+        if status == '00004' :
+            status = 'Slave'
+        elif status == '00002':
+            status = 'Independent'
+
+if input == "ST2" :
+	print status
+	sys.exit()
+
+# Find the scale :
+ser.write("@03?SC2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        if input == 'SC2' :
+            print 999
+            sys.exit()
+        else :
+            print "Error reading SC2 from MFC"
+            sys.exit()
+else :
+        scale_ch2 = msg.replace("\r", " ")
+
+#Convert scale in to a % if channel 2 in slave mode
+if status == '00004' :
+        scale_ch2 = ((float(scale_ch2)/1000)/(float(range_ch1))) * 100
+        scale_ch2 = str(scale_ch2)
+        scale_ch2 += " " + "%"
+	
+if input == "SC2" :
+	print scale_ch2.strip()
+	sys.exit()

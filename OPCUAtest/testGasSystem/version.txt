@@ -1,0 +1,10 @@
+
+
+***********************************
+New version of MOS is available :
+Your version is : V2.1.0
+The version V1.3.0 is available
+download : https://forge.in2p3.fr/projects/mos/wiki (for CTA users):
+download : http://lappweb.in2p3.fr/~panazol/webOPCUA2.php (for SuperNemo users):
+***********************************
+ 

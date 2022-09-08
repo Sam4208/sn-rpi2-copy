@@ -1,0 +1,25 @@
+<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-1</connector>
+          <vendor>DEL</vendor>
+          <product>DELL P2011H</product>
+          <serial>646PX098981L</serial>
+        </monitorspec>
+        <mode>
+          <width>1600</width>
+          <height>900</height>
+          <rate>59.98</rate>
+        </mode>
+      </monitor>
+      <transform>
+        <rotation>normal</rotation>
+      </transform>
+    </logicalmonitor>
+  </configuration>
+</monitors>

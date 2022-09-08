@@ -1,0 +1,1 @@
+22/11/2021 19:17:57 : SP1: 10.000 SP2: 0040.0 FR1: 10.003 FR2: 0100.2 Range Ch1: 20.000 SLM Range Ch2: 2000.0 SCCM Scale Ch2: 1.0 % Status Ch2: Slave

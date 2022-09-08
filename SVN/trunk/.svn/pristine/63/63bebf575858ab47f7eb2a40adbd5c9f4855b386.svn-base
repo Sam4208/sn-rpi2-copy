@@ -1,0 +1,61 @@
+#!/usr/bin/python
+import argparse
+import sys
+
+# ------------------------------------------------------------- #
+# Python script for continuosly monitoring status of flow.
+# Lauren Dawson, 11.05.2016
+# Note that the unit has address "03" (default value ?)
+# ------------------------------------------------------------- #
+parser = argparse.ArgumentParser(description='Select Readout')
+parser.add_argument('input', metavar='SR', type=str, choices = ['d','t'], 
+                   help='Desired Variable Readout')
+
+args = parser.parse_args()
+input = args.input
+
+if input =='t':
+    print('OFF')
+    sys.exit()
+else :
+    pass
+
+import subprocess
+import serial as s
+from time import sleep 
+
+# Establish serial connection
+ser = s.Serial(port='/dev/mfc', baudrate=115000, timeout=2.0, parity=s.PARITY_NONE)
+
+# Read initial value
+ser.write("@03?VL0\r")
+# Clear buffer to help with lag :
+ser.flush()
+
+msg = ser.readline()
+prevValue = msg.strip()
+print prevValue
+# Enter while loop
+while True:
+	# Read value again
+	ser.write("@03?VL0\r")
+	ser.flush()
+	msg = ser.readline()
+	newValue = msg.strip()
+	print newValue
+	# Get last key press
+	ser.write("@03KY\r")
+	ser.flush()
+	msg = ser.readline()
+	keyPress = msg.strip()
+
+	# Only want to send alert if flow has turned off unexpetedly
+	if prevValue == 'ON' and newValue == 'OFF' and keyPress != '00007' :
+		# Send email as flow rate has turned off
+		subprocess.call("/home/supernemo/FlowRateMonitoring/SendEmail.sh")
+		prevValue = newValue
+		sleep(300)
+	else :
+		# Do not want a notification if flow has gone from OFF to ON, or has not changed
+		prevValue = newValue
+		sleep(300)

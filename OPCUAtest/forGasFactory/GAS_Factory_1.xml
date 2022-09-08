@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ******************************************************************************************* -->
+<!-- **** file :       						    			     *** -->
+<!-- **** description : 						                     *** -->
+<!-- **** author      : panazol@lapp.in2p3.fr                                                *** -->
+<!-- **** date        : 13/01/16                                                             *** -->
+<!-- ******************************************************************************************* -->
+
+
+<OPCUA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://lappweb.in2p3.fr/~panazol/xsd/v2_0_0/dict_device.xsd">
+	<Name>MOS_server</Name>
+	<SimpleDevice>
+		<Name>GAS_Factory</Name>
+		<Plugins>
+        	        <Location>/home/supernemo/OPCUAtest/forGasFactory/Plugin_Shell/libPlugin_Shell.so</Location>
+        	        <Name>ptr_Plugin</Name>
+        	</Plugins>
+                <Instruction_set>
+                        <Instruction>
+                                <Name>GetTemperature</Name>
+                                <Cmd>./getTemp.sh</Cmd>
+                        </Instruction>
+                        <Instruction>
+                                <Name>GetGasHe</Name>
+                                <Cmd>./getGasHe.sh</Cmd>
+                        </Instruction>
+                        <Instruction>
+                                <Name>StopGasFactory</Name>
+                                <Cmd>./cmdGasFactory.sh stop</Cmd>
+                        </Instruction>                        
+			<Instruction>
+                                <Name>StartGasFactory</Name>
+                                <Cmd>./cmdGasFactory.sh start</Cmd>
+                        </Instruction>
+                        <Instruction>
+                                <Name>SetLimit</Name>
+                                <Cmd>./cmdGasFactory.sh setLimit </Cmd>
+                        </Instruction>
+
+                </Instruction_set>
+
+		<Method> 
+			<Name>stopGasFactory</Name>
+			<Argument>
+				<Name>retour</Name>
+				<Type>string</Type>
+				<Access>Output</Access>
+			</Argument>
+			<DeviceInstruction>
+				<Value>StopGasFactory</Value>
+			</DeviceInstruction>
+		</Method>
+ 		<Method>
+                        <Name>startGasFactory</Name>
+                        <Argument>
+                                <Name>retour</Name>
+                                <Type>string</Type>
+                                <Access>Output</Access>
+                        </Argument>
+                        <DeviceInstruction>
+                                <Value>StartGasFactory</Value>
+                        </DeviceInstruction>
+                </Method>
+                        
+		<CompoundDatapoint>
+			<Name>0_ProgramInformations</Name>
+                	<Attribut>
+                        	<Name>DeviceModelName</Name>
+                        	<Value>SNEMO/GASFactory/GASFactoryModel.xml</Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>DeviceModelVersion</Name>
+                	        <Value>1.0.0</Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>DeviceModelDate</Name>
+                	        <Value>12-01-2016</Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>DeviceModelAuthor</Name>
+                        	<Value>Panazol Jean-luc</Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>DeviceModelDescription</Name>
+                	        <Value></Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>InstanceName</Name>
+                	        <Value>SNEMO/GASFactory/GAS_Factory_1.xml</Value>
+                	</Attribut>
+                	<Attribut>
+                	        <Name>InstanceDate</Name>
+                	        <Value>12-01-2016 10:32</Value>
+                	</Attribut>
+		</CompoundDatapoint>
+	
+		<SimpleDatapoint>
+			<Name>Temperature</Name>
+			<Type>float</Type>
+			<!-- <MonitoringRate>1</MonitoringRate> -->
+			 <MonitoringRate>1</MonitoringRate> 
+			<Historizing>1</Historizing>
+			<Method>
+				<Name>get</Name>
+				<Argument>
+					<Name>retour</Name>
+					<Type>float</Type>
+					<Access>Output</Access>
+				</Argument>
+                               <DeviceInstruction>
+					<Value>GetTemperature</Value>
+                		</DeviceInstruction>
+			</Method>
+		</SimpleDatapoint>
+
+               <SimpleDatapoint>
+                        <Name>LimitConsign</Name>
+                        <Type>int8</Type>
+                        <Historizing>1</Historizing>
+                        <Method>
+                                <Name>set</Name>
+                                <Argument>
+                                        <Name>retour</Name>
+                                        <Type>float</Type>
+                                        <Access>Output</Access>
+                                </Argument>
+                               <DeviceInstruction>
+                                        <Value>SetLimit</Value>
+                                </DeviceInstruction>
+                        </Method>
+                </SimpleDatapoint>
+
+
+                <SimpleDatapoint>
+                        <Name>He</Name>
+                        <Type>int32</Type>
+			<!-- <MonitoringRate>3</MonitoringRate> -->
+			<MonitoringRate>5</MonitoringRate> 
+                        <Historizing>1</Historizing>
+                        <Method>
+                                <Name>get</Name>
+                                <Argument>
+                                        <Name>retour</Name>
+                                        <Type>string</Type>
+                                        <Access>Output</Access>
+                                </Argument>
+                               <DeviceInstruction>
+                                        <Value>GetGasHe</Value>
+                                </DeviceInstruction>
+                        </Method>
+                </SimpleDatapoint>
+	</SimpleDevice>
+</OPCUA>

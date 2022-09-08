@@ -1,0 +1,19 @@
+Team URL: uclsupernemo.slack.com
+Email: m.e.cascella+sn.gas.sys@gmail.com 
+Password: S3l3n1um_82
+
+
+Getting Started: XMPP
+
+Host: uclsupernemo.xmpp.slack.com
+User: gas-system
+Pass: uclsupernemo.VIb7QzaMFlNHmYovobck
+
+    Your XMPP or Jabber ID is in the user@host format. Your ID is gas-system@uclsupernemo.xmpp.slack.com.
+    Your password is that big long string — the whole thing.
+    Once you've authenticated, try joining your team's #general channel with the following parameters:
+        general (no hash sign) for the room name
+        conference.uclsupernemo.xmpp.slack.com for the server (i.e. put "conference." at the beginning of your XMPP host name)
+        gas-system as your handle
+        uclsupernemo.VIb7QzaMFlNHmYovobck as your password
+

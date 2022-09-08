@@ -1,0 +1,6 @@
+2022/08/23-09:59:20.919 ba5 Creating DB /home/supernemo/.config/chromium/Default/IndexedDB/https_electronoobs.com_0.indexeddb.leveldb since it was missing.
+2022/08/23-09:59:20.955 ba5 Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_electronoobs.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/08/23-09:59:21.147 ba3 Level-0 table #5: started
+2022/08/23-09:59:21.158 ba3 Level-0 table #5: 627 bytes OK
+2022/08/23-09:59:21.165 ba3 Delete type=0 #3
+2022/08/23-09:59:21.167 ba2 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,1 @@
+/home/supernemo/SVN/trunk/source/scripts/TemperatureLogging.py

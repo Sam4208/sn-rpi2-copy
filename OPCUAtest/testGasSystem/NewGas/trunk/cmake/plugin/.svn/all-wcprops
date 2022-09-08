@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/17604/Falaise/RealTime/CMS/Gas/trunk/cmake/plugin
+END
+cta_slc_pluginsInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/17432/Falaise/RealTime/CMS/Gas/trunk/cmake/plugin/cta_slc_pluginsInterface.h
+END
+shell.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/17604/Falaise/RealTime/CMS/Gas/trunk/cmake/plugin/shell.cpp
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/17432/Falaise/RealTime/CMS/Gas/trunk/cmake/plugin/makefile
+END
+shell.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/17604/Falaise/RealTime/CMS/Gas/trunk/cmake/plugin/shell.h
+END

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GasSystemGUI
+Comment=GUI for monitoring the SuperNEMO gas system
+Icon=/usr/share/pixmaps/python2.7.xpm
+Exec=python /home/supernemo/GasSystemGUI/GasSystemGUI.py
+Type=Application
+StartupNotify=true
+Terminal=false
+Categories=None

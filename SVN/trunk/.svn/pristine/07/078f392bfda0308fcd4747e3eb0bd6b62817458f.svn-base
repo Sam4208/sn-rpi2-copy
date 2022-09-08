@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+import sys
+import subprocess
+
+# ------------------------------------------------------------- #
+# Python script for monitoring status of the flow rate.
+# Lauren Dawson, 18.05.2016
+# Note that the unit has address "03" (default value ?)
+# ------------------------------------------------------------- #
+
+# Read in last line of FlowStatus.txt
+f_flow = open('/home/supernemo/ClientScripts/FlowStatus.txt', 'r')
+lineList = f_flow.readlines()
+f_flow.close()
+lastline= (str(lineList[-1])).strip()
+print "Last line is: " , lastline
+
+# If equal to 'OFF' then send email and switch back on
+if 'OFF' in str(lastline) :
+	subprocess.call("/home/supernemo/FlowRateMonitoring/SendEmail.sh")
+	subprocess.call("/home/supernemo/FlowRateMonitoring/TurnOn.py d", shell = True)

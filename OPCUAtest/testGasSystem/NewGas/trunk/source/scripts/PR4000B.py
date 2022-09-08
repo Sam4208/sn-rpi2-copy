@@ -1,0 +1,192 @@
+#!/usr/bin/python
+
+import serial as s
+import ctypes
+import time
+import UsefulFunctions as uf
+import argparse
+import sys
+
+# ------------------------------------------------------------- #
+# Python script for talking to MKS controller unit PR4000B.
+# Dave Waters, 28.08.2015
+#
+# Note that the unit has address "03" (default value ?)
+# ------------------------------------------------------------- #
+
+# command line parameters
+parser = argparse.ArgumentParser(description='Select Readout')
+parser.add_argument('input', metavar='SR', type=str, choices = ['SP1','SP2','FR1','FR2','d'], 
+                   help='Desired Variable Readout')
+
+args = parser.parse_args()
+input = args.input
+
+# Get the date and time :
+# -----------------------
+report_msg = uf.get_date_time()
+
+# Get data from the PR4000B over serial interface :
+# -------------------------------------------------
+ser = s.Serial(port='/dev/mfc', baudrate=115000, timeout=2.0, parity=s.PARITY_NONE)
+
+# Get the set points and actual values :
+ser.write("@03?SP1\r")
+# Clear buffer to help with lag :
+ser.flush()
+# Read and reformat so all on one line :
+msg = ser.readline()
+if msg == "" :
+  if input == 'SP1' :
+    print 999
+    sys.exit()
+  else :
+	  print "Error reading SP1 from MFC"
+	  sys.exit()
+else :
+	set_point_ch1 = msg.replace("\r", " ")
+	# For faster response required by OPC
+	if input == 'SP1' :
+		print set_point_ch1.strip()
+		sys.exit() 
+
+# Get SP2 :
+ser.write("@03?SP2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+  if input == 'SP2' :
+    print 999
+    sys.exit()
+  else:
+	  print "Error reading SP2 from MFC"
+	  sys.exit()
+else :
+	set_point_ch2 = msg.replace("\r", " ")
+	if input == 'SP2' :
+               print set_point_ch2.strip()
+               sys.exit()
+
+# Get AV1 :
+ser.write("@03?AV1\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+  if input == 'FR1' :
+    print 999
+    sys.exit()
+  else:
+    print "Error reading AV1 from MFC"
+    sys.exit()
+else :
+        flow_ch1 = msg.replace("\r", " ")
+	if input == 'FR1' :
+               print flow_ch1.strip()
+               sys.exit()
+#Get AV2 :
+ser.write("@03?AV2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+  if input == 'FR2' :
+    print 999
+    sys.exit()
+  else:
+    print "Error reading AV2 from MFC"
+    sys.exit()
+else :
+        flow_ch2 = msg.replace("\r", " ")
+	if input == 'FR2' :
+               print flow_ch2.strip()
+               sys.exit()
+# Obtain the units and slave scale :
+# Returns range followed by the unit :
+ser.write("@03?RG1\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        print "Error reading RG1 from MFC"
+        sys.exit()
+else :
+        range_msg = (msg.replace("\r", " ")).split(",")
+# Separate message out in to range and unit :
+range_ch1, unit_ch1 = range_msg
+
+# Determine the unit used :
+if unit_ch1 == " 00013 " :
+	unit_ch1 = "SLM"
+elif unit_ch1 == " 00012 " :
+	unit_ch1 = "SCCM"
+
+# Recombine for full msg :
+range_unit_ch1 = range_ch1 + " " + unit_ch1
+
+# Get RG2 :
+ser.write("@03?RG2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        print "Error reading RG2 from MFC"
+        sys.exit()
+else :
+        range_msg = (msg.replace("\r", " ")).split(",")
+range_ch2, unit_ch2 = range_msg
+
+# Determine the unit used :
+if unit_ch2 == " 00013 " :
+        unit_ch2 = "SLM"
+elif unit_ch2 == " 00012 " :
+        unit_ch2 = "SCCM"
+
+range_unit_ch2 = range_ch2 + " " + unit_ch2
+
+# Find the scale :
+ser.write("@03?SC2\r")
+ser.flush()
+msg = ser.readline()
+if msg == "":
+        print "Error reading SC2 from MFC"
+        sys.exit()
+else :
+        scale_ch2 = msg.replace("\r", " ")
+
+# Slave status of channel 2 :
+ser.write("@03?SM2\r");
+msg = ser.readline()
+if msg == "":
+        print "Error reading SM2 from MFC"
+        sys.exit()
+else :
+        status = msg.replace("\r", " ")
+# Assign status : 
+if status == ' 00004 ' :
+	status = 'Slave'
+elif status == ' 00002 ':
+	status = 'Independent'
+
+#Convert scale in to a % if channel 2 in slave mode
+if status == 'Slave' :
+	scale_ch2 = ((float(scale_ch2)/1000)/(float(range_ch1))) * 100
+	scale_ch2 = str(scale_ch2)
+	scale_ch2 += " " + "%"
+
+# Format and write the final report message :
+# -------------------------------------------
+report_msg += "SP1:"  +set_point_ch1 
+report_msg += "SP2:" +set_point_ch2
+report_msg += "FR1:"  +flow_ch1      
+report_msg += "FR2:" +flow_ch2
+report_msg += "Range Ch1:" +range_unit_ch1
+report_msg += " Range Ch2:" +range_unit_ch2
+report_msg += " Scale Ch2:" + " " +scale_ch2
+report_msg += " Status Ch2:" + " " +status
+report_msg += "\n"
+
+# Print desired output :
+print report_msg
+
+# To separate files for the log (appending) and current values :
+f_log = open('/home/supernemo/FlowRateMonitoring/PR4000B_log.txt','a')
+f_cur = open('/home/supernemo/FlowRateMonitoring/PR4000B_cur.txt','w') 
+f_log.write(report_msg)
+f_cur.write(report_msg)

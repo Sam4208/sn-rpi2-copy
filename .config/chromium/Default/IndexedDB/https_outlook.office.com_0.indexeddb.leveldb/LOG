@@ -1,0 +1,7 @@
+2022/11/07-16:38:01.223 2ab0 Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_outlook.office.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/07-16:38:01.225 2ab0 Recovering log #4
+2022/11/07-16:38:01.228 2ab0 Reusing old log /home/supernemo/.config/chromium/Default/IndexedDB/https_outlook.office.com_0.indexeddb.leveldb/000004.log 
+2022/11/07-16:38:29.447 2a53 Level-0 table #8: started
+2022/11/07-16:38:29.455 2a53 Level-0 table #8: 15607 bytes OK
+2022/11/07-16:38:29.462 2a53 Delete type=0 #4
+2022/11/07-16:38:29.463 2a53 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -58,8 +58,8 @@ def file_open(variable):
     #print(index)
     variable , file ,dump_file = path(variable)
     f = open(file,'r')
-    lines = f.readlines()[-1]
-    #print(lines)
+    lines = f.readlines()
+    print(lines)
     last_lines = str(lines)
     
     last_time = last_lines[11:31]
@@ -98,7 +98,7 @@ def compare(threshold_1,variable):
     last_temp,last_time = file_open(variable)
     final_time,final_data = get_last_datapoint(variable)
     status = 'no'
-    print(threshold_1)
+    #print(threshold_1)
     compare = float(last_temp) - float(final_data)
     if abs(compare) >= threshold_1:
         status ='yes'
@@ -122,7 +122,7 @@ def write_file(threshold,variable):
     status = compare(threshold,variable)
     last_temp,last_time = file_open(variable)
     final_time,final_data = get_last_datapoint(variable)
-    print(status)
+    #print(status)
     if status == 'no':
         f_2.truncate(0)
         f_2.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))

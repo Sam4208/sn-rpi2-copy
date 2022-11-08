@@ -94,18 +94,18 @@ while True:
     
 	
 	
-	SensorTemp_v_1 = random.uniform(23,24)
-	Temp_Ch0_v_1 = random.uniform(21,22)
-	Temp_Ch1_v_1 = random.uniform(21,22)
-	BP_press_v_1 = random.uniform(100,200)
-	FR_Ch1_v_1 = random.uniform(9,11)
-	FR_Ch2_v_1 = random.uniform(500,700)
-	T_Ch2_v_1 = random.uniform(12,15)
+	SensorTemp_v_1 = random.uniform(12,13)
+	Temp_Ch0_v_1 = random.uniform(12,12.7)
+	Temp_Ch1_v_1 = random.uniform(12.5,13)
+	BP_press_v_1 = random.uniform(1,2)
+	FR_Ch1_v_1 = random.uniform(1,2)
+	FR_Ch2_v_1 = random.uniform(0.001,0.002)
+	T_Ch2_v_1 = random.uniform(23,25)
 	#timestamp = time.strftime("%y-%m-%d %H:%M:%S")
 	#timestamp = datetime.datetime.utcnow()
 	#print(timestamp)
 	#report_msg_sensortemp = SensorTemp_v_1 + timestamp
-	#print(SensorTemp_v_1,Temp_Ch0_v_1,Temp_Ch1_v_1,BP_press_v_1,FR_Ch1_v_1,FR_Ch2_v_1,T_Ch2_v_1)
+	print(SensorTemp_v_1,Temp_Ch0_v_1)
 	'''
 	date_time = time.strftime("%d/%m/%y")
 	current_time = time.strftime("%H:%M:%S")
@@ -117,5 +117,5 @@ while True:
 	FR_Ch1_v.set_value(FR_Ch1_v_1)
 	FR_Ch2_v.set_value(FR_Ch2_v_1)
 	T_Ch2_v.set_value(T_Ch2_v_1)
-	time.sleep(60)
+	time.sleep(10)
 

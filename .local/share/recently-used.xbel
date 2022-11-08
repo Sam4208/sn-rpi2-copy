@@ -3,12 +3,83 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/GasSystemGUI.py" added="2022-09-08T14:35:18.197811Z" modified="2022-09-08T14:35:18.197921Z" visited="2022-09-08T14:35:18.197817Z">
+  <bookmark href="file:///home/supernemo/Desktop/testread.py" added="2022-10-10T01:48:30.132257Z" modified="2022-10-10T01:48:30.132290Z" visited="2022-10-10T01:48:30.132265Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="text/x-python"/>
         <bookmark:applications>
-          <bookmark:application name="chromium-browser" exec="&apos;chromium-browser %u&apos;" modified="2022-09-08T14:35:18.197831Z" count="1"/>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-10T01:48:30.132275Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/Desktop/testavg.py" added="2022-10-16T23:46:36.178673Z" modified="2022-10-16T23:46:36.178710Z" visited="2022-10-16T23:46:36.178681Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-16T23:46:36.178694Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/logfile_2.py" added="2022-10-17T00:01:01.574699Z" modified="2022-11-07T16:38:22.129299Z" visited="2022-10-17T00:01:01.574703Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-17T00:01:01.574712Z" count="1"/>
+          <bookmark:application name="chromium-browser" exec="&apos;chromium-browser %u&apos;" modified="2022-11-07T16:38:22.129272Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/test_write.py" added="2022-10-17T00:37:01.155243Z" modified="2022-10-17T00:37:01.155262Z" visited="2022-10-17T00:37:01.155247Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-17T00:37:01.155253Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/GasSystemGUI_2.py" added="2022-10-28T14:34:25.782271Z" modified="2022-10-31T15:45:08.600928Z" visited="2022-10-28T14:34:25.782275Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-31T15:45:08.600912Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/GasSystemGUI_3.py" added="2022-11-02T07:15:34.945805Z" modified="2022-11-02T07:15:34.945821Z" visited="2022-11-02T07:15:34.945809Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-02T07:15:34.945814Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/adc_test.py" added="2022-11-03T15:34:58.664456Z" modified="2022-11-04T11:26:05.749247Z" visited="2022-11-03T15:34:58.664467Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-04T11:26:05.749232Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/Desktop/delete%20now.py" added="2022-11-07T12:34:12.880646Z" modified="2022-11-07T12:34:12.880684Z" visited="2022-11-07T12:34:12.880655Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-07T12:34:12.880667Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

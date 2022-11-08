@@ -79,10 +79,10 @@ msg = ser.readline(9)
 #exit if message returns blank
 if(msg=='') : 
 	if mode == '0' :
-		print 999
+		print (999)
 		sys.exit()
 	else :
-		print "Error in pressure reading, EV94 replied: ", msg
+		print ("Error in pressure reading, EV94 replied: " + msg)
 		sys.exit()
 
 #get only the relevant part of the reply
@@ -106,10 +106,10 @@ msg = ser.readline(9)
 #exit if message returns blank
 if(msg=='') : 
 	if mode == '0' :
-		print 999
+		print (999)
 		sys.exit()
 	else :
-		print "Error during decimal point reading, EV94 replied: ", msg
+		print ("Error during decimal point reading, EV94 replied: " + msg)
 		sys.exit()
 
 #get only the relevant part of the reply
@@ -123,9 +123,9 @@ pressureString = str(pressure)
 
 if mode == 'd':
 	report_msg += "Current Pressure: " + pressureString
-	print report_msg
+	print (report_msg)
 else :
-	print pressure 
+	print (pressure) 
 
 
 

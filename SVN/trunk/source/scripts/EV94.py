@@ -123,7 +123,7 @@ pressure = pressure/(10**pos_hex)
 pressureString = str(pressure)
 
 if mode == 'd':
-	report_msg += "Current Pressure: " + pressureString
+	report_msg += "Current Pressure: " + pressureString + "(BP P1)"
 	print (report_msg)
 else :
 	print (pressure) 

@@ -1,0 +1,5 @@
+2022/11/03-14:25:36.426 4ad8 Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/03-14:25:36.431 4ad8 Recovering log #6
+2022/11/03-14:25:36.470 4ad8 Reusing old log /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000006.log 
+2022/11/03-14:25:36.471 4ad8 Delete type=2 #7
+2022/11/03-14:25:36.471 4ad8 Delete type=2 #5

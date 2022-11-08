@@ -1,339 +1,167 @@
-** Message: 09:48:32.030: environement.vala:58: Exporting primary_variable
-** Message: 09:48:32.030: environement.vala:59: desktop_environnement XDG_CURRENT_DESKTOP
-** Message: 09:48:32.030: environement.vala:150: confir_dirs is null, export : /etc/xdg
-** Message: 09:48:32.030: environement.vala:184: Exporting XDG_CONFIG_DIRS
-** Message: 09:48:32.030: environement.vala:218: custom_data :
-** Message: 09:48:32.030: environement.vala:219: data_dirs :/usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
-** Message: 09:48:32.030: environement.vala:220: data_dirs not null, export : /usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
-** Message: 09:48:32.030: environement.vala:225: Exporting XDG_DATA_DIRS
-** Message: 09:48:32.031: utils.vala:127: User config used : /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.031: utils.vala:148: Final file used : /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.031: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
-** Message: 09:48:32.031: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “iGtk/ColorScheme” in group “GTK”
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “windows_manager/command” in group “Session”
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “panel/command” in group “Session”
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “dock/command” in group “Session”
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “file_manager/command” in group “Session”
-** Message: 09:48:32.032: settings.vala:540: Key file does not have key “desktop_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “launcher_manager/autostart” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “composite_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “im1/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “im2/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “widget1/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “notification/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “keybindings/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “im_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “screensaver/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “power_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “audio_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “workspace_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “screenshot_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “message_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “upgrade_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “updates_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “updates_manager/timeout” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “crash_manager/command” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “crash_manager/dev_mode” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “crash_manager/timeout” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “upstart_user_session” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “proxy_manager/http” in group “Session”
-** Message: 09:48:32.033: settings.vala:540: Key file does not have key “a11y/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “xrandr/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “network_gui/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “webbrowser/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “email/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “pdf_reader/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “video_player/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “audio_player/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “image_display/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “text_editor/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “archive/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “charmap/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “calculator/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “spreadsheet/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “bittorent/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “document/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “webcam/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “burn/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “notes/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “disk_utility/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “tasks/command” in group “Session”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have group “Keymap”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “laptop_mode” in group “State”
-** Message: 09:48:32.034: settings.vala:540: Key file does not have key “gnome” in group “Dbus”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “type” in group “Environment”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “ubuntu_menuproxy” in group “Environment”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “toolkit_integration” in group “Environment”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “gtk/overlay_scrollbar_disable” in group “Environment”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “qt/force_theme” in group “Environment”
-** Message: 09:48:32.035: settings.vala:540: Key file does not have key “qt/platform” in group “Environment”
-** Message: 09:48:32.035: settings.vala:462: Monitoring: /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.035: settings.vala:466: Desktop file is already in config home, do nothing
-** Message: 09:48:32.036: environement.vala:79: Exporting variable
-** Message: 09:48:32.036: environement.vala:80: desktop_environnement XDG_CURRENT_DESKTOP
-** Message: 09:48:32.036: environement.vala:177: custom_config :
-** Message: 09:48:32.036: environement.vala:178: config_dirs :/etc/xdg
-** Message: 09:48:32.042: environement.vala:179: confir_dirs not null, export : /etc/xdg
-** Message: 09:48:32.042: environement.vala:184: Exporting XDG_CONFIG_DIRS
-** Message: 09:48:32.042: environement.vala:218: custom_data :
-** Message: 09:48:32.042: environement.vala:219: data_dirs :/usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
-** Message: 09:48:32.042: environement.vala:220: data_dirs not null, export : /usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
-** Message: 09:48:32.042: environement.vala:225: Exporting XDG_DATA_DIRS
-** Message: 09:48:32.042: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
-** Message: 09:48:32.043: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.043: environement.vala:254: No entry in [Environment_variable]. Key file does not have group “Environment_variable”
+** Message: 16:14:38.456: environement.vala:58: Exporting primary_variable
+** Message: 16:14:38.456: environement.vala:59: desktop_environnement XDG_CURRENT_DESKTOP
+** Message: 16:14:38.456: environement.vala:150: confir_dirs is null, export : /etc/xdg
+** Message: 16:14:38.456: environement.vala:184: Exporting XDG_CONFIG_DIRS
+** Message: 16:14:38.456: environement.vala:218: custom_data :
+** Message: 16:14:38.456: environement.vala:219: data_dirs :/usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
+** Message: 16:14:38.456: environement.vala:220: data_dirs not null, export : /usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
+** Message: 16:14:38.456: environement.vala:225: Exporting XDG_DATA_DIRS
+** Message: 16:14:38.458: utils.vala:127: User config used : /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.458: utils.vala:148: Final file used : /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.458: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
+** Message: 16:14:38.458: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.459: settings.vala:540: Key file does not have key “iGtk/ColorScheme” in group “GTK”
+** Message: 16:14:38.459: settings.vala:540: Key file does not have key “windows_manager/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “panel/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “dock/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “file_manager/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “desktop_manager/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “launcher_manager/autostart” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “composite_manager/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “im1/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “im2/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “widget1/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “notification/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “keybindings/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “im_manager/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “screensaver/command” in group “Session”
+** Message: 16:14:38.460: settings.vala:540: Key file does not have key “power_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “audio_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “workspace_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “screenshot_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “message_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “upgrade_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “updates_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “updates_manager/timeout” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “crash_manager/command” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “crash_manager/dev_mode” in group “Session”
+** Message: 16:14:38.461: settings.vala:540: Key file does not have key “crash_manager/timeout” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “upstart_user_session” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “proxy_manager/http” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “a11y/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “xrandr/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “network_gui/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “webbrowser/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “email/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “pdf_reader/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “video_player/command” in group “Session”
+** Message: 16:14:38.462: settings.vala:540: Key file does not have key “audio_player/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “image_display/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “text_editor/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “archive/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “charmap/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “calculator/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “spreadsheet/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “bittorent/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “document/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “webcam/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “burn/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “notes/command” in group “Session”
+** Message: 16:14:38.463: settings.vala:540: Key file does not have key “disk_utility/command” in group “Session”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “tasks/command” in group “Session”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have group “Keymap”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “laptop_mode” in group “State”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “gnome” in group “Dbus”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “type” in group “Environment”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “ubuntu_menuproxy” in group “Environment”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “toolkit_integration” in group “Environment”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “gtk/overlay_scrollbar_disable” in group “Environment”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “qt/force_theme” in group “Environment”
+** Message: 16:14:38.464: settings.vala:540: Key file does not have key “qt/platform” in group “Environment”
+** Message: 16:14:38.465: settings.vala:462: Monitoring: /home/supernemo/.config/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.465: settings.vala:466: Desktop file is already in config home, do nothing
+** Message: 16:14:38.466: environement.vala:79: Exporting variable
+** Message: 16:14:38.466: environement.vala:80: desktop_environnement XDG_CURRENT_DESKTOP
+** Message: 16:14:38.466: environement.vala:177: custom_config :
+** Message: 16:14:38.466: environement.vala:178: config_dirs :/etc/xdg
+** Message: 16:14:38.466: environement.vala:179: confir_dirs not null, export : /etc/xdg
+** Message: 16:14:38.466: environement.vala:184: Exporting XDG_CONFIG_DIRS
+** Message: 16:14:38.466: environement.vala:218: custom_data :
+** Message: 16:14:38.466: environement.vala:219: data_dirs :/usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
+** Message: 16:14:38.466: environement.vala:220: data_dirs not null, export : /usr/share/fkms:/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg
+** Message: 16:14:38.466: environement.vala:225: Exporting XDG_DATA_DIRS
+** Message: 16:14:38.466: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
+** Message: 16:14:38.466: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.467: environement.vala:254: No entry in [Environment_variable]. Key file does not have group “Environment_variable”
 
-** (lxsession:1417): WARNING **: 09:48:32.047: process.vala:49: Failed to execute child process “xprop” (No such file or directory)
+** (lxsession:1397): WARNING **: 16:14:38.477: process.vala:49: Failed to execute child process “xprop” (No such file or directory)
 
-** (lxsession:1417): WARNING **: 09:48:32.047: process.vala:50: Error when launching xprop
-** Message: 09:48:32.048: utils.vala:138: Config system location : /etc/xdg/lxsession/LXDE-pi
-** Message: 09:48:32.048: utils.vala:144: System system path location : /etc/xdg/lxsession/LXDE-pi/conffiles.conf
-** Message: 09:48:32.048: utils.vala:148: Final file used : /etc/xdg/lxsession/LXDE-pi/conffiles.conf
-** Message: 09:48:32.048: options.vala:164: Activate xsettings_manager build-in
-** Message: 09:48:32.048: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
-** Message: 09:48:32.048: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
-** Message: 09:48:32.065: app.vala:728: polkit separate
-** Message: 09:48:32.065: app.vala:728: polkit separate
-** Message: 09:48:32.069: app.vala:76: Launching lxpolkit 
-** Message: 09:48:32.069: utils.vala:138: Config system location : /etc/xdg/lxsession/LXDE-pi
-** Message: 09:48:32.069: utils.vala:144: System system path location : /etc/xdg/lxsession/LXDE-pi/autostart
-** Message: 09:48:32.070: utils.vala:148: Final file used : /etc/xdg/lxsession/LXDE-pi/autostart
-** Message: 09:48:32.070: autostart.vala:42: Autostart path : /etc/xdg/lxsession/LXDE-pi/autostart
-** Message: 09:48:32.075: app.vala:76: Launching lxpanel 
-** Message: 09:48:32.091: app.vala:76: Launching pcmanfm 
+** (lxsession:1397): WARNING **: 16:14:38.477: process.vala:50: Error when launching xprop
+** Message: 16:14:38.477: utils.vala:138: Config system location : /etc/xdg/lxsession/LXDE-pi
+** Message: 16:14:38.478: utils.vala:144: System system path location : /etc/xdg/lxsession/LXDE-pi/conffiles.conf
+** Message: 16:14:38.478: utils.vala:148: Final file used : /etc/xdg/lxsession/LXDE-pi/conffiles.conf
+** Message: 16:14:38.478: options.vala:164: Activate xsettings_manager build-in
+** Message: 16:14:38.478: utils.vala:39: Config system location : /etc/xdg/lxsession/LXDE-pi
+** Message: 16:14:38.478: utils.vala:45: System system path location : /etc/xdg/lxsession/LXDE-pi/desktop.conf
+** Message: 16:14:38.494: app.vala:728: polkit separate
+** Message: 16:14:38.494: app.vala:728: polkit separate
+** Message: 16:14:38.498: app.vala:76: Launching lxpolkit 
+** Message: 16:14:38.499: utils.vala:138: Config system location : /etc/xdg/lxsession/LXDE-pi
+** Message: 16:14:38.499: utils.vala:144: System system path location : /etc/xdg/lxsession/LXDE-pi/autostart
+** Message: 16:14:38.499: utils.vala:148: Final file used : /etc/xdg/lxsession/LXDE-pi/autostart
+** Message: 16:14:38.499: autostart.vala:42: Autostart path : /etc/xdg/lxsession/LXDE-pi/autostart
+** Message: 16:14:38.504: app.vala:76: Launching lxpanel 
+** Message: 16:14:38.509: app.vala:76: Launching pcmanfm 
 
-** (lxsession:1417): WARNING **: 09:48:32.103: app.vala:86: Failed to execute child process “xscreensaver” (No such file or directory)
+** (lxsession:1397): WARNING **: 16:14:38.527: app.vala:86: Failed to execute child process “xscreensaver” (No such file or directory)
 
-** (lxsession:1417): WARNING **: 09:48:32.103: app.vala:87: Error when launching xscreensaver
-** Message: 09:48:32.108: options.vala:107: Create build-in Clipboard
-** Message: 09:48:32.109: main.vala:450: Check keymap_mode (null)
-** Message: 09:48:32.117: app.vala:76: Launching /usr/bin/ssh-agent 
-SSH_AUTH_SOCK=/tmp/ssh-y3awZlSbxv2P/agent.1506; export SSH_AUTH_SOCK;
-SSH_AGENT_PID=1510; export SSH_AGENT_PID;
-echo Agent pid 1510;
-** Message: 09:48:32.142: app.vala:130: /usr/bin/ssh-agent exit with this type of exit: 0
+** (lxsession:1397): WARNING **: 16:14:38.528: app.vala:87: Error when launching xscreensaver
+** Message: 16:14:38.532: options.vala:107: Create build-in Clipboard
+** Message: 16:14:38.534: main.vala:450: Check keymap_mode (null)
+** Message: 16:14:38.549: app.vala:76: Launching /usr/bin/ssh-agent 
+SSH_AUTH_SOCK=/tmp/ssh-akWQhTNJUdoY/agent.1484; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=1497; export SSH_AGENT_PID;
+echo Agent pid 1497;
+** Message: 16:14:38.563: app.vala:130: /usr/bin/ssh-agent exit with this type of exit: 0
 unable to find device pointer:Drop Preonic Mouse
 Openbox-Message: Unable to find a valid menu file "/usr/share/lxde/openbox/menu.xml"
-** Message: 09:48:32.987: x-terminal-emulator has very limited support, consider choosing another terminal
-grep: /home/supernemo/.config/lxpanel/LXDE-pi/panels/*: No such file or directory
-** Message: 09:48:33.010: x-terminal-emulator has very limited support, consider choosing another terminal
-** Message: 09:48:33.474: Connecting ...
-** Message: 09:48:33.475: Status changed to down
+** Message: 16:14:39.310: x-terminal-emulator has very limited support, consider choosing another terminal
+** Message: 16:14:39.467: x-terminal-emulator has very limited support, consider choosing another terminal
+** Message: 16:14:39.919: Connecting ...
+** Message: 16:14:39.919: Status changed to down
 
-** (lxpanel:1500): CRITICAL **: 09:48:33.475: dhcpcd_open: Inappropriate ioctl for device
+** (lxpanel:1479): CRITICAL **: 16:14:39.920: dhcpcd_open: Resource temporarily unavailable
 Unit pt-device-manager.service could not be found.
 Unit pi-topd.service could not be found.
 
-** (lxpanel:1500): WARNING **: 09:48:33.714: Battery 0 not found
+** (lxpanel:1479): WARNING **: 16:14:40.146: Battery 0 not found
 
-(pcmanfm:1501): Gtk-WARNING **: 09:48:33.817: Could not load a pixbuf from icon theme.
+(pcmanfm:1480): Gtk-WARNING **: 16:14:40.217: Could not load a pixbuf from icon theme.
 This may indicate that pixbuf loaders or the mime database could not be found.
-** Message: 09:48:34.040: up: Checking for updates
-** Message: 09:48:34.476: Status changed to opened
-** Message: 09:48:34.476: Connected to dhcpcd-8.1.2
-** Message: 09:48:34.477: Status changed to connected
-** Message: 09:48:34.477: eth0: CARRIER
-** Message: 09:48:34.477: eth0: Configured 169.254.246.69/16
-** Message: 09:48:34.477: wlan0: Associated with eduroam
-** Message: 09:48:34.477: wlan0: Configured 172.20.189.51/20
-[1818:1818:0823/094911.636600:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
-[1843:1843:0823/094911.735593:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
-** Message: 09:49:12.865: up: Error updating cache - E: http://raspbian.raspberrypi.org/raspbian bullseye InRelease is not (yet) available (Temporary failure resolving 'raspbian.raspberrypi.org')
+** Message: 16:14:40.490: up: Checking for updates
+** Message: 16:14:40.920: Status changed to opened
+** Message: 16:14:40.921: Connected to dhcpcd-8.1.2
+** Message: 16:14:40.921: Status changed to connected
+** Message: 16:14:40.921: eth0: Link is down
+** Message: 16:14:40.921: wlan0: Associated with eduroam
+** Message: 16:14:40.922: wlan0: Configured 172.20.189.51/20
+[1740:1740:1108/161448.077661:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
+[1688:1878:1108/161449.620087:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[1688:1878:1108/161449.624584:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[1688:1878:1108/161449.625189:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+Fontconfig error: Cannot load default config file: No such file: (null)
+** Message: 16:15:48.672: wlan0: Disassociated from eduroam
+** Message: 16:15:48.673: Status changed to disconnected
+** Message: 16:15:48.674: wlan0: Associated with eduroam
+** Message: 16:15:48.674: Status changed to connecting
+** Message: 16:15:48.696: wlan0: Disassociated from eduroam
+** Message: 16:15:48.696: Status changed to disconnected
+** Message: 16:15:48.697: wlan0: Associated with eduroam
+** Message: 16:15:48.697: Status changed to connecting
+** Message: 16:15:52.642: up: Error updating cache - E: http://raspbian.raspberrypi.org/raspbian bullseye InRelease is not (yet) available (Temporary failure resolving 'raspbian.raspberrypi.org')
 E: http://archive.raspberrypi.org/debian bullseye InRelease is not (yet) available (Temporary failure resolving 'archive.raspberrypi.org')
 
+** Message: 16:15:54.757: wlan0: Configured 172.20.189.51/20
+** Message: 16:15:54.757: Status changed to connected
+/usr/share/system-config-printer/applet.py:364: Warning: Source ID 12 was not found when attempting to remove it
+  GLib.source_remove (self.timer)
 Opening in existing browser session.
-[1728:2021:0823/094913.010405:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[1728:2021:0823/094913.013310:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[1728:2021:0823/094913.014159:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-Fontconfig error: Cannot load default config file: No such file: (null)
-Fontconfig error: Cannot load default config file: No such file: (null)
-** Message: 09:51:33.820: eth0: Link is down
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 13 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:51:36.808: eth0: Link is up, configuring
-** Message: 09:51:47.017: eth0: Configured 169.254.246.69/16
-** Message: 09:55:49.133: wlan0: Disassociated from eduroam
-** Message: 09:55:49.134: wlan0: Associated with eduroam
-** Message: 09:55:49.170: wlan0: Disassociated from eduroam
-** Message: 09:55:49.172: wlan0: Associated with eduroam
-** Message: 09:55:55.158: wlan0: Configured 172.20.189.51/20
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 15 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:57:57.096: wlan0: Expired 172.20.189.51/20
-** Message: 09:57:57.670: wlan0: Disassociated from eduroam
-** Message: 09:58:35.021: wlan0: Associated with eduroam
-** Message: 09:58:42.899: wlan0: Configured 172.20.189.51/20
-[2961:2961:0823/095853.193231:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
-[2910:3076:0823/095853.264628:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[2910:3076:0823/095853.265989:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[2910:3076:0823/095853.267219:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-Fontconfig error: Cannot load default config file: No such file: (null)
-
-(pcmanfm:1501): Gtk-WARNING **: 10:00:05.590: Theme parsing error: <data>:2:27: The style property GtkWidget:focus-padding is deprecated and shouldn't be used anymore. It will be removed in a future version
-
-(pcmanfm:1501): Gtk-WARNING **: 10:00:05.591: Theme parsing error: <data>:3:30: The style property GtkWidget:focus-line-width is deprecated and shouldn't be used anymore. It will be removed in a future version
-
-(pcmanfm:1501): Gtk-WARNING **: 10:00:08.171: gtk_menu_detach(): menu is not attached
-[3689:3849:0823/100604.467866:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3689:3849:0823/100604.468875:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3689:3849:0823/100604.469626:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3741:3741:0823/100604.517056:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
-[3741:3741:0823/101236.421414:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
-[3741:3741:0823/101236.422168:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 INFO    thonny: Thonny version: 3.3.14
-INFO    thonny: Thonny version: 3.3.14
-INFO    thonny: Thonny version: 3.3.14
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 19 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 21 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:00:49.353: wlan0: Disassociated from eduroam
-** Message: 09:00:54.799: wlan0: Associated with eduroam
-** Message: 09:00:59.941: wlan0: Expired
-** Message: 09:01:04.847: wlan0: Configured 172.20.189.51/20
-** Message: 09:01:45.681: wlan0: Disassociated from eduroam
-** Message: 09:01:46.369: wlan0: Associated with eduroam
-** Message: 09:01:47.137: wlan0: Disassociated from eduroam
-** Message: 09:01:49.952: wlan0: Associated with eduroam
-** Message: 09:01:56.257: wlan0: Configured 172.20.189.51/20
-** Message: 09:21:35.417: wlan0: Disassociated from eduroam
-** Message: 09:22:01.930: wlan0: Associated with eduroam
-** Message: 09:22:08.107: wlan0: Configured 172.20.189.51/20
-** Message: 09:23:03.784: wlan0: Disassociated from eduroam
-** Message: 09:23:03.793: wlan0: Associated with eduroam
-** Message: 09:23:10.367: wlan0: Configured 172.20.189.51/20
-** Message: 09:49:56.078: up: Checking for updates
-** Message: 09:49:57.662: up: Cache updated - comparing versions
-** Message: 09:50:01.956: up: Check complete - 267 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 25 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 27 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.077: up: Checking for updates
-** Message: 09:49:57.526: up: Cache updated - comparing versions
-** Message: 09:50:01.818: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 31 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 33 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.077: up: Checking for updates
-** Message: 09:50:03.903: up: Cache updated - comparing versions
-** Message: 09:50:08.442: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 37 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 39 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.076: up: Checking for updates
-** Message: 09:49:57.752: up: Cache updated - comparing versions
-** Message: 09:50:02.104: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 43 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 45 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.077: up: Checking for updates
-** Message: 09:49:57.512: up: Cache updated - comparing versions
-** Message: 09:50:01.805: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 49 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 51 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.078: up: Checking for updates
-** Message: 09:50:04.718: up: Cache updated - comparing versions
-** Message: 09:50:09.156: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 55 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 57 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:56.077: up: Checking for updates
-** Message: 09:49:57.449: up: Cache updated - comparing versions
-** Message: 09:50:01.798: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 61 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 63 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.991: up: Checking for updates
-** Message: 09:50:03.815: up: Cache updated - comparing versions
-** Message: 09:50:08.967: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 67 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 69 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.990: up: Checking for updates
-** Message: 09:49:57.694: up: Cache updated - comparing versions
-** Message: 09:50:01.981: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 73 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 75 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.990: up: Checking for updates
-** Message: 09:49:57.779: up: Cache updated - comparing versions
-** Message: 09:50:02.022: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 79 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 81 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.991: up: Checking for updates
-** Message: 09:49:57.422: up: Cache updated - comparing versions
-** Message: 09:50:01.750: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 85 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 87 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.991: up: Checking for updates
-** Message: 09:49:57.426: up: Cache updated - comparing versions
-** Message: 09:50:01.773: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 91 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 93 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.988: up: Checking for updates
-** Message: 09:49:57.674: up: Cache updated - comparing versions
-** Message: 09:50:01.886: up: Check complete - 269 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 97 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 99 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.991: up: Checking for updates
-** Message: 09:49:57.382: up: Cache updated - comparing versions
-** Message: 09:50:01.634: up: Check complete - 270 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 103 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 105 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 06:37:54.414: wlan0: Disassociated from eduroam
-** Message: 06:37:59.589: wlan0: Associated with eduroam
-** Message: 06:38:06.050: wlan0: Configured 172.20.189.51/20
-** Message: 09:49:55.991: up: Checking for updates
-** Message: 09:50:04.915: up: Cache updated - comparing versions
-** Message: 09:50:09.627: up: Check complete - 278 updates available
-** Message: 11:59:18.462: wlan0: Disassociated from eduroam
-** Message: 11:59:18.471: wlan0: Associated with eduroam
-** Message: 11:59:24.343: wlan0: Expired
-** Message: 11:59:29.168: wlan0: Configured 169.254.150.119/16
-** Message: 11:59:58.047: wlan0: Configured 172.20.189.51/20
-** Message: 11:59:58.055: wlan0: Expired IPv4LL
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 109 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-** Message: 09:49:55.990: up: Checking for updates
-** Message: 09:49:57.433: up: Cache updated - comparing versions
-** Message: 09:50:01.717: up: Check complete - 283 updates available
-/usr/share/system-config-printer/applet.py:364: Warning: Source ID 111 was not found when attempting to remove it
-  GLib.source_remove (self.timer)
-INFO    thonny: Thonny version: 3.3.14
-INFO    thonny: Thonny version: 3.3.14
-INFO    thonny: Thonny version: 3.3.14
-Delegated to an existing Thonny instance. Exiting now.
-
-(pcmanfm:1501): Gtk-WARNING **: 15:14:02.885: gtk_menu_detach(): menu is not attached
-INFO    thonny: Thonny version: 3.3.14
-Delegated to an existing Thonny instance. Exiting now.
-
-(pcmanfm:1501): Gtk-WARNING **: 15:15:33.399: gtk_menu_detach(): menu is not attached
-INFO    thonny: Thonny version: 3.3.14
-Delegated to an existing Thonny instance. Exiting now.
-[3081:3081:0908/152913.216082:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is egl
-[3030:3223:0908/152913.405262:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3030:3223:0908/152913.406278:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3030:3223:0908/152913.407225:ERROR:object_proxy.cc(622)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
-[3081:3081:0908/153227.723993:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+** Message: 16:44:27.993: wlan0: Expired 172.20.189.51/20
+** Message: 16:44:27.994: Status changed to connecting
+** Message: 16:44:28.547: wlan0: Disassociated from eduroam
+** Message: 16:44:28.547: Status changed to disconnected
+** Message: 16:45:32.824: wlan0: Associated with eduroam
+** Message: 16:45:32.824: Status changed to connecting
+** Message: 16:45:38.446: wlan0: Configured 172.20.189.51/20
+** Message: 16:45:38.447: Status changed to connected

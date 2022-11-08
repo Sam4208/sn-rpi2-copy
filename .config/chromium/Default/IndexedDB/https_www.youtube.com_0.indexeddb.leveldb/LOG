@@ -1,2 +1,15 @@
-2022/08/23-09:59:26.275 ba3 Creating DB /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb since it was missing.
-2022/08/23-09:59:26.307 ba3 Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/04-11:51:16.790 14c6 Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/04-11:51:16.794 14c6 Recovering log #6
+2022/11/04-11:51:16.812 14c6 Reusing old log /home/supernemo/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000006.log 
+2022/11/07-16:26:24.541 26ac Level-0 table #11: started
+2022/11/07-16:26:24.572 26ac Level-0 table #11: 184285 bytes OK
+2022/11/07-16:26:24.576 26ac Delete type=0 #6
+2022/11/07-16:26:24.577 26ac Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2022/11/07-16:26:24.577 26ac Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x05\x00\x00\xc8\x0b\x00S\x00W\x00H\x00e\x00a\x00l\x00t\x00h\x00L\x00o\x00g' @ 968 : 1
+2022/11/07-16:26:24.577 26ac Compacting 1@1 + 1@2 files
+2022/11/07-16:26:24.594 26ac Generated table #12@1: 78 keys, 7191 bytes
+2022/11/07-16:26:24.594 26ac Compacted 1@1 + 1@2 files => 7191 bytes
+2022/11/07-16:26:24.598 26ac compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/11/07-16:26:24.599 26ac Delete type=2 #8
+2022/11/07-16:26:24.599 26ac Delete type=2 #11
+2022/11/07-16:26:24.599 26ac Manual compaction at level-1 from '\x00\x05\x00\x00\xc8\x0b\x00S\x00W\x00H\x00e\x00a\x00l\x00t\x00h\x00L\x00o\x00g' @ 968 : 1 .. (end); will stop at (end)

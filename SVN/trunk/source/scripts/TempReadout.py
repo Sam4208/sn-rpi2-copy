@@ -24,7 +24,7 @@ for cmd_argument in inputs:
   if cmd_argument == 't':
     import random
     testT = random.randrange(0,20)
-    print("%.3f" % testT)
+    print(str("%.3f" % testT))
     sys.exit()
 # If not in test mode, generate the single argument required for the rest of the script :
 input = inputs[0]
@@ -36,7 +36,7 @@ import fcntl
 # Create temperorary lock file. When the script is called it will lock this file
 # If the file is already locked it will wait until it is released, before locking
 # and continuing execution of the script.
-x = open('/var/lock/temp_lock_file', 'w+')
+x = open('/var/lock/temp_lock_file.txt', 'w+')
 
 # Initialise counting variable
 attempts = 0
@@ -65,7 +65,7 @@ date_msg = time.strftime("%d/%m/%Y")
 time_msg = time.strftime("%H:%M:%S")
 
 #read in slope, intercept and correction factors from csv
-with open("/home/supernemo/ADC_Monitoring/CalibInput.csv", "rb") as csvfile:
+with open("/home/supernemo/ADC_Monitoring/CalibInput.csv", "r") as csvfile:
 	reader = csv.reader(csvfile, delimiter=':', quoting=csv.QUOTE_NONE)
 	for row in reader:
 		if row[0] == "Intercept Ch0":
@@ -89,8 +89,8 @@ gain = 4096  # +/- 4.096V
 sps = 250  # 250 samples per second
 
 # Initialise the ADC using the default mode (use default I2C address)
-adc = ADS1x15(ic=ADS1115)
-
+#adc = ADS1x15(ic=ADS1115)
+ads = ADS1x15.ADS1115(i2c)
 #create and fill report string
 if input == 'd':
     report_msg = ""
@@ -103,6 +103,7 @@ if input == 'd':
 #convert to temperature using values given
             if ch == 0:
                 temp = (volts - intercept0)/slope0
+                #ch_msg = 'ch 0 (FG T0)'
             elif ch == 1:
                 temp = (volts - intercept1)/slope1
             elif ch == 2:

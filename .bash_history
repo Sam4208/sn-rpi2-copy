@@ -600,3 +600,308 @@ sudo python simpletest.py
 cd ..
 cd Desktop
 sudo python simpletest.py
+cd Desktop
+python3 fake_opcua.py
+ls
+git init
+git add.
+git add
+git add .
+git status
+git commit -m "first commit"
+git config --global user.email "s1724346@ed.ac.uk"
+git config --global user.name "Hirateeeeee"
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Hirateeeeee/gas-system.git
+git push -u origin main
+git remote add origin https://github.com/Hirateeeeee/gas-system.git
+git push -u origin master
+git push -u origin main
+cd Desktop
+python fake_opcua.py
+cd Desktop
+ls
+python fake_opcua.py
+cd SVN
+cd trunk
+cd source
+cd scripts
+python OverallStatus.py d
+python OverallStatus.py t
+python PlotTemperature.py
+cd ..
+cd..
+cd ..
+ls
+cd TemperatureLogs
+ls
+python temp_plot.py
+cd ..
+cd trunk
+ls
+cd SVN
+cd trunk
+cd source
+ls
+cd scripts
+ls
+python OverallStatus_2.py
+python OverallStatus_2.py d
+python OverallStatus_2.py h
+python OverallStatus_2.py t
+cd ..
+ls
+cd ..
+ks
+ls
+cd TemperatureLogs
+ls
+tail Temp_Ch1.txt
+tail 100  Temp_Ch1.txt
+tail100  Temp_Ch1.txt
+tail -n100  Temp_Ch1.txt
+tail -n100  Temp_Ch0.txt
+tail -n100  Temp_Ch2.txt
+tail -n100  sensorTemp.txt
+tail -n100  SensorTemp.txt
+tail -n100  Temp_Ch2.txt
+cd TemperaturLogs
+cd TemperatureLogs
+ls
+tail -n 100 Temp_Ch2.txt
+tail -n 100 Temp_Ch2_dump.txt
+cd SVN
+cd trunk
+cd source
+cd scripts
+python OverallStatus.py t
+python OverallStatus.py 't'
+python TempReadout.py 't'
+cd svn
+ls
+cd SVN
+cd trunk
+cd sources
+ls
+cd source
+cd scripts
+ls
+CD DESKTOP
+cd Desktop
+python fake_opcua.py
+cd Desktop
+python testread.py
+ls
+cd SVN
+cd scripts
+ls
+cd trunk
+cd source
+cd scripts
+cd ..
+cd ..c
+cd ..
+cd TemperatureLogs
+tail Temp_Ch2_dump.txt
+tail -n100 Temp_Ch2_dump.txt
+cd TemperatureLogs
+tail -n 100 Temp_Ch2.txt
+tail -n 100 SensorTemp.txt
+tail -n 100 Temp_Ch2.txt
+tail -n 100 Temp_Ch0.txt
+tail -n 100 Temp_Ch1.txt
+python temp_plot.py
+cd TemperatureLogs
+ls
+tail -n 100 Temp_Ch2.txt
+tail -n 100 Temp_Ch0.txt
+tail -n 100 Temp_Ch1.txt
+Date/Time: 2022-06-15 11:19:40.299119 Temp(C): 21.286580464919748
+Date/Time: 2022-06-15 11:20:40.359446 Temp(C): 21.92341942127644
+Date/Time: 2022-06-15 11:21:40.412786 Temp(C): 21.313327162222116
+Date/Time: 2022-06-15 11:22:40.427560 Temp(C): 21.35074316317999
+Date/Time: 2022-06-15 11:23:40.482910 Temp(C): 21.11153848111967
+Date/Time: 2022-06-15 11:24:40.511212 Temp(C): 21.47735438141147
+Date/Time: 2022-06-15 11:25:40.572565 Temp(C): 21.87335562283381
+Date/Time: 2022-06-15 11:26:40.612560 Temp(C): 21.730288680609917
+Date/Time: 2022-06-15 11:
+tail -n 100 SensorTemp.txt
+tail -n 100 Temp_Ch2.txt
+wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+ping -c 3 www.google.com
+sudo su
+cd Desktop
+python fake_opcua.py
+cd Desktop
+python fake_opcua.py
+cd Desktop
+python fake_opcua.py
+ls
+pip list
+apt-mark showmanual -v
+apt-mark showmanual 
+apt-mark showmanual gnupg -v
+apt-mark showmanual gnupg
+apt-mark showmanual gnupg -version
+apt-mark showmanual gnupg -v
+apt-mark showmanual > package_edinburgh_pi.txt
+ls
+cd ADC_Monitoring/
+ls
+tail -n 100 ADS1x15_log.txt 
+cd ..
+ls
+cd SVN
+cd trunk/
+cd source/
+cd s
+cd scripts/
+ls
+python TempReadout.py 
+python TempReadout.py  1
+cd Adafruit_Python_ADS1x15/
+ls
+cd example
+cd examples
+sudo python simpletest.py
+cd SVN/
+cd trunk/
+cd source/
+cd s
+cd scripts/
+python TempReadout.py 
+python TempReadout.py 1
+cd SVN/
+cd trunk/
+cd source/
+cd scripts/
+sudo python adc_test.py 
+sudo python TempReadout.py
+sudo python TempReadout.py 0
+sudo python adc_test.py 
+sudo python TempReadout.py 0
+cd desktop
+cd home
+python fake_opcua.py
+cd desktop
+cd Desktop
+python fake_opcua.py
+cd Desktop
+python fake_opcua.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+cd SVN/
+cd trunk/
+cd source/
+cd scripts/
+sudo python TempReadout2.py 0
+sudo python TempReadout2.py 1
+sudo python TempReadout2.py 2
+sudo python TempReadout2.py 3
+sudo python TempReadout2.py d
+sudo python TempReadout2.py t
+sudo python TempReadout2.py 0
+sudo python TempReadout2.py 1
+sudo python TempReadout2.py 2
+sudo python TempReadout2.py 1
+sudo python TempReadout2.py 0
+sudo python TempReadout2.py 1
+sudo python TempReadout2.py 3
+sudo python TempReadout2.py d
+sudo python TempReadout2.py 2
+sudo python TempReadout2.py 0
+cd home
+cd hOME
+cd Home
+cd /Home
+cd supernemo
+cd /home
+/supernemo
+cd /supernemo
+cd supernemo
+cd TemperatureLogs
+cd temporarytest
+sudo python logfile_3.py
+python logfile_3.py
+cd /home
+/svn
+SVN
+cd SVN
+svn
+cd supernemo
+cd svn
+cd SVN
+trunk
+cd trunk
+cd source
+cd scripts
+python logfile_3.py
+cd Desktop
+python fake_opcua2.py
+df -h
+lsusb
+ifconfig
+ipconfih
+ipconfig
+ifconfig
+supernemo -I
+hostname -I
+sudo nano /etc/resolv.conf
+ifconfig
+sudo apt upgrade
+sudo apt update
+sudo apt install rfkill
+ping google.co.uk
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+sudo su
+sudo rfkill block wifi
+ifconfig
+sudo rfkill unblock wifi
+ifconfig
+ping google.com
+ifconfig
+hostname -i
+hostname
+hostname -I
+hostname
+hostname -I
+sudo su
+ping google.com
+nano /etc/network/interface
+sudo su
+hostname -I
+ping google.com
+ifconfig
+hostname -I
+sudo raspi-config
+sudo su
+ping google.com
+ifconfig
+hostname -I
+ip r
+route delete 172.20.186.81
+sudo route delete 172.20.186.81
+hostname -I
+sudo service dhcpcd status

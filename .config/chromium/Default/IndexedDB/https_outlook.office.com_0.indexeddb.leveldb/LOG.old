@@ -1,0 +1,6 @@
+2022/11/03-12:54:46.763 480a Creating DB /home/supernemo/.config/chromium/Default/IndexedDB/https_outlook.office.com_0.indexeddb.leveldb since it was missing.
+2022/11/03-12:54:46.791 480a Reusing MANIFEST /home/supernemo/.config/chromium/Default/IndexedDB/https_outlook.office.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/03-12:55:02.755 46b5 Level-0 table #5: started
+2022/11/03-12:55:02.789 46b5 Level-0 table #5: 1085 bytes OK
+2022/11/03-12:55:02.808 46b5 Delete type=0 #3
+2022/11/03-12:55:02.808 46b5 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

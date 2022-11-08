@@ -117,7 +117,7 @@ def retrieve_data_for_variable_hours(variable, duration):
     end_time = datetime.datetime.utcnow()
     start_time = end_time - timedelta(hours = duration)
     history.append(path.read_raw_history(start_time, end_time))
-    #print(history)
+#     print(history)
     client.disconnect()
     
     return history

@@ -71,7 +71,7 @@ u = s.split(',')[2]
 
 final_msg = report_msg + u
 if mode == 'd':
-	print final_msg
+	print (final_msg)
 elif mode == '0':
 	msg = u.strip()
-	print msg
+	print (msg)

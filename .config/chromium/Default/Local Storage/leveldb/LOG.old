@@ -1,3 +1,6 @@
-2022/08/23-10:06:03.897 5 Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2022/08/23-10:06:03.901 5 Recovering log #6
-2022/08/23-10:06:03.903 5 Reusing old log /home/supernemo/.config/chromium/Default/Local Storage/leveldb/000006.log 
+2022/11/08-15:18:07.942 5 Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2022/11/08-15:18:07.959 5 Recovering log #18
+2022/11/08-15:18:07.965 5 Reusing old log /home/supernemo/.config/chromium/Default/Local Storage/leveldb/000018.log 
+2022/11/08-16:10:48.093 e Level-0 table #22: started
+2022/11/08-16:10:48.103 e Level-0 table #22: 23244 bytes OK
+2022/11/08-16:10:48.117 e Delete type=0 #18

@@ -1,4 +1,4 @@
-Xsession: X session started for supernemo at Tue  9 Aug 15:37:10 BST 2022
+Xsession: X session started for supernemo at Tue  8 Nov 15:16:40 GMT 2022
 WARNING: tempfile is deprecated; consider using mktemp instead.
 dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
 dbus-update-activation-environment: setting DISPLAY=:0
@@ -28,7 +28,7 @@ dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1001/gnupg/
 dbus-update-activation-environment: setting PWD=/home/supernemo
 VCHI initialization failed
 /usr/bin/x-session-manager: 35: [: -ge: unexpected operator
-** Message: 15:37:11.414: main.vala:103: Session is LXDE-pi
-** Message: 15:37:11.415: main.vala:104: DE is LXDE
-** Message: 15:37:11.480: main.vala:135: log directory: /home/supernemo/.cache/lxsession/LXDE-pi
-** Message: 15:37:11.480: main.vala:136: log path: /home/supernemo/.cache/lxsession/LXDE-pi/run.log
+** Message: 15:16:41.159: main.vala:103: Session is LXDE-pi
+** Message: 15:16:41.159: main.vala:104: DE is LXDE
+** Message: 15:16:41.229: main.vala:135: log directory: /home/supernemo/.cache/lxsession/LXDE-pi
+** Message: 15:16:41.229: main.vala:136: log path: /home/supernemo/.cache/lxsession/LXDE-pi/run.log

@@ -164,9 +164,9 @@ def calcGradient(startPoint, endPoint, startFlow, endFlow):
     x4,y4 = endFlow[0],endFlow[1]
     x_diff = (x2 - x1).total_seconds()
     y_diff = y2 - y1
-    flow_r = y3 + (y3-y4)/2
+    flow_r = y3
     grad = y_diff/x_diff
-    print (grad)
+    #print (grad)
     space = flow_r/(grad*60)
     free_space = float ('%.4g'%space)
     
@@ -219,8 +219,8 @@ def formatChart(ymin, ymax):
         maximum = ymax*1.075
 
     a.set_ylim(minimum, maximum)
-
-    a.set_xlabel(setText("34"))
+    #a.set_xlabel(DateFormatter("%Y-%m-%d"))
+    #a.set_xlabel(setText("34"))
     a.set_ylabel(yTitle)
     a.set_title(plotTitle)
 
@@ -251,7 +251,7 @@ def get_data(variable):
 
 def get_last_datapoint(variable):
     data = chis.getHistory_duration(variable, 0.017)
-
+    #print(data)
     x, y = split(data)
 
     final_x = x[-1]
@@ -327,6 +327,7 @@ def animate(i):
                 x, y = get_data("Pressure")
                 ymin = min(y)
                 ymax = max(y)
+                print(startPoint)
         
                 a = formatChart(ymin, ymax)
                 a.annotate(setText("44"), xy=startPoint, xytext=startPoint, arrowprops=dict(facecolor='black', shrink=0.05))
@@ -368,13 +369,13 @@ def animate(i):
                 label_ch0 = setText("23")
                 label_ch1 = setText("24")
                 label_ch2 = setText("25")
-                print(x,y)
+                #print(x,y)
                 a.plot_date(x, y, 'b-', label=label_ch0)
                 a.plot_date(x1, y1, 'r-', label=label_ch1)
                 a.plot_date(x2, y2, 'g-', label=label_ch2)
                 a.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
                          ncol=3, borderaxespad=0)
-                plt.xticks(fontsize = 6)
+                plt.xticks(fontsize = 10)
                 set_status_title(status)
 
             elif variable == "Flow Rate":
@@ -444,12 +445,12 @@ def animate(i):
                 a4.clear()
 
                 for label in a2.xaxis.get_ticklabels():
-                    label.set_rotation(45)
+                    label.set_rotation(30)
                 for label in a3.xaxis.get_ticklabels():
-                    label.set_rotation(45)
+                    label.set_rotation(30)
 
-                a2.xaxis.set_major_formatter(DateFormatter("%H:%M:%S"))
-                a3.xaxis.set_major_formatter(DateFormatter("%H:%M:%S"))
+                a2.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
+                a3.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
 
                 minimum1 = 10
                 maximum1 = 30
@@ -497,15 +498,15 @@ def animate(i):
 def plot_data(subplot, fig, variable):
     # Function to take in the data and plot the graph
     x, y = get_data(variable)
-    print(x)
-    print(y)
+    #print(x)
+    #print(y)
     subplot.clear()
     subplot.get_xaxis().get_major_formatter().set_useOffset(False)
     for label in subplot.xaxis.get_ticklabels():
-        label.set_rotation(45)
+        label.set_rotation(30)
     fig.subplots_adjust(left=0.16, bottom=0.35, right=0.90, top=0.90, wspace=0.2, hspace=0)
-
-    subplot.xaxis.set_major_formatter(DateFormatter("%H:%M:%S"))
+    interval_multples=True
+    subplot.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
     #subplot.set_xlabel(setText("12"))
     
     
@@ -586,8 +587,8 @@ class GasSystemapp(tk.Tk):
         self.frames = {}
 
         
+       
         for F in (StartPage, PageOne):
-        
 
             frame = F(container, self)
             self.frames[F] = frame
@@ -598,7 +599,7 @@ class GasSystemapp(tk.Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
-
+        
 class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -613,6 +614,7 @@ class StartPage(tk.Frame):
         button2 = ttk.Button(self, text=setText("7"),
          command=quit)
         button2.pack()
+
 class PageOne(tk.Frame):
 
     def __init__(self, parent, controller):

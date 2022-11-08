@@ -36,7 +36,7 @@ for temp in [13,16,19,22,25] :
 		print "Error updating S0"
 	
 	# Print changed value to console
-	print set_point_0
+	print (set_point_0)
 
 	time.sleep(7200)
 

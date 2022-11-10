@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 from tkinter import Text
 from tkinter import *
 
+
 import time
 import sys
 import numpy as np
@@ -29,6 +30,8 @@ import re
 import smtplib
 import imghdr
 from email.message import EmailMessage
+from email_alert import *
+
 
 from tkinter import Canvas
 from tkinter import ttk
@@ -153,7 +156,7 @@ def plot_all_four_graphs():
                 
                 return f
 
-def save_plot_emergency():
+def email_plot_emergency():
                   
                 fig_save = plot_all_four_graphs()
 
@@ -162,63 +165,9 @@ def save_plot_emergency():
                 fig_save.savefig('emergency_plots/plot_save.png')   # save the figure to file
                 plt.close(fig_save)
                 print('saved')
+                
+                email_alert(False,False,False,False,False)
 
-def email_alert():
-
-    recipient_address=[]
-
-    f = open("email_alert_settings.txt", "r")
-    list_email_info = f.read().splitlines()  
-
-    for line in range (0,len((list_email_info))):
-
-        if line == 1:
-            gmail_user  = list_email_info[line]
-        elif line == 3:
-            gmail_password = list_email_info[line]
-        elif line== 5:
-            email_subject= list_email_info[line]
-        elif line== 7:
-            email_text = list_email_info[line]
-        elif line> 8:
-            recipient_address.append(list_email_info[line])
-       
-    f.close()
-    
-    
-    newMessage = EmailMessage()                         
-    newMessage['Subject'] = email_subject
-    newMessage['From'] = gmail_user                 
-    newMessage['To'] = recipient_address                
-    newMessage.set_content(email_text) 
-
-    save_plot_emergency()
-    
-    print(email_subject)
-    with open('emergency_plots/plot_save.png', 'rb') as p:
-       image_data = p.read()
-       image_type = imghdr.what(p.name)
-       image_name = p.name
-    newMessage.add_attachment(image_data, maintype='image', subtype=image_type, filename=image_name)
-    print('yes')
-    try:
-    
-        smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    
-        smtp_server.ehlo()
-    
-        smtp_server.login(gmail_user, gmail_password)
-        
-        smtp_server.send_message(newMessage)
-    
-        smtp_server.close()
-    
-        print ("Email sent successfully!")
-    
-    except Exception as ex:
-    
-        print ("Something went wrong….",ex)
-         
 
 
 def plot_temp_data(input_file,ax11,title,fig):
@@ -789,8 +738,8 @@ class GasSystemapp(tk.Tk):
         menubar.add_cascade(label='Log File 2', menu=LogFile)
         
         mailalert = tk.Menu(menubar, tearoff=1)
-        mailalert.add_command(label='Mail Alert',
-                                   command=lambda: email_alert())
+        mailalert.add_command(label='Send Mail Plot',
+                                   command=lambda: email_plot_emergency())
         menubar.add_cascade(label='Mail Alert', menu=mailalert)
 
         tk.Tk.config(self, menu=menubar)

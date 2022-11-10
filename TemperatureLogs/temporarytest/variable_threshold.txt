@@ -1,4 +1,0 @@
-SensorTemp  0.5
-Temp_Ch2  0
-Temp_Ch0  0
-Temp_Ch1  0

@@ -905,3 +905,59 @@ route delete 172.20.186.81
 sudo route delete 172.20.186.81
 hostname -I
 sudo service dhcpcd status
+isusb
+Isusb
+ls /dev/ttyUSB*
+lsusb
+dmesg | grep ttyUSB
+cd Desktop
+python fake_opcua2.py
+cd Desktop
+python fake_opcua2.py
+/desktop
+cd home
+cd Home
+cd supernemo
+cd /home
+cd supernemo
+cd SVN
+cd trunk
+cd scripts
+cd source
+cd scripts
+logfile_3.py
+python logfile_3.py
+cd /home
+cd supernemo
+cd svn
+cd SVN
+cd trunk
+cd source
+cd scripts
+python logfile_3.py
+crontab -e
+var/log/messages
+/var/log/messages
+ps ax | grep cron
+service cron start
+/var/log/messages
+ls -l /var | grep log
+crontab -e
+pgrep cron 
+crontab -e
+crontab -l
+python /home/supernemo/SVN/trunk/source/scripts/logfile_3.py
+/Home
+cd /Home
+cd /home
+supernemo
+cd supernemo
+cd SVN
+cd trunk
+cd source
+cd scripts
+python logfile_3.py
+python /home/supernemo/SVN/trunk/source/scripts/logfile_3.py
+crontab -e
+python /home/supernemo/SVN/trunk/source/scripts/New Logger.py
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py

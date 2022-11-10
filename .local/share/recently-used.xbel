@@ -84,4 +84,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/email_alert.py" added="2022-11-09T14:57:34.881678Z" modified="2022-11-09T14:57:34.881720Z" visited="2022-11-09T14:57:34.881687Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-09T14:57:34.881702Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

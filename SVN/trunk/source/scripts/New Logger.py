@@ -190,17 +190,19 @@ def automated_logger_time():
 
 def ch0_ch1_comparison(variable,last_temp):
     ethanol_alert=False
-    last_temp_ch0 = 100
-    last_temp_ch1 = 0
-    if variable=='Temp_Ch0':
+   
+    if variable=="Temp_Ch0":
         last_temp_ch0 = float(last_temp)
-    elif variable=='Temp_Ch1':
+        print('c0checkked')
+    elif variable=="Temp_Ch1":
+        print('c1checkked')
         last_temp_ch1 = float(last_temp)
         ethanol_bound,ethanol_bound=read_in_threshold_file('ethanol')
+        print(last_temp_ch0-last_temp_ch1)
         if last_temp_ch0-last_temp_ch1 < ethanol_bound:
             ethanol_alert = True
     
-    return ethanol_alert
+    return ethanol_alert,last
 
 def write_file(threshold,variable):
     variable , filename , dump_file = path(variable)

@@ -4,8 +4,6 @@ import subprocess
 import argparse
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
-import board
-import busio
 # ------------------------------------------------------------- #
 # Python script for reading the overall status of all devices.
 # Lauren Dawson, 08.04.2016
@@ -25,9 +23,9 @@ print("Temperature: ")
 print("------------")
 if mode == 'd':
     tempReadout = subprocess.check_output(['/home/supernemo/ADC_Monitoring/TempReadout2.py', 'd'])
-    
-    
-    tempString = tempReadout.rstrip("\n")
+    print(tempReadout)
+    tempReadout_convert = str(tempReadout)
+    tempString = tempReadout_convert.rstrip("\n")
     print(tempString)
     statusString += "Temperature: \n" + "----------- \n" +tempString + "\n"
 elif mode == 't':
@@ -40,12 +38,12 @@ elif mode == 't':
 print("Flow Monitoring: ")
 print("----------------")
 if mode == 'd':
-    flowReadout = subprocess.check_output(['/home/supernemo/FlowRateMonitoring/PR4000B.py', 'd'])
+    flowReadout = subprocess.check_output(['/home/supernemo/FlowRateMonitoring/PR4000B_2.py', 'd'])
     flowString = flowReadout.rstrip("\n")
     print(flowString)
     statusString += "Flow Monitoring: \n" + "---------------- \n" +flowString +"\n"
 elif mode == 't':
-    flowReadouttest = subprocess.check_output(['/home/supernemo/FlowRateMonitoring/PR4000B.py', 't'])
+    flowReadouttest = subprocess.check_output(['/home/supernemo/FlowRateMonitoring/PR4000B_2.py', 't'])
     flowStringtest = flowReadouttest.rstrip("\n")
     print(flowStringtest)
     statusString += "Flow Monitoring: \n" + "---------------- \n" +flowStringtest +"\n"

@@ -24,9 +24,8 @@ mode = args.input
 print("Temperature: ")
 print("------------")
 if mode == 'd':
-    tempReadout = subprocess.check_output(['/home/supernemo/ADC_Monitoring/TempReadout2.py', 'd'])
     
-    
+tempReadout = subprocess.check_output(['/home/supernemo/ADC_Monitoring/TempReadout2.py', 'd'])
     tempString = tempReadout.rstrip("\n")
     print(tempString)
     statusString += "Temperature: \n" + "----------- \n" +tempString + "\n"

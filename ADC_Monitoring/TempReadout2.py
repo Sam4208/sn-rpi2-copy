@@ -23,9 +23,9 @@ ads.gain = 1 #1 gain is 4.096
 chan0 = AnalogIn(ads, ADS.P0).voltage
 chan1 = AnalogIn(ads, ADS.P1).voltage
 chan2 = AnalogIn(ads, ADS.P2).voltage
-#print(chan0)
-#print(chan1)
-#print(chan2)
+print(chan0)
+print(chan1)
+print(chan2)
 
 # command line parameters
 parser = argparse.ArgumentParser(description='Select Readout')

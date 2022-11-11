@@ -978,3 +978,103 @@ cd scripts/
 ls
 quit
 logout
+cd SVN/trunk/source/scripts/
+nano TempReadout2.py
+cd Desjtio
+cd Desktop
+l
+ls
+cd ..
+ls
+cd Adafruit_CircuitPython_ADS1x15/
+ls
+cd ..
+ls
+cd SVN/
+cd trunk/
+cd s`
+cd source/
+cd scripts/
+ls
+nano test_write.py 
+nano adc_test.py 
+python TempReadout2.py
+nano TempReadout2.py
+nano OverallStatus.py
+python OverallStatus.py
+python OverallStatus.py d
+nano TempReadout.py
+nano OverallStatus.py
+python OverallStatus.py d
+nano OverallStatus.py
+sudo cp ~/SVN/trunk/source/scripts/TempReadout2.py /home/supernemo/ADC_Monitoring/
+python OverallStatus.py d
+sudo python OverallStatus.py d
+nano OverallStatus.py
+sudo python TempReadout2.py d
+nano TempReadout2.py d
+sudo python TempReadout2.py d
+sudo python OverallStatus.py d
+sudo python TempReadout2.py d
+sudo python OverallStatus.py d
+sudo python OverallStatus.py t
+sudo python OverallStatus.py d
+sudo python OverallStatus_3.py d
+ls
+logout
+cd SVN/
+cd trunk/
+cd source/
+cd scripts/
+ls
+nano GasSystemGUI_3.py
+cd ~
+git add .
+ls
+git add .
+sudo git add .
+git commit -m 'add existing file_3'
+git push origin https://github.com/Hirateeeeee/gas-system.git
+git push origin 
+ls
+cd SVN/
+cd trunk/
+cd source/
+cd scripts/
+ls
+python HaakeTempLogging.py 
+nano HaakeTempLogging.py 
+ls
+python OverallStatus
+python OverallStatus.py
+python OverallStatus.py 1
+python OverallStatus.py d
+python OverallStatus_2.py d
+sudo python OverallStatus_2.py d
+nano OverallStatus_2.py d
+ls
+python OverallStatus
+python OverallStatus.[y
+python OverallStatus.py
+python OverallStatus.py d
+cd ~
+ls
+cd SVN/
+cd trunk/source/scripts/
+ls
+cd ~
+ls
+cd home
+cd ADC_Monitoring/
+ls
+cd ..
+cd SVN/trunk/source/scripts/
+nano OverallStatus.py
+nano OverallStatus_3.py
+logout
+cd SVN/trunk/source/scripts/
+python TempReadout2.py
+sudo python TempReadout2.py
+sudo python TempReadout2.py d
+nano TempReadout2.py
+logout

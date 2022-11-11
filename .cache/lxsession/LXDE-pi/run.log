@@ -222,3 +222,19 @@ Delegated to an existing Thonny instance. Exiting now.
 ** Message: 10:17:26.780: Status changed to connecting
 ** Message: 10:17:32.595: wlan0: Configured 172.20.189.51/20
 ** Message: 10:17:32.595: Status changed to connected
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.
+
+** (lxpanel:1459): WARNING **: 10:50:38.912: lxpanel : X error: BadWindow (invalid Window parameter)
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.
+
+** (lxpanel:1459): WARNING **: 11:32:07.235: lxpanel : X error: BadWindow (invalid Window parameter)
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.
+INFO    thonny: Thonny version: 3.3.14
+Delegated to an existing Thonny instance. Exiting now.

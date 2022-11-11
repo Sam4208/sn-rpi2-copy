@@ -1,5 +1,5 @@
-SensorTemp  0.5
-Temp_Ch0  0
-Temp_Ch1  0
-Temp_Ch2  0
-Pressure  0
+SensorTemp  1
+Temp_Ch0  1
+Temp_Ch1  1
+Temp_Ch2  1
+Pressure  1

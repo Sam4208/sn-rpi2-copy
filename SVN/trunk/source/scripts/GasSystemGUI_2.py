@@ -732,15 +732,15 @@ class GasSystemapp(tk.Tk):
         menubar.add_cascade(label=setText("37"), menu=ethanolMeasurement)
 
 
-        LogFile = tk.Menu(menubar, tearoff=1)
-        LogFile.add_command(label='Log File',
-                                   command=lambda: log_graph())
-        menubar.add_cascade(label='Log File 2', menu=LogFile)
+        #LogFile = tk.Menu(menubar, tearoff=1)
+        #LogFile.add_command(label='Log File',
+        #                           command=lambda: log_graph())
+        #menubar.add_cascade(label='Log File 2', menu=LogFile)
         
-        mailalert = tk.Menu(menubar, tearoff=1)
-        mailalert.add_command(label='Send Mail Plot',
-                                   command=lambda: email_plot_emergency())
-        menubar.add_cascade(label='Mail Alert', menu=mailalert)
+        #mailalert = tk.Menu(menubar, tearoff=1)
+        #mailalert.add_command(label='Mail Alert',
+        #                           command=lambda: email_plot_emergency())
+        #menubar.add_cascade(label='Mail Alert', menu=mailalert)
 
         tk.Tk.config(self, menu=menubar)
 

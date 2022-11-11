@@ -119,7 +119,10 @@ def read_in_threshold_file(variable):
         if line_text_from_file[line] == variable:
             short_term_upper_trigger = float(line_text_from_file[line+1][25:27])
             short_term_lower_trigger = float(line_text_from_file[line+2][25:27])
-     
+        elif variable == 'ethanol' and line_text_from_file[line] == 'FGT1 FGT0 Temperature Difference Trigger':
+            print(line_text_from_file[line+1][0:3])
+            short_term_upper_trigger,short_term_lower_trigger = float(line_text_from_file[line+1][1:3]),float(line_text_from_file[line+1][1:3])
+            
     f.close()
     
     return short_term_upper_trigger,short_term_lower_trigger
@@ -185,7 +188,19 @@ def automated_logger_time():
     
     return start <= current <= end
 
-
+def ch0_ch1_comparison(variable,last_temp):
+    ethanol_alert=False
+    last_temp_ch0 = 100
+    last_temp_ch1 = 0
+    if variable=='Temp_Ch0':
+        last_temp_ch0 = float(last_temp)
+    elif variable=='Temp_Ch1':
+        last_temp_ch1 = float(last_temp)
+        ethanol_bound,ethanol_bound=read_in_threshold_file('ethanol')
+        if last_temp_ch0-last_temp_ch1 < ethanol_bound:
+            ethanol_alert = True
+    
+    return ethanol_alert
 
 def write_file(threshold,variable):
     variable , filename , dump_file = path(variable)
@@ -202,6 +217,7 @@ def write_file(threshold,variable):
     activate_alert = False
     trigger_short_term_average,trigger_bound,last_temp,last_time,final_time,final_data = compare(threshold,variable)
     
+    ethanol_alert=ch0_ch1_comparison(variable,last_temp)
     
     if trigger_short_term_average == 'no':
         
@@ -211,7 +227,7 @@ def write_file(threshold,variable):
         
         print(variable + ' checked'+str('\n----------------------------------'))
         
-    if trigger_short_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True:
+    if trigger_short_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True or ethanol_alert ==True:
         
         last_unchange_temp , last_unchange_time =  dump_file_open(variable)
         f.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))
@@ -220,7 +236,7 @@ def write_file(threshold,variable):
         f_2.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))
         print(variable + ' changed,logged in ' + filename+str('\n----------------------------------'))
         
-    if trigger_bound == 'yes':
+    if trigger_bound == 'yes' or ethanol_alert == True:
        
         activate_alert = True
         
@@ -233,9 +249,13 @@ def write_file(threshold,variable):
         elif variable =="Temp_Ch2":
                 warn_2 = True
         elif variable =="Pressure":
-                warn_p = True         
+                warn_p = True
+        elif ethanol_alert ==True:
+            warn_0 = True
+            warn_1 = True 
+            
                 
-    return activate_alert,warn_sense,warn_0,warn_1,warn_2,warn_p
+    return activate_alert,warn_sense,warn_0,warn_1,warn_2,warn_p,ethanol_alert
 
 list_name = []
 threshold = []
@@ -257,9 +277,10 @@ warn_0_final=False
 warn_1_final=False
 warn_2_final=False
 warn_p_final=False
+ethanol_alert_final=False
 
 for i in range (len(list_name)): 
-  activate_alert, warn_sense, warn_0, warn_1,warn_2,warn_p =  write_file(float(threshold[i]),list_name[i])
+  activate_alert, warn_sense, warn_0, warn_1,warn_2,warn_p,ethanol_alert =  write_file(float(threshold[i]),list_name[i])
   
   if activate_alert == True:
       activate_alert_final =True
@@ -273,14 +294,16 @@ for i in range (len(list_name)):
       warn_2_final=True
   if  warn_p==True:
       warn_p_final=True
+  if ethanol_alert ==True:
+      ethanol_alert_final=True
       
       
-print('\nAlerts:\nSensorTemp: '+str(warn_sense_final)+'\nCh0: '+str(warn_0_final)+'\nCh1: '+str(warn_1_final)+'\nCh2: '+str(warn_2_final)+'\nPressure: '+str(warn_p_final))
+print('\nAlerts:\nSensorTemp: '+str(warn_sense_final)+'\nCh0: '+str(warn_0_final)+'\nCh1: '+str(warn_1_final)+'\nCh2: '+str(warn_2_final)+'\nPressure: '+str(warn_p_final)+'\nEthanol Comparison: '+str(ethanol_alert_final))
 
 
 if activate_alert_final == True:
     print('\nSending Alert Email')
-    email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final)
+    email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,ethanol_alert_final)
 else:
     print('No Email Alert Sent')
 #print('Email Sent:'+str(activate_alert_final))

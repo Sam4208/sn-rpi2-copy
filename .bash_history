@@ -961,3 +961,20 @@ python /home/supernemo/SVN/trunk/source/scripts/logfile_3.py
 crontab -e
 python /home/supernemo/SVN/trunk/source/scripts/New Logger.py
 python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+git add /
+git add .
+git commit -m 'add existing file 2'
+git push -u origin main
+logout
+cd desktop
+cd /home
+cd desktop
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+ls
+cd SVN
+cd trunk/
+cd source/
+cd scripts/
+ls
+quit
+logout

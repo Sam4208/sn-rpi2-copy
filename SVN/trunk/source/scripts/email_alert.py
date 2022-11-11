@@ -120,7 +120,7 @@ def save_plot_emergency_email():
    
 
 
-def email_alert(plot,warn_sense,warn_0,warn_1,warn_2,warn_3):
+def email_alert(plot,warn_sense,warn_0,warn_1,warn_2,warn_3,warn_4):
 
     recipient_address=[]
 

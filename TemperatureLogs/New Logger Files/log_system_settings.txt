@@ -1,5 +1,5 @@
 SensorTemp
-short_term_upper_trigger:10
+short_term_upper_trigger:28
 short_term_lower_trigger:10
 
 Temp_Ch0
@@ -17,3 +17,6 @@ short_term_lower_trigger:10
 Pressure
 short_term_upper_trigger:2.5
 short_term_lower_trigger:0.5
+
+FGT1 FGT0 Temperature Difference Trigger
+0.5

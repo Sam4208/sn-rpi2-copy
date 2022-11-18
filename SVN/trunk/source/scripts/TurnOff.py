@@ -36,9 +36,9 @@ uf.enable_remote_control(mode)
 # turn off both channels 
 if mode == 'd' :
 	print ('Turning off both channels')
-ser.write("@03?VL0,OFF\r");
+ser.write(b"@03?VL0,OFF\r");
 ser.flush()
-msg = ser.read(8)
+msg = ser.read(8).decode("UTF-8")
 print (msg)
 if msg == '' :
 		if mode == '0' :

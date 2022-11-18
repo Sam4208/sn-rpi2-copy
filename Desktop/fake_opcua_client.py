@@ -4,8 +4,9 @@ import datetime
 from datetime import timedelta
 from opcua import Client
 from opcua import ua
-url = "opc.tcp://127.0.0.1:4840"
-
+#url = "opc.tcp://172.1.18.230:48010/freeopcua/server"
+url = "opc.tcp://localhost:48010/freeopcua/server"
+#url = 'opc.tcp://127.0.0.1:4840'
 client=Client(url)
 
 client.connect()

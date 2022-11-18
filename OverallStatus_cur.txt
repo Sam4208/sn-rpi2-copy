@@ -1,12 +1,24 @@
 Temperature: 
 ----------- 
-11.000
+18/11/2022 09:34:04 :
+ch 0: 2.042687V 21.352560C
+ch 1: 2.003436V 20.834627C
+ch 2: 2.036437V 22.002852C
+
 Flow Monitoring: 
 ---------------- 
-3.0
+18/11/2022 09:34:05 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+
+
 Pressure: 
 --------- 
-1.047
+18/11/2022 09:34:06 : 
+Current Pressure: -0.029(BP P1)
+
 Overall Status: 
 --------------- 
 GOOD

@@ -12,9 +12,9 @@ ser = s.Serial(port='/dev/mfc', baudrate=115000, timeout=2.0, parity=s.PARITY_NO
 
 # Function to enable remote control of the MFC
 def enable_remote_control(mode):
-    ser.write("@03?RT,ON\r");
+    ser.write(b"@03?RT,ON\r");
     ser.flush()
-    resp =  ser.read(8)
+    resp = ser.read(8).decode("utf-8")
     print (resp)
     if resp == 'ON \r' :
         if mode == 'd' :
@@ -28,9 +28,9 @@ def enable_remote_control(mode):
 
 # Function to disable remote control of MFC
 def disable_remote_control(mode):
-	ser.write("@03?RT,OFF\r");
+	ser.write(b"@03?RT,OFF\r");
 	ser.flush()
-	resp =  ser.read(8)
+	resp =  ser.read(8).decode("utf-8")
 	print (resp)
 	if resp == 'OFF\r' :
 		if mode == 'd' :

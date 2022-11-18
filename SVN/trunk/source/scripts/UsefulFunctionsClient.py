@@ -17,8 +17,9 @@ import errno
 # ------------------------------------------------------------------------------------------ #
 def connect_client() :
 
-    client = Client("opc.tcp://127.0.0.1:4840")
-    #client = Client("opc.tcp://localhost:48010/freeopcua/server")
+    #client = Client("opc.tcp://127.0.0.1:4840")
+    client = Client("opc.tcp://localhost:48010/freeopcua/server")
+    #client = Client("opc.tcp://sn-rpi2:4801/freeopcua/server0")
     # For MSSL opc.tcp://sn-rpi1.holmbury.hep.ucl.ac.uk:48010/freeopcua/server"
 
 
@@ -123,4 +124,4 @@ def retrieve_data_for_variable_hours(variable, duration):
     return history
 
 #retrieve_data_for_variable_hours("Pressure", 1)
-
+connect_client()

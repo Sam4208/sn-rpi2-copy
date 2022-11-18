@@ -1,3 +1,12 @@
-2022/11/08-15:18:09.159 80a Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/MANIFEST-000001
-2022/11/08-15:18:09.160 80a Recovering log #260
-2022/11/08-15:18:09.175 80a Reusing old log /home/supernemo/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/000260.log 
+2022/11/16-14:29:35.902 8a8 Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/MANIFEST-000001
+2022/11/16-14:29:35.903 8a8 Recovering log #260
+2022/11/16-14:29:35.912 8a8 Reusing old log /home/supernemo/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/000260.log 
+2022/11/16-14:35:24.205 8bc Level-0 table #268: started
+2022/11/16-14:35:24.276 8bc Level-0 table #268: 1741560 bytes OK
+2022/11/16-14:35:24.281 8bc Delete type=0 #260
+2022/11/16-14:38:27.942 8bc Level-0 table #270: started
+2022/11/16-14:38:28.051 8bc Level-0 table #270: 2191164 bytes OK
+2022/11/16-14:38:28.058 8bc Delete type=0 #267
+2022/11/16-14:43:31.420 8bc Level-0 table #272: started
+2022/11/16-14:43:31.508 8bc Level-0 table #272: 2740100 bytes OK
+2022/11/16-14:43:31.513 8bc Delete type=0 #269

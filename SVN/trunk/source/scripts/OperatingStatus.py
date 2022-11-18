@@ -67,14 +67,14 @@ report_msg = uf.get_date_time()
 
 # Get Current Operating Status :
 # ------------------------------
-ser.write("R BS\r")
+ser.write(b"R BS\r")
 ser.flush()
 msg = ser.readline()
 if msg == "" :
 	print ("Error communicating with device")
 	sys.exit()
 
-status_msg = msg[2:].replace("$", '')
+status_msg = str(msg[2:]).replace("$", '')
 
 # Need to scan through response and look for 1s
 # For test purposes :

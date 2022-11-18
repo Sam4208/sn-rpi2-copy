@@ -1,1 +1,1 @@
-21/11/2021 20:14:41 : Current Status: Temp Control On
+18/11/2022 09:24:13 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present

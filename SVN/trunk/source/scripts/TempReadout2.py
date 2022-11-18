@@ -113,42 +113,42 @@ with open("/home/supernemo/ADC_Monitoring/CalibInput.csv", "r") as csvfile:
 if input == 'd':
             report_msg = ""
             for ch in range(0,3):
-      #      rawVolt = adc.readADCSingleEnded(ch, gain, sps)
-            #if rawVolt == -1:
-            #        print ('999')
+          #      rawVolt = adc.readADCSingleEnded(ch, gain, sps)
+                #if rawVolt == -1:
+                #        print ('999')
                 if ch ==0:      
-                    volts  = AnalogIn(ads, ADS.P0).voltage
+                        volts  = AnalogIn(ads, ADS.P0).voltage
                 if ch ==1:      
-                    volts = AnalogIn(ads, ADS.P1).voltage 
+                        volts = AnalogIn(ads, ADS.P1).voltage 
                 if ch ==2:      
-                    volts = AnalogIn(ads, ADS.P2).voltage 
-               
+                        volts = AnalogIn(ads, ADS.P2).voltage 
+                   
 
-#convert to temperature using values given
-            if ch == 0:
-                temp = (volts - intercept0)/slope0
-                #ch_msg = 'ch 0 (FG T0)'
-            elif ch == 1:
-                temp = (volts - intercept1)/slope1
-            elif ch == 2:
-                temp = (volts - intercept2)/slope2
+    #convert to temperature using values given
+                if ch == 0:
+                    temp = (volts - intercept0)/slope0
+                    #ch_msg = 'ch 0 (FG T0)'
+                elif ch == 1:
+                    temp = (volts - intercept1)/slope1
+                elif ch == 2:
+                    temp = (volts - intercept2)/slope2
 
-            t_msg = "%6fC" % temp
-            volt_msg = "%.6fV" % volts
-            ch_msg = "ch %d:" % ch
+                t_msg = "%6fC" % temp
+                volt_msg = "%.6fV" % volts
+                ch_msg = "ch %d:" % ch
 
-            if t_msg == "" or volt_msg == "" or ch_msg == "" :
-                print ("Error: Cannot read values from ADC")
+                if t_msg == "" or volt_msg == "" or ch_msg == "" :
+                    print ("Error: Cannot read values from ADC")
 
-        #add formatting for nice print out of each channel
-            if ch == 0:
-                temp_msg = date_msg+" "+time_msg+" :"+ch_msg+" "+volt_msg+" "+t_msg
-            elif ch == 2:
-                temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg+"\n"
-            else:
-                temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg
+            #add formatting for nice print out of each channel
+                if ch == 0:
+                    temp_msg = date_msg+" "+time_msg+" :"+"\n"+ch_msg+" "+t_msg+" (" +volt_msg+")"+"\n"
+                elif ch == 1:
+                    temp_msg =ch_msg+" "+t_msg+" (" +volt_msg+")"+"\n" 
+                else:
+                    temp_msg = ch_msg+" "+t_msg+" (" +volt_msg+")"
 
-            report_msg += temp_msg
+                report_msg += temp_msg
 
             print (report_msg)
 
@@ -170,3 +170,4 @@ if input == '2' :
     volts2  = AnalogIn(ads, ADS.P2).voltage 
     temp2 = ((volts2 - intercept2)/slope2)
     print (temp2)
+

@@ -67,7 +67,7 @@ ser = s.Serial(port='/dev/pressure', bytesize=s.SEVENBITS,
 	stopbits=s.STOPBITS_ONE)
 
 #get displayed value
-ser.write("!0000/");
+ser.write(b"!0000/");
 ser.flush()
 
 # Get the date and time :
@@ -75,7 +75,7 @@ ser.flush()
 report_msg = uf.get_date_time()
 
 #read result, number of bits to read specified
-msg = ser.readline(9)
+msg = ser.readline(9).decode("utf-8")
 
 #exit if message returns blank
 if(msg=='') : 
@@ -88,7 +88,7 @@ if(msg=='') :
 
 #get only the relevant part of the reply
 disp_str = msg[4:8]
-#convert the string to hex
+#convert the bytes to hex
 disp_hex = int(disp_str,16)
 #read the hex as a signed short
 pressure = ctypes.c_short(disp_hex).value
@@ -99,7 +99,7 @@ pressure = float(pressure)
 sleep(.01)
 
 #get decimal point position
-ser.write("!0005/");
+ser.write(b"!0005/");
 ser.flush()
 #read result
 msg = ser.readline(9)
@@ -123,7 +123,7 @@ pressure = pressure/(10**pos_hex)
 pressureString = str(pressure)
 
 if mode == 'd':
-	report_msg += "Current Pressure: " + pressureString + "(BP P1)"
+	report_msg += "\nCurrent Pressure: " + pressureString + "(BP P1)"
 	print (report_msg)
 else :
 	print (pressure) 

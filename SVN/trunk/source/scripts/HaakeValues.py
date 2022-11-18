@@ -66,11 +66,11 @@ report_msg = uf.get_date_time()
 
 # Get Active Set Values :
 # -----------------------
-ser.write("S0\r")
+ser.write(b"S0\r")
 ser.flush()
 
 # Reformat response for reporting :
-msg = ser.readline().replace("\r\n", '')
+msg = str(ser.readline()).replace("\\r\\n'", '')
 set_point_0 = msg[5:].replace("$", '')
 if input == "S0" :
 	# Need to check if message is blank, if so return '999', out of range value
@@ -83,9 +83,9 @@ if input == "S0" :
 
 # Get Current Sensor Reading :
 # ----------------------------
-ser.write("I\r")
+ser.write(b"I\r")
 ser.flush()
-msg = ser.readline().replace("\r\n", '')
+msg = str(ser.readline()).replace("\\r\\n'", '')
 internal_sensor = msg[5:].replace("$", '')
 if input == "T" :
 	if internal_sensor == "" :
@@ -96,41 +96,41 @@ if input == "T" :
 		sys.exit()
 
 if input == 'd' :
-	ser.write("S1\r")
+	ser.write(b"S1\r")
 	ser.flush()	
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	set_point_1 = msg[5:].replace("$", '')
 
-	ser.write("S2\r")
+	ser.write(b"S2\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	set_point_2 = msg[5:].replace("$", '')
 
-	ser.write("S3\r")
+	ser.write(b"S3\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	set_point_3 = msg[5:].replace("$", '')
 
 	# Get RTA Correction Factors :
 	# ----------------------------
-	ser.write("IS\r")
+	ser.write(b"IS\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')        
+	msg = str(ser.readline()).replace("\\r\\n'", '')        
 	correction_factor_0 = msg[3:].replace("$", '')
 
-	ser.write("I1\r")
+	ser.write(b"I1\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	correction_factor_1 = msg[3:].replace("$", '')
 
-	ser.write("I2\r")
+	ser.write(b"I2\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	correction_factor_2 = msg[3:].replace("$", '')
 
-	ser.write("I3\r")
+	ser.write(b"I3\r")
 	ser.flush()
-	msg = ser.readline().replace("\r\n", '')
+	msg = str(ser.readline()).replace("\\r\\n'", '')
 	correction_factor_3 = msg[3:].replace("$", '')
 
 

@@ -43,7 +43,7 @@ import ctypes
 scale = args.scale
 
 if input == 'd' :
-	print ("Trying to set scale = "+ scale)
+	print ("Trying to set scale = "+ str(scale))
 
 # Get data from the PR4000B over serial interface :
 # -------------------------------------------------
@@ -58,9 +58,9 @@ uf.enable_remote_control(input)
 if input == 'd' :
 	print ('Change ch2 mode to slave ')
 
-ser.write("@03?SM2,4\r");
+ser.write(b"@03?SM2,4\r");
 ser.flush()
-msg = ser.read(8)
+msg = ser.read(8).decode("UTF-8")
 if input == 'd' :
 	print ('Response : '+ msg)
 
@@ -68,9 +68,9 @@ if input == 'd' :
 if input == 'd' :
 	print ('Adjusting ch2 scale to %0.2f' % scale)
 
-ser.write("@03?SC2,%0.2f\r" % scale);
+ser.write(b"@03?SC2,%0.2f\r" % scale);
 ser.flush()
-msg = ser.read(8)
+msg = ser.read(8).decode("UTF-8")
 
 if msg == '' :
 	if input == '0' :
@@ -84,14 +84,14 @@ else:
 
 # Read SC2 value back and check updated
 if input == 'd' :
-	ser.write("@03?SC2\r")
+	ser.write(b"@03?SC2\r")
 	ser.flush()
-	msg = ser.read(8)
+	msg = ser.read(8).decode("UTF-8")
 	if msg == "":
         	print ("Error reading SC2 from MFC")
         	sys.exit()
 	else :
-       		scale_ch2 = msg.replace("\r", " ")
+       		scale_ch2 = msg.replace("\\r", " ")
 
 	if float(scale) == float(scale_ch2) :
 		print ("Successfully changed SC2")

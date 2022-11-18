@@ -6780,3 +6780,105 @@
 22/11/2021 13:31:15 : SP1: 01.000 SP2: 0040.0 FR1: 01.005 FR2: 0014.6 Range Ch1: 20.000 SLM Range Ch2: 2000.0 SCCM Scale Ch2: 1.0 % Status Ch2: Slave
 22/11/2021 15:47:54 : SP1: 20.000 SP2: 0040.0 FR1: 19.994 FR2: 0199.7 Range Ch1: 20.000 SLM Range Ch2: 2000.0 SCCM Scale Ch2: 1.0 % Status Ch2: Slave
 22/11/2021 19:17:57 : SP1: 10.000 SP2: 0040.0 FR1: 10.003 FR2: 0100.2 Range Ch1: 20.000 SLM Range Ch2: 2000.0 SCCM Scale Ch2: 1.0 % Status Ch2: Slave
+16/11/2022 22:23:22 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+16/11/2022 22:26:10 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.8\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+16/11/2022 22:33:49 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 09:42:45 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 09:48:16 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 09:56:52 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 09:57:33 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 09:58:37 : SP1:b''SP2:b''FR1:b'#E010\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:00:55 : SP1:b'#E010\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:01:59 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:02:50 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:03:16 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:03:50 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:05:24 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:06:11 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:06:35 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:07:04 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:07:17 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:08:49 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:09:37 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:09:50 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:12:07 : SP1:b' 02.000\r'SP2:b' 0000.0\r'FR1:b' 00.301\r'FR2:b' 0009.0\r'Range Ch1:b' 20.000 00013\r' Range Ch2:b' 2000.0 00012\r' Scale Ch2: b' 0200.0\r' Status Ch2: b'00004\r'
+17/11/2022 10:15:12 : SP1:  02.000 SP2:  0000.0 FR1:  00.301 FR2:  0009.0 Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 10:16:36 : SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+ Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 10:17:23 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 11:09:41 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.293 FR2:  0008.2 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 11:43:53 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 11:46:08 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.299 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 14:17:32 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 14:50:22 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 14:52:03 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:01:21 : 
+SP1:  02.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:38:15 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:39:37 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:57:15 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:58:55 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+17/11/2022 15:59:31 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+18/11/2022 09:23:44 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+18/11/2022 09:34:05 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0009.0 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 

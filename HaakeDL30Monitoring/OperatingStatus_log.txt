@@ -3842,3 +3842,13 @@
 21/11/2021 18:57:06 : Current Status: Temp Control On
 21/11/2021 19:12:58 : Current Status: Temp Control On
 21/11/2021 20:14:41 : Current Status: Temp Control On
+17/11/2022 11:41:23 : Current Status: Alarm: Via Ext Connection
+17/11/2022 11:43:57 : Current Status: Alarm: Via Ext Connection
+17/11/2022 11:46:12 : Current Status: Alarm: Via Ext Connection
+17/11/2022 14:17:53 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+17/11/2022 14:50:43 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+17/11/2022 14:52:24 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+17/11/2022 15:01:42 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+17/11/2022 15:57:37 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+17/11/2022 15:59:32 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+18/11/2022 09:24:13 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present

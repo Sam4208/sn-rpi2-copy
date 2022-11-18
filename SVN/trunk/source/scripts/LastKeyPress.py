@@ -13,12 +13,12 @@ import serial as s
 ser = s.Serial(port='/dev/mfc', baudrate=115000, timeout=2.0, parity=s.PARITY_NONE)
 
 # Write request for key press value
-ser.write("@03KY\r")
+ser.write(b"@03KY\r")
 # Clear buffer to help with lag :
 ser.flush()
 
 # Read back value and format
-msg = ser.read(8)
+msg = ser.read(8).decode("UTF-8")
 keypress_code = msg.strip()
 
 if msg == "" :
@@ -49,5 +49,6 @@ elif keypress_code == "00255" :
 	keypress = "No Key"
 else :
 	keypress = "Other"
-
+	
 print (keypress)
+print(keypress_code)

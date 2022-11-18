@@ -44,9 +44,9 @@ sp1 = args.input1
 
 if mode == 'd' :
 	if sp1 > 22 :
-		print "Cannot set SP1 above 22, setting to 22 (max) by default"
-
-	print "Trying to set SP1 = ", sp1
+		print ("Cannot set SP1 above 22(you chose "+str(sp1)+"), setting to 22 (max) by default")
+		
+	print( "Trying to set SP1 = ", sp1)
 
 # Get data from the PR4000B over serial interface :
 # -------------------------------------------------
@@ -59,21 +59,21 @@ uf.enable_remote_control(mode)
 
 # adjust SP1
 if mode == 'd' :
-	print 'Adjusting set point to %0.2f' % sp1
-ser.write("@03?SP1,%0.2f\r" % sp1);
-msg = ser.read(8)
+	print( 'Adjusting set point to %0.2f' % sp1)
+ser.write(b"@03?SP1,%0.2f\r" % sp1);
+msg = ser.read(8).decode("UTF-8")
 if msg == '':
 	if mode == '0' :
-		print 999
+		print(999)
 		sys.exit()
 	else :
-		print "Error writing set point"
+		print( "Error writing set point")
 		sys.exit()
 else:
 	if mode == '0' :
-		print msg.strip()
+		print(msg.strip())
 	else :
-		print 'Response : ', msg
+		print('Response : ', msg)
 
 #disable remote control
 uf.disable_remote_control(mode)
@@ -85,27 +85,31 @@ if mode == 'd' :
 
 # Get the set points and actual values :
 if mode == 'd' :
-	ser.write("@03?SP1\r")
+	ser.write(b"@03?SP1\r")
 	ser.flush()
-	set_point_ch1 = ser.read(8)
-	set_point_ch1 = set_point_ch1.replace("\r", " ")
-	ser.write("@03?SP2\r")
+	set_point_ch1 = ser.read(8).decode("UTF-8")
+
+	set_point_ch1 = set_point_ch1.replace("\\r", " ")
+	ser.write(b"@03?SP2\r")
 	ser.flush()
-	set_point_ch2 = ser.read(8)
-	set_point_ch2 = set_point_ch2.replace("\r", " ")
-	ser.write("@03?AV1\r")
+	set_point_ch2 = ser.read(8).decode("UTF-8")
+
+	set_point_ch2 = set_point_ch2.replace("\\r", " ")
+	ser.write(b"@03?AV1\r")
 	ser.flush()
-	flow_ch1 = ser.read(8)
-	flow_ch1 = flow_ch1.replace("\r", " ")
-	ser.write("@03?AV2\r")
+	flow_ch1 = ser.read(8).decode("UTF-8")
+
+	flow_ch1 = flow_ch1.replace("\\r", " ")
+	ser.write(b"@03?AV2\r")
 	ser.flush()
-	flow_ch2 = ser.read(8)
-	flow_ch2 = flow_ch2.replace("\r", " ")
+	flow_ch2 = ser.read(8).decode("UTF-8")
+
+	flow_ch2 = flow_ch2.replace("\\r", " ")
 
 	if float(set_point_ch1) == float(sp1) :
-		print "SP1 successfully changed"
+		print("SP1 successfully changed")
 	else :
-		print "Error: SP1 not updated, check that value entered is not greater than max (22)"
+		print( "Error: SP1 not updated, check that value entered is not greater than max (22)")
 
 # Format and write the final report message :
 # -------------------------------------------
@@ -117,4 +121,4 @@ if mode == 'd' :
 	report_msg += "\r\n"
 
 # To screen for interactive use :
-	print report_msg
+	print (report_msg)

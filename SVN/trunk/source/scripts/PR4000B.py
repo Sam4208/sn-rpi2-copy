@@ -73,7 +73,7 @@ report_msg = uf.get_date_time()
 ser = s.Serial(port='/dev/mfc', baudrate=115200, timeout=0.1, parity=s.PARITY_NONE)
 
 # Get the set points and actual values. Start with SP1:
-ser.write("@03?SP1\r")
+ser.write(b"@03?SP1\r")
 # Clear buffer to help with lag :
 ser.flush()
 # Read and reformat so all on one line (the 8 bytes is empirical) :
@@ -86,14 +86,14 @@ if msg == "" :
         print ("Error reading SP1 from MFC")
         sys.exit()
 else :
-    set_point_ch1 = msg.replace("\r", " ")
+    set_point_ch1 =str(msg).replace("\\r'", " ").replace("b'", " ")
     # For faster response required by OPC
     if input == 'SP1' :
         print (set_point_ch1.strip())
         sys.exit() 
 
 # Get SP2 :
-ser.write("@03?SP2\r")
+ser.write(b"@03?SP2\r")
 ser.flush()
 msg = ser.read(8)
 if msg == "":
@@ -104,13 +104,16 @@ if msg == "":
         print ("Error reading SP2 from MFC")
         sys.exit()
 else :
-    set_point_ch2 = msg.replace("\r", " ")
+   
+    
+    
+    set_point_ch2 = str(msg).replace("\\r'", " ").replace("b'", " ")
     if input == 'SP2' :
         print (set_point_ch2.strip())
         sys.exit()
 
 # Get AV1 :
-ser.write("@03?AV1\r")
+ser.write(b"@03?AV1\r")
 ser.flush()
 msg = ser.read(8)
 if msg == "":
@@ -122,7 +125,7 @@ if msg == "":
       sys.exit()
 
 else :
-    flow_ch1 = msg.replace("\r", " ")
+    flow_ch1 = str(msg).replace("\\r'", " ").replace("b'", " ")
     if input == 'FR1' :
             print (flow_ch1.strip())
             sys.exit()
@@ -131,7 +134,7 @@ else :
 
 
 #Get AV2 :
-ser.write("@03?AV2\r")
+ser.write(b"@03?AV2\r")
 ser.flush()
 msg = ser.read(8)
 if msg == "":
@@ -142,14 +145,14 @@ if msg == "":
     print ("Error reading AV2 from MFC")
     sys.exit()
 else :
-        flow_ch2 = msg.replace("\r", " ")
+        flow_ch2 = str(msg).replace("\\r'", " ").replace("b'", " ")
         if input == 'FR2' :
                print (flow_ch2.strip())
                sys.exit()
 
 # Obtain the units and slave scale :
 # Returns range followed by the unit :
-ser.write("@03?RG1\r")
+ser.write(b"@03?RG1\r")
 ser.flush()
 # DSW, 07.09.16 : the unit code is an additional 7 (?) bytes (empirical) :
 msg = ser.read(15)
@@ -157,12 +160,12 @@ if msg == "":
         print ("Error reading RG1 from MFC")
         sys.exit()
 else :
-        range_msg = (msg.replace("\r", " ")).split(",")
+        range_msg = (str(msg).replace("\\r'", " ").replace("b'", " ")).split(",")
 # Separate message out in to range and unit :
 range_ch1, unit_ch1 = range_msg
 
 # Remove some spaces :
-unit_ch1 = unit_ch1.replace(" ", "")
+unit_ch1 = str(unit_ch1).replace(" ", "")
 # Determine the unit used :
 if unit_ch1 == "00013" :
     unit_ch1 = "SLM"
@@ -173,7 +176,7 @@ elif unit_ch1 == "00012" :
 range_unit_ch1 = range_ch1 + " " + unit_ch1
 
 # Get RG2 :
-ser.write("@03?RG2\r")
+ser.write(b"@03?RG2\r")
 ser.flush()
 # DSW, 07.09.16 : the unit code is an additional 7 (?) bytes on top of the value (** not tested thoroughly **) :
 msg = ser.read(15)
@@ -181,11 +184,11 @@ if msg == "":
         print ("Error reading RG2 from MFC")
         sys.exit()
 else :
-        range_msg = (msg.replace("\r", " ")).split(",")
+        range_msg = (str(msg).replace("\\r'", " ").replace("b'", " ")).split(",")
 range_ch2, unit_ch2 = range_msg
 
 # Remove some spaces :
-unit_ch2 = unit_ch2.replace(" ", "")
+unit_ch2 = str(unit_ch2).replace(" ", "")
 # Determine the unit used :
 if unit_ch2 == "00013" :
         unit_ch2 = "SLM"
@@ -195,25 +198,25 @@ elif unit_ch2 == "00012" :
 range_unit_ch2 = range_ch2 + " " + unit_ch2
 
 # Find the scale :
-ser.write("@03?SC2\r")
+ser.write(b"@03?SC2\r")
 ser.flush()
 msg = ser.read(8)
 if msg == "":
         print ("Error reading SC2 from MFC")
         sys.exit()
 else :
-        scale_ch2 = msg.replace("\r", " ")
+        scale_ch2 = str(msg).replace("\\r'", " ").replace("b'", " ")
 
 # Slave status of channel 2 :
-ser.write("@03?SM2\r");
+ser.write(b"@03?SM2\r");
 # DSW, 07.09.16 : force this to be 7 bytes (empirically)
 msg = ser.read(7)
 if msg == "":
         print ("Error reading SM2 from MFC")
         sys.exit()
 else :
-        status = msg.replace("\r", " ")
-        status = status.replace(" ", "")
+        status = str(msg).replace("\\r'", " ").replace("b'", " ")
+        status = str(msg).replace("\\r'", " ").replace("b'", " ")
 # Assign status : 
 if status == '00004' :
     status = 'Slave'
@@ -228,13 +231,13 @@ if status == 'Slave' :
 
 # Format and write the final report message :
 # -------------------------------------------
-report_msg += "SP1:" + set_point_ch1 
-report_msg += "SP2:" + set_point_ch2
+report_msg += '\n'+"SP1:" + set_point_ch1 
+report_msg += "SP2:" + set_point_ch2 +'\n'
 report_msg += "FR1:" + flow_ch1      
-report_msg += "FR2:" + flow_ch2
+report_msg += "FR2:" + flow_ch2+'\n'
 report_msg += "Range Ch1:"   + range_unit_ch1
-report_msg += " Range Ch2:"  + range_unit_ch2
-report_msg += " Scale Ch2:"  + " " + scale_ch2
+report_msg += " Range Ch2:"  + range_unit_ch2+'\n'
+report_msg += "Scale Ch2:"  + " " + scale_ch2
 report_msg += " Status Ch2:" + " " + status
 report_msg += "\n"
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import os
 import subprocess
 import argparse
 import adafruit_ads1x15.ads1115 as ADS
@@ -24,24 +24,33 @@ mode = args.input
 print("Temperature: ")
 print("------------")
 if mode == 'd':
-    tempReadout = subprocess.check_output(['/home/supernemo/ADC_Monitoring/TempReadout2.py', 'd'])
+    #tempReadout = subprocess.check_output(['/home/supernemo/SVN/trunk/source/scripts/TempReadout2.py', 'd'])
+    #print(tempReadout)
     
+    tempReadout = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/TempReadout2.py', 'd'], check=True, capture_output=True, text=True).stdout
+    print(tempReadout)
     
-    tempString = tempReadout.rstrip("\n")
-    print(tempString)
+    tempString = tempReadout
+    #print(tempString)
     statusString += "Temperature: \n" + "----------- \n" +tempString + "\n"
+    
+   
 elif mode == 't':
-    tempReadouttest = subprocess.check_output(['/home/supernemo/ADC_Monitoring/TempReadout2.py', 't'])
+    tempReadouttest = subprocess.check_output(['/home/supernemo/SVN/trunk/source/scripts/TempReadout2.py', 't'])
     tempStringtest = tempReadouttest.rstrip("\n")
     print(tempStringtest)
     statusString += "Temperature: \n" + "----------- \n" +tempStringtest + "\n"
+
+
+
+
 
 # Readout flow rate information:
 print("Flow Monitoring: ")
 print("----------------")
 if mode == 'd':
-    flowReadout = subprocess.check_output(['/home/supernemo/FlowRateMonitoring/PR4000B.py', 'd'])
-    flowString = flowReadout.rstrip("\n")
+    flowReadout =subprocess.run(['/home/supernemo/FlowRateMonitoring/PR4000B.py', 'd'], check=True, capture_output=True, text=True).stdout
+    flowString = flowReadout
     print(flowString)
     statusString += "Flow Monitoring: \n" + "---------------- \n" +flowString +"\n"
 elif mode == 't':
@@ -51,39 +60,41 @@ elif mode == 't':
     statusString += "Flow Monitoring: \n" + "---------------- \n" +flowStringtest +"\n"
 
 # Readout values from Haake Bath:
-#print("Haake Values: ")
-#print("-------------")
-#if mode == 'd':
-#    haakeReadout = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/HaakeValues.py', 'd'])
-#    haakeString = haakeReadout.rstrip("\n")
-#    print(haakeString)
-#    statusString += "Haake Values: \n" + "------------- \n" +haakeString +"\n"
-#elif mode == 't':
-#    haakeReadouttest = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/HaakeValues.py', 't'])
-#    haakeStringtest = haakeReadouttest.rstrip("\n")
-#    print(haakeStringtest)
-#    statusString += "Haake Values: \n" + "------------- \n" +haakeStringtest +"\n"
+print("Haake Values: ")
+print("-------------")
+if mode == 'd':
+    haakeReadout =subprocess.run(['/home/supernemo/HaakeDL30Monitoring/HaakeValues.py', 'd'], check=True, capture_output=True, text=True).stdout
+    haakeString = haakeReadout
+    print(haakeString)
+    statusString += "Haake Values: \n" + "------------- \n" +haakeString +"\n"
+elif mode == 't':
+    haakeReadouttest = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/HaakeValues.py', 't'])
+    haakeStringtest = haakeReadouttest.rstrip("\n")
+    print(haakeStringtest)
+    statusString += "Haake Values: \n" + "------------- \n" +haakeStringtest +"\n"
 
 # Readout status of the Haake Bath:
-#print("Haake Status: ")
-#print("-------------")
-#if mode == 'd':
-#    haakeStatusReadout = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/OperatingStatus.py', 'd'])
-#    haakeStatusString = haakeStatusReadout.rstrip("\n")
-#    print(haakeStatusString)
-#    statusString += "Haake Status: \n" + "------------- \n" +haakeStatusString +"\n"
-#elif mode == 't':
-#    haakeStatusReadouttest = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/OperatingStatus.py', 't'])
-#    haakeStatusStringtest = haakeStatusReadouttest.rstrip("\n")
-#    print(haakeStatusStringtest)
-#    statusString += "Haake Status: \n" + "------------- \n" +haakeStatusStringtest +"\n"
+print("Haake Status: ")
+print("-------------")
+if mode == 'd':
+    haakeStatusReadout = subprocess.run(['/home/supernemo/HaakeDL30Monitoring/OperatingStatus.py', 'd'], check=True, capture_output=True, text=True).stdout  
+    haakeStatusString = haakeStatusReadout
+    print(haakeStatusString)
+    statusString += "Haake Status: \n" + "------------- \n" +haakeStatusString +"\n"
+elif mode == 't':
+    haakeStatusReadouttest = subprocess.check_output(['/home/supernemo/HaakeDL30Monitoring/OperatingStatus.py', 't'])
+    haakeStatusStringtest = haakeStatusReadouttest.rstrip("\n")
+    print(haakeStatusStringtest)
+    statusString += "Haake Status: \n" + "------------- \n" +haakeStatusStringtest +"\n"
 
 # Readout pressure:
-print("Pressure: ")
+print("Primary Bubbler Pressure: ")
 print("---------")
 if mode == 'd':
-    pressureReadout = subprocess.check_output(['/home/supernemo/PressureMonitoring/EV94.py','d'])
-    pressureString = pressureReadout.rstrip("\n")
+    
+    pressureReadout = subprocess.run(['/home/supernemo/PressureMonitoring/EV94.py', 'd'], check=True, capture_output=True, text=True).stdout
+    pressureString = pressureReadout
+    
     print(pressureString)
     statusString += "Pressure: \n" + "--------- \n" +pressureString +"\n"
 elif mode == 't':
@@ -91,6 +102,25 @@ elif mode == 't':
     pressureStringtest = pressureReadouttest.rstrip("\n")
     print(pressureStringtest)
     statusString += "Pressure: \n" + "--------- \n" +pressureStringtest +"\n"
+
+# Readout Lab pressure and temperature
+print("Lab Pressure and Temperature")
+print("----------------------------")
+if mode == 'd':
+	cmd = 'ls /media/supernemo/P-76631/data | tail -n 1'
+	#the cmd defines the command that would find the newest csv file for the lab temperature and pressure sensor
+	list_csv = os.popen(cmd).read()
+	print(list_csv)
+
+
+	reader_file = '/home/supernemo/gcdc-b1100-reader-last-value'
+	#the script Manu wrote for read the b1100 lab temperature and pressure
+	run_file = '/media/supernemo/P-76631/data/'+str(list_csv).rstrip('\n')
+	#the csv file feeds in the reader file, replaced with the search results from above, striped off the empty line
+	tempReadout = subprocess.run([reader_file, run_file], check=True, capture_output=True, text=True).stdout
+	print(tempReadout)
+
+
 
 # Check error status
 overallStatus = ""

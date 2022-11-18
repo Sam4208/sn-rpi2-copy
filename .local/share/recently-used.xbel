@@ -3,26 +3,6 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/supernemo/Desktop/testread.py" added="2022-10-10T01:48:30.132257Z" modified="2022-10-10T01:48:30.132290Z" visited="2022-10-10T01:48:30.132265Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="text/x-python"/>
-        <bookmark:applications>
-          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-10T01:48:30.132275Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/supernemo/Desktop/testavg.py" added="2022-10-16T23:46:36.178673Z" modified="2022-10-16T23:46:36.178710Z" visited="2022-10-16T23:46:36.178681Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="text/x-python"/>
-        <bookmark:applications>
-          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-16T23:46:36.178694Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
   <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/logfile_2.py" added="2022-10-17T00:01:01.574699Z" modified="2022-11-07T16:38:22.129299Z" visited="2022-10-17T00:01:01.574703Z">
     <info>
       <metadata owner="http://freedesktop.org">
@@ -30,16 +10,6 @@
         <bookmark:applications>
           <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-17T00:01:01.574712Z" count="1"/>
           <bookmark:application name="chromium-browser" exec="&apos;chromium-browser %u&apos;" modified="2022-11-07T16:38:22.129272Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/test_write.py" added="2022-10-17T00:37:01.155243Z" modified="2022-10-17T00:37:01.155262Z" visited="2022-10-17T00:37:01.155247Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="text/x-python"/>
-        <bookmark:applications>
-          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-10-17T00:37:01.155253Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -90,6 +60,46 @@
         <mime:mime-type type="text/x-python"/>
         <bookmark:applications>
           <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-09T14:57:34.881702Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/serial%20read%20in%20test%20(to%20be%20deleted)" added="2022-11-16T09:53:02.870394Z" modified="2022-11-16T09:53:02.870412Z" visited="2022-11-16T09:53:02.870398Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-16T09:53:02.870403Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/SVN/trunk/source/scripts/serial_read.py" added="2022-11-16T09:57:49.972947Z" modified="2022-11-16T09:57:49.972988Z" visited="2022-11-16T09:57:49.972957Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-16T09:57:49.972970Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/udev/rules.d/99-usb-serial.rules" added="2022-11-16T11:13:49.348995Z" modified="2022-11-16T11:13:49.349035Z" visited="2022-11-16T11:13:49.349005Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2022-11-16T11:13:49.349018Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/supernemo/new-OPCUA" added="2022-11-17T09:44:23.350720Z" modified="2022-11-17T09:44:23.350744Z" visited="2022-11-17T09:44:23.350726Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="xarchiver" exec="&apos;xarchiver %u&apos;" modified="2022-11-17T09:44:23.350733Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

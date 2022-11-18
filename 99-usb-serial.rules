@@ -1,0 +1,3 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="haake"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="pressure"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="05d1", ATTRS{idProduct}=="1019", SYMLINK+="mfc"

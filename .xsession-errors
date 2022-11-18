@@ -1,4 +1,4 @@
-Xsession: X session started for supernemo at Thu 10 Nov 16:19:27 GMT 2022
+Xsession: X session started for supernemo at Fri 18 Nov 09:31:25 CET 2022
 WARNING: tempfile is deprecated; consider using mktemp instead.
 dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
 dbus-update-activation-environment: setting DISPLAY=:0
@@ -14,7 +14,7 @@ dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/
 dbus-update-activation-environment: setting LOGNAME=supernemo
 dbus-update-activation-environment: setting XDG_SESSION_CLASS=user
 dbus-update-activation-environment: setting PATH=/home/supernemo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
-dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
 dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1001
 dbus-update-activation-environment: setting DISPLAY=:0
 dbus-update-activation-environment: setting LANG=en_GB.UTF-8
@@ -28,7 +28,7 @@ dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1001/gnupg/
 dbus-update-activation-environment: setting PWD=/home/supernemo
 VCHI initialization failed
 /usr/bin/x-session-manager: 35: [: -ge: unexpected operator
-** Message: 16:19:27.572: main.vala:103: Session is LXDE-pi
-** Message: 16:19:27.572: main.vala:104: DE is LXDE
-** Message: 16:19:27.616: main.vala:135: log directory: /home/supernemo/.cache/lxsession/LXDE-pi
-** Message: 16:19:27.616: main.vala:136: log path: /home/supernemo/.cache/lxsession/LXDE-pi/run.log
+** Message: 09:31:26.219: main.vala:103: Session is LXDE-pi
+** Message: 09:31:26.219: main.vala:104: DE is LXDE
+** Message: 09:31:26.302: main.vala:135: log directory: /home/supernemo/.cache/lxsession/LXDE-pi
+** Message: 09:31:26.302: main.vala:136: log path: /home/supernemo/.cache/lxsession/LXDE-pi/run.log

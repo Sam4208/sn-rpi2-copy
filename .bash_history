@@ -1,1059 +1,3 @@
-cdDesktop
-cd Desktop
-python3 fake_opcua.py
-cd Desktop
-pyhton3 fake_opcua.py
-python3 fake_opcua.py
-cd Desktop
-python3 fake_opuca.py
-python3 fake_opcua.py
-sudo apt-get update
-sudo apt-get install build-essential python-dev python-smbus git
-cd ~
-git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
-cd Adafruit_Python_ADS1x15
-sudo python setup.py install
-sudo apt-get update
-sudo apt-get install build-essential python-dev python-smbus python-pip
-sudo pip install adafruit-ads1x15
-cd ~/Adafruit_Python_ADS1x15/examples
-nano simpletest.py
-sudo python simpletest.py
-nano simpletest.py
-sudo python simpletest.py
-cd ..
-sudo pip3 install adafruit-circuitpython-ads1x15
-cd ~/Adafruit_CircuitPython_ADS1x15/examples
-cd ~/Adafruit_CircuitPython_ADS1x15
-cd Adafruit_CircuitPython_ADS1x15
-pip3 install adafruit-circuitpython-ads1x15
-cd /home/supernemo/Adafruit_Python_ADS1x15
-ls
-cd examples
-ls
-sudo python simpletest.py
-cd ..
-cd Desktop
-sudo python simpletest.py
-cd Desktop
-python3 fake_opcua.py
-ls
-git init
-git add.
-git add
-git add .
-git status
-git commit -m "first commit"
-git config --global user.email "s1724346@ed.ac.uk"
-git config --global user.name "Hirateeeeee"
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Hirateeeeee/gas-system.git
-git push -u origin main
-git remote add origin https://github.com/Hirateeeeee/gas-system.git
-git push -u origin master
-git push -u origin main
-cd Desktop
-python fake_opcua.py
-cd Desktop
-ls
-python fake_opcua.py
-cd SVN
-cd trunk
-cd source
-cd scripts
-python OverallStatus.py d
-python OverallStatus.py t
-python PlotTemperature.py
-cd ..
-cd..
-cd ..
-ls
-cd TemperatureLogs
-ls
-python temp_plot.py
-cd ..
-cd trunk
-ls
-cd SVN
-cd trunk
-cd source
-ls
-cd scripts
-ls
-python OverallStatus_2.py
-python OverallStatus_2.py d
-python OverallStatus_2.py h
-python OverallStatus_2.py t
-cd ..
-ls
-cd ..
-ks
-ls
-cd TemperatureLogs
-ls
-tail Temp_Ch1.txt
-tail 100  Temp_Ch1.txt
-tail100  Temp_Ch1.txt
-tail -n100  Temp_Ch1.txt
-tail -n100  Temp_Ch0.txt
-tail -n100  Temp_Ch2.txt
-tail -n100  sensorTemp.txt
-tail -n100  SensorTemp.txt
-tail -n100  Temp_Ch2.txt
-cd TemperaturLogs
-cd TemperatureLogs
-ls
-tail -n 100 Temp_Ch2.txt
-tail -n 100 Temp_Ch2_dump.txt
-cd SVN
-cd trunk
-cd source
-cd scripts
-python OverallStatus.py t
-python OverallStatus.py 't'
-python TempReadout.py 't'
-cd svn
-ls
-cd SVN
-cd trunk
-cd sources
-ls
-cd source
-cd scripts
-ls
-CD DESKTOP
-cd Desktop
-python fake_opcua.py
-cd Desktop
-python testread.py
-ls
-cd SVN
-cd scripts
-ls
-cd trunk
-cd source
-cd scripts
-cd ..
-cd ..c
-cd ..
-cd TemperatureLogs
-tail Temp_Ch2_dump.txt
-tail -n100 Temp_Ch2_dump.txt
-cd TemperatureLogs
-tail -n 100 Temp_Ch2.txt
-tail -n 100 SensorTemp.txt
-tail -n 100 Temp_Ch2.txt
-tail -n 100 Temp_Ch0.txt
-tail -n 100 Temp_Ch1.txt
-python temp_plot.py
-cd TemperatureLogs
-ls
-tail -n 100 Temp_Ch2.txt
-tail -n 100 Temp_Ch0.txt
-tail -n 100 Temp_Ch1.txt
-Date/Time: 2022-06-15 11:19:40.299119 Temp(C): 21.286580464919748
-Date/Time: 2022-06-15 11:20:40.359446 Temp(C): 21.92341942127644
-Date/Time: 2022-06-15 11:21:40.412786 Temp(C): 21.313327162222116
-Date/Time: 2022-06-15 11:22:40.427560 Temp(C): 21.35074316317999
-Date/Time: 2022-06-15 11:23:40.482910 Temp(C): 21.11153848111967
-Date/Time: 2022-06-15 11:24:40.511212 Temp(C): 21.47735438141147
-Date/Time: 2022-06-15 11:25:40.572565 Temp(C): 21.87335562283381
-Date/Time: 2022-06-15 11:26:40.612560 Temp(C): 21.730288680609917
-Date/Time: 2022-06-15 11:
-tail -n 100 SensorTemp.txt
-tail -n 100 Temp_Ch2.txt
-wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-ping -c 3 www.google.com
-sudo su
-cd Desktop
-python fake_opcua.py
-cd Desktop
-python fake_opcua.py
-cd Desktop
-python fake_opcua.py
-ls
-pip list
-apt-mark showmanual -v
-apt-mark showmanual 
-apt-mark showmanual gnupg -v
-apt-mark showmanual gnupg
-apt-mark showmanual gnupg -version
-apt-mark showmanual gnupg -v
-apt-mark showmanual > package_edinburgh_pi.txt
-ls
-cd ADC_Monitoring/
-ls
-tail -n 100 ADS1x15_log.txt 
-cd ..
-ls
-cd SVN
-cd trunk/
-cd source/
-cd s
-cd scripts/
-ls
-python TempReadout.py 
-python TempReadout.py  1
-cd Adafruit_Python_ADS1x15/
-ls
-cd example
-cd examples
-sudo python simpletest.py
-cd SVN/
-cd trunk/
-cd source/
-cd s
-cd scripts/
-python TempReadout.py 
-python TempReadout.py 1
-cd SVN/
-cd trunk/
-cd source/
-cd scripts/
-sudo python adc_test.py 
-sudo python TempReadout.py
-sudo python TempReadout.py 0
-sudo python adc_test.py 
-sudo python TempReadout.py 0
-cd desktop
-cd home
-python fake_opcua.py
-cd desktop
-cd Desktop
-python fake_opcua.py
-cd Desktop
-python fake_opcua.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-cd SVN/
-cd trunk/
-cd source/
-cd scripts/
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py 2
-sudo python TempReadout2.py 3
-sudo python TempReadout2.py d
-sudo python TempReadout2.py t
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py 2
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py 3
-sudo python TempReadout2.py d
-sudo python TempReadout2.py 2
-sudo python TempReadout2.py 0
-cd home
-cd hOME
-cd Home
-cd /Home
-cd supernemo
-cd /home
-/supernemo
-cd /supernemo
-cd supernemo
-cd TemperatureLogs
-cd temporarytest
-sudo python logfile_3.py
-python logfile_3.py
-cd /home
-/svn
-SVN
-cd SVN
-svn
-cd supernemo
-cd svn
-cd SVN
-trunk
-cd trunk
-cd source
-cd scripts
-python logfile_3.py
-cd Desktop
-python fake_opcua2.py
-df -h
-lsusb
-ifconfig
-ipconfih
-ipconfig
-ifconfig
-supernemo -I
-hostname -I
-sudo nano /etc/resolv.conf
-ifconfig
-sudo apt upgrade
-sudo apt update
-sudo apt install rfkill
-ping google.co.uk
-sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-sudo su
-sudo rfkill block wifi
-ifconfig
-sudo rfkill unblock wifi
-ifconfig
-ping google.com
-ifconfig
-hostname -i
-hostname
-hostname -I
-hostname
-hostname -I
-sudo su
-ping google.com
-nano /etc/network/interface
-sudo su
-hostname -I
-ping google.com
-ifconfig
-hostname -I
-sudo raspi-config
-sudo su
-ping google.com
-ifconfig
-hostname -I
-ip r
-route delete 172.20.186.81
-sudo route delete 172.20.186.81
-hostname -I
-sudo service dhcpcd status
-isusb
-Isusb
-ls /dev/ttyUSB*
-lsusb
-dmesg | grep ttyUSB
-cd Desktop
-python fake_opcua2.py
-cd Desktop
-python fake_opcua2.py
-/desktop
-cd home
-cd Home
-cd supernemo
-cd /home
-cd supernemo
-cd SVN
-cd trunk
-cd scripts
-cd source
-cd scripts
-logfile_3.py
-python logfile_3.py
-cd /home
-cd supernemo
-cd svn
-cd SVN
-cd trunk
-cd source
-cd scripts
-python logfile_3.py
-crontab -e
-var/log/messages
-/var/log/messages
-ps ax | grep cron
-service cron start
-/var/log/messages
-ls -l /var | grep log
-crontab -e
-pgrep cron 
-crontab -e
-crontab -l
-python /home/supernemo/SVN/trunk/source/scripts/logfile_3.py
-/Home
-cd /Home
-cd /home
-supernemo
-cd supernemo
-cd SVN
-cd trunk
-cd source
-cd scripts
-python logfile_3.py
-python /home/supernemo/SVN/trunk/source/scripts/logfile_3.py
-crontab -e
-python /home/supernemo/SVN/trunk/source/scripts/New Logger.py
-python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
-git add /
-git add .
-git commit -m 'add existing file 2'
-git push -u origin main
-logout
-cd desktop
-cd /home
-cd desktop
-python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
-ls
-cd SVN
-cd trunk/
-cd source/
-cd scripts/
-ls
-quit
-logout
-cd SVN/trunk/source/scripts/
-nano TempReadout2.py
-cd Desjtio
-cd Desktop
-l
-ls
-cd ..
-ls
-cd Adafruit_CircuitPython_ADS1x15/
-ls
-cd ..
-ls
-cd SVN/
-cd trunk/
-cd s`
-cd source/
-cd scripts/
-ls
-nano test_write.py 
-nano adc_test.py 
-python TempReadout2.py
-nano TempReadout2.py
-nano OverallStatus.py
-python OverallStatus.py
-python OverallStatus.py d
-nano TempReadout.py
-nano OverallStatus.py
-python OverallStatus.py d
-nano OverallStatus.py
-sudo cp ~/SVN/trunk/source/scripts/TempReadout2.py /home/supernemo/ADC_Monitoring/
-python OverallStatus.py d
-sudo python OverallStatus.py d
-nano OverallStatus.py
-sudo python TempReadout2.py d
-nano TempReadout2.py d
-sudo python TempReadout2.py d
-sudo python OverallStatus.py d
-sudo python TempReadout2.py d
-sudo python OverallStatus.py d
-sudo python OverallStatus.py t
-sudo python OverallStatus.py d
-sudo python OverallStatus_3.py d
-ls
-logout
-cd SVN/
-cd trunk/
-cd source/
-cd scripts/
-ls
-nano GasSystemGUI_3.py
-cd ~
-git add .
-ls
-git add .
-sudo git add .
-git commit -m 'add existing file_3'
-git push origin https://github.com/Hirateeeeee/gas-system.git
-git push origin 
-ls
-cd SVN/
-cd trunk/
-cd source/
-cd scripts/
-ls
-python HaakeTempLogging.py 
-nano HaakeTempLogging.py 
-ls
-python OverallStatus
-python OverallStatus.py
-python OverallStatus.py 1
-python OverallStatus.py d
-python OverallStatus_2.py d
-sudo python OverallStatus_2.py d
-nano OverallStatus_2.py d
-ls
-python OverallStatus
-python OverallStatus.[y
-python OverallStatus.py
-python OverallStatus.py d
-cd ~
-ls
-cd SVN/
-cd trunk/source/scripts/
-ls
-cd ~
-ls
-cd home
-cd ADC_Monitoring/
-ls
-cd ..
-cd SVN/trunk/source/scripts/
-nano OverallStatus.py
-nano OverallStatus_3.py
-logout
-cd SVN/trunk/source/scripts/
-python TempReadout2.py
-sudo python TempReadout2.py
-sudo python TempReadout2.py d
-nano TempReadout2.py
-logout
-git add .
-sudo git add .
-git commit -m 'add existing file 4'
-git push main
-git push origin
-ethanol
-python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
-0:5
-python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
-cd /home
-cd SVN
-cd supernemo
-cd SVN
-cd trunk
-cd source
-cd scripts
-tempreadout2.py
-python tempreadout2.py
-python OverallStatus.py
-python OverallStatus.py d
-python TempReadout2.py
-sudo python TempReadout2.py 0
-ls - la
-ls -la
-ls -la /var/lock/temp_lock_file.txt
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-cat /var/lock/temp_lock_file.txt
-sudo python TempReadout2.py 0
-mv /var/lock/temp_lock_file.txt /var/lock/temp_lock_file_old.txt
-ls /var/lock/temp_lock_file.txt
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 2
-/var/lock/temp_lock_file.txt
-ls /var/lock/temp_lock_file.txt
-ls -la  /var/lock/temp_lock_file.txt
-sudo python TempReadout2.py 2
-sudo python EV94.py
-sudo python EV94.py 0
-sudo su
-cd Desktop
-python fake_opcua2.py
-w
-passwd
-sudo shutdown 
-sudo shutdown -r now
-w
-logout
-cd SVN/trunk/source/scripts/
-ls
-nano ClientHistoryReadout.py 
-nano UsefulFunctionsClient.py 
-nano ClientHistoryReadout.py 
-nano UsefulFunctionsClient.py 
-python UsefulFunctionsClient.py 
-nano UsefulFunctionsClient.py 
-python UsefulFunctionsClient.py 
-nano UsefulFunctionsClient.py 
-python UsefulFunctionsClient.py 
-nano UsefulFunctionsClient.py 
-python UsefulFunctionsClient.py 
-nano UsefulFunctionsClient.py 
-nano ClientHistoryReadout.py 
-sudo raspi-config
-cd `
-reboot
-cd Desktop
-ls
-python fake_opcua_client.py 
-sudo python fake_opcua_client.py 
-pip install opcua
-sudo python fake_opcua_client.py 
-python fake_opcua_client.py 
-cd ..
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-cd ~
-cd Desktop/
-nano fake_opcua_client.py 
-cd Desktop/
-python fake_opcua.py 
-cd ..
-cd SVN/trunk/source/scripts/
- 
-python UsefulFunctionsClient.py 
-cd ~
-ls
-cd Desktop/
-nano fake_opcua_client.py
-/home
-cd /home
-/supernemo
-cd supernemo
-cd ADC_Monitoring
-sudo python TempReadout2.py
-sudo python TempReadout2.py d
-sudo python TempReadout2.py
-cd SVN/trunk/source/scripts/
-python OverallStatus.py 
-python OverallStatus.py D
-python OverallStatus.py Dd
-python OverallStatus.py d
-sudo python OverallStatus.py d
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py d
-sudo python TempReadout2.py 2
-sudo python TempReadout2.py 0
-sudo python TempReadout2.py 1
-sudo python TempReadout2.py 2
-sudo python TempReadout2.py d
-sudo python OverallStatus.py d
-sudo python TempReadout2.py d
-sudo python OverallStatus.py d
-sudo python TempReadout2.py d
-sudo python OverallStatus.py d
-cd Desktop/
-python fake_opcua.py
-cd ~
-reboot
-sudo reboot
-ping google.com
-w
-ping google.com
-cd ~
-cd /home
-cd supernemo
-cd SVN
-cd source
-cd trunk
-cd source
-cd trunk
-cd scripts
-sudo python OverallStatus.py d
-ping google.com
-ping google.com
-sudo su
-ifconfig
-raspberry-config
-raspi-config
-sudo raspi-config
-sudo reboot
-ping opc.tcp://localhost:48010/freeopcua/serever
-ping opc.tcp://localhost:48010/freeopcua/server
-quit
-exit
-cd SVN/trunk/source/scripts/
-nano UsefulFunctionsClient.py 
-quit
-logout
-cd /home
-cd supernemo
-cd SVN
-cd source
-cd trunk
-cd source
-cd scripts
-sudo python EV94.py d
-lsusb
-sudo python EV94.py d
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-cd~
-cd ~
-cd Desktop/
-ls 
-python fake_opcua_client.py 
-sudo raspi-config
-timedatectl status
-sudo timedatectl set-ntp true
-timedatectl status
-sudo modprobe rtc-ds1307
-sudo bash
-sudo hwclock -r
-timedatectl status
-python UsefulFunctionsClient.py 
-cd ..
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-cd ~
-cd Desktop/
-python fake_opcua_client.py 
-ping google.com
-ls
-raspi-config
-sudo raspi-config
-sudo reboot
-quit
-logout
-lsusb
-cd /home
-cd supernemo
-cd source
-cd SVN
-cd source
-cd trunk
-cd source
-cd scripts
-sudo python EV94.py d
-python -m serial.tools.list_ports
-sudo python EV94.py d
-lsusb
-python -m serial.tools.list_ports
-sudo python -m serial.tools.list_ports
-serial.tools.list_ports.comports()
-python serial.tools.list_ports.comports()
-python serial.tools.list_ports.comports
-python -m  serial.tools.list_ports.comports
-python -m  serial.tools.list_ports.comports()
-lsusb
-sudo python -m serial.tools.list_ports
-sudo python serial read in test (to be deleted).py
-sudo python serial_read.py
-cd /
-ssh supernemo@172.1.18.230
-ssh supernemo@172.18.1.230
-scp sn-rpi1:/etc/udev/rules.d/99-usb-serial.rules .
-scp 172.18.1.230:/etc/udev/rules.d/99-usb-serial.rules .
-sudo cp 99-usb-serial.rules /etc/udev/rules.d/
-ls /etc/udev/rules.d/
-less /etc/udev/rules.d/99-usb-serial.rules 
-cd /home
-cd supernemo
-cd svn
-cd SVN
-cd trunk
-cd source
-cd scripts
-sudo python serial_read.py
-sudo python EV94.py d
-python serial.tools.list_ports.comports
-sudo python -m serial.tools.list_ports
-lsusb
-cd dev
-cd /dev
-ls
-ls -la serial0
-ls -la serial1
-ls -la stdout
-ls -la stdin
-ls /dev/
-ls usb
-ls
-nano OPCUASentinel.sh 
-bash OPCUASentinel.sh 
-nano OPCUASentinel.sh 
-nano MOS
-nano MOS_Server/
-cd MOS_Server/
-ls
-nano Gas_System_testV2.xml 
-cd ..
-ls
-cd python-opcua-master/
-ls
-cd opcua/
-ls
-cd ..
-ls
-nano setup.py 
-emacs stdeb.cfg 
-emacs /stdeb.cfg 
-emac /stdeb.cfg 
-emacs
-cd Cl
-cd .
-cd ..
-ls
-cd ClientScripts/
-ls
-nano ClientSubscription.py 
-python ClientSubscription.py 
-nano ClientSubscription.py 
-ls
-nano RealTimePlot.py 
-cd ..
-ls
-cd brainbox_driver/
-ls
-cd ..
-ls /dev/
-cd ..
-cd ~
-cd SVN/trunk/source/scripts/
-nano UsefulFunctionsClient.py 
-cd ~
-ls
-cd Desktop/`
-quiit
-ls
-cd D
-cd Desktop/
-l
-ssls
-ls
-nano fake_opcua_client.py 
-python fake_opcua_client.py 
-ping 172.1.18.230
-sftp supernemo@172.1.18.230
-ssh supernemo@172.1.18.230
-ls
-cd ..
-l
-dls
-ls
-cd python-opcua-master/
-ls
-cd opcua/
-ks
-ls
-cd client/
-ls
-python ua_client.py
-nano ua_client.py
-cd ~
-stfp supernemo@172.1.18.230
-sftp supernemo@172.1.18.230
-ping 172.1.18.230
-ssh supernemo@172.1.18.230
-sftp supernemo@172.18.1.230
-ls
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-ls
-nano ClientS
-nano ClientSubscription.py z
-python ClientSubscription.py 
-ls
-nano __init__.py 
-cd ...
-;ls
-cd ..
-ls
-cd ..
-ls
-cd documentation/
-ls
-cd ..
-ls
-cd resources/
-ls
-cd config/
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
-l
-ls
-nano dead.letter 
-nano /usr/local/lib/python2.7/dist-packages/freeopcua-0.10.11-py2.7.egg/opcua/client/client.py
-nano dead.letter 
-cd /usr/local/lib/python2.7/dist-packages
-cd /usr/local/lib/python2.7/dist-packages/
-nano debug.log 
-cd Public/
-ls
-cd ..
-nano config.txt_copy 
-cd packages/
-ls
-cd ..
-cd python-opcua-master/
-ls
-cd COPYING
-ls
-cd COPYING
-nano COPYING
-nano release.py 
-nano make_deb.sh `
-nano make_deb.sh 
-cd tools
-ls
-cd uaclient
-ls
-nano uaclient 
-cd ..
-cd  ..
-ls
-nano version.txt 
-OPCUASentinel.sh'
-OPCUASentinel.sh
-/home/supernemo/OPCUASentinel.sh 
-nano version.txt 
-cd /tmp
-ls
-cd OPCUA_Raspberry_V_1_3_0/
-ls
-cd lib
-lks
-l
-ls
-cd ..
-ls
-cd example/
-ls
-nano README.txt 
-cd ..
-ls
-cd OPCUA_Raspberry_V_1_3_0/
-ls
-cd ..
-cd trunk/
-ls
-cd source_cpp/tcp_opcua_connection_lib
-cd sources_cpp/
-ls
-cd tcp_opcua_connection_lib/
-ls
-nano README.TXT 
-mkdir build
-cd build/
-ls
-cd ..
-ls
-nano README.TXT 
-cd B
-cd build/
-ls
-cmake -DCMAKE_INSTALL_PREFIX=../.. ..
-cd ~
-pip install cmake
-cd tmp
-cd /tmp
-cd trunk/
-cd sources_cpp/
-cd tcp_opcua_connection_lib/
-ls
-cd build/
-cmake -DCMAKE_INSTALL_PREFIX=../.. ..
-cd ~
-/home/supernemo/OPCUASentinel.sh 
-ls
-cd ..
-lks
-ls
-quit
-exit
-cd Desktop/
-python fake_opcua_client.py 
-nano fake_opcua_client.py
-python fake_opcua_client.py 
-ls
-cd /dev
-ls
-ecp
-esp
-cd
-lsusb
-"
-
-
-/etc/udev/rules.d/99-usb-serial.rules
-/etc/udev/rules.d/99-usb-serial.rules .
-cat /etc/udev/rules.d/99-usb-serial.rules .
-de /dev
-cd /dev
-ls
-lsusb
-ls
-lsusb
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-nano UsefulFunctionsClient.py 
-python UsefulFunctionsClient.py 
-lsusb
-/home/supernemo/OPCUASentinel.sh `
-/home/supernemo/OPCUASentinel.sh 
-s
-ls
-cd ..
-ls
-cd supernemo/
-ls
-sudo reboot
-crontab -e
-/home/supernemo/OPCUASentinel.sh
-nano /home/supernemo/OPCUASentinel.sh 
-cd /home
-cd supernemo
-cd SVN
-cd trunk
-cd source
-cd scripts
-sudo python EV94.py d
-sudo python overallstatus.py d
-sudo python OverallStatus.py d
-sudo python PR4000B.py d
-sudo python PR4000B.py SP1
-cd SVN/trunk/source/scripts/
-python UsefulFunctionsClient.py 
-cd ..
-cd ~
-cd /dev
-ls
-ls -la stdin
-ls -la pressure
-ls
-cd /dev
-ls
-cd ..
-ls
-sftp supernemo@172.18.1.230
-sftp -r supernemo@172.18.1.230
-sudo su
-ls
-cd supernemo
-cd home
-cd supernemo/
-ls
-/home/supernemo/OPCUASentinel.sh 
-nano /home/supernemo/OPCUASentinel.sh 
-/home/supernemo/OPCUASentinel.sh 
-cd ..
-cd .
-cd ..
-ks
-ls
-cd lib
-ls
-cd ..
-cd home/
-cd supernemo/
-ls
-sudo apt-get update
-sudo apt-get install libssl1.0.0 libssl-dev
-sudo apt-get install libssl1.0.0
-sudo apt-get install libssl
-sudo apt-get install libssl1.0.0
-pip install libssl1.0.0
-sudo apt-get install libssl1.0.0 libssl-dev
-sudo apt-get install libssl.so.1.0.0 libssl-dev
-sudo apt-get install libssl-dev
-/home/supernemo/OPCUASentinel.sh 
-cd ..
-ls
-cd l
-cd lib
-ls
-cd ..
 ls
 cd home/
 cd supernemo/
@@ -1998,3 +942,1059 @@ sudo su
 logout
 ifconfig
 logout
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py d
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+nano /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 
+python /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 200 d
+nano /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 
+python /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 200 d
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py d
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+python /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 200 d
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+python /home/supernemo/SVN/trunk/source/scripts/New Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/SetCh2Scale.py 200 d
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py d
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout2.py d 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py d 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 0
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py d
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py d
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py d
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py d
+python /home/SVN/trunk/source/scripts/LastKeyPressed.py
+python /home/SVN/trunk/source/scripts/LastKeyPress.py
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py
+nano /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py
+python /home/supernemo/SVN/trunk/source/scripts/LastKeyPress.py
+nano /home/supernemo/SVN/trunk/source/scripts/GassystemGUI2.py
+nano /home/supernemo/SVN/trunk/source/scripts/GasSystemGUI
+nano /home/supernemo/SVN/trunk/source/scripts/GasSystemGUI
+nano /home/supernemo/SVN/trunk/source/scripts/GasSystemGUI_2.py
+ls
+git add .
+sudo git add .
+git commit -m 'changes at lsm'
+git add
+git add .
+sudo su
+ls
+nano newPID.log 
+whereis .git
+git remote add origin https://github.com/Hirateeeeee/gas-sysyetm-lsm.git
+git remote add .
+git add
+git add .
+git commit -m 'lsm chanegs'
+git push origin main
+ls /dev
+ls /dev | grep mmcblk0
+ps aux
+ps aux | grep mmcblk0
+ps aux
+ps aux | grep mmc
+ps aux | grep mmcblk0
+ls /dev
+ps aux | grep mmcblk0
+ps aux | grep mm
+ls /dev
+sudo su
+w
+ls
+ls /
+ls /MOS
+ls /MOS/OPCUA_Raspberry_V_1_3_0/
+ls /MOS/OPCUA_Raspberry_V_1_3_0/bin/
+ls /MOS
+ls /MOS_OLD_PI
+ls /MOS_OLD_PI/plugins/
+ls /MOS_OLD_PI/SNEMO/
+ls /MOS_OLD_PI/SNEMO/CMS/
+ls /MOS_OLD_PI/SNEMO/CMS/DNS/
+ls /MOS_OLD_PI/SNEMO/
+ls /MOS_OLD_PI/SNEMO/LSM
+ls /MOS_OLD_PI/SNEMO/LSM_ENVIRONMENT/
+ls
+ls MOS_Server/
+emacs MOS_Server/Gas_System_testV2.xml 
+nano MOS_Server/Gas_System_testV2.xml 
+sudo su
+ps aux
+logout
+ps aux
+logout
+sudo su
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py d
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/NewLoggerd
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+crontab -e
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py d
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py lab
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py temp
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py temp
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py pres
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py flow
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py temp
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py temp
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+exit
+nano /home/supernemo/SVN/trunk/source/scripts/OverallStatus.py 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py 
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py fgt1
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py fgt1
+python /home/supernemo/SVN/trunk/source/scripts/TempReadout.py FGT1
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/EV84.py d 
+python /home/supernemo/SVN/trunk/source/scripts/EV94.py d
+nano /home/supernemo/SVN/trunk/source/scripts/EV94.py d
+python /home/supernemo/SVN/trunk/source/scripts/EV94.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+crontab -e
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+crontab -e
+exit
+crontab -e
+exit
+python /home/supernemo/SVN/trunk/source/scripts/HaakeTempLogging.py 
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 0
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py T
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py S0
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py d
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py t
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/K=HaakeValues.py 
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/NewLogFiles
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/SensorTemp.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/PR400B.py
+python /home/supernemo/SVN/trunk/source/scripts/PR4000B.py
+python /home/supernemo/SVN/trunk/source/scripts/PR4000B.py g
+python /home/supernemo/SVN/trunk/source/scripts/PR4000B.py FR1
+python /home/supernemo/SVN/trunk/source/scripts/PR4000B.py FR2
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/cat > FRHe.txt
+cat > /home/supernemo/TemperatureLogs/FRHe.txt
+cat > /home/supernemo/TemperatureLogs/FRAr.txt
+nano /home/supernemo/TemperatureLogs/SensorTemp_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger/Pressure_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ files/Pressure_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+cat > /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+crontab -e
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+exit
+ps aux
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+exit
+nano /home/supernemo/SVN/trunk/source/scripts/Newl Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+crontab -e
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+crontab -e
+exit
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert_settings.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/ 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert_settings.txt 
+nano /home/supernemo/TemperatureLogs/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadin.py
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/SVN/trunk/source/scripts/TempReadout.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py Pressure
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py Pressure
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_old_format.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_old_format.txt  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt
+crontab -e
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_old_format.txt  /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_old_format.txt  /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+python /home/supernemo/TemperatureLogs/New\ Logger\ Files/Reformat_logger_text.py
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch3_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump_old_format.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump_old_format.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/Send.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+y
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_old_formt.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump_old_formt.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump_old_format.txt 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump_old_format.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/T_tests_02.03.17.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/temp_plot_test.py 
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/SensorTemp_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump_old_format.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/temp_plot.py 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/temp_plot.py 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch3_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_ch1_Ref.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/variable_threshold.txt 
+cat > /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch2_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT_dump.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch1_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_dump.txt
+mv  /home/supernemo/TemperatureLogs/New\ Logger\ Files/Temp_Ch0_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+crontab -e
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/ 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/Water
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt 
+crontab -e
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGt1.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/
+crontab -e
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/variable_threshold.txt 
+exit
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+crontab -e
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+final
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+ps aux
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/HaakeValues.py T
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_bath.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+crontab -e
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+crontab -e
+git init -b main
+git add .
+git commit -m "First commit"
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+cd desktop
+cd /desktop
+cd /home
+cd supernemo
+git init -b main
+git add .
+sudo su
+exit

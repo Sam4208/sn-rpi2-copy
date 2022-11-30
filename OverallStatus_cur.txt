@@ -1,23 +1,32 @@
 Temperature: 
 ----------- 
-18/11/2022 09:34:04 :
-ch 0: 2.042687V 21.352560C
-ch 1: 2.003436V 20.834627C
-ch 2: 2.036437V 22.002852C
+21/11/2022 13:48:20 :
+FGT1(bot): 22.295973C (2.099439V)
+FGT2(top): 21.940190C (2.069438V)
+BPT      : 23.253961C (2.110189V)
 
 Flow Monitoring: 
 ---------------- 
-18/11/2022 09:34:05 : 
+21/11/2022 13:48:21 : 
 SP1:  05.000 SP2:  0000.0 
-FR1:  00.301 FR2:  0009.0 
+FR1:  00.301 FR2:  0010.6 
 Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
 Scale Ch2:   0200.0  Status Ch2:   00004 
 
 
+Haake Values: 
+------------- 
+Error reading haake values
+
+Haake Status: 
+------------- 
+21/11/2022 13:48:42 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+
+
 Pressure: 
 --------- 
-18/11/2022 09:34:06 : 
-Current Pressure: -0.029(BP P1)
+21/11/2022 13:48:46 : 
+Current Pressure: -0.019(BP P1)
 
 Overall Status: 
 --------------- 

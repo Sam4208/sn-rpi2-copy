@@ -1,31 +1,19 @@
-import ClientHistoryReadout as chis
+import subprocess
 import numpy as np
 from datetime import timedelta
 import datetime as dt
 from email_alert import *
 
 
-
+automated_logger_time_set=[22,30,0] # hour,minute,second
 
 directory = '/home/supernemo/TemperatureLogs/New Logger Files/'
 
 def path(variable):
-    if variable == "SensorTemp":
-        filename = (directory)+"SensorTemp.txt"
-        dump_filename = (directory)+"SensorTemp_dump.txt"
-    if variable == "Temp_Ch2":
-        filename = (directory)+"Temp_Ch2.txt"
-        dump_filename = (directory)+"Temp_Ch2_dump.txt"
-    if variable == "Temp_Ch0":
-        filename =(directory)+"Temp_Ch0.txt"
-        dump_filename = (directory)+"Temp_Ch0_dump.txt"
-    if variable == "Temp_Ch1":
-        filename = (directory)+"Temp_Ch1.txt"
-        dump_filename = (directory)+"Temp_Ch1_dump.txt"
-        
-    if variable == "Pressure":
-        filename = (directory)+"Pressure.txt"
-        dump_filename = (directory)+"Pressure_dump.txt"    
+
+     
+    filename = (directory)+str(variable)+".txt"
+    dump_filename = (directory)+str(variable)+"_dump.txt"    
         
     return variable , filename , dump_filename
     
@@ -43,122 +31,132 @@ def split(data):
 
     return dates, datapoints
 
-def get_last_datapoint(variable):
-    data = chis.getHistory_duration(variable, 0.000278)
-    variable , file ,dump_file = path(variable)
-    #print(data)
-    new_time, new_data = split(data)
-    #print(new_time)
-    #print(new_data)
-    final_time = new_time[-1]
-    final_data_raw = new_data[-1]
-    
-    #final_time = final_time_raw[0:25]
-    final_data = round(final_data_raw,2)
-    
-    print(str(variable) +' timestamp: ' + str(final_time))
-    print(str(variable) +' current value: ' + str(final_data))
-    return final_time, final_data
 
-def file_open(variable):
-    #print(index)
-    variable , file ,dump_file = path(variable)
-    f = open(file,'r')
-    lines = f.readlines()[-1]
-    #print(lines)
-    last_lines = str(lines)
+def variable_status(variable):
+
+        if variable == 'Water_Bath':
+            variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/HaakeValues.py','T'], check=True, capture_output=True, text=True).stdout
+
+        if variable == 'FGT1':
+            variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/TempReadout.py','FGT1'], check=True, capture_output=True, text=True).stdout
+
+
+        if variable == 'FGT2':
+              variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/TempReadout.py','FGT2'], check=True, capture_output=True, text=True).stdout
+
+        if variable =='BPT':
+
+             variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/TempReadout.py','BPT'], check=True, capture_output=True, text=True).stdout
+
+
+        if variable =='Pressure':
+
+               variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/EV94.py','0'], check=True, capture_output=True, text=True).stdout
+
+        if variable == 'FRHe':
+  
+             variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/PR4000B.py','FR1'], check=True, capture_output=True, text=True).stdout
+  
     
-    last_time = last_lines[11:31]
-    last_temp = last_lines[47:52]
+        if  variable == 'FRAr':
+          
+           variable_output = subprocess.run(['/home/supernemo/SVN/trunk/source/scripts/PR4000B.py','FR2'], check=True, capture_output=True, text=True).stdout
+
+
+        return float(variable_output)
+
+
+def get_current_datapoint(variable):
+    data = variable_status(variable)
+    time = dt.datetime.now()
     
-        
-        
-    
-    #print(last_temp)
-    #print(last_time)
-        
-    return last_temp, last_time
+    if variable=='Water_Bath' and data == float(999):
+       data = 'Chiller off'
+
+    print(str(variable) +' timestamp: ' + str(time))
+    print(str(variable) +' current value: ' + str(data))
+
+    return time, data
 
 def dump_file_avg(variable):
     readin = []
     variable , file ,dump_file = path(variable)
     with open(dump_file,'r') as f:
-  
+        
         lines = f.readlines()
         for i in range(len(lines)):
             line_single = lines[i]
             
-            temp = line_single[47:55]
-          
+            temp = line_single[30:38]
+            if temp =='2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
+                temp =  float(0)
             readin.append(float(temp))
         avg = np.average(readin)
   
     print(str(variable) + ' average short term value: '+ str(avg))
     return avg
 
-def dump_file_open(variable):
-   
+def log_file_open(variable):
+    
     variable , file ,dump_file = path(variable)
-    f = open(dump_file,'r+')
+    f = open(file,'r+')
     lines = f.readlines()[-1]
     
     last_lines = str(lines)
     
-    last_unchange_time = last_lines[11:36]
-    last_unchange_temp = last_lines[47:55]
+    last_log_time = last_lines[0:20]
+    last_log_value = last_lines[30:38]
     
         
         
-    return last_unchange_temp, last_unchange_time
+    return last_log_value, last_log_time
 
-def read_in_threshold_file(variable):
-    f = open(str(directory)+"log_system_settings.txt", "r")
-    line_text_from_file = f.read().splitlines()  
+def compare(variable_settings,variable,chiller_status):
+    
+    short_term_average_bound = variable_settings[0]
 
-    for line in range (0,len((line_text_from_file))):
-        if line_text_from_file[line] == variable:
-            short_term_upper_trigger = float(line_text_from_file[line+1][25:27])
-            short_term_lower_trigger = float(line_text_from_file[line+2][25:27])
-        elif variable == 'ethanol' and line_text_from_file[line] == 'FGT1 FGT0 Temperature Difference Trigger':
-            print(line_text_from_file[line+1][0:3])
-            short_term_upper_trigger,short_term_lower_trigger = float(line_text_from_file[line+1][1:3]),float(line_text_from_file[line+1][1:3])
-            
-    f.close()
-    
-    return short_term_upper_trigger,short_term_lower_trigger
-
-def compare(threshold_1,variable):
-    
-    
+    if chiller_status=='off':
+       upper_trigger = variable_settings[2]
+       lower_trigger = variable_settings[3] 
+    elif chiller_status=='on':
+       upper_trigger = variable_settings[4]
+       lower_trigger = variable_settings[5] 
     
     avg = dump_file_avg(variable)
-    last_temp,last_time = file_open(variable)
-    final_time,final_data = get_last_datapoint(variable)
+    last_log_value,last_log_time = log_file_open(variable)
+    current_time,current_value = get_current_datapoint(variable)
     
     trigger_short_term_average ='no'
     trigger_bound ='no'
-  
-    
-    #print(threshold_1)
-    compare = avg - float(final_data)
-    if abs(compare) >= threshold_1:
-        trigger_short_term_average ='yes'
-        
-        
-    short_term_upper_threshold,short_term_lower_threshold = read_in_threshold_file(variable)
-  
-    
-    if final_data > short_term_upper_threshold or final_data < short_term_lower_threshold :
-        trigger_bound ='yes'
-  
-    
+    chiller_off_alert = 'no'
+
+    if variable =='Water_Bath' and chiller_status=='off':  
+       
+       if (last_log_value) == '2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
+             chiller_off_alert = 'no'
+            
+             
+       else:
+            chiller_off_alert = 'yes'
     else:
-        pass
+
+      compare = avg - float(current_value)
+      if abs(compare) >= short_term_average_bound:
+         trigger_short_term_average ='yes'
+        
+      if current_value > upper_trigger or current_value < lower_trigger :
+
+              
+              trigger_bound ='yes'
+  
+    
+      else:
+          pass
     
     
     
   
-    return trigger_short_term_average,trigger_bound,last_temp,last_time,final_time,final_data 
+    return trigger_short_term_average,trigger_bound,current_time,current_value,chiller_off_alert 
 
 
 def clear_file(file):
@@ -181,98 +179,116 @@ def clear_file(file):
     f.close()
 
 def automated_logger_time():
+    hour = automated_logger_time_set[0]
+    minute = automated_logger_time_set[1]
+    second = automated_logger_time_set[2]
 
-    start = dt.time(14, 33, 0)
-    end = dt.time(14, 35, 0)
+
+    start = dt.time(hour, minute, second)
+    end = dt.time(hour, minute+11, second)
+
     current = dt.datetime.now().time()
     
     return start <= current <= end
 
-def ch0_ch1_comparison(variable,last_temp):
-    ethanol_alert=False
-   
-    if variable=="Temp_Ch0":
-        last_temp_ch0 = float(last_temp)
-        print('c0checkked')
-    elif variable=="Temp_Ch1":
-        print('c1checkked')
-        last_temp_ch1 = float(last_temp)
-        ethanol_bound,ethanol_bound=read_in_threshold_file('ethanol')
-        print(last_temp_ch0-last_temp_ch1)
+def ch0_ch1_comparison(last_temp_ch0,last_temp_ch1,ethanol_bound):
+        ethanol_alert=False
         if last_temp_ch0-last_temp_ch1 < ethanol_bound:
             ethanol_alert = True
     
-    return ethanol_alert,last
+        return ethanol_alert
 
-def write_file(threshold,variable):
+def write_file(variable_settings,variable,chiller_status):
     variable , filename , dump_file = path(variable)
     
     f = open(filename,'a')
     f_2 = open(dump_file,'a')
  
+    trigger_short_term_average,trigger_bound,current_time,current_value,chiller_off_alert = compare(variable_settings,variable,chiller_status)
+    
+  
+    if trigger_short_term_average == 'no' and chiller_off_alert=='no':
+        
+        clear_file(dump_file)
+        f_2.write("{} -- {}\n".format(current_time, current_value))
+
+        print(variable + ' checked, change not logged'+str('\n----------------------------------'))
+        
+    if trigger_short_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True or chiller_off_alert =='yes':
+        
+        
+        f.write("{} -- {}\n".format(current_time, current_value))
+        
+        clear_file(dump_file)
+        f_2.write("{} -- {}\n".format(current_time, current_value))
+
+        print(variable + ' changed,logged in ' + filename+str('\n----------------------------------'))
+
     warn_sense = False
     warn_0 = False
     warn_1 = False
     warn_2 = False
     warn_p = False
- 
+    warn_FRHe = False
+    warn_FRAr = False 
     activate_alert = False
-    trigger_short_term_average,trigger_bound,last_temp,last_time,final_time,final_data = compare(threshold,variable)
-    
-    ethanol_alert=ch0_ch1_comparison(variable,last_temp)
-    
-    if trigger_short_term_average == 'no':
         
-        clear_file(dump_file)
-        f_2.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))
-     
-        
-        print(variable + ' checked'+str('\n----------------------------------'))
-        
-    if trigger_short_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True or ethanol_alert ==True:
-        
-        last_unchange_temp , last_unchange_time =  dump_file_open(variable)
-        f.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))
-        
-        clear_file(dump_file)
-        f_2.write("Date/Time: {} Temp(C): {}\n".format(final_time, final_data))
-        print(variable + ' changed,logged in ' + filename+str('\n----------------------------------'))
-        
-    if trigger_bound == 'yes' or ethanol_alert == True:
+    if chiller_off_alert == 'yes':
+           activate_alert = True
+
+    if trigger_bound == 'yes' :
        
         activate_alert = True
-        
-        if variable =="SensorTemp":
+    
+        if variable =="Water_Bath":
                 warn_sense = True 
-        elif variable =="Temp_Ch0":
+        elif variable =="FGT1":
                 warn_0 = True 
-        elif variable =="Temp_Ch1":
+        elif variable =="FGT2":
                 warn_1 = True 
-        elif variable =="Temp_Ch2":
+        elif variable =="BPT":
                 warn_2 = True
         elif variable =="Pressure":
                 warn_p = True
-        elif ethanol_alert ==True:
-            warn_0 = True
-            warn_1 = True 
+        elif variable =="FRAr":
+                warn_FRAr = True
+        elif variable =="FRHe":
+                warn_FRHe = True
             
                 
-    return activate_alert,warn_sense,warn_0,warn_1,warn_2,warn_p,ethanol_alert
-
-list_name = []
-threshold = []
+    return activate_alert,warn_sense,warn_0,warn_1,warn_2,warn_p,warn_FRHe,warn_FRAr,current_value,chiller_off_alert
 
 
-f = open(str(directory)+"variable_threshold.txt",'r+')
-lines = f.readlines()
+
+def alert_status_print(warn):
+     if warn == True:
+         status = 'Warning'
+     else:
+        status = 'OK'
+
+     return status 
+
+def get_log_settings(variable):
+
+   f = open(str(directory)+"log_system_settings.txt",'r+')
+   lines = f.read().splitlines()  
+   for line in range (0,len(lines)):
+       if str(lines[line]) == variable:
+         short_term_average_bound = float(lines[line+1][25:29])
+         medium_term_average_bound = float(lines[line+2][26:30])
+         chiller_off_upper_trigger = float(lines[line+3][26:30])
+         chiller_off_lower_trigger = float(lines[line+4][26:30])
+         chiller_on_upper_trigger = float(lines[line+5][25:29])
+         chiller_on_lower_trigger = float(lines[line+6][25:29])
+
+       if str(lines[line]) == "FGT1 FGT0 Temperature Difference Trigger":
+         ethanol_bound = float(lines[line+1][0:5])
+
+   variable_settings = [short_term_average_bound,medium_term_average_bound,chiller_off_upper_trigger,chiller_off_lower_trigger,chiller_on_upper_trigger,chiller_on_lower_trigger]
+
+   return variable_settings,ethanol_bound
 
 
-for i in range (len(lines)) :
-    name_1 , value = lines[i].split()
-    
-    list_name.append(name_1)
-    threshold.append(value)
-print(list_name)
 activate_alert_final = False
 warn_sense_final = False
 warn_0_final=False
@@ -280,10 +296,28 @@ warn_1_final=False
 warn_2_final=False
 warn_p_final=False
 ethanol_alert_final=False
+warn_FRHe_final = False
+warn_FRAr_final = False
+chiller_off_alert_final = False
 
-for i in range (len(list_name)): 
-  activate_alert, warn_sense, warn_0, warn_1,warn_2,warn_p,ethanol_alert =  write_file(float(threshold[i]),list_name[i])
+variables = ['Water_Bath','FGT1','FGT2','BPT','Pressure','FRHe','FRAr']
+
+if variable_status('Water_Bath')==float(999):
+    chiller_status = 'off'
+else:
+    chiller_status = 'on'
+
+for i in range (0, len(variables)):
   
+  variable_settings,ethanol_bound = get_log_settings(variables[i]) 
+  activate_alert, warn_sense, warn_0, warn_1,warn_2,warn_p,warn_FRHe,warn_FRAr,current_value,chiller_off_alert =  write_file(variable_settings,variables[i],chiller_status)
+ 
+  if variables[i]=='FGT1':
+       temp_ch0_value = current_value
+  if variables[i]=='FGT2':
+       temp_ch1_value = current_value
+       ethanol_alert_final= ch0_ch1_comparison(temp_ch0_value,temp_ch1_value,ethanol_bound)
+
   if activate_alert == True:
       activate_alert_final =True
   if  warn_sense==True:
@@ -296,16 +330,25 @@ for i in range (len(list_name)):
       warn_2_final=True
   if  warn_p==True:
       warn_p_final=True
-  if ethanol_alert ==True:
-      ethanol_alert_final=True
-      
-      
-print('\nAlerts:\nSensorTemp: '+str(warn_sense_final)+'\nCh0: '+str(warn_0_final)+'\nCh1: '+str(warn_1_final)+'\nCh2: '+str(warn_2_final)+'\nPressure: '+str(warn_p_final)+'\nEthanol Comparison: '+str(ethanol_alert_final))
+  if  warn_FRHe==True:
+      warn_FRHe_final=True
+  if  warn_FRAr==True:
+      warn_FRAr_final=True
+  if chiller_off_alert == 'yes':
+     chiller_off_alert_final = True
+           
+print('\nAlerts:\nWater Bath: '+alert_status_print(warn_sense_final)+'\nFGT1: '+alert_status_print(warn_0_final)+'\nFGT2: '+alert_status_print(warn_1_final)+'\nBPT: '+alert_status_print(warn_2_final)+'\nFlowrate He: '+alert_status_print(warn_FRHe_final)+'\nFlowrate Ar: '+alert_status_print(warn_FRAr_final)+'\nPressure: '+alert_status_print(warn_p_final)+'\nFGT1 FGT2 Temperature Difference: '+alert_status_print(ethanol_alert_final))
 
-
-if activate_alert_final == True:
+if activate_alert_final == True or ethanol_alert_final:
     print('\nSending Alert Email')
-    email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,ethanol_alert_final)
+    email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,warn_FRHe_final,warn_FRAr_final,ethanol_alert_final,chiller_off_alert_final)
+
+elif automated_logger_time() ==True:
+    print('\nSending daily update email')
+    email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,warn_FRHe_final,warn_FRAr_final,ethanol_alert_final,chiller_off_alert_final)
+
+
 else:
     print('No Email Alert Sent')
 #print('Email Sent:'+str(activate_alert_final))
+

@@ -6882,3 +6882,43 @@ SP1:  05.000 SP2:  0000.0
 FR1:  00.301 FR2:  0009.0 
 Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
 Scale Ch2:   0200.0  Status Ch2:   00004 
+18/11/2022 10:57:19 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0008.2 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+18/11/2022 11:18:51 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0008.2 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+18/11/2022 11:29:19 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0008.2 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+21/11/2022 12:57:01 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0010.6 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+21/11/2022 13:17:29 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0010.6 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+21/11/2022 13:18:08 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0010.6 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+21/11/2022 13:48:21 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0010.6 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 
+21/11/2022 13:50:22 : 
+SP1:  05.000 SP2:  0000.0 
+FR1:  00.301 FR2:  0010.6 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 

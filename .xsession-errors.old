@@ -1,9 +1,11 @@
-Xsession: X session started for supernemo at Fri 18 Nov 09:30:35 CET 2022
+Xsession: X session started for supernemo at Sun 20 Nov 02:03:13 CET 2022
 WARNING: tempfile is deprecated; consider using mktemp instead.
 dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
 dbus-update-activation-environment: setting DISPLAY=:0
 dbus-update-activation-environment: setting XAUTHORITY=/home/supernemo/.Xauthority
-localuser:supernemo being added to access control list
+xrdb: Connection refused
+xrdb: Can't open display ':0'
+Invalid MIT-MAGIC-COOKIE-1 keyxhost:  unable to open display ":0"
 dbus-update-activation-environment: setting USER=supernemo
 dbus-update-activation-environment: setting TEXTDOMAIN=Linux-PAM
 dbus-update-activation-environment: setting XDG_SESSION_TYPE=x11
@@ -28,7 +30,7 @@ dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1001/gnupg/
 dbus-update-activation-environment: setting PWD=/home/supernemo
 VCHI initialization failed
 /usr/bin/x-session-manager: 35: [: -ge: unexpected operator
-** Message: 09:30:39.737: main.vala:103: Session is LXDE-pi
-** Message: 09:30:39.743: main.vala:104: DE is LXDE
-** Message: 09:30:39.807: main.vala:135: log directory: /home/supernemo/.cache/lxsession/LXDE-pi
-** Message: 09:30:39.807: main.vala:136: log path: /home/supernemo/.cache/lxsession/LXDE-pi/run.log
+** Message: 02:03:17.808: main.vala:103: Session is LXDE-pi
+** Message: 02:03:17.808: main.vala:104: DE is LXDE
+Invalid MIT-MAGIC-COOKIE-1 key
+(lxsession:9543): Gtk-WARNING **: 02:03:17.818: cannot open display: :0

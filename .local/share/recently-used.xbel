@@ -104,4 +104,17 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/supernemo/gcdc-b1100-reader-last-value.cc" added="2022-11-18T17:50:32.898534Z" modified="2022-11-18T17:50:32.898551Z" visited="2022-11-18T17:50:32.898537Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-c++src"/>
+        <bookmark:groups>
+          <bookmark:group>geany</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="geany" exec="&apos;geany %u&apos;" modified="2022-11-18T17:50:32.898544Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

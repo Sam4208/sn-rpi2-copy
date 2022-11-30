@@ -5,13 +5,31 @@
 # Lauren Dawson, 03.12.2015
 # Pete Dockrill, 13.06.2016
 # ------------------------------------------------------------- #
-
+import time
+import board
+import busio
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 import argparse
 import sys
 
+i2c = busio.I2C(board.SCL, board.SDA)
+# Create the ADC object using the I2C bus
+ads = ADS.ADS1115(i2c)
+ads.gain = 1 #1 gain is 4.096
+#ads.mode = Mode.SINGLE
+# Create single-ended input on channel 0
+
+chan0 = AnalogIn(ads, ADS.P0).voltage
+chan1 = AnalogIn(ads, ADS.P1).voltage
+chan2 = AnalogIn(ads, ADS.P2).voltage
+#print(chan0)
+#print(chan1)
+#print(chan2)
+
 # command line parameters
 parser = argparse.ArgumentParser(description='Select Readout')
-parser.add_argument('input1', metavar='SR', type=str, nargs="+", choices = ['0','1','2','d','t'],
+parser.add_argument('input1', metavar='SR', type=str, nargs="+", choices = ['FGT1','FGT2','BPT','d','t'],
                    help='Desired Readout Channel, d - default')
 
 args = parser.parse_args()
@@ -58,7 +76,7 @@ while True:
           time.sleep(0.1)
 
 #import Adafruit library to use relevant functions
-from Adafruit_ADS1x15 import ADS1x15
+
 
 #Set date and time
 date_msg = time.strftime("%d/%m/%Y")
@@ -82,67 +100,74 @@ with open("/home/supernemo/ADC_Monitoring/CalibInput.csv", "r") as csvfile:
 			slope2 = float(row[1])
 	csvfile.close()
 
-ADS1115 = 0x01	# 16-bit ADC
+#ADS1115 = 0x01	# 16-bit ADC
 
 #Set gain (pga) and samples per second (sps) as constants
-gain = 4096  # +/- 4.096V
-sps = 250  # 250 samples per second
+#gain = 4096  # +/- 4.096V
+#sps = 250  # 250 samples per second
 
 # Initialise the ADC using the default mode (use default I2C address)
 #adc = ADS1x15(ic=ADS1115)
-ads = ADS1x15.ADS1115(i2c)
+#ads = ADS1x15.ADS1115(i2c)
 #create and fill report string
 if input == 'd':
-    report_msg = ""
-    for ch in range(0,3):
-            rawVolt = adc.readADCSingleEnded(ch, gain, sps)
-            if rawVolt == -1:
-                    print ('999')
-            volts = adc.readADCSingleEnded(ch, gain, sps) / 1000
+            report_msg = ""
+            for ch in range(0,3):
+          #      rawVolt = adc.readADCSingleEnded(ch, gain, sps)
+                #if rawVolt == -1:
+                #        print ('999')
+                if ch ==0:      
+                        volts  = AnalogIn(ads, ADS.P0).voltage
+                if ch ==1:      
+                        volts = AnalogIn(ads, ADS.P1).voltage 
+                if ch ==2:      
+                        volts = AnalogIn(ads, ADS.P2).voltage 
+                   
 
-#convert to temperature using values given
-            if ch == 0:
-                temp = (volts - intercept0)/slope0
-                #ch_msg = 'ch 0 (FG T0)'
-            elif ch == 1:
-                temp = (volts - intercept1)/slope1
-            elif ch == 2:
-                temp = (volts - intercept2)/slope2
+    #convert to temperature using values given
+                if ch == 0:
+                    temp = (volts - intercept0)/slope0
+                    #ch_msg = 'ch 0 (FG T0)'
+                elif ch == 1:
+                    temp = (volts - intercept1)/slope1
+                elif ch == 2:
+                    temp = (volts - intercept2)/slope2
 
-            t_msg = "%6fC" % temp
-            volt_msg = "%.6fV" % volts
-            ch_msg = "ch %d:" % ch
+                t_msg = "%6fC" % temp
+                volt_msg = "%.6fV" % volts
+                ch_msg = "ch %d:" % ch
 
-            if t_msg == "" or volt_msg == "" or ch_msg == "" :
-                print ("Error: Cannot read values from ADC")
+                if t_msg == "" or volt_msg == "" or ch_msg == "" :
+                    print ("Error: Cannot read values from ADC")
 
-        #add formatting for nice print out of each channel
-            if ch == 0:
-                temp_msg = date_msg+" "+time_msg+" :"+ch_msg+" "+volt_msg+" "+t_msg
-            elif ch == 2:
-                temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg+"\n"
-            else:
-                temp_msg = " " +ch_msg+" "+volt_msg+" "+t_msg
+            #add formatting for nice print out of each channel
+                if ch == 0:
+                    temp_msg = date_msg+" "+time_msg+" :"+"\n"+"FGT1(bot):"+" "+t_msg+" (" +volt_msg+")"+"\n"
+                elif ch == 1:
+                    temp_msg ="FGT2(top):"+" "+t_msg+" (" +volt_msg+")"+"\n" 
+                else:
+                    temp_msg = "BPT      :"+" "+t_msg+" (" +volt_msg+")"
 
-            report_msg += temp_msg
+                report_msg += temp_msg
 
-    print (report_msg)
+            print (report_msg)
 
-    #write to logs
-    f_log = open('/home/supernemo/ADC_Monitoring/ADS1x15_log.txt','a')
-    f_cur = open('/home/supernemo/ADC_Monitoring/ADS1x15_cur.txt','w')
-    f_log.write(report_msg)
-    f_cur.write(report_msg)
+            #write to logs
+            f_log = open('/home/supernemo/ADC_Monitoring/ADS1x15_log.txt','a')
+            f_cur = open('/home/supernemo/ADC_Monitoring/ADS1x15_cur.txt','w')
+            f_log.write(report_msg)
+            f_cur.write(report_msg)
 
-if input == '0' :
-    volts0 = adc.readADCSingleEnded(0, gain, sps) / 1000
+if input == 'FGT1' :
+    volts0  = AnalogIn(ads, ADS.P0).voltage 
     temp0 = ((volts0 - intercept0)/slope0)
     print (temp0)
-if input == '1' :
-    volts1 = adc.readADCSingleEnded(1, gain, sps) / 1000
+if input == 'FGT2' :
+    volts1  = AnalogIn(ads, ADS.P1).voltage
     temp1 = ((volts1 - intercept1)/slope1)
     print (temp1)
-if input == '2' :
-    volts2 = adc.readADCSingleEnded(2, gain, sps) / 1000
+if input == 'BPT' :
+    volts2  = AnalogIn(ads, ADS.P2).voltage 
     temp2 = ((volts2 - intercept2)/slope2)
     print (temp2)
+

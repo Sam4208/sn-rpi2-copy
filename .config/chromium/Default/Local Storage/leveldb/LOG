@@ -1,3 +1,15 @@
-2022/11/17-10:39:11.616 3 Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2022/11/17-10:39:11.627 3 Recovering log #21
-2022/11/17-10:39:11.637 3 Reusing old log /home/supernemo/.config/chromium/Default/Local Storage/leveldb/000021.log 
+2022/11/18-11:21:37.206 5 Reusing MANIFEST /home/supernemo/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2022/11/18-11:21:37.221 5 Recovering log #21
+2022/11/18-11:21:37.229 5 Reusing old log /home/supernemo/.config/chromium/Default/Local Storage/leveldb/000021.log 
+2022/11/18-11:22:45.629 7 Level-0 table #25: started
+2022/11/18-11:22:45.645 7 Level-0 table #25: 18018 bytes OK
+2022/11/18-11:22:45.656 7 Delete type=0 #21
+2022/11/18-11:22:45.659 7 Compacting 4@0 + 1@1 files
+2022/11/18-11:22:45.682 7 Generated table #26@0: 142 keys, 34877 bytes
+2022/11/18-11:22:45.682 7 Compacted 4@0 + 1@1 files => 34877 bytes
+2022/11/18-11:22:45.686 7 compacted to: files[ 0 1 0 0 0 0 0 ]
+2022/11/18-11:22:45.692 7 Delete type=2 #22
+2022/11/18-11:22:45.692 7 Delete type=2 #17
+2022/11/18-11:22:45.692 7 Delete type=2 #14
+2022/11/18-11:22:45.693 7 Delete type=2 #19
+2022/11/18-11:22:45.693 7 Delete type=2 #25

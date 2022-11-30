@@ -3,9 +3,11 @@ snemoalerts@gmail.com
 Sender password: 
 ycttktfsvwqxxkoa
 Email Subject:
-GAS SYSTEM ALERT
-Email text: 
+GAS SYSTEM
+Email text alert: 
 GAS SYSTEM WARNING - CHECK GAS SYSTEM IMMEDIATELY - SEE PLOT FOR DETAILS
+Email text normal:
+Gas System update email sent from sn-rpi2
 Recipient addresses:
 s2408030@ed.ac.uk
 snemoalerts@gmail.com

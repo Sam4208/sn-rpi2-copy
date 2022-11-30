@@ -3852,3 +3852,8 @@
 17/11/2022 15:57:37 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
 17/11/2022 15:59:32 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
 18/11/2022 09:24:13 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+18/11/2022 10:57:40 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+18/11/2022 11:29:40 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+21/11/2022 12:57:24 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+21/11/2022 13:18:29 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+21/11/2022 13:48:42 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present

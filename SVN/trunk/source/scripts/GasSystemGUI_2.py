@@ -113,13 +113,14 @@ def plot_all_four_graphs():
 
                 
 
+
                 # This is repeated, maybe have function to set all labels at start
                 label_ch0 = setText("23")
                 label_ch1 = setText("24")
                 label_ch2 = setText("25")
 
-                a2.plot_date(x, y, 'b-', label="FG T0 (bot)",linewidth=1.5)
-                a2.plot_date(x1, y1, 'r-', label="FG T1 (top)",linewidth=1)
+                a2.plot_date(x, y, 'b-', label="FG T1 (bot)",linewidth=1.5)
+                a2.plot_date(x1, y1, 'r-', label="FG T2 (top)",linewidth=1)
                 a2.plot_date(x10, y10, 'g-',label="SensTemp",linewidth=0.5)
                 a2.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
                           ncol=3, borderaxespad=0, prop={'size':10})

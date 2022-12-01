@@ -30,28 +30,31 @@ second2=0
 milisecond=0
 milisecond2=0
 """
-
+string1=30
+string2=36
 now=str(datetime.datetime.now())
 
-year = int(now[0:4])
+yest=str(datetime.datetime.now() - datetime.timedelta(days=1))
+
+year = int(yest[0:4])
 year2 = int(now[0:4])
 
-month=int(now[5:7])
+month=int(yest[5:7])
 month2=int(now[5:7])
 
-day=int(now[8:10])-1
+day=int(yest[8:10])
 day2 = int(now[8:10])
 
-hour=int(now[11:13])
+hour=int(yest[11:13])
 hour2=int(now[11:13])
 
-min_=int(now[14:16])
+min_=int(yest[14:16])
 min_2=int(now[14:16])
 
-second=int(now[17:19])
+second=int(yest[17:19])
 second2=int(now[17:19])
 
-milisecond=int(now[20:25])
+milisecond=int(yest[20:25])
 milisecond2=int(now[20:25])
 
 def plot_temp_data_email(input_file,title):
@@ -71,15 +74,15 @@ def plot_temp_data_email(input_file,title):
     
     for i in range(0,no_events):
         i = i* precision
-        temp_add = (lines[i][30:38])
-        if temp_add =='2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
+        temp_add = (lines[i][string1:string2])
+        if temp_add =='2022-11-29 12:36:53.209280 -- Chiller off'[string1:string2]:
             continue
         else:
 
 #        print(temp_add)
           try:
               float(temp_add)
-              time_add = datetime.datetime(int(lines[i][0:4]),int(lines[i][5:7]),int(lines[i][8:10]),int(lines[i][11:13]),int(lines[i][14:16]),int(lines[i][17:19]),int(lines[i][20:27]))
+              time_add = datetime.datetime(int(lines[i][0:4]),int(lines[i][5:7]),int(lines[i][8:10]),int(lines[i][11:13]),int(lines[i][14:16]),int(lines[i][17:19]),int(lines[i][20:25]))
 #              print(time_add)  
               temp_add = float(temp_add)
              # print(time_add,datetime.datetime(year, month, day,hour,min_,second,milisecond))
@@ -88,12 +91,14 @@ def plot_temp_data_email(input_file,title):
                
                   time = np.append(time,time_add)
                   temp = np.append(temp,temp_add)
-            
+          
           except ValueError:
-             # continue
+          
+             
+              
               print('error reading log file - data point not read in - temp: '+str(temp_add)+'   time:'+str(time_add))
-            
-        
+              
+       
     
     """
     ax.set_title(title)

@@ -7,48 +7,48 @@ chiller_on_upper_trigger:15
 chiller_on_lower_trigger:10
 
 FGT1
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.1
+medium_term_average_bound:0.1
 chiller_off_upper_trigger:26
 chiller_off_lower_trigger:17
 chiller_on_upper_trigger:15
 chiller_on_lower_trigger:10
 
 FGT2
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.1
+medium_term_average_bound:0.1
 chiller_off_upper_trigger:26
 chiller_off_lower_trigger:17
 chiller_on_upper_trigger:15
 chiller_on_lower_trigger:10
 
 BPT
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.1
+medium_term_average_bound:0.1
 chiller_off_upper_trigger:26
 chiller_off_lower_trigger:17
 chiller_on_upper_trigger:15
 chiller_on_lower_trigger:10
 
 Pressure
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.001
+medium_term_average_bound:0.001
 chiller_off_upper_trigger:2.5
 chiller_off_lower_trigger:-2.5
 chiller_on_upper_trigger:2.5
 chiller_on_lower_trigger:-2.5
 
 FRHe
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.01
+medium_term_average_bound:0.01
 chiller_off_upper_trigger:100
 chiller_off_lower_trigger:0
 chiller_on_upper_trigger:100
 chiller_on_lower_trigger:0
 
 FRAr
-short_term_average_bound:0
-medium_term_average_bound:0
+short_term_average_bound:0.01
+medium_term_average_bound:0.01
 chiller_off_upper_trigger:100
 chiller_off_lower_trigger:0
 chiller_on_upper_trigger:100

@@ -5,17 +5,19 @@ import datetime as dt
 from email_alert import *
 
 
-automated_logger_time_set=[22,30,0] # hour,minute,second
+automated_email_time_set=[8,30,0] # hour,minute,second
 
 directory = '/home/supernemo/TemperatureLogs/New Logger Files/'
 
 def path(variable):
 
      
-    filename = (directory)+str(variable)+".txt"
-    dump_filename = (directory)+str(variable)+"_dump.txt"    
-        
-    return variable , filename , dump_filename
+    log_filename = (directory)+str(variable)+".txt"
+    short_term_log_filename = (directory)+str(variable)+"_short_term_rolling_log.txt"    
+    medium_term_log_filename = (directory)+str(variable)+"_med_term_rolling_log.txt"
+
+
+    return log_filename,short_term_log_filename,medium_term_log_filename
     
 def split(data):
     dates = data[0::2]
@@ -73,24 +75,33 @@ def get_current_datapoint(variable):
     if variable=='Water_Bath' and data == float(999):
        data = 'Chiller off'
 
+    else:
+        data = (round(data,3))
+
+
     print(str(variable) +' timestamp: ' + str(time))
     print(str(variable) +' current value: ' + str(data))
 
     return time, data
 
-def dump_file_avg(variable):
+def rolling_log_file_avg(term,variable):
     readin = []
-    variable , file ,dump_file = path(variable)
-    with open(dump_file,'r') as f:
+    log_file ,short_log_file,med_log_file = path(variable)
+    if term == 'short':
+        file_to_open = short_log_file
+    if term == 'med':
+        file_to_open = med_log_file
+    
+    with open(file_to_open,'r') as f:
         
         lines = f.readlines()
         for i in range(len(lines)):
             line_single = lines[i]
             
-            temp = line_single[30:38]
-            if temp =='2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
-                temp =  float(0)
-            readin.append(float(temp))
+            value = line_single[30:38]
+            if value =='2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
+                value =  float(0)
+            readin.append(float(value))
         avg = np.average(readin)
   
     print(str(variable) + ' average short term value: '+ str(avg))
@@ -98,8 +109,8 @@ def dump_file_avg(variable):
 
 def log_file_open(variable):
     
-    variable , file ,dump_file = path(variable)
-    f = open(file,'r+')
+    log_file ,short_log_file,med_log_file = path(variable)
+    f = open(log_file,'r+')
     lines = f.readlines()[-1]
     
     last_lines = str(lines)
@@ -111,10 +122,27 @@ def log_file_open(variable):
         
     return last_log_value, last_log_time
 
-def compare(variable_settings,variable,chiller_status):
+def compare_subfunction(current_value,term,variable_settings,variable):
+ 
+    if term=='short': 
+         term_average_bound = variable_settings[0]
+    if term=='med': 
+         term_average_bound = variable_settings[1]
+
+    trigger_term_average ='no'
+    avg= rolling_log_file_avg(term,variable)
+    compare = avg - float(current_value)
+    if abs(compare) >= term_average_bound:
+         trigger_term_average ='yes'
+
+    return trigger_term_average
+
+
+
+def compare_rolling_averages_to_current_value(variable_settings,variable,chiller_status):
     
     short_term_average_bound = variable_settings[0]
-
+    medium_term_average_bound = variable_settings[1]
     if chiller_status=='off':
        upper_trigger = variable_settings[2]
        lower_trigger = variable_settings[3] 
@@ -122,11 +150,12 @@ def compare(variable_settings,variable,chiller_status):
        upper_trigger = variable_settings[4]
        lower_trigger = variable_settings[5] 
     
-    avg = dump_file_avg(variable)
+    
     last_log_value,last_log_time = log_file_open(variable)
     current_time,current_value = get_current_datapoint(variable)
     
-    trigger_short_term_average ='no'
+    trigger_short_term_average = 'no'
+    trigger_med_term_average = 'no'   
     trigger_bound ='no'
     chiller_off_alert = 'no'
 
@@ -134,37 +163,33 @@ def compare(variable_settings,variable,chiller_status):
        
        if (last_log_value) == '2022-11-29 12:36:53.209280 -- Chiller off'[30:38]:
              chiller_off_alert = 'no'
-            
              
        else:
             chiller_off_alert = 'yes'
     else:
 
-      compare = avg - float(current_value)
-      if abs(compare) >= short_term_average_bound:
-         trigger_short_term_average ='yes'
-        
+      trigger_short_term_average = compare_subfunction(current_value,'short',variable_settings,variable)
+      trigger_med_term_average   = compare_subfunction(current_value,'med',variable_settings,variable)
       if current_value > upper_trigger or current_value < lower_trigger :
 
-              
-              trigger_bound ='yes'
+           trigger_bound ='yes'
   
     
       else:
-          pass
+            pass
     
     
     
   
-    return trigger_short_term_average,trigger_bound,current_time,current_value,chiller_off_alert 
+    return trigger_short_term_average,trigger_med_term_average,trigger_bound,current_time,current_value,chiller_off_alert 
 
 
-def clear_file(file):
-    with open(file,'r') as f:
+def clear_file(log_file):
+    with open(log_file,'r') as f:
         line_number = 1
         lines=f.readlines()
     
-        with open(file,'w') as f_2:
+        with open(log_file,'w') as f_2:
         
 
             for line in lines:
@@ -178,10 +203,10 @@ def clear_file(file):
     f_2.close()
     f.close()
 
-def automated_logger_time():
-    hour = automated_logger_time_set[0]
-    minute = automated_logger_time_set[1]
-    second = automated_logger_time_set[2]
+def automated_email_time():
+    hour = automated_email_time_set[0]
+    minute = automated_email_time_set[1]
+    second = automated_email_time_set[2]
 
 
     start = dt.time(hour, minute, second)
@@ -191,6 +216,20 @@ def automated_logger_time():
     
     return start <= current <= end
 
+
+def automated_logger_time():
+  current = dt.datetime.now().time()
+  if current.minute>0 and current.minute<12 and current.hour%2 == 0:
+
+    log=True
+  
+  else:
+
+    log=False
+  
+  return log
+
+   
 def ch0_ch1_comparison(last_temp_ch0,last_temp_ch1,ethanol_bound):
         ethanol_alert=False
         if last_temp_ch0-last_temp_ch1 < ethanol_bound:
@@ -198,31 +237,56 @@ def ch0_ch1_comparison(last_temp_ch0,last_temp_ch1,ethanol_bound):
     
         return ethanol_alert
 
+def med_log_ticker(log_file,variable):
+
+ f = open(log_file,'r')
+ lines = f.read().splitlines()
+ counter = float(lines[0])
+ if counter>6:  
+   if variable=='FRAr':
+     f.close()
+     f = open(log_file,'w')
+     f.write(str(0))
+     f.close()
+   add_new_value=True
+ else:
+    if variable=='FRAr':
+       f.close()
+       f = open(log_file,'w')
+       f.write(str(counter+1))
+       f.close()
+    add_new_value=False
+
+ return add_new_value
+
+def write_rolling_files(f_short,short_log_file,f_med,med_log_file,current_time,current_value,variable):
+
+        clear_file(short_log_file)
+        f_short.write("{} -- {}\n".format(current_time, current_value))
+       
+        if med_log_ticker('/home/supernemo/TemperatureLogs/New Logger Files/log_counter.txt',variable)==True:
+          clear_file(med_log_file)             
+          f_med.write("{} -- {}\n".format(current_time, current_value,variable))
+
 def write_file(variable_settings,variable,chiller_status):
-    variable , filename , dump_file = path(variable)
-    
-    f = open(filename,'a')
-    f_2 = open(dump_file,'a')
- 
-    trigger_short_term_average,trigger_bound,current_time,current_value,chiller_off_alert = compare(variable_settings,variable,chiller_status)
-    
-  
-    if trigger_short_term_average == 'no' and chiller_off_alert=='no':
-        
-        clear_file(dump_file)
-        f_2.write("{} -- {}\n".format(current_time, current_value))
+    log_file ,short_log_file,med_log_file = path(variable)
 
+    f = open(log_file,'a')
+    f_short = open(short_log_file,'a')
+    f_med = open(med_log_file, 'a')
+    trigger_short_term_average,trigger_med_term_average,trigger_bound,current_time,current_value,chiller_off_alert = compare_rolling_averages_to_current_value(variable_settings,variable,chiller_status)
+
+
+    if trigger_short_term_average == 'no' and trigger_med_term_average == 'no' and chiller_off_alert=='no':
+
+        write_rolling_files(f_short,short_log_file,f_med,med_log_file,current_time,current_value,variable) 
         print(variable + ' checked, change not logged'+str('\n----------------------------------'))
-        
-    if trigger_short_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True or chiller_off_alert =='yes':
-        
-        
-        f.write("{} -- {}\n".format(current_time, current_value))
-        
-        clear_file(dump_file)
-        f_2.write("{} -- {}\n".format(current_time, current_value))
 
-        print(variable + ' changed,logged in ' + filename+str('\n----------------------------------'))
+    if trigger_short_term_average == 'yes' or trigger_med_term_average == 'yes' or trigger_bound =='yes' or automated_logger_time()==True or chiller_off_alert =='yes':
+
+        f.write("{} -- {}         -- Short term {} -- Med term {} \n".format(current_time,current_value,trigger_short_term_average,trigger_med_term_average))
+        write_rolling_files(f_short,short_log_file,f_med,med_log_file,current_time,current_value,variable) 
+        print(variable + ' changed,logged in ' + log_file+str('\n----------------------------------'))
 
     warn_sense = False
     warn_0 = False
@@ -230,9 +294,9 @@ def write_file(variable_settings,variable,chiller_status):
     warn_2 = False
     warn_p = False
     warn_FRHe = False
-    warn_FRAr = False 
+    warn_FRAr = False
     activate_alert = False
-        
+
     if chiller_off_alert == 'yes':
            activate_alert = True
 
@@ -343,7 +407,7 @@ if activate_alert_final == True or ethanol_alert_final:
     print('\nSending Alert Email')
     email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,warn_FRHe_final,warn_FRAr_final,ethanol_alert_final,chiller_off_alert_final)
 
-elif automated_logger_time() ==True:
+elif automated_email_time() ==True:
     print('\nSending daily update email')
     email_alert(True,warn_sense_final,warn_0_final,warn_1_final,warn_2_final,warn_p_final,warn_FRHe_final,warn_FRAr_final,ethanol_alert_final,chiller_off_alert_final)
 

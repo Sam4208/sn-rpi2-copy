@@ -1,174 +1,4 @@
 ls
-cd home/
-cd supernemo/
-ls
-sudo apt-get install libssl1.0.0
-sudo apt remove libssl-dev
-sudo apt install libssl1.0-dev
-cd home/
-ls
-/home/supernemo/OPCUASentinel.sh 
-sudo apt-get install libssl1.0.0
-sudo apt-get install libssl1.0.2
-/home/supernemo/OPCUASentinel.sh 
-nano /home/supernemo/OPCUASentinel.sh 
-ls
-cd OPCUAtest/
-lks
-ls
-cd testGasSystem/
-ls
-startServer.sh
-/home/supernemo ls
-/home/supernemo/OPCUAtest/testGasSystem/startServer.sh 
-nano startServer.sh 
-nano Gas_System_test.xml 
-cd ..
-ls
-nano OPCUASentinel.sh 
-/home/supernemo/OPCUASentinel.sh 
-BP_test.pdf
-apt-mark showmanual
-/home/supernemo/OPCUASentinel.sh 
-nano OPCUASentinel.sh 
-cd OPCUAtest/
-ls
-cd testGasSystem/
-ls
-cd NewGas/
-ls
-cd trunk/
-ls
-cd source/
-ls
-cd scripts/
-ls
-cd ..
-ls
-cd resources/
-ls
-cd 
-cd ..
-ls
-cd supernemo/
-cd OPCUAtest/testGasSystem/NewGas/trunk/resources/
-ls
-cd config/
-ls
-nano Gas_System_testV3.xml
-cd /dev
-ls
-cd
-cat /etc/udev/rules.d/99-usb-serial.rules .
-cd /dev
-ls
-lsusb
-ls
-lsusb
-dmesg
-ls
-lsusb
-ls
-cd
-sudo python /home/supernemo/SVN/trunk/source/scripts/PR4000B.py d
-cd /dev
-ls -la pressure
-nano /etc/udev/rules.d/99-usb-serial.rules .
-sudo su
-lsusb
-ls /dev
-cat /etc/udev/rules.d/99-usb-serial.rules 
-dmesg | grep tty
-ls -la  /dev/serial/by-id/usb-FTDI_USB-RS485_Cable_FTWDW38K-if00-port0 
-ls /dev/serial/by-id
-/home/
-/home/supernemo/OPCUASentinel.sh 
-sudo apt-get libssl1.0.0
-sudo apt-get install libssl1.0.0
-cd Op
-cd OPCUAtest/
-kls
-l
-ls
-cd testGasSystem/
-cd NewGas/
-ls
-cd trunk/
-ls
-cd cmake/
-ks
-ls
-cd Plugin_GasFactory/
-cd  build/
-ls
-nano libPlugin_Shell.so 
-ls
-CMakeFiles/
-l
-cd~
-cd ~
-sudo reboot
-ls
-wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.6_amd64.deb
-wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u12_armhf.deb
-ls
-cd Downloads/
-ls
-cd ..
-ls
-sudo apt install ./libssl1.0.0_1.0.1t-1+deb8u12_armhf.deb 
-sudo apt remove libssl1.0.2
-sudo apt install ./libssl1.0.0_1.0.1t-1+deb8u12_armhf.deb 
-sudo apt install libcrypto1.0.0
-logout
-lsmod
-lsmod | grep usb
-udevadm info -a
-udevadm 
-udevadm he
-udevadm info -a -n /dev/tty0
-udevadm info -a -n /dev/tty1
-udevadm info -a -n /dev/tty2
-udevadm info -a -n /dev/ttyUSB0 
-udevadm info -a -n /dev/ttyUSB0  | grep 2303
-udevadm info -a -n /dev/pressure 
-ls -l /dev/pressure 
-ls -l /dev/ttyUSB*
-lsusb 
-dmesg | grep tty
-dmesg | tail 50
-dmesg
-ls -l /dev/ttyUSB*
-modprobe ftdi-elan 
-sudo modprobe ftdi-elan 
-ls -l /dev/ttyUSB*
-ls /sys/bus/usb-serial/ -l
-ls /sys/bus/usb-serial/devices/ -l
-dmesg
-cd /dev
-ls
-ls mod
-lsmod
-/pressure
-cd /pressure
-ifconfig
-cd ..
-ls
-cd ..
-lks
-ls
-cd tmp
-ls
-cd ..
-ls
-cd ..
-cd home/
-ls
-cd supernemo/
-ls
-cd DO
-cd Downloads/
-ls
 cd ..
 ls
 cd ..
@@ -1997,4 +1827,174 @@ cd supernemo
 git init -b main
 git add .
 sudo su
+exit
+cd home
+cd /home
+cd supernemo
+git init -b main
+git commit -m "First commit"
+sudo su
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+sudo su
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt
+exit
+crontab-e
+crontab -e
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_med_term_rolling_average.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_med_term_rolling_log.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_short_term_rolling_log.txt
+mv /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_short_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_short_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_med_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_short_term_rolling_log.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+crontab -e
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_dump.txt
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_dump.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/med_log_counter.txt
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+rm /home/supernemo/TemperatureLogs/New\ Logger\ Files/med_log_counter.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/Pr
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_short_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_short_term_rolling_log.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_med_term_rolling_log.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1_med_term_rolling_log.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRHe_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FRAr_med_term_rolling_log.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath_med_term_rolling_log.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_system_settings.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2.txt 
+y
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/log_counter.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+crontab -e
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+exit 
+ps aux
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/BPT.txt 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+nano /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/SVN/trunk/source/scripts/email_alert.py 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+python /home/supernemo/SVN/trunk/source/scripts/New\ Logger.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+exit
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+exit
+cat /etc/issue
+w
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Water_Bath.txt 
+python /home/supernemo/SVN/trunk/source/scripts/Send_email_update.py 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/Pressure.txt 
+nano /home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt 
 exit

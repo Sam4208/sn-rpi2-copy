@@ -17,8 +17,8 @@ import errno
 # ------------------------------------------------------------------------------------------ #
 def connect_client() :
 
-    #client = Client("opc.tcp://127.0.0.1:4840")
-    client = Client("opc.tcp://localhost:48010/freeopcua/server")
+    client = Client("opc.tcp://127.0.0.1:4840")
+    #client = Client("opc.tcp://localhost:48010/freeopcua/server")
     #client = Client("opc.tcp://sn-rpi2:4801/freeopcua/server0")
     # For MSSL opc.tcp://sn-rpi1.holmbury.hep.ucl.ac.uk:48010/freeopcua/server"
 

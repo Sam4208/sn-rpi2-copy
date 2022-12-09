@@ -10,17 +10,17 @@ from matplotlib import pyplot as plt
 from tkinter import Text
 from tkinter import *
 
-
+from GUI_useful_functions import *
 import time
 import sys
 import numpy as np
 from dateutil import parser
 import subprocess
-import ClientHistoryReadout as chis
+import GUI_useful_functions
 import datetime as dt
 from datetime import timedelta
 from matplotlib.dates import  DateFormatter
-import UsefulFunctionsClient as uf
+
 from itertools import islice
 import configparser
 import csv
@@ -39,7 +39,8 @@ from tkinter import ttk
 
               
                 
-                
+min_lim=0.97
+max_lim=1.05
 
 LARGE_FONT = ("Verdana", 12)
 NORM_FONT = ("Verdana", 10)
@@ -76,15 +77,15 @@ def plot_all_four_graphs():
                 a3 = plt.subplot(2,2,3)
                 a4 = plt.subplot(2,2,4)
 
-                x, y = get_data("Temp_Ch0")
-                x1,y1 = get_data("Temp_Ch1")
-                x2,y2 = get_data("Temp_Ch2")
-                x10, y10 = get_data("SensorTemp")
+                x, y = get_data("FGT1")
+                x1,y1 = get_data("FGT2")
+                x2,y2 = get_data("BPT")
+                x10, y10 = get_data("Water_Bath")
                 
 
-                x3,y3 = get_data("FlowRate_Ch1")
-                x4,y4 = get_data("FlowRate_Ch2")
-                y4_mult = [i/100 for i in y4]
+                x3,y3 = get_data("FRHe")
+                x4,y4 = get_data("FRAr")
+                y4_mult = [i/10 for i in y4]
                 # orginally y4_mult = [i*10 for i in y4] I believe this is wrong
 
                 a1.clear()
@@ -121,12 +122,16 @@ def plot_all_four_graphs():
 
                 a2.plot_date(x, y, 'b-', label="FG T1 (bot)",linewidth=1.5)
                 a2.plot_date(x1, y1, 'r-', label="FG T2 (top)",linewidth=1)
-                a2.plot_date(x10, y10, 'g-',label="SensTemp",linewidth=0.5)
+                a2.plot_date(x10, y10, 'g-',label="Water Bath",linewidth=0.5)
                 a2.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
                           ncol=3, borderaxespad=0, prop={'size':10})
                 
-                minimum2 = min(min(y),min(y1),min(y10))-2
-                maximum2 = max(max(y),max(y1),max(y10))+2
+                minimum2 = min(min(y),min(y1),min(y10))
+                maximum2 = max(max(y),max(y1),max(y10))
+                
+                minimum2 = minimum2*min_lim
+                maximum2 = maximum2*max_lim
+                
                 a2.set_ylim(minimum2, maximum2)
                 a2.set_title('Secondary Bubbler Temperatures' + "\n")
                 a2.set_ylabel(setText("14") + "\n")
@@ -142,14 +147,18 @@ def plot_all_four_graphs():
                           ncol=2, borderaxespad=0, prop={'size':10})
                 
                 
-                minimum3 = min(min(y3),min(y4))-2
-                maximum3 = max(max(y3),max(y4))+2             
+                minimum3 = min(min(y3),min(y4_mult))
+                maximum3 = max(max(y3),max(y4_mult))
+                
+                minimum3 = minimum3*min_lim
+                maximum3 = maximum3*max_lim
+                
                 a3.set_ylim(minimum3, maximum3)
                 a3.set_title(setText("15") + "\n")
                 a3.set_ylabel(setText("16") + "\n") 
                 
 
-                plot_data(a4, f,"Temp_Ch2")
+                plot_data(a4, f,"BPT")
 
                 f.subplots_adjust(left=0.10, bottom=0.15, right=0.95, top=0.90, wspace=0.3, hspace=0.6)
                 
@@ -230,7 +239,7 @@ def plot_temp_data(input_file,ax11,title,fig):
     ax11.set_title(title)
     ax11.plot_date(time,temp,'b-',linewidth=1)
     fig.autofmt_xdate()
-    ax11.set_ylim([min(temp),max(temp)*1.1])
+    ax11.set_ylim([min(temp)*min_lim,max(temp)*max_lim])
     ax11.set_xlim([dt.datetime(year, month, day), dt.datetime(year2, month2, day2)])
     
     
@@ -251,9 +260,9 @@ def log_graph():
     fig1.subplots_adjust(hspace=0.1)   
    
     
-    plot_temp_data('/home/supernemo/TemperatureLogs/Temp_Ch0.txt',ax11,'FGT1',fig1)
-    plot_temp_data('/home/supernemo/TemperatureLogs/Temp_Ch1.txt',ax12,'FGT0',fig1)
-    plot_temp_data('/home/supernemo/TemperatureLogs/Temp_Ch2.txt',ax13,'BPT2',fig1)
+    plot_temp_data('/home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt',ax11,'FGT1',fig1)
+    plot_temp_data('/home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT2.txt',ax12,'FGT2',fig1)
+    plot_temp_data('/home/supernemo/TemperatureLogs/New\ Logger\ Files/FGT1.txt',ax13,'BPT',fig1)
     
     root = tk.Tk()
     canvas = FigureCanvasTkAgg(fig1, master=root)
@@ -409,7 +418,7 @@ def setChartVariables(variable):
         maximum = 25
         plotTitle = setText("15")
         yTitle = setText("16")
-    elif variable == "BP T2":
+    elif variable == "BPT":
         minimum = 0
         maximum = 30
         plotTitle = 'Primary Bubbler Temperature'
@@ -430,10 +439,10 @@ def formatChart(ymin, ymax):
     a.xaxis.set_major_formatter(DateFormatter("%Y-%m-%d %H:%M:%S"))
 
     if ymin < minimum:
-        minimum = ymin*0.925
+        minimum = ymin*min_lim
                     
     if ymax > maximum:
-        maximum = ymax*1.075
+        maximum = ymax*max_lim
 
     a.set_ylim(minimum, maximum)
     #a.set_xlabel(DateFormatter("%Y-%m-%d"))
@@ -451,20 +460,6 @@ def popupmsg(msg):
     B1 = ttk.Button(popup, text=setText("36"), command=popup.destroy)
     B1.pack()
     popup.mainloop()
-
-def get_data(variable):
-    array = chis.getHistory_duration(variable, 0.5)
-    x, y = split(array)
-    #print(x,y)
-    # DSW, 08.09.16. MOS server times are in UTC (I think). This
-    # piece of logic shifts everything to the current time on the
-    # device, which should reflect "wall-clock" time assuming that
-    # the date/time are configured correctly.
-    time_offset = dt.datetime.now()-dt.datetime.utcnow()
-    for j in range(len(x)):
-        x[j] = x[j]+time_offset
-
-    return x, y
 
 def get_last_datapoint(variable):
     data = chis.getHistory_duration(variable, 0.017)
@@ -534,8 +529,16 @@ def set_status_title(status):
         title.set_backgroundcolor("red")
 
 def animate(i):
+
     global minimum
     global maximum
+
+    
+    
+    variables = ['Water_Bath','FGT1','FGT2','BPT','Pressure','FRHe','FRAr']
+    for i in range(0,7):
+      write_data_temporary_log(variables[i])
+
 
     if chartLoad:
         status = get_status()
@@ -545,7 +548,7 @@ def animate(i):
                 ymin = min(y)-0.5
                 ymax = max(y)+0.5
                 print(startPoint)
-        
+
                 a = formatChart(ymin, ymax)
                 a.annotate(setText("44"), xy=startPoint, xytext=startPoint, arrowprops=dict(facecolor='black', shrink=0.05))
                 a.annotate(setText("45"), xy=endPoint, xytext=endPoint, arrowprops=dict(facecolor='black', shrink=0.05))
@@ -557,18 +560,18 @@ def animate(i):
                 f.subplots_adjust(left=None, bottom=0.15, right=None, top=None, wspace=None, hspace=0.6)
 
             elif variable == "Secondary Bubbler Temperature":
-                x, y = get_data("Temp_Ch0")
-                x1,y1 = get_data("Temp_Ch1")
-                x2,y2 = get_data("SensorTemp")
+                x, y = get_data("FGT1")
+                x1,y1 = get_data("FGT2")
+                x2,y2 = get_data("Water_Bath")
 
-                ymin=int(min(min(y,y1,y2)))-2
-                ymax=int(max(max(y,y1,y2)))+2
+                ymin=int((min(min(y),min(y1),min(y2))))-2
+                ymax=int((max(max(y),max(y1),max(y2))))+2
 
                 a = formatChart(ymin, ymax)
 
-                label_ch0 = 'FG TO (bot)'
-                label_ch1 = 'FG T1 (top)'
-                label_ch2 = 'Sensor Temp'
+                label_ch0 = 'FG T1 (bot)'
+                label_ch1 = 'FG T2 (top)'
+                label_ch2 = 'Water Bath'
                 #print(x,y)
                 a.plot_date(x, y, 'b-', label=label_ch0,linewidth=1.5)
                 a.plot_date(x1, y1, 'r-', label=label_ch1,linewidth=1)
@@ -579,12 +582,12 @@ def animate(i):
                 set_status_title(status)
 
             elif variable == "Flow Rate":
-                x, y = get_data("FlowRate_Ch1")
-                x1,y1 = get_data("FlowRate_Ch2")
+                x, y = get_data("FRHe")
+                x1,y1 = get_data("FRAr")
                 
                 
                 # Convert from SCCM to SLM (1000) and multiply by 10 to see on graph
-                y1_conv = [i/100 for i in y1]
+                y1_conv = [i/10 for i in y1]
 
                 y0min = min(y)
                 y1min = min(y1_conv)
@@ -613,8 +616,8 @@ def animate(i):
 
                 set_status_title(status)
 
-            elif variable == "BP T2":
-                x, y = get_data("Temp_Ch2")
+            elif variable == "BPT":
+                x, y = get_data("BPT")
                 ymin = min(y)
                 ymax = max(y)
 
@@ -658,21 +661,20 @@ def plot_data(subplot, fig, variable):
     
     
     if variable == "Pressure":
-        minimum = minimum-0.5
-        maximum = maximum+0.5
-        subplot.set_title('Secondary Bubbler Pressure')
+        minimum = minimum
+        maximum = maximum
+        subplot.set_title('Primary Bubbler Pressure')
         subplot.set_ylabel(setText("11"))
-    elif variable == "Temp_Ch2":
-        minimum = minimum-2
-        maximum = maximum+2
+    elif variable == "BPT":
+        
         subplot.set_title("Primary Bubbler Temperature")
         subplot.set_ylabel(setText("14"))
 
     if min(y,default = "EMPTY" ) < minimum:
-        minimum = (min(y))*0.925
+        minimum = (min(y))*min_lim
 
     if max(y,default = "EMPTY") > maximum:
-        maximum = (max(y))*1.075
+        maximum = (max(y))*max_lim
     
     subplot.set_ylim(minimum, maximum)
     subplot.plot_date(x, y, '-')   
@@ -705,7 +707,7 @@ class GasSystemapp(tk.Tk):
         variableChoice.add_command(label=setText("28"),
                                    command=lambda: changeVariable("Flow Rate"))
         variableChoice.add_command(label='Primary Bubbler Temperature',
-                                   command=lambda: changeVariable("BP T2"))
+                                   command=lambda: changeVariable("BPT"))
         variableChoice.add_command(label=setText("30"),
                                    command=lambda: changeVariable("All Plots"))
         
@@ -797,13 +799,16 @@ class PageOne(tk.Frame):
         
        
 
+variables = ['Water_Bath','FGT1','FGT2','BPT','Pressure','FRHe','FRAr']
+for i in range(0,7):
+  create_temporary_GUI_log_file(variables[i])
 
 
 
 app = GasSystemapp()
 app.geometry("1280x720")
 show_fig=True
-ani = animation.FuncAnimation(f, animate, interval=5000)
+ani = animation.FuncAnimation(f, animate, interval=1000)
 
 app.protocol("WM_DELETE_WINDOW", quit)
 app.mainloop()

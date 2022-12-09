@@ -3065,3 +3065,2586 @@
 2022-12-01 14:40:19.471467 -- 22.88711079664867         -- Short term no -- Med term yes 
 2022-12-01 15:10:18.996197 -- 22.89983393914999         -- Short term no -- Med term yes 
 2022-12-01 16:10:19.429978 -- 23.029185887913506         -- Short term no -- Med term no 
+2022-12-01 18:10:19.247973 -- 22.915         -- Short term no -- Med term no 
+2022-12-01 20:10:19.047578 -- 23.019         -- Short term no -- Med term no 
+2022-12-01 22:10:19.039215 -- 23.031         -- Short term no -- Med term no 
+2022-12-01 23:40:19.141853 -- 22.87         -- Short term yes -- Med term no 
+2022-12-02 00:10:18.816524 -- 22.946         -- Short term no -- Med term no 
+2022-12-02 02:10:18.767346 -- 22.898         -- Short term no -- Med term no 
+2022-12-02 04:10:18.787274 -- 22.908         -- Short term no -- Med term no 
+2022-12-02 06:10:19.553179 -- 22.955         -- Short term no -- Med term no 
+2022-12-02 08:10:19.477332 -- 22.902         -- Short term no -- Med term no 
+2022-12-02 10:10:19.528070 -- 22.97         -- Short term no -- Med term no 
+2022-12-02 11:25:18.971325 -- 23.033         -- Short term no -- Med term yes 
+2022-12-02 12:05:19.060973 -- 22.974         -- Short term no -- Med term no 
+2022-12-02 14:05:19.453672 -- 23.023         -- Short term no -- Med term no 
+2022-12-02 14:28:33.842883 -- 22.915         -- Short term yes -- Med term no 
+2022-12-02 14:55:19.217644 -- 22.906         -- Short term yes -- Med term no 
+2022-12-02 15:25:19.449444 -- 23.036         -- Short term yes -- Med term no 
+2022-12-02 15:30:19.370741 -- 22.91         -- Short term yes -- Med term no 
+2022-12-02 16:05:19.444903 -- 22.934         -- Short term no -- Med term no 
+2022-12-02 16:50:18.910828 -- 23.038         -- Short term yes -- Med term no 
+2022-12-02 17:40:18.954562 -- 22.91         -- Short term yes -- Med term no 
+2022-12-02 18:05:19.297245 -- 22.949         -- Short term no -- Med term no 
+2022-12-02 19:30:19.353664 -- 22.898         -- Short term yes -- Med term no 
+2022-12-02 20:00:18.721717 -- 22.906         -- Short term yes -- Med term no 
+2022-12-02 20:05:19.578574 -- 22.98         -- Short term no -- Med term no 
+2022-12-02 20:35:19.102683 -- 22.836         -- Short term yes -- Med term yes 
+2022-12-02 20:45:18.893887 -- 22.87         -- Short term yes -- Med term no 
+2022-12-02 20:55:18.633016 -- 22.991         -- Short term yes -- Med term no 
+2022-12-02 21:05:19.468511 -- 22.851         -- Short term yes -- Med term yes 
+2022-12-02 22:05:19.404832 -- 22.991         -- Short term no -- Med term no 
+2022-12-02 22:20:19.080294 -- 22.891         -- Short term yes -- Med term no 
+2022-12-02 22:30:18.864569 -- 23.019         -- Short term yes -- Med term no 
+2022-12-02 23:00:19.324700 -- 22.874         -- Short term yes -- Med term no 
+2022-12-02 23:20:18.927097 -- 22.87         -- Short term yes -- Med term no 
+2022-12-02 23:45:19.310787 -- 22.987         -- Short term yes -- Med term no 
+2022-12-02 23:50:19.219482 -- 22.872         -- Short term yes -- Med term no 
+2022-12-02 23:55:19.197835 -- 22.838         -- Short term yes -- Med term yes 
+2022-12-03 00:05:19.039891 -- 22.891         -- Short term no -- Med term no 
+2022-12-03 00:20:18.824431 -- 22.974         -- Short term yes -- Med term no 
+2022-12-03 00:35:19.524251 -- 22.802         -- Short term yes -- Med term yes 
+2022-12-03 00:40:19.360518 -- 22.961         -- Short term yes -- Med term no 
+2022-12-03 01:40:19.179990 -- 22.974         -- Short term yes -- Med term no 
+2022-12-03 02:05:18.657138 -- 22.944         -- Short term no -- Med term no 
+2022-12-03 02:55:19.461378 -- 22.983         -- Short term yes -- Med term no 
+2022-12-03 03:05:19.223882 -- 22.864         -- Short term yes -- Med term no 
+2022-12-03 03:40:19.433981 -- 22.87         -- Short term yes -- Med term no 
+2022-12-03 04:05:19.005868 -- 22.847         -- Short term yes -- Med term no 
+2022-12-03 04:20:18.700352 -- 22.849         -- Short term yes -- Med term no 
+2022-12-03 05:05:19.631450 -- 22.84         -- Short term yes -- Med term no 
+2022-12-03 05:15:19.473104 -- 22.966         -- Short term yes -- Med term no 
+2022-12-03 06:05:19.545883 -- 22.927         -- Short term no -- Med term no 
+2022-12-03 06:15:19.391713 -- 22.847         -- Short term yes -- Med term no 
+2022-12-03 06:30:19.193626 -- 22.961         -- Short term yes -- Med term no 
+2022-12-03 06:35:19.083046 -- 22.966         -- Short term yes -- Med term no 
+2022-12-03 07:15:19.202570 -- 22.864         -- Short term yes -- Med term no 
+2022-12-03 08:00:19.172098 -- 22.855         -- Short term yes -- Med term no 
+2022-12-03 08:05:19.036208 -- 22.923         -- Short term no -- Med term no 
+2022-12-03 08:40:19.382990 -- 22.838         -- Short term yes -- Med term no 
+2022-12-03 08:50:19.189603 -- 22.851         -- Short term yes -- Med term no 
+2022-12-03 09:30:19.266576 -- 22.826         -- Short term yes -- Med term no 
+2022-12-03 09:35:19.097540 -- 22.834         -- Short term yes -- Med term no 
+2022-12-03 10:05:19.412957 -- 22.927         -- Short term yes -- Med term no 
+2022-12-03 10:10:19.312579 -- 22.995         -- Short term yes -- Med term yes 
+2022-12-03 10:25:19.142637 -- 22.802         -- Short term yes -- Med term no 
+2022-12-03 10:45:18.732939 -- 22.826         -- Short term yes -- Med term no 
+2022-12-03 10:50:18.670809 -- 22.932         -- Short term yes -- Med term no 
+2022-12-03 11:40:19.588826 -- 22.815         -- Short term yes -- Med term no 
+2022-12-03 12:05:18.895858 -- 22.966         -- Short term yes -- Med term no 
+2022-12-03 12:30:19.311324 -- 22.959         -- Short term yes -- Med term no 
+2022-12-03 12:35:19.203584 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-03 13:15:19.331044 -- 22.949         -- Short term yes -- Med term no 
+2022-12-03 13:35:18.945718 -- 22.957         -- Short term yes -- Med term no 
+2022-12-03 14:05:19.218530 -- 22.887         -- Short term no -- Med term no 
+2022-12-03 14:45:19.574436 -- 22.823         -- Short term yes -- Med term no 
+2022-12-03 15:00:19.191270 -- 22.93         -- Short term yes -- Med term no 
+2022-12-03 15:15:18.866121 -- 22.949         -- Short term yes -- Med term no 
+2022-12-03 15:45:19.371727 -- 22.936         -- Short term yes -- Med term no 
+2022-12-03 16:05:19.049586 -- 22.932         -- Short term no -- Med term no 
+2022-12-03 16:15:18.873376 -- 22.823         -- Short term yes -- Med term no 
+2022-12-03 16:30:19.482003 -- 22.83         -- Short term yes -- Med term no 
+2022-12-03 16:35:19.340909 -- 22.8         -- Short term yes -- Med term no 
+2022-12-03 17:00:18.740466 -- 22.802         -- Short term yes -- Med term no 
+2022-12-03 17:25:19.342408 -- 22.819         -- Short term yes -- Med term no 
+2022-12-03 17:30:19.237653 -- 22.79         -- Short term yes -- Med term no 
+2022-12-03 17:40:19.050315 -- 22.804         -- Short term yes -- Med term no 
+2022-12-03 17:50:18.862348 -- 22.953         -- Short term yes -- Med term no 
+2022-12-03 17:55:18.766163 -- 22.938         -- Short term yes -- Med term no 
+2022-12-03 18:05:19.570618 -- 22.864         -- Short term no -- Med term no 
+2022-12-03 18:15:19.356915 -- 22.811         -- Short term yes -- Med term no 
+2022-12-03 18:50:19.601732 -- 22.809         -- Short term yes -- Med term no 
+2022-12-03 19:00:19.369478 -- 22.93         -- Short term yes -- Med term no 
+2022-12-03 19:20:19.066358 -- 22.823         -- Short term yes -- Med term no 
+2022-12-03 19:35:18.844841 -- 22.819         -- Short term yes -- Med term no 
+2022-12-03 19:40:18.754874 -- 22.804         -- Short term yes -- Med term no 
+2022-12-03 20:05:19.200337 -- 22.843         -- Short term no -- Med term no 
+2022-12-03 20:45:19.523775 -- 22.904         -- Short term yes -- Med term no 
+2022-12-03 21:25:19.607962 -- 22.796         -- Short term yes -- Med term no 
+2022-12-03 21:40:19.090045 -- 22.925         -- Short term yes -- Med term no 
+2022-12-03 21:50:18.816690 -- 22.79         -- Short term yes -- Med term no 
+2022-12-03 22:00:19.535329 -- 22.94         -- Short term yes -- Med term no 
+2022-12-03 22:05:19.426001 -- 22.847         -- Short term no -- Med term no 
+2022-12-03 23:00:19.424360 -- 22.908         -- Short term yes -- Med term no 
+2022-12-03 23:50:18.952242 -- 22.919         -- Short term yes -- Med term no 
+2022-12-04 00:20:19.620382 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-04 01:10:18.995980 -- 22.896         -- Short term yes -- Med term no 
+2022-12-04 01:20:18.928890 -- 22.908         -- Short term yes -- Med term no 
+2022-12-04 01:30:18.852358 -- 22.794         -- Short term yes -- Med term no 
+2022-12-04 02:30:19.402769 -- 22.777         -- Short term yes -- Med term no 
+2022-12-04 02:40:19.380755 -- 22.785         -- Short term yes -- Med term no 
+2022-12-04 03:40:18.755274 -- 22.927         -- Short term yes -- Med term no 
+2022-12-04 04:20:19.374603 -- 22.768         -- Short term yes -- Med term no 
+2022-12-04 04:40:19.133262 -- 22.913         -- Short term yes -- Med term no 
+2022-12-04 04:50:19.055647 -- 22.794         -- Short term yes -- Med term no 
+2022-12-04 05:10:18.898225 -- 22.76         -- Short term yes -- Med term no 
+2022-12-04 07:30:19.446803 -- 22.775         -- Short term yes -- Med term no 
+2022-12-04 07:40:19.369931 -- 22.745         -- Short term yes -- Med term no 
+2022-12-04 08:20:19.183791 -- 22.756         -- Short term yes -- Med term no 
+2022-12-04 09:20:18.859993 -- 22.874         -- Short term yes -- Med term no 
+2022-12-04 09:50:19.576141 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-04 10:40:19.425662 -- 22.845         -- Short term yes -- Med term no 
+2022-12-04 11:10:18.983638 -- 22.877         -- Short term yes -- Med term no 
+2022-12-04 12:10:19.394837 -- 22.734         -- Short term yes -- Med term no 
+2022-12-05 10:10:19.017781 -- 22.586         -- Short term yes -- Med term yes 
+2022-12-05 11:44:42.529640 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 11:45:19.013157 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 11:46:18.940432 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 11:47:18.811359 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 11:48:18.736096 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 11:49:18.644993 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 11:50:19.483578 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 11:51:19.417969 -- 22.605         -- Short term yes -- Med term yes 
+2022-12-05 11:52:19.351599 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 11:53:19.254548 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 11:54:19.220793 -- 22.548         -- Short term yes -- Med term yes 
+2022-12-05 11:55:19.160972 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 11:56:19.047800 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 11:57:18.970040 -- 22.618         -- Short term yes -- Med term yes 
+2022-12-05 11:58:18.892216 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 11:59:18.825708 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 12:00:18.740916 -- 22.611         -- Short term yes -- Med term yes 
+2022-12-05 12:01:18.635262 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 12:02:19.483837 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 12:03:19.407455 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 12:04:19.282425 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 12:05:19.200102 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 12:06:19.062240 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 12:07:19.004777 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 12:08:18.913692 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 12:09:18.835711 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 12:10:18.719079 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 12:11:19.601357 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 12:12:19.521704 -- 22.626         -- Short term yes -- Med term yes 
+2022-12-05 12:13:19.453372 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 12:14:19.352621 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 12:15:19.293312 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 12:16:19.265179 -- 22.605         -- Short term yes -- Med term yes 
+2022-12-05 12:17:19.163335 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 12:18:19.085110 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 12:19:19.039979 -- 22.624         -- Short term yes -- Med term yes 
+2022-12-05 12:20:18.909759 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 12:21:18.793716 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 12:22:18.687390 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 12:23:19.535139 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 12:49:19.127590 -- 22.605         -- Short term yes -- Med term yes 
+2022-12-05 12:50:18.957665 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 12:51:18.788003 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 12:52:18.654919 -- 22.607         -- Short term yes -- Med term yes 
+2022-12-05 12:53:19.515809 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 12:54:19.412304 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 12:55:19.375694 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 12:56:19.311089 -- 22.586         -- Short term yes -- Med term yes 
+2022-12-05 12:57:19.150969 -- 22.618         -- Short term yes -- Med term yes 
+2022-12-05 12:58:18.974886 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 12:59:18.917496 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 13:00:18.769344 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 13:01:18.706424 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 13:02:19.633057 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 13:03:19.484011 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 13:04:19.358804 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 13:05:19.221264 -- 22.594         -- Short term yes -- Med term yes 
+2022-12-05 13:06:19.118087 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 13:07:18.929035 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 13:08:18.831323 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 13:09:18.622375 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 13:10:19.550804 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 13:11:19.404087 -- 22.62         -- Short term yes -- Med term yes 
+2022-12-05 13:12:19.260192 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 13:13:19.192730 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 13:14:19.079166 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 13:15:19.034124 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-05 13:16:18.976900 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 13:17:18.840017 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 13:18:18.717581 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 13:19:18.625693 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 13:20:19.517420 -- 22.616         -- Short term yes -- Med term yes 
+2022-12-05 13:21:19.443191 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 13:22:19.349395 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 13:23:19.245816 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 13:24:19.121468 -- 22.616         -- Short term yes -- Med term yes 
+2022-12-05 13:25:19.050444 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 13:26:18.888122 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 13:27:18.829989 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 13:28:18.655226 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 13:29:19.475550 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 13:30:19.381639 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 13:31:19.389072 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 13:32:19.289811 -- 22.622         -- Short term yes -- Med term yes 
+2022-12-05 13:33:19.176148 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 13:34:19.106851 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 13:35:19.070666 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 13:36:18.984592 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 13:37:18.833173 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 13:38:18.627589 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 13:39:19.492666 -- 22.59         -- Short term yes -- Med term yes 
+2022-12-05 13:40:19.414160 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 13:41:19.303178 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 13:42:19.172604 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 13:43:19.012304 -- 22.594         -- Short term yes -- Med term yes 
+2022-12-05 13:44:18.860729 -- 22.594         -- Short term yes -- Med term yes 
+2022-12-05 13:45:18.723974 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 13:46:18.626430 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 13:47:19.491715 -- 22.594         -- Short term yes -- Med term yes 
+2022-12-05 13:48:19.387379 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 13:49:19.291069 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 13:50:19.102543 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 13:51:18.884709 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 13:52:18.757754 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 13:53:18.715986 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 13:54:18.613659 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 13:55:19.520737 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 13:56:19.446218 -- 22.584         -- Short term yes -- Med term yes 
+2022-12-05 13:57:19.352496 -- 22.605         -- Short term yes -- Med term yes 
+2022-12-05 13:58:19.247087 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 13:59:19.116811 -- 22.597         -- Short term yes -- Med term yes 
+2022-12-05 14:00:18.966277 -- 22.601         -- Short term yes -- Med term yes 
+2022-12-05 14:01:18.872463 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 14:02:18.796395 -- 22.571         -- Short term yes -- Med term yes 
+2022-12-05 14:03:18.661565 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 14:04:19.517639 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 14:04:42.814978 -- 22.626         -- Short term yes -- Med term yes 
+2022-12-05 14:05:19.584334 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 14:06:19.002846 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 14:07:19.592950 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 14:08:19.496172 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 14:09:19.386952 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 14:10:19.303847 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 14:11:19.243880 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 14:12:19.126084 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 14:13:19.053597 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 14:14:18.911441 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 14:15:20.827078 -- 22.618         -- Short term yes -- Med term yes 
+2022-12-05 14:16:18.739106 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 14:17:18.654079 -- 22.624         -- Short term yes -- Med term yes 
+2022-12-05 14:18:22.494557 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 14:18:27.748665 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 14:19:19.123668 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 14:20:19.008545 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 14:21:18.945598 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 14:22:18.818040 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 14:23:18.730546 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 14:24:19.594352 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 14:25:19.584707 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 14:26:19.512803 -- 22.626         -- Short term yes -- Med term yes 
+2022-12-05 14:27:19.517244 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 14:28:19.481890 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 14:29:19.346499 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 14:30:19.340549 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 14:31:19.246905 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 14:32:19.207501 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 14:33:19.056714 -- 22.616         -- Short term yes -- Med term yes 
+2022-12-05 14:34:18.966126 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 14:35:18.939664 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 14:36:18.792187 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 14:37:18.637240 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-05 14:38:19.535524 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 14:39:19.382785 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 14:40:19.401621 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 14:41:19.367370 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 14:42:19.258122 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 14:43:19.092448 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 14:44:19.027303 -- 22.607         -- Short term yes -- Med term yes 
+2022-12-05 14:45:18.941425 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 14:46:18.863937 -- 22.614         -- Short term yes -- Med term yes 
+2022-12-05 14:47:18.830649 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 14:48:18.728772 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 14:49:18.685824 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 14:50:19.607743 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 14:51:19.540910 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 14:52:19.440597 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 14:53:19.359111 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 14:54:19.307158 -- 22.637         -- Short term yes -- Med term yes 
+2022-12-05 14:55:19.196453 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 14:56:19.090028 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 14:57:18.938449 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 14:58:18.902861 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 14:59:18.788015 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 15:00:18.724555 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 15:01:18.616211 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 15:02:19.458150 -- 22.563         -- Short term yes -- Med term yes 
+2022-12-05 15:03:19.353339 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 15:04:19.257050 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 15:05:19.252618 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 15:06:19.133828 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 15:07:19.091509 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 15:08:18.976010 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 15:09:18.857539 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 15:10:18.754684 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 15:11:18.644762 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 15:12:19.527974 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 15:13:19.363807 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 15:14:19.230889 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 15:15:19.125016 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 15:16:18.990162 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 15:17:18.910484 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 15:18:18.803680 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 15:19:18.724829 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 15:20:18.644152 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 15:21:19.519749 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 15:22:19.398468 -- 22.639         -- Short term yes -- Med term yes 
+2022-12-05 15:23:19.353175 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 15:24:19.241431 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 15:25:19.184053 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 15:26:19.169832 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 15:27:19.048788 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 15:28:18.880369 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 15:29:18.764231 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 15:30:19.641326 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 15:31:19.527009 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 15:32:19.441372 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 15:33:19.347370 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 15:34:19.185825 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 15:35:19.012480 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 15:36:18.937607 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 15:37:18.843412 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 15:38:18.739764 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 15:39:19.585446 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 15:40:19.447871 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-05 15:41:19.373170 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 15:42:19.294078 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 15:43:19.232749 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 15:44:19.114736 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 15:45:19.042223 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 15:46:18.974254 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 15:47:18.798091 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 15:48:18.703385 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 15:49:18.703964 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 15:50:18.633258 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 15:51:19.622718 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 15:52:19.554236 -- 22.618         -- Short term yes -- Med term yes 
+2022-12-05 15:53:19.402775 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 15:54:19.254574 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 15:55:19.156211 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 15:56:18.998776 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 15:57:18.904261 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 15:58:18.773168 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 15:59:18.693378 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 16:00:19.604533 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 16:01:19.531612 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 16:02:19.446902 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 16:03:19.414876 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 16:04:19.344194 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 16:05:19.302687 -- 22.588         -- Short term yes -- Med term yes 
+2022-12-05 16:06:19.249962 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 16:07:19.146140 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 16:08:19.056278 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 16:09:18.947059 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 16:10:18.787697 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 16:11:18.689271 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 16:12:19.634707 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 16:13:19.492927 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 16:14:19.398485 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 16:15:19.288041 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 16:16:19.175814 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 16:17:19.103259 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-05 16:18:18.989688 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 16:19:18.933838 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 16:20:18.785733 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 16:21:18.689147 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 16:22:19.617913 -- 22.626         -- Short term yes -- Med term yes 
+2022-12-05 16:23:19.497564 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 16:24:19.417038 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 16:25:19.364511 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 16:26:19.265006 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 16:27:19.145448 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 16:28:19.031343 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 16:29:18.901505 -- 22.639         -- Short term yes -- Med term yes 
+2022-12-05 16:30:18.795004 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 16:31:18.724214 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 16:32:19.590196 -- 22.639         -- Short term yes -- Med term yes 
+2022-12-05 16:33:19.474793 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 16:34:19.447563 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 16:35:19.337445 -- 22.628         -- Short term yes -- Med term yes 
+2022-12-05 16:36:19.275337 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 16:37:19.156263 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 16:38:19.136011 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 16:39:19.039915 -- 22.643         -- Short term yes -- Med term yes 
+2022-12-05 16:40:18.948364 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 16:41:18.852549 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 16:42:18.746563 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 16:43:18.710265 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 16:44:19.598167 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 16:45:19.508640 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 16:46:19.387442 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-05 16:47:19.284637 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 16:48:19.156355 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 16:49:19.051232 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 16:50:18.986950 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 16:51:18.914800 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 16:52:18.800920 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 16:53:18.666540 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 16:54:19.603782 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 16:55:19.448448 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 16:56:19.332601 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 16:57:19.163531 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 16:58:19.041164 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 16:59:18.921718 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 17:00:18.839176 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 17:01:18.728811 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 17:02:18.680328 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 17:03:19.580331 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 17:04:19.543722 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 17:05:19.499012 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 17:06:19.391224 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 17:07:19.389363 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 17:08:19.337573 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 17:09:19.257537 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 17:10:19.286486 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 17:11:19.302269 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 17:12:19.156005 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 17:13:19.147016 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 17:14:19.045035 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 17:15:19.008373 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 17:16:18.910182 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 17:17:18.754178 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-05 17:18:18.660215 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 17:19:19.593332 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 17:20:19.449763 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 17:21:19.326921 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 17:22:19.377463 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 17:23:19.325680 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 17:24:19.207570 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-05 17:25:19.181535 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 17:26:19.115738 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 17:27:18.997789 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 17:28:18.859667 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 17:29:18.820675 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 17:30:18.771639 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 17:31:18.705793 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 17:32:19.612158 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 17:33:19.457824 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 17:34:19.275564 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 17:35:19.221295 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 17:36:19.260981 -- 22.618         -- Short term yes -- Med term yes 
+2022-12-05 17:37:19.216378 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 17:38:19.147132 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 17:39:19.039931 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 17:40:19.029604 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 17:41:18.988015 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 17:42:18.396670 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 17:43:19.000676 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 17:44:18.852337 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 17:45:18.702725 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 17:46:19.637002 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 17:47:19.519224 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 17:48:19.449918 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 17:49:19.372292 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 17:50:19.225091 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 17:51:19.163569 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 17:52:19.059765 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 17:53:18.930547 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-05 17:54:18.783420 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 17:55:18.634575 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 17:56:19.536153 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 17:57:19.441417 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-05 17:58:19.313672 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 17:59:19.267543 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 18:00:19.094014 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 18:01:19.033957 -- 22.635         -- Short term yes -- Med term yes 
+2022-12-05 18:02:18.957158 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 18:03:18.819489 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 18:04:18.761291 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 18:05:18.673925 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 18:06:19.597088 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 18:07:19.455250 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 18:08:19.334047 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 18:09:19.215331 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 18:10:19.118089 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 18:11:19.056214 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 18:12:18.978851 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 18:13:18.808983 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 18:14:18.672311 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 18:15:19.609148 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 18:16:19.453123 -- 22.637         -- Short term yes -- Med term yes 
+2022-12-05 18:17:19.347752 -- 22.601         -- Short term yes -- Med term yes 
+2022-12-05 18:18:19.248363 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 18:19:19.179966 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 18:20:19.073371 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 18:21:19.000909 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 18:22:18.944546 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 18:23:18.855802 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 18:24:18.792856 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 18:25:18.730476 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 18:26:18.687480 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 18:27:19.638349 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 18:28:19.499198 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 18:29:19.337193 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-05 18:30:19.242998 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 18:31:19.209173 -- 22.631         -- Short term yes -- Med term yes 
+2022-12-05 18:32:19.125766 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 18:33:19.017848 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 18:34:18.855062 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 18:35:18.831384 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 18:36:18.723239 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 18:37:18.609486 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 18:38:19.459686 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 18:39:19.382064 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 18:40:19.233638 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 18:41:19.050624 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 18:42:18.869084 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 18:43:18.763890 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 18:44:18.650331 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 18:45:19.506413 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 18:46:19.456549 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 18:47:19.420212 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 18:48:19.294578 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 18:49:19.226606 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 18:50:19.180513 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 18:51:19.113531 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 18:52:19.013575 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 18:53:18.879742 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 18:54:18.856636 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 18:55:18.716198 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-05 18:56:18.605401 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 18:57:19.545980 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 18:58:19.495117 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 18:59:19.415570 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 19:00:19.332428 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 19:01:19.272483 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 19:02:19.206505 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 19:03:19.080758 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 19:04:18.943633 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 19:05:18.926400 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 19:06:18.869767 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 19:07:18.786184 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 19:08:18.737836 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 19:09:18.629768 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 19:10:19.612410 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 19:11:19.581342 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 19:12:19.522196 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 19:13:19.405968 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 19:14:19.395221 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-05 19:15:19.347017 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 19:16:19.288936 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 19:17:19.115076 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 19:18:18.985274 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 19:19:18.945789 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 19:20:18.827852 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 19:21:18.713401 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 19:22:18.653670 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 19:23:19.569677 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 19:24:19.532337 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 19:25:19.464572 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-05 19:26:19.402058 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 19:27:19.270548 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 19:28:19.162486 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 19:29:19.124067 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 19:30:19.047903 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 19:31:19.003473 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 19:32:18.902291 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 19:33:18.806027 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 19:34:18.751612 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 19:35:18.619309 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 19:36:19.574546 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 19:37:19.429253 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 19:38:19.328022 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 19:39:19.254669 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 19:40:19.194456 -- 22.611         -- Short term yes -- Med term yes 
+2022-12-05 19:41:19.091931 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 19:42:18.929135 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 19:43:18.846806 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 19:44:18.733343 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 19:45:19.676633 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 19:46:19.548032 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 19:47:19.498368 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 19:48:19.416168 -- 22.592         -- Short term yes -- Med term yes 
+2022-12-05 19:49:19.374996 -- 22.639         -- Short term yes -- Med term yes 
+2022-12-05 19:50:19.286848 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 19:51:19.164649 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 19:52:19.155493 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 19:53:19.039574 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 19:54:18.968595 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 19:55:18.791700 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 19:56:18.688731 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-05 19:57:19.620266 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 19:58:19.581570 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 19:59:19.553633 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 20:00:19.501665 -- 22.792         -- Short term yes -- Med term yes 
+2022-12-05 20:01:19.355911 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-05 20:02:19.213184 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 20:03:19.006058 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 20:04:18.900397 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 20:05:18.836744 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 20:06:18.663726 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 20:07:19.481580 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 20:08:19.396507 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 20:09:19.326173 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 20:10:19.300259 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 20:11:19.236195 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 20:12:19.170031 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-05 20:13:19.060399 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 20:14:18.966190 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 20:15:18.868868 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-05 20:16:18.727870 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 20:17:19.569702 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 20:18:19.527085 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 20:19:19.451252 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 20:20:19.422484 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 20:21:19.387167 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 20:22:19.269390 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 20:23:19.178091 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 20:24:19.071475 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 20:25:18.991921 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 20:26:18.885635 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 20:27:18.846218 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 20:28:18.761101 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 20:29:19.588031 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 20:30:19.461361 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 20:31:19.441947 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 20:32:19.351880 -- 22.622         -- Short term yes -- Med term yes 
+2022-12-05 20:33:19.267097 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 20:34:19.222891 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-05 20:35:19.143453 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 20:36:19.068349 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 20:37:18.962761 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 20:38:18.912423 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 20:39:18.789365 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 20:40:19.625365 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 20:41:19.562682 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 20:42:19.469197 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 20:43:19.336924 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 20:44:19.304324 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 20:45:19.211688 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-05 20:46:19.005975 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 20:47:18.985465 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 20:48:18.846740 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 20:49:18.701070 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 20:50:19.623385 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 20:51:19.572963 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 20:52:19.501316 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 20:53:19.447801 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 20:54:19.365304 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 20:55:19.272359 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-05 20:56:19.153518 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 20:57:19.022236 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 20:58:18.910392 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 20:59:18.848171 -- 22.637         -- Short term yes -- Med term yes 
+2022-12-05 21:00:18.663009 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-05 21:01:19.547648 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 21:02:19.474517 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 21:03:19.461247 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 21:04:19.413986 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 21:05:19.390754 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 21:06:19.278626 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 21:07:19.224684 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 21:08:19.091660 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 21:09:19.041912 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 21:10:18.953008 -- 22.616         -- Short term yes -- Med term yes 
+2022-12-05 21:11:18.841705 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 21:12:18.786561 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 21:13:18.657934 -- 22.62         -- Short term yes -- Med term yes 
+2022-12-05 21:14:19.554935 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-05 21:15:19.452203 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 21:16:19.336958 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 21:17:19.236416 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 21:18:19.089664 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 21:19:19.053737 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 21:20:18.948658 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 21:21:18.847551 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-05 21:22:18.777697 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 21:23:18.722661 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 21:24:19.623160 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 21:25:19.499955 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 21:26:19.432397 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 21:27:19.368229 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 21:28:19.292410 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 21:29:19.215460 -- 22.607         -- Short term yes -- Med term yes 
+2022-12-05 21:30:19.122459 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 21:31:19.077509 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 21:32:19.059861 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-05 21:33:18.955971 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 21:34:18.892689 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 21:35:18.758040 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-05 21:36:18.642119 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 21:37:19.460947 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 21:38:19.380116 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 21:39:19.254701 -- 22.787         -- Short term yes -- Med term yes 
+2022-12-05 21:40:19.144146 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 21:41:19.053383 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 21:42:18.948151 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 21:43:18.837686 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 21:44:18.769284 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-05 21:45:18.721170 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-05 21:46:19.671606 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 21:47:19.602163 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 21:48:19.609393 -- 22.639         -- Short term yes -- Med term yes 
+2022-12-05 21:49:19.556507 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 21:50:19.508936 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 21:51:19.432993 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 21:52:19.306456 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 21:53:19.247533 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 21:54:19.184303 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 21:55:19.091783 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 21:56:19.019154 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 21:57:18.870448 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-05 21:58:18.858197 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 21:59:18.718906 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 22:00:18.656432 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-05 22:01:19.610741 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 22:02:19.568606 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 22:03:19.525817 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 22:04:19.456514 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-05 22:05:19.475434 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 22:06:19.370047 -- 22.652         -- Short term yes -- Med term yes 
+2022-12-05 22:07:19.236881 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 22:08:19.214882 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 22:09:19.165209 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 22:10:19.090079 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-05 22:11:18.927735 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 22:12:18.827079 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 22:13:18.722337 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 22:14:19.573087 -- 22.654         -- Short term yes -- Med term yes 
+2022-12-05 22:15:19.457661 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-05 22:16:19.420206 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-05 22:17:19.285377 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 22:18:19.185243 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-05 22:19:19.058262 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 22:20:18.912057 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 22:21:18.787106 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 22:22:18.686167 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-05 22:23:19.502791 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-05 22:24:19.378738 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 22:25:19.319359 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 22:26:19.281854 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 22:27:19.249520 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-05 22:28:19.215727 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-05 22:29:19.112884 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 22:30:19.045881 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 22:31:18.954125 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 22:32:18.849906 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 22:33:18.845857 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-05 22:34:18.766832 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 22:35:18.688730 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 22:36:19.626910 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-05 22:37:19.592829 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 22:38:19.449610 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 22:39:19.322260 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 22:40:19.214353 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 22:41:19.170972 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-05 22:42:19.135776 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-05 22:43:19.082424 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-05 22:44:18.998952 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 22:45:18.893093 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 22:46:18.817699 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 22:47:18.676257 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 22:48:19.589089 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 22:49:19.428124 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-05 22:50:19.344737 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 22:51:19.248752 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-05 22:52:19.189147 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 22:53:19.165642 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 22:54:19.098848 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 22:55:18.997751 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-05 22:56:18.858017 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-05 22:57:18.762815 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-05 22:58:18.685935 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-05 22:59:18.639819 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-05 23:00:19.608631 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 23:01:19.533499 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-05 23:02:19.473166 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 23:03:19.376041 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-05 23:04:19.234427 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-05 23:05:19.161275 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-05 23:06:19.125017 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 23:07:19.144440 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-05 23:08:19.067205 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-05 23:09:18.942810 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-05 23:10:18.879730 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 23:11:18.732429 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-05 23:12:18.596105 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 23:13:19.474899 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-05 23:14:19.331061 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-05 23:15:19.233530 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 23:16:19.085042 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-05 23:17:19.081285 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 23:18:19.034161 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 23:19:18.934857 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 23:20:18.861319 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 23:21:18.799277 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-05 23:22:18.688635 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 23:23:19.554042 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 23:24:19.521910 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 23:25:19.418312 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-05 23:26:19.365867 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-05 23:27:19.355275 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 23:28:19.266076 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 23:29:19.154689 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-05 23:30:19.096643 -- 22.794         -- Short term yes -- Med term yes 
+2022-12-05 23:31:18.959142 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 23:32:18.782041 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 23:33:18.706344 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-05 23:34:19.624248 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-05 23:35:19.545847 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-05 23:36:19.481889 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-05 23:37:19.393374 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-05 23:38:19.323961 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-05 23:39:19.253201 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-05 23:40:19.116683 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-05 23:41:18.913185 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 23:42:18.806606 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-05 23:43:18.688254 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-05 23:44:18.682675 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-05 23:45:19.589061 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-05 23:46:19.398366 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-05 23:47:19.326937 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-05 23:48:19.219707 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-05 23:49:19.161587 -- 22.609         -- Short term yes -- Med term yes 
+2022-12-05 23:50:19.072541 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-05 23:51:18.969390 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-05 23:52:18.930707 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-05 23:53:18.856222 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-05 23:54:18.716022 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-05 23:55:19.591422 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-05 23:56:19.471823 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-05 23:57:19.325267 -- 22.607         -- Short term yes -- Med term yes 
+2022-12-05 23:58:19.209737 -- 22.626         -- Short term yes -- Med term yes 
+2022-12-05 23:59:19.126384 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 00:00:19.207156 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 00:01:19.115874 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 00:02:18.997939 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 00:03:18.896224 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 00:04:18.785416 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 00:05:18.698642 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 00:06:19.590557 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 00:07:19.430207 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 00:08:19.373474 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 00:09:19.258314 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 00:10:19.176975 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 00:11:19.066319 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-06 00:12:18.973356 -- 22.787         -- Short term yes -- Med term yes 
+2022-12-06 00:13:18.835246 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 00:14:18.751968 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 00:15:18.671650 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 00:16:19.602554 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 00:17:19.443167 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 00:18:19.401561 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 00:19:19.320228 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 00:20:19.205624 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-06 00:21:19.135374 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 00:22:19.046752 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 00:23:18.975243 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 00:24:18.894878 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 00:25:18.760124 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 00:26:18.665575 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-06 00:27:19.632420 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 00:28:19.520420 -- 22.66         -- Short term yes -- Med term yes 
+2022-12-06 00:29:19.395899 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 00:30:19.281606 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 00:31:19.232582 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 00:32:19.161677 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-06 00:33:18.986985 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 00:34:18.893699 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 00:35:18.790953 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 00:36:18.700194 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 00:37:18.598323 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 00:38:19.483927 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 00:39:19.339160 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 00:40:19.232329 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-06 00:41:19.122406 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 00:42:19.037863 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 00:43:19.043519 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 00:44:18.968953 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 00:45:18.839818 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 00:46:18.701233 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 00:47:19.607865 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 00:48:19.537061 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 00:49:19.445035 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 00:50:19.394826 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 00:51:19.305437 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 00:52:19.240410 -- 22.647         -- Short term yes -- Med term yes 
+2022-12-06 00:53:19.178232 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 00:54:19.058303 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 00:55:19.002060 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 00:56:18.912502 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 00:57:18.846396 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 00:58:18.810203 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 00:59:18.672605 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 01:00:19.615706 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 01:01:19.524872 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 01:02:19.372505 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 01:03:19.313952 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 01:04:19.263861 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 01:05:19.171443 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 01:06:19.071212 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 01:07:19.033350 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-06 01:08:19.056062 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 01:09:18.916888 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 01:10:18.868543 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 01:11:18.822521 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 01:12:18.670397 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 01:13:19.483779 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 01:14:19.456739 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 01:15:19.350027 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-06 01:16:19.274110 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 01:17:19.170804 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 01:18:19.057699 -- 22.781         -- Short term yes -- Med term yes 
+2022-12-06 01:19:19.037791 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 01:20:19.007320 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 01:21:18.929323 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 01:22:18.822516 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 01:23:18.668404 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-06 01:24:19.631344 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 01:25:19.583832 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 01:26:19.501741 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 01:27:19.386838 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 01:28:19.384766 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 01:29:19.285554 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 01:30:19.169698 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 01:31:19.007741 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 01:32:18.849963 -- 22.65         -- Short term yes -- Med term yes 
+2022-12-06 01:33:18.694567 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 01:34:19.573436 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 01:35:19.392952 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 01:36:19.363308 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-06 01:37:19.269921 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 01:38:19.156300 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 01:39:19.144809 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 01:40:19.076285 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 01:41:18.984797 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 01:42:18.877190 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 01:43:18.739630 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 01:44:18.687344 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-06 01:45:19.579535 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 01:46:19.520712 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 01:47:19.463512 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 01:48:19.348116 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 01:49:19.179016 -- 22.781         -- Short term yes -- Med term yes 
+2022-12-06 01:50:19.060386 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 01:51:18.946896 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 01:52:18.886188 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 01:53:18.741428 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 01:54:18.647257 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 01:55:19.622189 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-06 01:56:19.545037 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 01:57:19.524399 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 01:58:19.429680 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 01:59:19.326620 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 02:00:19.178623 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 02:01:19.060990 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 02:02:19.013185 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 02:03:18.937714 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 02:04:18.797852 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 02:05:18.695878 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 02:06:19.624845 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 02:07:19.544726 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 02:08:19.500030 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 02:09:19.439833 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 02:10:19.388986 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 02:11:19.300088 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 02:12:19.205344 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 02:13:19.115620 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 02:14:18.982717 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 02:15:18.867879 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 02:16:18.811147 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 02:17:18.685001 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 02:18:19.594831 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 02:19:19.516531 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 02:20:19.454550 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 02:21:19.402148 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-06 02:22:19.317258 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 02:23:19.189741 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 02:24:19.061069 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 02:25:18.957606 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 02:26:18.874196 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 02:27:18.804708 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-06 02:28:18.712970 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 02:29:19.611651 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 02:30:19.498493 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 02:31:19.432368 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 02:32:19.392164 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 02:33:19.306120 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 02:34:19.250400 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 02:35:19.184432 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 02:36:19.067830 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-06 02:37:19.013421 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 02:38:18.939146 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 02:39:18.901474 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 02:40:18.768192 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 02:41:18.659630 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 02:42:19.608328 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 02:43:19.488512 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 02:44:19.423819 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-06 02:45:19.321122 -- 22.671         -- Short term yes -- Med term yes 
+2022-12-06 02:46:19.226944 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 02:47:19.142855 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 02:48:19.066333 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 02:49:19.043471 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 02:50:18.943434 -- 22.664         -- Short term yes -- Med term yes 
+2022-12-06 02:51:18.828906 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 02:52:18.688735 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 02:53:19.523635 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 02:54:19.389329 -- 22.673         -- Short term yes -- Med term yes 
+2022-12-06 02:55:19.352282 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 02:56:19.293730 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 02:57:19.285059 -- 22.677         -- Short term yes -- Med term yes 
+2022-12-06 02:58:19.261547 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 02:59:19.238931 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 03:00:19.149163 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 03:01:19.067036 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 03:02:18.989895 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 03:03:18.893419 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-06 03:04:18.789211 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 03:05:18.719046 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 03:06:19.666196 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 03:07:19.520201 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 03:08:19.409833 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 03:09:19.381939 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 03:10:19.330749 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 03:11:19.318213 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 03:12:19.217745 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 03:13:19.162537 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 03:14:19.136872 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 03:15:19.056894 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-06 03:16:18.897451 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 03:17:18.782451 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 03:18:18.675799 -- 22.79         -- Short term yes -- Med term yes 
+2022-12-06 03:19:19.557590 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 03:20:19.416673 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 03:21:19.287503 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 03:22:19.231696 -- 22.633         -- Short term yes -- Med term yes 
+2022-12-06 03:23:19.108977 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 03:24:18.955475 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 03:25:18.863506 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 03:26:18.749667 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 03:27:18.680968 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 03:28:19.573310 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 03:29:19.492659 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 03:30:19.364822 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 03:31:19.278570 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 03:32:19.299784 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 03:33:19.204797 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 03:34:19.078039 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 03:35:18.954098 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 03:36:18.850224 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 03:37:18.789064 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 03:38:18.665101 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 03:39:19.624426 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 03:40:19.524279 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 03:41:19.457568 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 03:42:19.410801 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 03:43:19.274160 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 03:44:19.154013 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 03:45:19.067167 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 03:46:18.942700 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 03:47:18.860833 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 03:48:18.691888 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 03:49:19.623540 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 03:50:19.466528 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 03:51:19.391866 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 03:52:19.261901 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 03:53:19.173947 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 03:54:19.123295 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 03:55:19.004156 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 03:56:18.881186 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 03:57:18.810926 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 03:58:18.727075 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 03:59:19.551377 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 04:00:19.457409 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 04:01:19.439435 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 04:02:19.381711 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 04:03:19.311927 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 04:04:19.289396 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 04:05:19.180056 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-06 04:06:19.045661 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 04:07:18.890432 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 04:08:18.825718 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 04:09:18.824637 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-06 04:10:18.731205 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-06 04:11:18.639341 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 04:12:19.543365 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 04:13:19.464807 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 04:14:19.266032 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 04:15:19.185166 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 04:16:19.152322 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 04:17:19.012743 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 04:18:18.905872 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 04:19:18.847394 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-06 04:20:18.764322 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 04:21:18.715529 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 04:22:18.670235 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 04:23:19.593139 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 04:24:19.485969 -- 22.667         -- Short term yes -- Med term yes 
+2022-12-06 04:25:19.358503 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 04:26:19.274963 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-06 04:27:19.145538 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 04:28:18.996928 -- 22.794         -- Short term yes -- Med term yes 
+2022-12-06 04:29:18.984264 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 04:30:18.957025 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-06 04:31:18.882039 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 04:32:18.882543 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 04:33:18.767241 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 04:34:18.652043 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 04:35:19.608627 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 04:36:19.584962 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 04:37:19.571080 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 04:38:19.531852 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 04:39:19.424588 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 04:40:19.348052 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 04:41:19.183233 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 04:42:19.126355 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 04:43:19.010550 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 04:44:18.914122 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 04:45:18.864523 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 04:46:18.799539 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 04:47:18.690082 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 04:48:19.621306 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 04:49:19.484457 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 04:50:19.364223 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 04:51:19.221889 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 04:52:19.062792 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 04:53:18.950983 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 04:54:18.941962 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 04:55:18.904979 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 04:56:18.756100 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 04:57:18.672906 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 04:58:19.597383 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 04:59:19.426520 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 05:00:19.311574 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-06 05:01:19.304526 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 05:02:19.184236 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 05:03:19.079422 -- 22.785         -- Short term yes -- Med term yes 
+2022-12-06 05:04:18.961339 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 05:05:18.914441 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 05:06:18.805201 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 05:07:18.747697 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 05:08:18.632035 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:09:19.566152 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 05:10:19.492427 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 05:11:19.473653 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 05:12:19.420993 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 05:13:19.436046 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 05:14:19.335887 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 05:15:19.250426 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 05:16:19.159344 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 05:17:19.066341 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:18:18.972884 -- 22.658         -- Short term yes -- Med term yes 
+2022-12-06 05:19:18.882564 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 05:20:18.811075 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 05:21:18.728043 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 05:22:18.656997 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 05:23:19.538480 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:24:19.425470 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 05:25:19.336778 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 05:26:19.174580 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 05:27:19.013345 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:28:18.853207 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 05:29:18.735229 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 05:30:19.606952 -- 22.749         -- Short term yes -- Med term yes 
+2022-12-06 05:31:19.539836 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 05:32:19.432823 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 05:33:19.381982 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 05:34:19.268575 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 05:35:19.143188 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 05:36:19.052352 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 05:37:18.989961 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 05:38:18.906951 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 05:39:18.832628 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-06 05:40:18.754061 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 05:41:18.688902 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 05:42:19.615542 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 05:43:19.482598 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:44:19.406308 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 05:45:19.315548 -- 22.679         -- Short term yes -- Med term yes 
+2022-12-06 05:46:19.214614 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 05:47:19.211168 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 05:48:19.191108 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 05:49:19.168973 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-06 05:50:19.060508 -- 22.783         -- Short term yes -- Med term yes 
+2022-12-06 05:51:19.019771 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 05:52:18.891009 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 05:53:18.805696 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 05:54:18.734394 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 05:55:19.604542 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 05:56:19.573544 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 05:57:19.466729 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 05:58:19.432043 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 05:59:19.416259 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 06:00:19.300268 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 06:01:19.233003 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 06:02:19.154283 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 06:03:19.112526 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 06:04:19.015025 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 06:05:18.860872 -- 22.798         -- Short term yes -- Med term yes 
+2022-12-06 06:06:18.815031 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 06:07:18.686308 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 06:08:19.527707 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 06:09:19.466896 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 06:10:19.368497 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 06:11:19.224164 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 06:12:19.237313 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 06:13:19.149345 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 06:14:19.106944 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 06:15:18.948379 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 06:16:18.913618 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 06:17:18.847751 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 06:18:18.810761 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 06:19:18.736725 -- 22.8         -- Short term yes -- Med term yes 
+2022-12-06 06:20:18.661354 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 06:21:19.570476 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 06:22:19.546302 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 06:23:19.473824 -- 22.781         -- Short term yes -- Med term yes 
+2022-12-06 06:24:19.419372 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 06:25:19.388633 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 06:26:19.285381 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 06:27:19.166465 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 06:28:19.021620 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 06:29:18.980562 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 06:30:18.858507 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 06:31:18.797827 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 06:32:18.683224 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-06 06:33:19.559993 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 06:34:19.435572 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 06:35:19.323628 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 06:36:19.243588 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 06:37:19.135810 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 06:38:18.976217 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 06:39:18.823925 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 06:40:18.713877 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 06:41:19.609819 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 06:42:19.556742 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 06:43:19.454378 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 06:44:19.385414 -- 22.692         -- Short term yes -- Med term yes 
+2022-12-06 06:45:19.288916 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 06:46:19.210853 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 06:47:19.126101 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 06:48:19.065101 -- 22.656         -- Short term yes -- Med term yes 
+2022-12-06 06:49:18.988538 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 06:50:18.865571 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 06:51:18.692738 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 06:52:19.598888 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 06:53:19.444641 -- 22.804         -- Short term yes -- Med term yes 
+2022-12-06 06:54:19.389328 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 06:55:19.283808 -- 22.8         -- Short term yes -- Med term yes 
+2022-12-06 06:56:19.195658 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 06:57:19.151353 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 06:58:18.977799 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 06:59:18.860381 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 07:00:18.751981 -- 22.703         -- Short term yes -- Med term yes 
+2022-12-06 07:01:18.628037 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 07:02:19.595775 -- 22.73         -- Short term yes -- Med term yes 
+2022-12-06 07:03:19.524296 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 07:04:19.452346 -- 22.688         -- Short term yes -- Med term yes 
+2022-12-06 07:05:19.428091 -- 22.815         -- Short term yes -- Med term yes 
+2022-12-06 07:06:19.295854 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 07:07:19.304023 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 07:08:19.232050 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 07:09:19.201251 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 07:10:19.051170 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 07:11:18.965601 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 07:12:18.882476 -- 22.686         -- Short term yes -- Med term yes 
+2022-12-06 07:13:18.762567 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 07:14:19.643780 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 07:15:19.548274 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 07:16:19.518138 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 07:17:19.437225 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 07:18:19.302673 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 07:19:19.223769 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 07:20:19.133457 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 07:21:19.036322 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 07:22:18.944923 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 07:23:18.895890 -- 22.681         -- Short term yes -- Med term yes 
+2022-12-06 07:24:18.799165 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 07:25:18.727916 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 07:26:19.602622 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 07:27:19.482843 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 07:28:19.459940 -- 22.684         -- Short term yes -- Med term yes 
+2022-12-06 07:29:19.331598 -- 22.773         -- Short term yes -- Med term yes 
+2022-12-06 07:30:19.256120 -- 22.783         -- Short term yes -- Med term yes 
+2022-12-06 07:31:19.184718 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 07:32:19.056979 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 07:33:18.939678 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 07:34:18.858902 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 07:35:18.835478 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 07:36:18.737164 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 07:37:18.640606 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 07:38:19.554122 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 07:39:19.588563 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 07:40:19.479610 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 07:41:19.402337 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 07:42:19.365868 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 07:43:19.241438 -- 22.645         -- Short term yes -- Med term yes 
+2022-12-06 07:44:19.219660 -- 22.696         -- Short term yes -- Med term yes 
+2022-12-06 07:45:19.138039 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 07:46:19.048194 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 07:47:18.974499 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 07:48:18.896073 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 07:49:18.836478 -- 22.717         -- Short term yes -- Med term yes 
+2022-12-06 07:50:18.693731 -- 22.768         -- Short term yes -- Med term yes 
+2022-12-06 07:51:19.570894 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 07:52:19.530260 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 07:53:19.535685 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 07:54:19.469151 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 07:55:19.397947 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 07:56:19.324670 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 07:57:19.251217 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 07:58:19.173934 -- 22.76         -- Short term yes -- Med term yes 
+2022-12-06 07:59:19.082381 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 08:00:19.051308 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 08:01:18.962338 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 08:02:18.855812 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-06 08:03:18.758366 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 08:04:18.734527 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 08:05:18.585448 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 08:06:19.523541 -- 22.722         -- Short term yes -- Med term yes 
+2022-12-06 08:07:19.478090 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 08:08:19.402080 -- 22.69         -- Short term yes -- Med term yes 
+2022-12-06 08:09:19.341084 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 08:10:19.251053 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 08:11:19.144186 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 08:12:19.034871 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 08:13:18.900181 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 08:14:18.850879 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 08:15:18.740207 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 08:16:19.591066 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 08:17:19.482710 -- 22.785         -- Short term yes -- Med term yes 
+2022-12-06 08:18:19.433659 -- 22.796         -- Short term yes -- Med term yes 
+2022-12-06 08:19:19.359117 -- 22.794         -- Short term yes -- Med term yes 
+2022-12-06 08:20:19.341185 -- 22.807         -- Short term yes -- Med term yes 
+2022-12-06 08:21:19.224936 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 08:22:19.094124 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 08:23:19.034716 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 08:24:18.944832 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 08:25:18.891611 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 08:26:18.792484 -- 22.787         -- Short term yes -- Med term yes 
+2022-12-06 08:27:18.688942 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 08:28:19.586300 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 08:29:19.563910 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 08:30:19.471533 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 08:31:19.400826 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 08:32:19.162976 -- 22.762         -- Short term yes -- Med term yes 
+2022-12-06 08:33:18.904150 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 08:34:18.714244 -- 22.58         -- Short term yes -- Med term yes 
+2022-12-06 08:35:19.546862 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 08:36:19.085505 -- 22.669         -- Short term yes -- Med term yes 
+2022-12-06 08:37:18.913432 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 08:38:18.854646 -- 22.741         -- Short term yes -- Med term yes 
+2022-12-06 08:39:18.824016 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 08:40:18.841133 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 08:41:18.755545 -- 22.726         -- Short term yes -- Med term yes 
+2022-12-06 08:42:18.644694 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 08:43:19.592838 -- 22.709         -- Short term yes -- Med term yes 
+2022-12-06 08:44:19.489025 -- 22.775         -- Short term yes -- Med term yes 
+2022-12-06 08:45:19.374762 -- 22.743         -- Short term yes -- Med term yes 
+2022-12-06 08:46:19.293752 -- 22.675         -- Short term yes -- Med term yes 
+2022-12-06 08:47:19.198480 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 08:48:19.152540 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 08:49:19.084252 -- 22.807         -- Short term yes -- Med term yes 
+2022-12-06 08:50:19.013407 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 08:51:19.002570 -- 22.766         -- Short term yes -- Med term yes 
+2022-12-06 08:52:18.904724 -- 22.747         -- Short term yes -- Med term yes 
+2022-12-06 08:53:18.849200 -- 22.72         -- Short term yes -- Med term yes 
+2022-12-06 08:54:18.701426 -- 22.764         -- Short term yes -- Med term yes 
+2022-12-06 08:55:19.621657 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 08:56:19.536493 -- 22.715         -- Short term yes -- Med term yes 
+2022-12-06 08:57:19.373123 -- 22.711         -- Short term yes -- Med term yes 
+2022-12-06 08:58:19.234800 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 08:59:19.152279 -- 22.77         -- Short term yes -- Med term yes 
+2022-12-06 09:00:19.093263 -- 22.694         -- Short term yes -- Med term yes 
+2022-12-06 09:01:18.912779 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 09:02:18.824563 -- 22.751         -- Short term yes -- Med term yes 
+2022-12-06 09:03:18.715140 -- 22.728         -- Short term yes -- Med term yes 
+2022-12-06 09:04:18.647628 -- 22.758         -- Short term yes -- Med term yes 
+2022-12-06 09:05:19.522012 -- 22.698         -- Short term yes -- Med term yes 
+2022-12-06 09:06:19.401893 -- 22.8         -- Short term yes -- Med term yes 
+2022-12-06 09:07:19.317275 -- 22.745         -- Short term yes -- Med term yes 
+2022-12-06 09:08:19.281011 -- 22.779         -- Short term yes -- Med term yes 
+2022-12-06 09:09:19.172474 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 09:10:19.073795 -- 22.737         -- Short term yes -- Med term yes 
+2022-12-06 09:11:18.995484 -- 22.701         -- Short term yes -- Med term yes 
+2022-12-06 09:12:18.957886 -- 22.732         -- Short term yes -- Med term yes 
+2022-12-06 09:13:18.810790 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 09:14:18.676808 -- 22.641         -- Short term yes -- Med term yes 
+2022-12-06 09:15:19.655217 -- 22.705         -- Short term yes -- Med term yes 
+2022-12-06 09:16:19.629770 -- 22.777         -- Short term yes -- Med term yes 
+2022-12-06 09:17:19.564414 -- 22.756         -- Short term yes -- Med term yes 
+2022-12-06 09:18:19.493435 -- 22.734         -- Short term yes -- Med term yes 
+2022-12-06 09:19:19.380707 -- 22.707         -- Short term yes -- Med term yes 
+2022-12-06 09:20:19.383081 -- 22.713         -- Short term yes -- Med term yes 
+2022-12-06 09:21:19.239212 -- 22.739         -- Short term yes -- Med term yes 
+2022-12-06 09:22:19.192506 -- 22.857         -- Short term yes -- Med term yes 
+2022-12-06 09:23:19.122321 -- 22.662         -- Short term yes -- Med term yes 
+2022-12-06 09:24:19.102449 -- 22.754         -- Short term yes -- Med term yes 
+2022-12-06 09:25:18.990142 -- 22.961         -- Short term yes -- Med term yes 
+2022-12-06 09:26:18.882491 -- 22.603         -- Short term yes -- Med term yes 
+2022-12-06 09:27:18.828596 -- 22.724         -- Short term yes -- Med term yes 
+2022-12-06 09:28:18.702012 -- 22.586         -- Short term yes -- Med term yes 
+2022-12-06 09:29:19.550484 -- 22.51         -- Short term yes -- Med term yes 
+2022-12-06 09:30:19.426067 -- 22.561         -- Short term yes -- Med term yes 
+2022-12-06 09:31:19.385567 -- 22.573         -- Short term yes -- Med term yes 
+2022-12-06 09:32:19.340956 -- 22.622         -- Short term yes -- Med term yes 
+2022-12-06 09:33:19.290387 -- 22.571         -- Short term yes -- Med term yes 
+2022-12-06 09:34:19.134104 -- 22.597         -- Short term yes -- Med term yes 
+2022-12-06 09:35:18.994029 -- 22.556         -- Short term yes -- Med term yes 
+2022-12-06 09:36:18.870794 -- 22.597         -- Short term yes -- Med term yes 
+2022-12-06 09:37:18.760902 -- 22.599         -- Short term yes -- Med term yes 
+2022-12-06 09:38:18.768429 -- 22.605         -- Short term yes -- Med term yes 
+2022-12-06 09:39:19.566858 -- 22.588         -- Short term yes -- Med term yes 
+2022-12-06 09:40:21.388561 -- 22.698         -- Short term yes -- Med term no 
+2022-12-06 09:50:19.506491 -- 22.779
+2022-12-06 10:00:19.506909 -- 22.792
+2022-12-06 10:05:22.636782 -- 23.006
+2022-12-06 10:05:27.701609 -- 22.942
+2022-12-06 10:10:19.606906 -- 22.849
+2022-12-06 10:25:19.453380 -- 22.631
+2022-12-06 10:30:19.520416 -- 22.671
+2022-12-06 10:35:19.378568 -- 22.614
+2022-12-06 10:40:19.350721 -- 22.59
+2022-12-06 10:45:19.409484 -- 22.616
+2022-12-06 10:50:19.324045 -- 22.514
+2022-12-06 10:55:19.272907 -- 22.565
+2022-12-06 11:00:19.204938 -- 22.425
+2022-12-06 11:05:19.276619 -- 22.376
+2022-12-06 11:10:19.363455 -- 22.433
+2022-12-06 11:15:19.424219 -- 22.442
+2022-12-06 11:20:19.526574 -- 24.28
+2022-12-06 11:25:18.683384 -- 22.802
+2022-12-06 11:30:23.482842 -- 23.241
+2022-12-06 11:35:19.300507 -- 22.194
+2022-12-06 11:40:19.062092 -- 22.266
+2022-12-06 11:45:19.194365 -- 22.238
+2022-12-06 11:50:19.334251 -- 22.194
+2022-12-06 11:55:19.176441 -- 22.194
+2022-12-06 12:00:19.360740 -- 22.17
+2022-12-06 12:05:19.363285 -- 22.158
+2022-12-06 12:10:18.662719 -- 22.268
+2022-12-06 12:15:19.583243 -- 22.202
+2022-12-06 12:20:19.125127 -- 22.228
+2022-12-06 12:25:18.746879 -- 22.276
+2022-12-06 12:30:19.559322 -- 22.291
+2022-12-06 12:35:19.321152 -- 22.234
+2022-12-06 12:40:18.699094 -- 22.249
+2022-12-06 12:45:19.485296 -- 22.262
+2022-12-06 12:50:19.535751 -- 22.315
+2022-12-06 12:55:19.500950 -- 22.259
+2022-12-06 13:00:19.567046 -- 22.281
+2022-12-06 13:05:19.649685 -- 22.342
+2022-12-06 13:10:19.102100 -- 22.298
+2022-12-06 13:13:59.423401 -- 22.249
+2022-12-06 13:15:18.822329 -- 22.302
+2022-12-06 13:20:19.688500 -- 22.342
+2022-12-06 13:25:19.297740 -- 22.3
+2022-12-06 13:30:19.129204 -- 22.342
+2022-12-06 13:35:18.798239 -- 22.393
+2022-12-06 13:40:18.791367 -- 22.312
+2022-12-06 13:45:19.641081 -- 22.336
+2022-12-06 13:50:19.683577 -- 22.304
+2022-12-06 13:55:19.373133 -- 22.304
+2022-12-06 14:05:19.401951 -- 22.353
+2022-12-06 14:10:19.460058 -- 22.372
+2022-12-06 14:15:18.865272 -- 22.262
+2022-12-06 15:00:19.687916 -- 21.036
+2022-12-06 15:05:18.774981 -- 23.911
+2022-12-06 15:10:11.201297 -- 20.183
+2022-12-06 15:15:11.053457 -- 21.153
+2022-12-06 15:20:12.187929 -- 20.786
+2022-12-06 15:25:11.813096 -- 19.624
+2022-12-06 15:30:12.299751 -- 19.507
+2022-12-06 15:35:11.355287 -- 19.113
+2022-12-06 15:40:11.175624 -- 19.219
+2022-12-06 15:45:11.756676 -- 19.407
+2022-12-06 15:50:12.529019 -- 19.482
+2022-12-06 15:55:11.548811 -- 19.613
+2022-12-06 16:00:12.731267 -- 19.77
+2022-12-06 16:05:11.659100 -- 19.812
+2022-12-06 16:10:11.207696 -- 19.878
+2022-12-06 16:15:11.904889 -- 19.978
+2022-12-06 16:20:11.337903 -- 20.077
+2022-12-06 16:25:11.924714 -- 20.141
+2022-12-06 16:28:21.751620 -- 20.175
+2022-12-06 16:31:37.928954 -- 20.241
+2022-12-06 16:33:33.616339 -- 20.268
+2022-12-06 16:35:12.097979 -- 20.23
+2022-12-06 16:40:11.554874 -- 20.306
+2022-12-06 16:45:12.227671 -- 20.302
+2022-12-06 16:50:11.824146 -- 20.395
+2022-12-06 16:55:12.365723 -- 20.459
+2022-12-06 16:56:51.971287 -- 20.512
+2022-12-06 17:00:11.868824 -- 20.569
+2022-12-06 17:05:12.443472 -- 20.673
+2022-12-06 17:10:11.476865 -- 20.629
+2022-12-06 17:15:12.596162 -- 20.748
+2022-12-06 17:20:11.571411 -- 20.756
+2022-12-06 17:25:11.657289 -- 20.811
+2022-12-06 17:30:11.729123 -- 20.917
+2022-12-06 17:35:11.260177 -- 20.96
+2022-12-06 17:40:11.938419 -- 20.943
+2022-12-06 17:45:11.041035 -- 21.044
+2022-12-06 17:50:11.974640 -- 21.04
+2022-12-06 17:55:11.714221 -- 21.15
+2022-12-06 18:00:12.117900 -- 21.167
+2022-12-06 18:05:11.161001 -- 21.172
+2022-12-06 18:10:11.196523 -- 21.222
+2022-12-06 18:15:11.561939 -- 21.267
+2022-12-06 18:20:12.198132 -- 21.28
+2022-12-06 18:25:12.056410 -- 21.386
+2022-12-06 18:30:11.341149 -- 21.443
+2022-12-06 18:35:11.636692 -- 21.458
+2022-12-06 18:40:12.606139 -- 21.449
+2022-12-06 18:45:11.568477 -- 21.549
+2022-12-06 18:50:12.671183 -- 21.528
+2022-12-06 18:55:12.064971 -- 21.566
+2022-12-06 19:00:11.575086 -- 21.596
+2022-12-06 19:05:11.837371 -- 21.668
+2022-12-06 19:10:11.298583 -- 21.723
+2022-12-06 19:15:12.073951 -- 21.725
+2022-12-06 19:20:11.775506 -- 21.814
+2022-12-06 19:25:11.429682 -- 21.823
+2022-12-06 19:30:12.145739 -- 21.852
+2022-12-06 19:35:12.282599 -- 21.931
+2022-12-06 19:40:11.613289 -- 21.924
+2022-12-06 19:45:10.650106 -- 21.973
+2022-12-06 19:50:11.413419 -- 22.009
+2022-12-06 19:55:11.119362 -- 21.992
+2022-12-06 20:00:11.744085 -- 22.001
+2022-12-06 20:05:11.398808 -- 21.996
+2022-12-06 20:10:12.475611 -- 22.003
+2022-12-06 20:15:11.827101 -- 22.079
+2022-12-06 20:25:11.267815 -- 22.202
+2022-12-06 20:30:11.892098 -- 22.228
+2022-12-06 20:35:10.836648 -- 22.107
+2022-12-06 20:40:11.875678 -- 22.215
+2022-12-06 20:45:11.764971 -- 22.274
+2022-12-06 20:50:12.156878 -- 22.31
+2022-12-06 20:55:11.465435 -- 22.421
+2022-12-06 21:00:12.096979 -- 22.372
+2022-12-06 21:05:11.307256 -- 22.393
+2022-12-06 21:10:11.505364 -- 22.382
+2022-12-06 21:15:11.874167 -- 22.465
+2022-12-06 21:20:12.877133 -- 22.467
+2022-12-06 21:25:11.602934 -- 22.529
+2022-12-06 21:30:11.468954 -- 22.554
+2022-12-06 21:35:11.842742 -- 22.535
+2022-12-06 21:40:11.120941 -- 22.516
+2022-12-06 21:45:11.782577 -- 22.611
+2022-12-06 21:50:11.239305 -- 22.535
+2022-12-06 21:55:11.997178 -- 22.607
+2022-12-06 22:00:11.498342 -- 22.62
+2022-12-06 22:05:11.300047 -- 22.669
+2022-12-06 22:10:10.960298 -- 22.686
+2022-12-06 22:15:12.130208 -- 22.686
+2022-12-06 22:20:11.714491 -- 22.768
+2022-12-06 22:30:11.654954 -- 22.781
+2022-12-06 22:35:11.061392 -- 22.741
+2022-12-06 22:40:11.617143 -- 22.813
+2022-12-06 22:45:12.070988 -- 22.828
+2022-12-06 22:50:12.397858 -- 22.77
+2022-12-06 22:55:12.692108 -- 22.868
+2022-12-06 23:00:11.724331 -- 22.807
+2022-12-06 23:05:11.515251 -- 22.906
+2022-12-06 23:10:11.938483 -- 22.934
+2022-12-06 23:15:11.499012 -- 22.946
+2022-12-06 23:20:11.916023 -- 22.881
+2022-12-06 23:25:11.280252 -- 22.889
+2022-12-06 23:30:11.287740 -- 22.985
+2022-12-06 23:35:11.942003 -- 23.021
+2022-12-06 23:40:12.201155 -- 22.997
+2022-12-06 23:45:11.887820 -- 23.006
+2022-12-06 23:50:11.439314 -- 23.067
+2022-12-06 23:55:11.817561 -- 22.997
+2022-12-07 00:00:11.238957 -- 23.108
+2022-12-07 00:05:11.848388 -- 23.089
+2022-12-07 00:10:11.894522 -- 23.078
+2022-12-07 00:15:10.790215 -- 23.159
+2022-12-07 00:20:11.285249 -- 23.178
+2022-12-07 00:25:11.654242 -- 23.142
+2022-12-07 00:30:11.946435 -- 23.201
+2022-12-07 00:35:11.825604 -- 23.135
+2022-12-07 00:40:11.250194 -- 23.192
+2022-12-07 00:45:11.917294 -- 23.216
+2022-12-07 00:50:12.057632 -- 23.216
+2022-12-07 00:55:12.025802 -- 23.237
+2022-12-07 01:00:11.936956 -- 23.277
+2022-12-07 01:05:12.236222 -- 23.252
+2022-12-07 01:10:11.930838 -- 23.271
+2022-12-07 01:15:12.361269 -- 23.328
+2022-12-07 01:20:11.316309 -- 23.286
+2022-12-07 01:25:12.442359 -- 23.301
+2022-12-07 01:30:11.909185 -- 23.358
+2022-12-07 01:35:11.055977 -- 23.362
+2022-12-07 01:40:11.552124 -- 23.277
+2022-12-07 01:45:12.705449 -- 23.305
+2022-12-07 01:50:11.623364 -- 23.347
+2022-12-07 01:55:11.006201 -- 23.332
+2022-12-07 02:00:11.826383 -- 23.407
+2022-12-07 02:05:11.731020 -- 23.383
+2022-12-07 02:10:11.310726 -- 23.39
+2022-12-07 02:15:11.516857 -- 23.388
+2022-12-07 02:20:11.974559 -- 23.508
+2022-12-07 02:25:11.064388 -- 23.519
+2022-12-07 02:30:12.248416 -- 23.477
+2022-12-07 02:35:11.642089 -- 23.451
+2022-12-07 02:40:11.560607 -- 23.375
+2022-12-07 02:45:11.418281 -- 23.472
+2022-12-07 02:50:10.866583 -- 23.487
+2022-12-07 02:55:11.409922 -- 23.511
+2022-12-07 03:00:12.606495 -- 23.458
+2022-12-07 03:05:10.927643 -- 23.474
+2022-12-07 03:10:11.652821 -- 23.559
+2022-12-07 03:15:11.691799 -- 23.53
+2022-12-07 03:20:11.202445 -- 23.578
+2022-12-07 03:25:11.914332 -- 23.597
+2022-12-07 03:30:11.782744 -- 23.559
+2022-12-07 03:35:12.136179 -- 23.636
+2022-12-07 03:40:11.794053 -- 23.568
+2022-12-07 03:45:12.103813 -- 23.568
+2022-12-07 03:50:11.685560 -- 23.636
+2022-12-07 03:55:11.432013 -- 23.623
+2022-12-07 04:00:11.983901 -- 23.646
+2022-12-07 04:05:11.179843 -- 23.581
+2022-12-07 04:10:11.231274 -- 23.631
+2022-12-07 04:15:11.540581 -- 23.653
+2022-12-07 04:20:11.569238 -- 23.638
+2022-12-07 04:25:12.574401 -- 23.604
+2022-12-07 04:30:11.660839 -- 23.682
+2022-12-07 04:35:11.767111 -- 23.648
+2022-12-07 04:40:11.153889 -- 23.646
+2022-12-07 04:45:12.743438 -- 23.674
+2022-12-07 04:50:11.812752 -- 23.693
+2022-12-07 04:55:11.477641 -- 23.714
+2022-12-07 05:05:11.456010 -- 23.644
+2022-12-07 05:10:12.142893 -- 23.733
+2022-12-07 05:15:11.791083 -- 23.771
+2022-12-07 05:20:12.224699 -- 23.744
+2022-12-07 05:25:10.992356 -- 23.82
+2022-12-07 05:30:10.939941 -- 23.765
+2022-12-07 05:40:11.109089 -- 23.771
+2022-12-07 05:45:11.955205 -- 23.818
+2022-12-07 05:50:11.732440 -- 23.786
+2022-12-07 05:55:11.728197 -- 23.829
+2022-12-07 06:00:12.777397 -- 23.822
+2022-12-07 06:05:11.675858 -- 23.812
+2022-12-07 06:10:11.391033 -- 23.843
+2022-12-07 06:15:11.904891 -- 23.812
+2022-12-07 06:20:11.682838 -- 23.807
+2022-12-07 06:25:12.274726 -- 23.776
+2022-12-07 06:30:12.111110 -- 23.816
+2022-12-07 06:35:10.470736 -- 23.839
+2022-12-07 06:40:11.753272 -- 23.831
+2022-12-07 06:45:12.335141 -- 23.81
+2022-12-07 06:50:11.317174 -- 23.867
+2022-12-07 06:55:11.096498 -- 23.848
+2022-12-07 07:00:11.749786 -- 23.761
+2022-12-07 07:05:12.597973 -- 23.928
+2022-12-07 07:10:11.569839 -- 23.822
+2022-12-07 07:15:11.442690 -- 23.863
+2022-12-07 07:20:11.706210 -- 23.88
+2022-12-07 07:25:11.445217 -- 23.937
+2022-12-07 07:30:11.950655 -- 23.937
+2022-12-07 07:35:11.815618 -- 23.852
+2022-12-07 07:40:12.001995 -- 23.943
+2022-12-07 07:45:11.746020 -- 23.911
+2022-12-07 07:50:12.106354 -- 23.93
+2022-12-07 07:55:11.840728 -- 23.949
+2022-12-07 08:00:12.213866 -- 23.918
+2022-12-07 08:05:11.212166 -- 24.009
+2022-12-07 08:10:12.361947 -- 23.952
+2022-12-07 08:15:11.473729 -- 23.973
+2022-12-07 08:20:11.337401 -- 24.032
+2022-12-07 08:25:11.484262 -- 23.96
+2022-12-07 08:30:11.117598 -- 23.966
+2022-12-07 08:35:11.594379 -- 23.969
+2022-12-07 08:40:11.700459 -- 23.998
+2022-12-07 08:45:11.754366 -- 24.013
+2022-12-07 08:50:11.404889 -- 23.971
+2022-12-07 08:55:11.902084 -- 23.983
+2022-12-07 09:00:11.974032 -- 23.983
+2022-12-07 09:05:11.986437 -- 23.979
+2022-12-07 09:10:11.878366 -- 23.986
+2022-12-07 09:15:12.131338 -- 24.041
+2022-12-07 09:20:12.113096 -- 24.039
+2022-12-07 09:25:12.216047 -- 24.009
+2022-12-07 09:30:11.278580 -- 24.049
+2022-12-07 09:35:12.406822 -- 24.053
+2022-12-07 09:40:11.384731 -- 24.022
+2022-12-07 09:45:11.023796 -- 24.062
+2022-12-07 09:50:11.823596 -- 24.085
+2022-12-07 09:55:11.257009 -- 24.058
+2022-12-07 10:00:11.644739 -- 24.121
+2022-12-07 10:05:11.482818 -- 24.015
+2022-12-07 10:10:11.765741 -- 24.064
+2022-12-07 10:15:11.871826 -- 24.072
+2022-12-07 10:20:11.884794 -- 24.079
+2022-12-07 10:25:11.637241 -- 24.14
+2022-12-07 10:30:12.012606 -- 24.066
+2022-12-07 10:35:11.854441 -- 24.168
+2022-12-07 10:40:11.001883 -- 24.07
+2022-12-07 10:45:11.733659 -- 24.1
+2022-12-07 10:50:10.554199 -- 24.13
+2022-12-07 10:55:11.608409 -- 24.102
+2022-12-07 11:00:11.009966 -- 24.168
+2022-12-07 11:05:11.711962 -- 24.121
+2022-12-07 11:10:11.974948 -- 24.168
+2022-12-07 11:20:11.150661 -- 24.081
+2022-12-07 11:25:11.721351 -- 24.13
+2022-12-07 11:30:11.630311 -- 24.079
+2022-12-07 11:40:11.576319 -- 23.971
+2022-12-07 11:45:11.748381 -- 23.867
+2022-12-07 11:50:11.076759 -- 23.854
+2022-12-07 11:55:12.004502 -- 23.684
+2022-12-07 12:00:11.122616 -- 23.687
+2022-12-07 12:05:12.192434 -- 23.621
+2022-12-07 12:10:12.053770 -- 23.568
+2022-12-07 12:15:11.266713 -- 23.502
+2022-12-07 12:20:11.792593 -- 23.441
+2022-12-07 12:25:12.347390 -- 23.358
+2022-12-07 12:30:11.486306 -- 23.286
+2022-12-07 12:35:11.100850 -- 23.205
+2022-12-07 12:40:11.537525 -- 23.118
+2022-12-07 12:45:11.207801 -- 23.116
+2022-12-07 12:50:11.581505 -- 23.061
+2022-12-07 12:55:11.246405 -- 22.968
+2022-12-07 13:00:11.680530 -- 22.917
+2022-12-07 13:05:11.475320 -- 22.868
+2022-12-07 13:10:11.849250 -- 22.787
+2022-12-07 13:15:11.725270 -- 22.775
+2022-12-07 13:20:12.081457 -- 22.713
+2022-12-07 13:25:12.072863 -- 22.72
+2022-12-07 13:30:12.192606 -- 22.684
+2022-12-07 13:35:11.217790 -- 22.618
+2022-12-07 13:40:12.296691 -- 22.565
+2022-12-07 13:45:11.609292 -- 22.508
+2022-12-07 13:50:11.083537 -- 22.425
+2022-12-07 13:55:12.039337 -- 22.467
+2022-12-07 14:00:11.474735 -- 22.365
+2022-12-07 14:05:11.815173 -- 22.325
+2022-12-07 14:10:11.348217 -- 22.406
+2022-12-07 14:15:11.755194 -- 22.327
+2022-12-07 14:20:11.698302 -- 22.245
+2022-12-07 14:25:11.891143 -- 22.202
+2022-12-07 14:30:11.598398 -- 22.16
+2022-12-07 14:35:11.999352 -- 22.194
+2022-12-07 14:40:11.281676 -- 22.09
+2022-12-07 14:45:12.019030 -- 22.122
+2022-12-07 14:50:11.263439 -- 22.079
+2022-12-07 14:55:11.147158 -- 22.05
+2022-12-07 15:00:11.869396 -- 22.054
+2022-12-07 15:05:11.150825 -- 21.975
+2022-12-07 15:10:12.024148 -- 21.91
+2022-12-07 15:15:11.298762 -- 21.903
+2022-12-07 15:20:11.354738 -- 21.905
+2022-12-07 15:25:11.147461 -- 21.846
+2022-12-07 15:28:00.806697 -- 21.816
+2022-12-07 15:30:11.481301 -- 21.831
+2022-12-07 15:34:11.362596 -- 21.823
+2022-12-07 15:35:11.613405 -- 21.835
+2022-12-07 15:36:12.022801 -- 21.827
+2022-12-07 15:37:12.330973 -- 21.806
+2022-12-07 15:38:11.526928 -- 21.799
+2022-12-07 15:38:23.662517 -- 21.721
+2022-12-07 15:39:12.278110 -- 21.823
+2022-12-07 15:40:11.633504 -- 21.829
+2022-12-07 15:41:11.906923 -- 21.797
+2022-12-07 15:42:11.190321 -- 21.774
+2022-12-07 15:43:11.209718 -- 21.78
+2022-12-07 15:44:11.022169 -- 21.765
+2022-12-07 15:45:11.398609 -- 21.738
+2022-12-07 15:46:12.115084 -- 21.797
+2022-12-07 15:47:11.595855 -- 21.818
+2022-12-07 15:48:11.861310 -- 21.793
+2022-12-07 15:49:12.362028 -- 21.729
+2022-12-07 15:50:11.814798 -- 21.702
+2022-12-07 15:51:11.975294 -- 21.714
+2022-12-07 15:52:11.282355 -- 21.721
+2022-12-07 15:53:11.998913 -- 21.723
+2022-12-07 15:54:11.361399 -- 21.712
+2022-12-07 15:55:11.602455 -- 21.678
+2022-12-07 15:56:12.235794 -- 21.678
+2022-12-07 15:57:11.685298 -- 21.695
+2022-12-07 15:58:12.049540 -- 21.712
+2022-12-07 15:59:11.351371 -- 21.727
+2022-12-07 16:00:11.888170 -- 21.702
+2022-12-07 16:01:11.265821 -- 21.736
+2022-12-07 16:02:11.624710 -- 21.623
+2022-12-07 16:03:12.118530 -- 21.761
+2022-12-07 16:04:11.510647 -- 21.676
+2022-12-07 16:05:11.661992 -- 21.721
+2022-12-07 16:06:12.481463 -- 21.702
+2022-12-07 16:07:11.844294 -- 21.685
+2022-12-07 16:08:11.722936 -- 21.736
+2022-12-07 16:09:11.153755 -- 21.706
+2022-12-07 16:10:12.005735 -- 21.725
+2022-12-07 16:11:11.512143 -- 21.717
+2022-12-07 16:12:11.866923 -- 21.666
+2022-12-07 16:13:11.244251 -- 21.623
+2022-12-07 16:14:11.707142 -- 21.685
+2022-12-07 16:15:12.094305 -- 21.634
+2022-12-07 16:16:11.546071 -- 21.784
+2022-12-07 16:17:11.931064 -- 21.74
+2022-12-07 16:18:11.412456 -- 21.7
+2022-12-07 16:19:11.718091 -- 21.683
+2022-12-07 16:20:12.170039 -- 21.695
+2022-12-07 16:21:11.652675 -- 21.706
+2022-12-07 16:22:11.984861 -- 21.7
+2022-12-07 16:23:11.235088 -- 21.765
+2022-12-07 16:24:11.754111 -- 21.812
+2022-12-07 16:27:11.994948 -- 21.708
+2022-12-07 16:28:11.421734 -- 21.708
+2022-12-07 16:30:12.259825 -- 21.681
+2022-12-07 17:39:11.662404 -- 21.507
+2022-12-07 17:42:11.952641 -- 21.547
+2022-12-07 17:44:11.657126 -- 21.551
+2022-12-07 17:45:12.289237 -- 21.534
+2022-12-07 17:55:11.715710 -- 21.479
+2022-12-07 17:57:11.179068 -- 21.466
+2022-12-07 18:01:11.867378 -- 21.562
+2022-12-07 18:02:11.156562 -- 21.532
+2022-12-07 18:03:11.551463 -- 21.528
+2022-12-07 18:04:11.506174 -- 21.509
+2022-12-07 18:05:12.519197 -- 21.615
+2022-12-07 18:06:11.938361 -- 21.49
+2022-12-07 18:07:11.316969 -- 21.555
+2022-12-07 18:08:11.768956 -- 21.528
+2022-12-07 18:09:11.020681 -- 21.507
+2022-12-07 18:10:11.583805 -- 21.517
+2022-12-07 18:11:11.930107 -- 21.464
+2022-12-07 18:14:11.260002 -- 21.428
+2022-12-07 18:52:11.665349 -- 21.549
+2022-12-07 19:01:11.585211 -- 21.324
+2022-12-07 20:01:11.072798 -- 21.392
+2022-12-07 20:02:11.733607 -- 21.407
+2022-12-07 20:03:12.068503 -- 21.326
+2022-12-07 20:04:11.368829 -- 21.452
+2022-12-07 20:05:11.998835 -- 21.445
+2022-12-07 20:06:11.354609 -- 21.394
+2022-12-07 20:07:11.679307 -- 21.407
+2022-12-07 20:08:12.203331 -- 21.362
+2022-12-07 20:09:11.634561 -- 21.403
+2022-12-07 20:10:11.963355 -- 21.475
+2022-12-07 20:11:11.341360 -- 21.373
+2022-12-07 20:33:11.420235 -- 21.301
+2022-12-07 22:01:11.777825 -- 21.384
+2022-12-07 22:02:11.161025 -- 21.39
+2022-12-07 22:03:11.461914 -- 21.405
+2022-12-07 22:04:11.989449 -- 21.386
+2022-12-07 22:05:11.397230 -- 21.333
+2022-12-07 22:06:11.764138 -- 21.335
+2022-12-07 22:07:11.120132 -- 21.373
+2022-12-07 22:08:11.634688 -- 21.428
+2022-12-07 22:09:11.864256 -- 21.356
+2022-12-07 22:10:11.151497 -- 21.399
+2022-12-07 22:11:11.870131 -- 21.348
+2022-12-07 23:18:11.283394 -- 21.235
+2022-12-07 23:24:11.776939 -- 21.437
+2022-12-08 00:01:11.235792 -- 21.39
+2022-12-08 00:02:11.423716 -- 21.424
+2022-12-08 00:03:12.078844 -- 21.335
+2022-12-08 00:04:11.451826 -- 21.322
+2022-12-08 00:05:11.802001 -- 21.345
+2022-12-08 00:06:11.202351 -- 21.379
+2022-12-08 00:07:11.744959 -- 21.354
+2022-12-08 00:08:11.078995 -- 21.339
+2022-12-08 00:09:11.552073 -- 21.303
+2022-12-08 00:10:12.046751 -- 21.358
+2022-12-08 00:11:11.319197 -- 21.371
+2022-12-08 00:18:11.222629 -- 21.25
+2022-12-08 00:30:12.243003 -- 21.229
+2022-12-08 01:41:11.189729 -- 21.422
+2022-12-08 01:48:11.224307 -- 21.216
+2022-12-08 02:01:11.549309 -- 21.365
+2022-12-08 02:02:12.120192 -- 21.276
+2022-12-08 02:03:11.417627 -- 21.377
+2022-12-08 02:04:11.729306 -- 21.365
+2022-12-08 02:05:10.999594 -- 21.314
+2022-12-08 02:06:11.756964 -- 21.333
+2022-12-08 02:07:11.124451 -- 21.375
+2022-12-08 02:08:11.328137 -- 21.358
+2022-12-08 02:09:11.995297 -- 21.401
+2022-12-08 02:10:11.346215 -- 21.263
+2022-12-08 02:11:11.731531 -- 21.29
+2022-12-08 02:55:11.857524 -- 21.237
+2022-12-08 03:47:11.236909 -- 21.216
+2022-12-08 04:01:12.136795 -- 21.32
+2022-12-08 04:02:11.582287 -- 21.352
+2022-12-08 04:03:12.126336 -- 21.358
+2022-12-08 04:04:11.483214 -- 21.227
+2022-12-08 04:05:11.859930 -- 21.305
+2022-12-08 04:06:11.236070 -- 21.292
+2022-12-08 04:07:11.502937 -- 21.341
+2022-12-08 04:08:12.071546 -- 21.341
+2022-12-08 04:09:11.429981 -- 21.322
+2022-12-08 04:10:11.737470 -- 21.295
+2022-12-08 04:11:11.117422 -- 21.28
+2022-12-08 06:01:11.580752 -- 21.29
+2022-12-08 06:02:11.915094 -- 21.284
+2022-12-08 06:03:11.243577 -- 21.318
+2022-12-08 06:04:11.826324 -- 21.331
+2022-12-08 06:05:11.216841 -- 21.29
+2022-12-08 06:06:11.526118 -- 21.307
+2022-12-08 06:07:12.080262 -- 21.297
+2022-12-08 06:08:11.547208 -- 21.415
+2022-12-08 06:09:11.943749 -- 21.297
+2022-12-08 06:10:11.204489 -- 21.314
+2022-12-08 06:11:11.689360 -- 21.326
+2022-12-08 06:37:11.236301 -- 21.42
+2022-12-08 08:01:11.967907 -- 21.324
+2022-12-08 08:02:11.346829 -- 21.288
+2022-12-08 08:03:11.871085 -- 21.337
+2022-12-08 08:04:11.247241 -- 21.259
+2022-12-08 08:05:11.605017 -- 21.233
+2022-12-08 08:06:12.165743 -- 21.36
+2022-12-08 08:07:11.481331 -- 21.322
+2022-12-08 08:08:11.866750 -- 21.365
+2022-12-08 08:09:11.251720 -- 21.413
+2022-12-08 08:10:11.742125 -- 21.348
+2022-12-08 08:11:11.132903 -- 21.341
+2022-12-08 09:12:11.904889 -- 21.254
+2022-12-08 09:33:11.211436 -- 21.176
+2022-12-08 09:39:11.255098 -- 21.074
+2022-12-08 09:41:12.166842 -- 21.15
+2022-12-08 09:43:11.778302 -- 21.153
+2022-12-08 09:45:11.802507 -- 21.1
+2022-12-08 09:46:12.050627 -- 21.119
+2022-12-08 09:47:11.301761 -- 21.08
+2022-12-08 09:48:12.071193 -- 21.095
+2022-12-08 09:49:11.421745 -- 21.131
+2022-12-08 09:51:12.322252 -- 21.131
+2022-12-08 09:52:11.685705 -- 21.129
+2022-12-08 09:54:12.553489 -- 21.078
+2022-12-08 09:55:11.893887 -- 21.089
+2022-12-08 09:56:11.292525 -- 21.085
+2022-12-08 09:57:11.289044 -- 21.078
+2022-12-08 09:58:12.263449 -- 21.008
+2022-12-08 10:01:11.190965 -- 21.042
+2022-12-08 10:02:11.804428 -- 21.085
+2022-12-08 10:03:11.205229 -- 21.057
+2022-12-08 10:04:11.535448 -- 21.11
+2022-12-08 10:05:12.029365 -- 21.091
+2022-12-08 10:06:11.425916 -- 21.068
+2022-12-08 10:07:11.571995 -- 21.03
+2022-12-08 10:08:12.259042 -- 21.019
+2022-12-08 10:09:11.707580 -- 21.038
+2022-12-08 10:10:12.049168 -- 21.013
+2022-12-08 10:11:11.298788 -- 21.046
+2022-12-08 10:12:11.962883 -- 21.03
+2022-12-08 10:13:11.315035 -- 21.023
+2022-12-08 10:15:12.170503 -- 21.013
+2022-12-08 10:16:11.576530 -- 21.01
+2022-12-08 10:17:11.764912 -- 21.068
+2022-12-08 10:18:12.399042 -- 20.947
+2022-12-08 10:20:12.026458 -- 21.017
+2022-12-08 10:22:12.082866 -- 21.017
+2022-12-08 10:23:11.426078 -- 20.964
+2022-12-08 10:24:11.917575 -- 21.021
+2022-12-08 10:25:10.988879 -- 20.991
+2022-12-08 10:30:11.406050 -- 20.96
+2022-12-08 10:33:11.602019 -- 20.909
+2022-12-08 10:34:11.064230 -- 20.949
+2022-12-08 10:35:12.552829 -- 20.955
+2022-12-08 10:36:11.900940 -- 20.957
+2022-12-08 10:38:11.636445 -- 20.955
+2022-12-08 10:41:11.909942 -- 20.966
+2022-12-08 10:43:11.825134 -- 20.949
+2022-12-08 10:44:11.456758 -- 20.938
+2022-12-08 10:46:12.052632 -- 20.904
+2022-12-08 10:49:11.150303 -- 20.977
+2022-12-08 10:54:11.313567 -- 20.892
+2022-12-08 12:01:11.942327 -- 20.862
+2022-12-08 12:02:11.367730 -- 20.966
+2022-12-08 12:03:11.494983 -- 20.894
+2022-12-08 12:04:12.199836 -- 20.877
+2022-12-08 12:05:11.505433 -- 20.839
+2022-12-08 12:06:11.678920 -- 20.826
+2022-12-08 12:07:12.394598 -- 20.839
+2022-12-08 12:08:11.857675 -- 20.796
+2022-12-08 12:09:11.168396 -- 20.896
+2022-12-08 12:10:11.393936 -- 20.875
+2022-12-08 12:11:12.036173 -- 20.934
+2022-12-08 13:44:11.356184 -- 20.743
+2022-12-08 14:01:11.579405 -- 20.851
+2022-12-08 14:02:12.767400 -- 20.773
+2022-12-08 14:03:11.162048 -- 20.807
+2022-12-08 14:04:11.687082 -- 20.856
+2022-12-08 14:05:11.990258 -- 20.786
+2022-12-08 14:06:11.244831 -- 20.938
+2022-12-08 14:07:11.762098 -- 20.697
+2022-12-08 14:08:12.104610 -- 20.887
+2022-12-08 14:09:11.368610 -- 20.788
+2022-12-08 14:10:11.988095 -- 20.777
+2022-12-08 14:11:11.466241 -- 20.911
+2022-12-08 14:36:11.557405 -- 20.718
+2022-12-08 14:51:11.965645 -- 20.735
+2022-12-08 15:00:11.301140 -- 20.919
+2022-12-08 15:02:11.414682 -- 20.93
+2022-12-08 15:06:11.927811 -- 20.724
+2022-12-08 15:56:11.707273 -- 20.919
+2022-12-08 16:01:11.590219 -- 20.877
+2022-12-08 16:02:12.193657 -- 20.824
+2022-12-08 16:03:11.575635 -- 20.824
+2022-12-08 16:04:11.974329 -- 20.86
+2022-12-08 16:05:11.307044 -- 20.748
+2022-12-08 16:06:11.836935 -- 20.919
+2022-12-08 16:07:12.182240 -- 20.824
+2022-12-08 16:08:11.452436 -- 20.858
+2022-12-08 16:09:12.047790 -- 20.788
+2022-12-08 16:10:11.466230 -- 20.809
+2022-12-08 16:11:11.534401 -- 20.801
+2022-12-08 16:27:11.451306 -- 20.928
+2022-12-08 18:01:12.345199 -- 20.864
+2022-12-08 18:02:11.659067 -- 20.796
+2022-12-08 18:03:11.924894 -- 20.881
+2022-12-08 18:04:11.092875 -- 20.83
+2022-12-08 18:05:11.830386 -- 20.771
+2022-12-08 18:06:11.231438 -- 20.771
+2022-12-08 18:07:11.547205 -- 20.839
+2022-12-08 18:08:12.155911 -- 20.798
+2022-12-08 18:09:11.506276 -- 20.824
+2022-12-08 18:10:11.879367 -- 20.849
+2022-12-08 18:11:11.176825 -- 20.828
+2022-12-08 19:35:11.987920 -- 20.904
+2022-12-08 20:01:11.749171 -- 20.811
+2022-12-08 20:02:11.146653 -- 20.798
+2022-12-08 20:03:11.437117 -- 20.87
+2022-12-08 20:04:12.014867 -- 20.777
+2022-12-08 20:05:11.381986 -- 20.843
+2022-12-08 20:06:11.846610 -- 20.849
+2022-12-08 20:07:11.248097 -- 20.794
+2022-12-08 20:08:11.639698 -- 20.75
+2022-12-08 20:09:11.889749 -- 20.837
+2022-12-08 20:10:11.144620 -- 20.792
+2022-12-08 20:11:11.881671 -- 20.902
+2022-12-08 20:37:11.387273 -- 20.718
+2022-12-08 22:01:11.239356 -- 20.936
+2022-12-08 22:02:11.545780 -- 20.822
+2022-12-08 22:03:12.078319 -- 20.811
+2022-12-08 22:04:11.442546 -- 20.786
+2022-12-08 22:05:11.660713 -- 20.89
+2022-12-08 22:06:12.334718 -- 20.87
+2022-12-08 22:07:11.697932 -- 20.786
+2022-12-08 22:08:11.072067 -- 20.856
+2022-12-08 22:09:11.294862 -- 20.809
+2022-12-08 22:10:11.941183 -- 20.809
+2022-12-08 22:11:11.340377 -- 20.817
+2022-12-08 22:47:12.230444 -- 20.703
+2022-12-09 00:01:11.479399 -- 20.779
+2022-12-09 00:02:12.078896 -- 20.775
+2022-12-09 00:03:11.451399 -- 20.892
+2022-12-09 00:04:11.823743 -- 20.837
+2022-12-09 00:05:11.078517 -- 20.839
+2022-12-09 00:06:11.767444 -- 20.826
+2022-12-09 00:07:11.122119 -- 20.801
+2022-12-09 00:08:11.476411 -- 20.875
+2022-12-09 00:09:11.977333 -- 20.807
+2022-12-09 00:10:11.336658 -- 20.807
+2022-12-09 00:11:11.612331 -- 20.826
+2022-12-09 01:43:11.451084 -- 20.883
+2022-12-09 01:47:11.075368 -- 20.89
+2022-12-09 02:01:12.143514 -- 20.832
+2022-12-09 02:02:11.572561 -- 20.779
+2022-12-09 02:03:11.887408 -- 20.792
+2022-12-09 02:04:11.138443 -- 20.777
+2022-12-09 02:05:11.773766 -- 20.807
+2022-12-09 02:06:11.133547 -- 20.815
+2022-12-09 02:07:11.386542 -- 20.786
+2022-12-09 02:08:12.019172 -- 20.824
+2022-12-09 02:09:11.495005 -- 20.83
+2022-12-09 02:10:11.729607 -- 20.716
+2022-12-09 02:11:11.031151 -- 20.883
+2022-12-09 03:16:12.082270 -- 20.724
+2022-12-09 04:01:11.590382 -- 20.875
+2022-12-09 04:02:11.793432 -- 20.796
+2022-12-09 04:03:11.066246 -- 20.837
+2022-12-09 04:04:11.827832 -- 20.813
+2022-12-09 04:05:11.146272 -- 20.824
+2022-12-09 04:06:11.529037 -- 20.892
+2022-12-09 04:07:12.086766 -- 20.775
+2022-12-09 04:08:11.451120 -- 20.834
+2022-12-09 04:09:11.776826 -- 20.815
+2022-12-09 04:10:10.947184 -- 20.854
+2022-12-09 04:11:11.686075 -- 20.779
+2022-12-09 04:27:11.065734 -- 20.733
+2022-12-09 04:40:11.442563 -- 20.707
+2022-12-09 05:11:11.418541 -- 20.731
+2022-12-09 05:31:11.576145 -- 20.913
+2022-12-09 06:01:12.077270 -- 20.841
+2022-12-09 06:02:11.320576 -- 20.822
+2022-12-09 06:03:11.916691 -- 20.805
+2022-12-09 06:04:11.230409 -- 20.72
+2022-12-09 06:05:11.504734 -- 20.832
+2022-12-09 06:06:12.101001 -- 20.868
+2022-12-09 06:07:11.537130 -- 20.866
+2022-12-09 06:08:11.724640 -- 20.841
+2022-12-09 06:09:11.104673 -- 20.803
+2022-12-09 06:10:11.761370 -- 20.798
+2022-12-09 06:11:11.129687 -- 20.843
+2022-12-09 06:56:11.470592 -- 20.919
+2022-12-09 06:57:12.132670 -- 20.921
+2022-12-09 06:59:11.892695 -- 20.934
+2022-12-09 08:01:11.373696 -- 20.796
+2022-12-09 08:02:11.908303 -- 20.741
+2022-12-09 08:03:11.256596 -- 20.794
+2022-12-09 08:04:11.657727 -- 20.834
+2022-12-09 08:05:12.204428 -- 20.849
+2022-12-09 08:06:11.656783 -- 20.801
+2022-12-09 08:07:11.992482 -- 20.832
+2022-12-09 08:08:11.256390 -- 20.873
+2022-12-09 08:09:11.806625 -- 20.817
+2022-12-09 08:10:11.156153 -- 20.784
+2022-12-09 08:11:11.398329 -- 20.837
+2022-12-09 08:57:11.487155 -- 20.977
+2022-12-09 09:07:11.517173 -- 21.006
+2022-12-09 09:10:11.795789 -- 21.023
+2022-12-09 09:11:13.311291 -- 20.989
+2022-12-09 09:12:11.079533 -- 20.974
+2022-12-09 09:13:12.023416 -- 20.977
+2022-12-09 09:14:11.399005 -- 21.046
+2022-12-09 09:15:11.605097 -- 21.021
+2022-12-09 09:17:11.692783 -- 21.023
+2022-12-09 09:18:11.818743 -- 21.021
+2022-12-09 09:19:10.973759 -- 20.979
+2022-12-09 09:20:11.955782 -- 21.038
+2022-12-09 09:21:11.318297 -- 21.044
+2022-12-09 09:22:11.449914 -- 21.017
+2022-12-09 09:23:12.147076 -- 21.002
+2022-12-09 09:24:11.591591 -- 21.042
+2022-12-09 09:25:11.658368 -- 21.025
+2022-12-09 09:26:12.429708 -- 21.015
+2022-12-09 09:27:11.906845 -- 21.083
+2022-12-09 09:28:11.153834 -- 21.112
+2022-12-09 09:29:11.324658 -- 21.07
+2022-12-09 09:30:12.092510 -- 21.008
+2022-12-09 09:31:11.405637 -- 21.063
+2022-12-09 09:32:11.578869 -- 21.114
+2022-12-09 09:33:12.300221 -- 21.127
+2022-12-09 09:34:11.713357 -- 21.119
+2022-12-09 09:35:11.793074 -- 21.182
+2022-12-09 09:36:10.817318 -- 21.125
+2022-12-09 09:37:10.603859 -- 21.104
+2022-12-09 09:38:11.874187 -- 21.157
+2022-12-09 09:39:11.153225 -- 21.097
+2022-12-09 09:40:11.170820 -- 21.068
+2022-12-09 09:41:11.589271 -- 21.155
+2022-12-09 09:42:11.886268 -- 21.165
+2022-12-09 09:43:12.424611 -- 21.184
+2022-12-09 09:44:11.785394 -- 21.195
+2022-12-09 09:45:11.203314 -- 21.136
+2022-12-09 09:46:11.417536 -- 21.157
+2022-12-09 09:47:12.081120 -- 21.191
+2022-12-09 09:48:11.432414 -- 21.174
+2022-12-09 09:49:11.575832 -- 21.136
+2022-12-09 09:50:12.288452 -- 21.25
+2022-12-09 09:51:11.712974 -- 21.222
+2022-12-09 09:52:11.807317 -- 21.178
+2022-12-09 09:53:12.558347 -- 21.199
+2022-12-09 09:54:11.932013 -- 21.229
+2022-12-09 09:55:11.923169 -- 21.172
+2022-12-09 09:56:11.120313 -- 21.239
+2022-12-09 09:57:11.053333 -- 21.218
+2022-12-09 09:58:11.586091 -- 21.318
+2022-12-09 09:59:11.725248 -- 21.214
+2022-12-09 10:00:12.556878 -- 21.252
+2022-12-09 10:01:12.838375 -- 21.165
+2022-12-09 10:02:11.674052 -- 21.22
+2022-12-09 10:03:12.766162 -- 13.012
+2022-12-09 10:04:12.110686 -- 21.246
+2022-12-09 10:05:11.426510 -- 21.229
+2022-12-09 10:06:11.677437 -- 21.256
+2022-12-09 10:07:12.326315 -- 21.225
+2022-12-09 10:08:11.698763 -- 21.284
+2022-12-09 10:09:11.923075 -- 21.299
+2022-12-09 10:10:11.088580 -- 21.286
+2022-12-09 10:11:11.975521 -- 21.276
+2022-12-09 10:12:11.309103 -- 21.191
+2022-12-09 10:13:11.443870 -- 21.309
+2022-12-09 10:14:12.217437 -- 21.312
+2022-12-09 10:15:11.589931 -- 21.276
+2022-12-09 10:16:11.696443 -- 21.242
+2022-12-09 10:17:12.441275 -- 21.307
+2022-12-09 10:18:11.841457 -- 21.265
+2022-12-09 10:19:11.182068 -- 21.307
+2022-12-09 10:20:11.424183 -- 21.341
+2022-12-09 10:21:12.092493 -- 21.413
+2022-12-09 10:22:11.461343 -- 21.29
+2022-12-09 10:23:11.594367 -- 21.322
+2022-12-09 10:24:12.320470 -- 21.348
+2022-12-09 10:25:11.732225 -- 21.335
+2022-12-09 10:26:11.753615 -- 21.339
+2022-12-09 10:27:11.021211 -- 21.333
+2022-12-09 10:28:11.099016 -- 21.39
+2022-12-09 10:29:11.271965 -- 21.299
+2022-12-09 10:30:11.367315 -- 21.305
+2022-12-09 10:31:11.492957 -- 21.318
+2022-12-09 10:32:12.913188 -- 21.337
+2022-12-09 10:33:11.143695 -- 21.358
+2022-12-09 10:34:11.446343 -- 21.341
+2022-12-09 10:35:11.978572 -- 21.341
+2022-12-09 10:36:11.336026 -- 21.456
+2022-12-09 10:37:11.572619 -- 21.377
+2022-12-09 10:38:12.232589 -- 21.356
+2022-12-09 10:39:11.614478 -- 21.377
+2022-12-09 10:40:11.933065 -- 21.369
+2022-12-09 10:41:12.446195 -- 21.407
+2022-12-09 10:42:11.831733 -- 21.392
+2022-12-09 10:43:11.208380 -- 21.369
+2022-12-09 10:44:11.443558 -- 21.43
+2022-12-09 10:45:12.113782 -- 21.435
+2022-12-09 10:46:11.478927 -- 21.454
+2022-12-09 10:47:11.831438 -- 21.483
+2022-12-09 10:48:11.174653 -- 21.432
+2022-12-09 10:49:11.730762 -- 21.513
+2022-12-09 10:50:11.105194 -- 21.435
+2022-12-09 10:51:11.315462 -- 21.409
+2022-12-09 10:52:11.956547 -- 21.437
+2022-12-09 10:53:11.291154 -- 21.502
+2022-12-09 10:54:11.546135 -- 21.477
+2022-12-09 10:55:12.262918 -- 21.441
+2022-12-09 10:56:11.568070 -- 21.432
+2022-12-09 10:57:11.840620 -- 21.517
+2022-12-09 10:58:11.216339 -- 21.496
+2022-12-09 10:59:11.816522 -- 21.422
+2022-12-09 11:00:11.521779 -- 21.541
+2022-12-09 11:01:11.678743 -- 21.481
+2022-12-09 11:02:12.066006 -- 21.475
+2022-12-09 11:03:11.394832 -- 21.541
+2022-12-09 11:04:11.611466 -- 21.56
+2022-12-09 11:05:12.375080 -- 21.511
+2022-12-09 11:06:11.734620 -- 21.536
+2022-12-09 11:07:11.110359 -- 21.5
+2022-12-09 11:08:11.486489 -- 21.532
+2022-12-09 11:09:11.973834 -- 21.528
+2022-12-09 11:10:11.346402 -- 21.562
+2022-12-09 11:11:11.562715 -- 21.532
+2022-12-09 11:12:12.226110 -- 21.604
+2022-12-09 11:13:11.531093 -- 21.558
+2022-12-09 11:14:11.847160 -- 21.579
+2022-12-09 11:15:12.501965 -- 21.562
+2022-12-09 11:16:11.859922 -- 21.575
+2022-12-09 11:17:11.225050 -- 21.517
+2022-12-09 11:18:11.500255 -- 21.551
+2022-12-09 11:19:12.111801 -- 21.577
+2022-12-09 11:20:11.471590 -- 21.589
+2022-12-09 11:21:11.722183 -- 21.521
+2022-12-09 11:22:10.989218 -- 21.674
+2022-12-09 11:23:11.716247 -- 21.566
+2022-12-09 11:24:11.975917 -- 21.507
+2022-12-09 11:25:11.346042 -- 21.604
+2022-12-09 11:26:11.989868 -- 21.591
+2022-12-09 11:27:11.334465 -- 21.564
+2022-12-09 11:28:11.599931 -- 21.555
+2022-12-09 11:29:12.212817 -- 21.628
+2022-12-09 11:30:11.615030 -- 21.543
+2022-12-09 11:31:11.839787 -- 21.606
+2022-12-09 11:32:11.138178 -- 21.581
+2022-12-09 11:33:11.871620 -- 21.642
+2022-12-09 11:34:11.265259 -- 21.625
+2022-12-09 11:35:11.464418 -- 21.608
+2022-12-09 11:36:12.124601 -- 21.611
+2022-12-09 11:37:11.494780 -- 21.583
+2022-12-09 11:38:11.723519 -- 21.661
+2022-12-09 11:39:11.007223 -- 21.659
+2022-12-09 11:40:11.716135 -- 21.63
+2022-12-09 11:41:12.010311 -- 21.687
+2022-12-09 11:42:11.224453 -- 21.659
+2022-12-09 11:43:11.982539 -- 21.676
+2022-12-09 11:44:11.344997 -- 21.653
+2022-12-09 11:45:11.722975 -- 21.695
+2022-12-09 11:46:12.226886 -- 21.695
+2022-12-09 11:47:11.618398 -- 21.689
+2022-12-09 11:48:11.989290 -- 21.602
+2022-12-09 11:49:11.266747 -- 21.67
+2022-12-09 11:50:11.859937 -- 21.67
+2022-12-09 11:51:11.220007 -- 21.63
+2022-12-09 11:52:11.521022 -- 21.683
+2022-12-09 11:53:12.100983 -- 21.689
+2022-12-09 11:54:11.523268 -- 21.668
+2022-12-09 11:55:11.281939 -- 21.738
+2022-12-09 11:56:12.378290 -- 21.625
+2022-12-09 11:57:11.758548 -- 21.642
+2022-12-09 11:58:11.102812 -- 21.759
+2022-12-09 11:59:11.358290 -- 21.725
+2022-12-09 12:00:12.000641 -- 21.704
+2022-12-09 12:01:11.359276 -- 21.714
+2022-12-09 12:02:11.625289 -- 21.717
+2022-12-09 12:03:12.248545 -- 21.706
+2022-12-09 12:04:11.630561 -- 21.748
+2022-12-09 12:05:11.899080 -- 21.772
+2022-12-09 12:06:11.269440 -- 21.678
+2022-12-09 12:07:11.900308 -- 21.721
+2022-12-09 12:08:11.269623 -- 21.784
+2022-12-09 12:09:11.592801 -- 21.678
+2022-12-09 12:10:12.149326 -- 21.717
+2022-12-09 12:11:11.521457 -- 21.74
+2022-12-09 12:12:11.861346 -- 21.759
+2022-12-09 12:13:11.120507 -- 21.676
+2022-12-09 12:14:11.740582 -- 21.789
+2022-12-09 12:15:11.647540 -- 21.761
+2022-12-09 12:16:12.631443 -- 21.772
+2022-12-09 12:17:12.080325 -- 21.748
+2022-12-09 12:18:11.352887 -- 21.825
+2022-12-09 12:19:11.620431 -- 21.721
+2022-12-09 12:20:12.287320 -- 21.727
+2022-12-09 12:21:11.634333 -- 21.753
+2022-12-09 12:22:11.871463 -- 21.774
+2022-12-09 12:23:11.148311 -- 21.827
+2022-12-09 12:24:11.882487 -- 21.767
+2022-12-09 12:25:11.275962 -- 21.795
+2022-12-09 12:26:11.490788 -- 21.78
+2022-12-09 12:27:12.110399 -- 21.784
+2022-12-09 12:28:11.821031 -- 21.78
+2022-12-09 12:29:11.892778 -- 21.795
+2022-12-09 12:30:11.096397 -- 21.765
+2022-12-09 12:31:11.761474 -- 21.778
+2022-12-09 12:32:11.121227 -- 21.846
+2022-12-09 12:33:11.425493 -- 21.797
+2022-12-09 12:34:11.993534 -- 21.793
+2022-12-09 12:35:11.426077 -- 21.844
+2022-12-09 12:36:11.612725 -- 21.825
+2022-12-09 12:37:12.275237 -- 21.782
+2022-12-09 12:38:11.633903 -- 21.842
+2022-12-09 12:39:11.851702 -- 21.801
+2022-12-09 12:40:11.609962 -- 21.84
+2022-12-09 12:41:11.881152 -- 21.77
+2022-12-09 12:42:11.376027 -- 21.793
+2022-12-09 12:43:11.566360 -- 21.757
+2022-12-09 12:44:12.141449 -- 21.795
+2022-12-09 12:45:11.513013 -- 21.799
+2022-12-09 12:46:11.834518 -- 21.874
+2022-12-09 12:47:11.148231 -- 21.804
+2022-12-09 12:48:11.758295 -- 21.874
+2022-12-09 12:49:12.002694 -- 21.863
+2022-12-09 12:50:11.610460 -- 21.742
+2022-12-09 12:51:12.041027 -- 21.808
+2022-12-09 12:52:11.379618 -- 21.734
+2022-12-09 12:53:11.565437 -- 21.778
+2022-12-09 12:54:12.270147 -- 21.823
+2022-12-09 12:55:11.626413 -- 21.863
+2022-12-09 12:56:11.900973 -- 21.935
+2022-12-09 12:57:11.222127 -- 21.852
+2022-12-09 12:58:11.882466 -- 21.907
+2022-12-09 12:59:11.932124 -- 21.835
+2022-12-09 13:00:11.169483 -- 21.98
+2022-12-09 13:01:12.125767 -- 21.867
+2022-12-09 13:02:11.813035 -- 21.91
+2022-12-09 13:03:11.120421 -- 21.91
+2022-12-09 13:04:11.370325 -- 21.939
+2022-12-09 13:05:11.761722 -- 21.884
+2022-12-09 13:06:11.131477 -- 21.827
+2022-12-09 13:07:12.634815 -- 21.922
+2022-12-09 13:08:12.042502 -- 21.937
+2022-12-09 13:09:11.404945 -- 21.865
+2022-12-09 13:10:11.717135 -- 21.85
+2022-12-09 13:11:12.240888 -- 21.931
+2022-12-09 13:12:11.619868 -- 21.916
+2022-12-09 13:13:11.904784 -- 21.884
+2022-12-09 13:14:11.172043 -- 21.899
+2022-12-09 13:15:11.902621 -- 21.854
+2022-12-09 13:16:11.269679 -- 21.931
+2022-12-09 13:17:11.877836 -- 21.943
+2022-12-09 13:18:11.204258 -- 21.893
+2022-12-09 13:19:11.494320 -- 21.91
+2022-12-09 13:20:11.875751 -- 21.907
+2022-12-09 13:21:11.151833 -- 21.929
+2022-12-09 13:22:11.987071 -- 21.943
+2022-12-09 13:23:11.236028 -- 21.871
+2022-12-09 13:24:11.503418 -- 21.869
+2022-12-09 13:25:12.042800 -- 21.937
+2022-12-09 13:26:11.437172 -- 21.903
+2022-12-09 13:27:11.753588 -- 21.91
+2022-12-09 13:28:11.025104 -- 21.958
+2022-12-09 13:29:11.654300 -- 21.88
+2022-12-09 13:30:11.907019 -- 21.948
+2022-12-09 13:31:11.166241 -- 21.863
+2022-12-09 13:32:11.937159 -- 21.965
+2022-12-09 13:33:11.247630 -- 21.967
+2022-12-09 13:34:11.519192 -- 22.024
+2022-12-09 13:35:12.190762 -- 21.967
+2022-12-09 13:36:11.520679 -- 21.939
+2022-12-09 13:37:11.748203 -- 21.939
+2022-12-09 13:38:11.054301 -- 22.001
+2022-12-09 13:39:11.770360 -- 21.939
+2022-12-09 13:40:11.657852 -- 21.943
+2022-12-09 13:41:12.638768 -- 21.952
+2022-12-09 13:42:12.009174 -- 21.96
+2022-12-09 13:43:11.352808 -- 21.842
+2022-12-09 13:44:11.544509 -- 21.971
+2022-12-09 13:45:12.283732 -- 22.083
+2022-12-09 13:46:11.679110 -- 21.977
+2022-12-09 13:47:11.899907 -- 21.971
+2022-12-09 13:48:11.132493 -- 21.967
+2022-12-09 13:49:11.945452 -- 21.977
+2022-12-09 13:50:11.305816 -- 22.039
+2022-12-09 13:51:11.283189 -- 21.939
+2022-12-09 13:52:12.160923 -- 21.91
+2022-12-09 13:53:11.710167 -- 21.95
+2022-12-09 13:54:11.983594 -- 21.99
+2022-12-09 13:55:11.261439 -- 21.965
+2022-12-09 13:56:11.768248 -- 22.005
+2022-12-09 13:57:11.160548 -- 22.005
+2022-12-09 13:58:11.541181 -- 22.02
+2022-12-09 13:59:12.059192 -- 21.971
+2022-12-09 14:00:11.427260 -- 22.033
+2022-12-09 14:01:11.660336 -- 21.994
+2022-12-09 14:02:12.293092 -- 22.035
+2022-12-09 14:03:11.975155 -- 21.946
+2022-12-09 14:04:11.227942 -- 21.977
+2022-12-09 14:05:11.084245 -- 22.011
+2022-12-09 14:06:11.946901 -- 21.988
+2022-12-09 14:07:11.332606 -- 22.011
+2022-12-09 14:08:11.653763 -- 21.988
+2022-12-09 14:09:12.190677 -- 22.001
+2022-12-09 14:10:11.707920 -- 21.988
+2022-12-09 14:11:11.891300 -- 22.058
+2022-12-09 14:12:11.169151 -- 21.929
+2022-12-09 14:13:11.816830 -- 21.96
+2022-12-09 14:14:11.168103 -- 22.035
+2022-12-09 14:15:11.408186 -- 22.005
+2022-12-09 14:16:12.055157 -- 21.99
+2022-12-09 14:17:11.425423 -- 21.943
+2022-12-09 14:18:11.630879 -- 21.969
+2022-12-09 14:19:12.310921 -- 21.954
+2022-12-09 14:20:11.654546 -- 21.994
+2022-12-09 14:21:11.568797 -- 22.043
+2022-12-09 14:22:12.530591 -- 22.026
+2022-12-09 14:23:11.905967 -- 22.009
+2022-12-09 14:24:11.318124 -- 21.975
+2022-12-09 14:25:11.212195 -- 21.948
+2022-12-09 14:26:12.189632 -- 22.003
+2022-12-09 14:27:11.613892 -- 22.035
+2022-12-09 14:28:11.895028 -- 21.98
+2022-12-09 14:29:11.290132 -- 22.054
+2022-12-09 14:30:11.765333 -- 22.039
+2022-12-09 14:31:11.190411 -- 22.088
+2022-12-09 14:32:11.556056 -- 22.054
+2022-12-09 14:33:12.084798 -- 22.011
+2022-12-09 14:34:11.429020 -- 21.99
+2022-12-09 14:35:11.670557 -- 21.965
+2022-12-09 14:36:12.335473 -- 22.052
+2022-12-09 14:37:11.698154 -- 22.075
+2022-12-09 14:38:12.172840 -- 22.05
+2022-12-09 14:39:12.568089 -- 22.028
+2022-12-09 14:40:11.878054 -- 22.064
+2022-12-09 14:41:11.220160 -- 21.986
+2022-12-09 14:42:11.593850 -- 21.996
+2022-12-09 14:43:12.077939 -- 22.047
+2022-12-09 14:44:11.436869 -- 22.047
+2022-12-09 14:45:11.783039 -- 22.045
+2022-12-09 14:46:12.333590 -- 22.086
+2022-12-09 14:47:11.666933 -- 22.018
+2022-12-09 14:48:11.950264 -- 22.018
+2022-12-09 14:49:11.415282 -- 22.018
+2022-12-09 14:50:11.919073 -- 22.05
+2022-12-09 14:51:11.315131 -- 22.1
+2022-12-09 14:52:11.603423 -- 22.069
+2022-12-09 14:53:12.206885 -- 22.064
+2022-12-09 14:54:11.565571 -- 22.039
+2022-12-09 14:55:11.607545 -- 22.073
+2022-12-09 14:56:12.501068 -- 22.092
+2022-12-09 14:57:12.681271 -- 22.062
+2022-12-09 14:58:12.014264 -- 22.035
+2022-12-09 14:59:11.321161 -- 22.094
+2022-12-09 15:00:12.123412 -- 22.134
+2022-12-09 15:01:11.492054 -- 22.069
+2022-12-09 15:02:11.431692 -- 22.045
+2022-12-09 15:03:12.342641 -- 22.141
+2022-12-09 15:04:11.686911 -- 22.117
+2022-12-09 15:05:11.888906 -- 22.066
+2022-12-09 15:06:12.642451 -- 22.077
+2022-12-09 15:07:11.990945 -- 22.09
+2022-12-09 15:08:12.079356 -- 22.047
+2022-12-09 15:09:11.371772 -- 22.181
+2022-12-09 15:10:12.191912 -- 22.179
+2022-12-09 15:11:11.568167 -- 22.075
+2022-12-09 15:12:11.799327 -- 22.109
+2022-12-09 15:13:11.229554 -- 22.115
+2022-12-09 15:14:11.834720 -- 22.149
+2022-12-09 15:15:12.034521 -- 22.098
+2022-12-09 15:16:11.759962 -- 22.124
+2022-12-09 15:17:12.091920 -- 22.105
+2022-12-09 15:18:11.890537 -- 22.124
+2022-12-09 15:19:12.924926 -- 22.177
+2022-12-09 15:20:11.153930 -- 22.103
+2022-12-09 15:21:11.807288 -- 22.172
+2022-12-09 15:22:11.693248 -- 22.109
+2022-12-09 15:23:11.094194 -- 22.064
+2022-12-09 15:24:12.028299 -- 22.083
+2022-12-09 15:25:11.382104 -- 22.151
+2022-12-09 15:26:11.756511 -- 22.213
+2022-12-09 15:27:12.192541 -- 22.141
+2022-12-09 15:28:11.602868 -- 22.185
+2022-12-09 15:29:11.929407 -- 22.105
+2022-12-09 15:30:14.696043 -- 22.111
+2022-12-09 15:31:12.324514 -- 22.189
+2022-12-09 15:32:11.201275 -- 22.179
+2022-12-09 15:33:11.495609 -- 22.168
+2022-12-09 15:34:12.122425 -- 22.16
+2022-12-09 15:35:11.491354 -- 22.117
+2022-12-09 15:36:11.755340 -- 22.141
+2022-12-09 15:37:12.389171 -- 22.119
+2022-12-09 15:38:11.704332 -- 22.115
+2022-12-09 15:39:11.996277 -- 22.119
+2022-12-09 15:40:11.129022 -- 22.168
+2022-12-09 15:41:11.987000 -- 22.175
+2022-12-09 15:42:11.373080 -- 22.132
+2022-12-09 15:43:11.596919 -- 22.141
+2022-12-09 15:44:12.218608 -- 22.215
+2022-12-09 15:45:11.600051 -- 22.198
+2022-12-09 15:46:11.717121 -- 22.113
+2022-12-09 15:47:11.795677 -- 22.156
+2022-12-09 15:48:11.698882 -- 22.162
+2022-12-09 15:49:11.903200 -- 22.16
+2022-12-09 15:50:11.138770 -- 22.219
+2022-12-09 15:51:12.046302 -- 22.126
+2022-12-09 15:52:11.488208 -- 22.215
+2022-12-09 15:53:11.679560 -- 22.143
+2022-12-09 15:54:12.374773 -- 22.194
+2022-12-09 15:55:11.691087 -- 22.158
+2022-12-09 15:56:12.029670 -- 22.189
+2022-12-09 15:57:11.204311 -- 22.156
+2022-12-09 15:58:11.945588 -- 22.196
+2022-12-09 15:59:11.347673 -- 22.228
+2022-12-09 16:00:11.656600 -- 22.181
+2022-12-09 16:01:12.192932 -- 22.09
+2022-12-09 16:02:11.593194 -- 22.202
+2022-12-09 16:03:11.581616 -- 22.16
+2022-12-09 16:04:12.496433 -- 22.153
+2022-12-09 16:05:11.831258 -- 22.151
+2022-12-09 16:06:11.878480 -- 22.175
+2022-12-09 16:07:12.709814 -- 22.23
+2022-12-09 16:08:12.099754 -- 22.13
+2022-12-09 16:09:11.574511 -- 22.215
+2022-12-09 16:10:11.795040 -- 22.175
+2022-12-09 16:11:12.381103 -- 22.23
+2022-12-09 16:12:11.706319 -- 22.215
+2022-12-09 16:13:11.876032 -- 22.083
+2022-12-09 16:14:11.880811 -- 22.245
+2022-12-09 16:15:11.508102 -- 22.158
+2022-12-09 16:16:11.899433 -- 22.194
+2022-12-09 16:17:11.387409 -- 22.259
+2022-12-09 16:18:12.255771 -- 22.2
+2022-12-09 16:19:11.723877 -- 22.187
+2022-12-09 16:20:12.209426 -- 22.198
+2022-12-09 16:21:11.452496 -- 22.236
+2022-12-09 16:22:11.955179 -- 22.223
+2022-12-09 16:23:11.273727 -- 22.226
+2022-12-09 16:24:11.453534 -- 22.141
+2022-12-09 16:25:12.071379 -- 22.289
+2022-12-09 16:26:11.452214 -- 22.187
+2022-12-09 16:27:11.721624 -- 22.242
+2022-12-09 16:28:12.351394 -- 22.166
+2022-12-09 16:29:11.717183 -- 22.202
+2022-12-09 16:30:11.747627 -- 22.196
+2022-12-09 16:31:12.634086 -- 22.257
+2022-12-09 16:32:12.017101 -- 22.215
+2022-12-09 16:33:11.334321 -- 22.153
+2022-12-09 16:34:11.720336 -- 22.255
+2022-12-09 16:35:12.205321 -- 22.226
+2022-12-09 16:36:11.663253 -- 22.219
+2022-12-09 16:37:11.869396 -- 22.242
+2022-12-09 16:38:10.654064 -- 22.234
+2022-12-09 16:39:11.454798 -- 22.206
+2022-12-09 16:40:11.887693 -- 22.245
+2022-12-09 16:41:12.730522 -- 22.236
+2022-12-09 16:42:12.130478 -- 22.295
+2022-12-09 16:43:11.520522 -- 22.151
+2022-12-09 16:44:11.321932 -- 22.215
+2022-12-09 16:45:12.335987 -- 22.287
+2022-12-09 16:46:11.720287 -- 22.24
+2022-12-09 16:47:12.066257 -- 22.264
+2022-12-09 16:48:11.251734 -- 22.234
+2022-12-09 16:49:12.000209 -- 22.251
+2022-12-09 16:50:11.389179 -- 22.306
+2022-12-09 16:51:11.505506 -- 22.3
+2022-12-09 16:52:12.283625 -- 22.279
+2022-12-09 16:53:11.620153 -- 22.253
+2022-12-09 16:54:11.850641 -- 22.302
+2022-12-09 16:55:12.469600 -- 22.266

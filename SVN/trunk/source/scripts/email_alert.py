@@ -8,6 +8,7 @@ import imghdr
 from email.message import EmailMessage
 import numpy as np
 import matplotlib.dates as mdates
+from gas_system_useful_functions import *
 """
 year = 2022
 year2 = 2022
@@ -34,7 +35,7 @@ string1=30
 string2=36
 now=str(datetime.datetime.now())
 
-yest=str(datetime.datetime.now() - datetime.timedelta(days=1))
+yest=str(datetime.datetime.now() - datetime.timedelta(days=2))
 
 year = int(yest[0:4])
 year2 = int(now[0:4])
@@ -57,10 +58,8 @@ second2=int(now[17:19])
 milisecond=int(yest[20:25])
 milisecond2=int(now[20:25])
 
-def plot_temp_data_email(input_file,title):
+def plot_temp_data_email(input_file,title,datetime_start,datetime_end):
 
-
-    
     
     with open(input_file) as f:
         lines = f.readlines()
@@ -86,7 +85,7 @@ def plot_temp_data_email(input_file,title):
 #              print(time_add)  
               temp_add = float(temp_add)
              # print(time_add,datetime.datetime(year, month, day,hour,min_,second,milisecond))
-              if time_add > datetime.datetime(year,month,day,hour,min_,second,milisecond) and time_add<datetime.datetime(year2,month2,day2,hour2,min_2,second2,milisecond2):
+              if time_add > datetime_start and time_add < datetime_end:
             
                
                   time = np.append(time,time_add)
@@ -112,7 +111,7 @@ def plot_temp_data_email(input_file,title):
 
 
 
-def plot_data(subplot, fig, variable,x,y,date_format,font_size):
+def plot_data(subplot, fig, variable,x,y,date_format,font_size,linewidth_adjustment):
     # Function to take in the data and plot the graph
     
     #print(x)
@@ -146,12 +145,12 @@ def plot_data(subplot, fig, variable,x,y,date_format,font_size):
         maximum = (max(y))*1.075
     
     subplot.set_ylim(minimum, maximum)
-    subplot.plot_date(x, y, '-',linewidth=1)   
+    subplot.plot_date(x, y, '-',linewidth=1-linewidth_adjustment)   
 
 
 
 
-def save_plot_emergency_email(chiller_stat,chiller_off_alert):
+def save_plot_emergency_email(chiller_stat,chiller_off_alert,time_start,time_end):
 
     
     directory='/home/supernemo/TemperatureLogs/New Logger Files/'
@@ -161,24 +160,24 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
 
    # fig.subplots_adjust(hspace=0.1)
 
-    bath_time,bath_temp  = plot_temp_data_email(str(directory)+'Water_Bath.txt','Water Bath')
+    bath_time,bath_temp  = plot_temp_data_email(str(directory)+'Water_Bath.txt','Water Bath',time_start,time_end)
 
-    FGT1_time,FGT1_temp  = plot_temp_data_email(str(directory)+'FGT1.txt','FGT1')
+    FGT1_time,FGT1_temp  = plot_temp_data_email(str(directory)+'FGT1.txt','FGT1',time_start,time_end)
 
-    FGT2_time,FGT2_temp  = plot_temp_data_email(str(directory)+'FGT2.txt','FGT2')
+    FGT2_time,FGT2_temp  = plot_temp_data_email(str(directory)+'FGT2.txt','FGT2',time_start,time_end)
 
-    BPT_time,BPT_temp    = plot_temp_data_email(str(directory)+'BPT.txt','BPT')
+    BPT_time,BPT_temp    = plot_temp_data_email(str(directory)+'BPT.txt','BPT',time_start,time_end)
    
-    pres_time, pres_temp = plot_temp_data_email(str(directory)+'Pressure.txt','Pressure')
+    pres_time, pres_temp = plot_temp_data_email(str(directory)+'Pressure.txt','Pressure',time_start,time_end)
 
-    FRHe_time, FRHe_temp = plot_temp_data_email(str(directory)+'FRHe.txt','FRHe')
+    FRHe_time, FRHe_temp = plot_temp_data_email(str(directory)+'FRHe.txt','FRHe',time_start,time_end)
 
-    FRAr_time, FRAr_temp = plot_temp_data_email(str(directory)+'FRAr.txt','FRAr')
+    FRAr_time, FRAr_temp = plot_temp_data_email(str(directory)+'FRAr.txt','FRAr',time_start,time_end)
 
     
     f = plt.figure(dpi=170) 
 
-    date_format ="%m/%d-%H"
+    
     a1 = plt.subplot(2,2,1)
     a2 = plt.subplot(2,2,2)
     a3 = plt.subplot(2,2,3)
@@ -224,24 +223,86 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
     for label in a1.yaxis.get_ticklabels():
         label.set_fontsize(font_size)
     
-    
-    a1.xaxis.set_major_locator(mdates.HourLocator(interval=4))
-    a2.xaxis.set_major_locator(mdates.HourLocator(interval=4))
-    a3.xaxis.set_major_locator(mdates.HourLocator(interval=4))
-    a4.xaxis.set_major_locator(mdates.HourLocator(interval=4))
-    a1.xaxis.set_major_formatter(DateFormatter(date_format))
-    a2.xaxis.set_major_formatter(DateFormatter(date_format))   
-    a3.xaxis.set_major_formatter(DateFormatter(date_format))
-    a4.xaxis.set_major_formatter(DateFormatter(date_format))
-                  
-    x_axis_label = 'Time (month/day-hour)'   
+    end_time=time_end
+    start_time=time_start    
+    delt_hour=end_time.hour-start_time.hour
+    delt_day=end_time.day-start_time.day
+    delt_month=end_time.month-start_time.month
+    delt_year=end_time.year-start_time.year
 
+    delt_hours = delt_hour
+    delt_hours +=delt_year*365.25*24
+    delt_hours +=delt_month*30*24
+    delt_hours +=delt_day*24
+
+
+
+    axis=[a1,a2,a3,a4]
+
+    for i in range(0,4):
+
+     if delt_hours<3:
+           
+        axis[i].xaxis.set_major_locator(mdates.MinuteLocator(interval=15))
+        date_format ="%m/%d-%H:%M" 
+        x_axis_label='Time (month/day-hour:minute)'
+        linewidth_adjustment=0
+     elif delt_hours<10:
+        
+        axis[i].xaxis.set_major_locator(mdates.HourLocator(interval=1))
+        date_format ="%m/%d-%H:%M" 
+        x_axis_label='Time (month/day-hour:minute)'
+        linewidth_adjustment=0
+     elif delt_hours<50:
+    
+        axis[i].xaxis.set_major_locator(mdates.HourLocator(interval=5))
+        date_format ="%m/%d-%H" 
+        x_axis_label='Time (month/day-hour)'
+        linewidth_adjustment=0
+     elif delt_hours<240:# between 2 day and 10 days
+    
+        axis[i].xaxis.set_major_locator(mdates.DayLocator(interval=1))
+        date_format ="%Y/%m/%d" 
+        x_axis_label='Time (Year/month/day)'
+        linewidth_adjustment=0.3
+    
+     elif delt_hours<1000:# between 1 day and 10 days
+        linewidth_adjustment=0.3
+        axis[i].xaxis.set_major_locator(mdates.DayLocator(interval=3))
+        date_format ="%Y/%m/%d" 
+        x_axis_label='Time (Year/month/day)'    
+        
+     elif delt_hours<5000:# between 1 day and 10 days
+        linewidth_adjustment=0.3
+        axis[i].xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+        date_format ="%Y/%m/%d" 
+        x_axis_label='Time (Year/month/day)'       
+    
+     elif delt_hours<10000:# between 1 day and 10 days
+        linewidth_adjustment=0.3
+        axis[i].xaxis.set_major_locator(mdates.MonthLocator(interval=4))
+        date_format ="%Y/%m/%d" 
+        x_axis_label='Time (Year/month/day)'   
+    
+     elif delt_hours>10000:# between 1 day and 10 days
+        linewidth_adjustment=0.3
+        axis[i].xaxis.set_major_locator(mdates.MonthLocator(interval=8))
+        date_format ="%Y/%m/%d" 
+        x_axis_label='Time (Year/month/day)'  
+         
+     
+     axis[i].xaxis.set_major_formatter(DateFormatter(date_format)) 
+
+
+
+                  
+    
     a4.set_xlabel(x_axis_label,fontsize=font_size)
     a3.set_xlabel(x_axis_label,fontsize=font_size)  
     a2.set_xlabel(x_axis_label,fontsize=font_size)
     a1.set_xlabel(x_axis_label,fontsize=font_size)
 
-    plot_data(a1, f, "Pressure",pres_time,pres_temp,date_format,font_size)
+    plot_data(a1, f, "Pressure",pres_time,pres_temp,date_format,font_size,linewidth_adjustment)
 
 
   
@@ -255,15 +316,15 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
     label_ch1 = 'FGT2'
     label_ch2 = 'BPT'
     
-    a2.plot_date(x, y, 'g-', label="FG T0 (bot)",linewidth=1.2)
-    a2.plot_date(x1, y1, 'r-', label="FG T1 (top)",linewidth=1.1)
+    a2.plot_date(x, y, 'g-', label="FG T0 (bot)",linewidth=1.2-linewidth_adjustment)
+    a2.plot_date(x1, y1, 'r-', label="FG T1 (top)",linewidth=1.1-linewidth_adjustment)
     if chiller_stat=='on' or chiller_off_alert==True:
-       a2.plot_date(x10, y10, 'b-',label="Water Bath",linewidth=0.9)
+       a2.plot_date(x10, y10, 'b-',label="Water Bath",linewidth=0.9-linewidth_adjustment)
        a2.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
           ncol=3, borderaxespad=0, prop={'size':4})
        
-       minimum2 = min(min(y),min(y1),min(y10))-2
-       maximum2 = max(max(y),max(y1),max(y10))+2
+       minimum2 = min(min(y),min(y1),min(y10))
+       maximum2 = max(max(y),max(y1),max(y10))
     else:
        
        a2.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
@@ -280,8 +341,8 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
     
     
 
-    a3.plot_date(x3, y3, 'b-', label='Helium',linewidth=1.2)
-    a3.plot_date(x4, y4_mult, 'r-', label='Argon x 100',linewidth=1)
+    a3.plot_date(x3, y3, 'b-', label='Helium',linewidth=1.2-linewidth_adjustment)
+    a3.plot_date(x4, y4_mult, 'r-', label='Argon x 100',linewidth=1-linewidth_adjustment)
     a3.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
           ncol=2, borderaxespad=0, prop={'size':4})
 
@@ -295,7 +356,7 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
     a3.set_ylabel('Flow rate (l/min)',fontsize=font_size ) 
 
 
-    plot_data(a4, f,"Temp_Ch2",BPT_time,BPT_temp,date_format,font_size)
+    plot_data(a4, f,"Temp_Ch2",BPT_time,BPT_temp,date_format,font_size,linewidth_adjustment)
 
 #    f.subplots_adjust(left=0.0, bottom=0, right=0, top=0, wspace=0.5, hspace=0.6)
     f.subplots_adjust(bottom=0.12, wspace=0.19, hspace=0.43)
@@ -303,7 +364,8 @@ def save_plot_emergency_email(chiller_stat,chiller_off_alert):
     """
     if warn_ethanol==True:
          fig2, ((ax0,ax1)) = plt.subplots(number_of_axis, 1,figsize=(10, 17), dpi=80)
-         fig2.subplots_adjust(hspace=0.1)     
+         fig2.subplots_adjust(hspace=0.1
+     
          plot_temp_data_email(str(directory)+'Temp_Ch0.txt',fig2,ax0,'FGT1')
          plot_temp_data_email(str(directory)+'Temp_Ch1.txt',fig2,ax1,'FGT2')
          fig = fig2
@@ -321,7 +383,7 @@ def chiller_status():
             
               return chiller_stat
  
-def email_alert(plot,warn_sens,warn_FGT1,warn_FGT2,warn_BPT,warn_pres,warn_FRHe,warn_FRAr,warn_ethanol,chiller_off_alert):
+def email_alert(plot,warn_sens,warn_FGT1,warn_FGT2,warn_BPT,warn_pres,warn_FRHe,warn_FRAr,warn_ethanol,chiller_off_alert,time_start,time_end,email):
     chiller_stat = chiller_status()
     recipient_address=[]
 
@@ -372,7 +434,10 @@ def email_alert(plot,warn_sens,warn_FGT1,warn_FGT2,warn_BPT,warn_pres,warn_FRHe,
         email_text=email_text_normal
     else:
          email_text = email_text_alert
-
+    if email =='stored':
+          pass
+    else:
+          recipient_address =[email]
 
     newMessage = EmailMessage()                         
     newMessage['Subject'] = email_subject
@@ -381,9 +446,10 @@ def email_alert(plot,warn_sens,warn_FGT1,warn_FGT2,warn_BPT,warn_pres,warn_FRHe,
     newMessage.set_content(email_text) 
 
     if plot == True:
-    
-        save_plot_emergency_email(chiller_stat,chiller_off_alert)
-    
+        f= plot_all_variables(chiller_stat,chiller_off_alert,time_start,time_end)    
+#        save_plot_emergency_email(chiller_stat,chiller_off_alert,time_start,time_end)
+        f.savefig('/home/supernemo/SVN/trunk/source/scripts/emergency_plots/plot_save.png')   # save the figure to file
+        plt.close(f)  
     
     with open('/home/supernemo/SVN/trunk/source/scripts/emergency_plots/plot_save.png', 'rb') as p:
        image_data = p.read()
@@ -408,6 +474,3 @@ def email_alert(plot,warn_sens,warn_FGT1,warn_FGT2,warn_BPT,warn_pres,warn_FRHe,
     except Exception as ex:
     
         print ("Something went wrong….",ex)
-         
-
-#email_alert(True,False,False,False,False,False,False)

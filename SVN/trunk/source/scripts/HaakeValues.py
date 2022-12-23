@@ -88,12 +88,16 @@ ser.flush()
 msg = str(ser.readline()).replace("\\r\\n'", '')
 internal_sensor = msg[5:].replace("$", '')
 if input == "T" :
+#        internal_sensor = ""
 	if internal_sensor == "" :
 		print ('999')
 		sys.exit()
 	else :
 		print (internal_sensor.strip())
+         #       print('999')
+
 		sys.exit()
+
 
 if input == 'd' :
 	ser.write(b"S1\r")

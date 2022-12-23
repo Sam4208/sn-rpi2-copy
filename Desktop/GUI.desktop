@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Icon=/usr/share/pixmaps/python2.7.xpm
+Name=GUI
+Comment=Description       
+Categories=Applications
+Exec=python /home/supernemo/SVN/trunk/source/scripts/GasSystemGUI_2.py
+StartupNotify=true
+Terminal=false

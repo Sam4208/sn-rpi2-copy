@@ -1,0 +1,19 @@
+
+#include <pthread.h>
+#include <libusb-1.0/libusb.h>
+
+struct thread_data {
+  int  thread_id;
+  libusb_device_handle* devh;
+  char* filename;
+  int retval;
+  pthread_t thread;
+  int exit_code;
+  struct thread_data* next;
+};
+
+
+
+struct thread_data* createUpdateThread( libusb_device_handle* devh1, char* filename);
+
+int waitComplete(struct thread_data* threads);

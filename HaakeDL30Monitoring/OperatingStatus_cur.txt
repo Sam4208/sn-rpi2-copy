@@ -1,1 +1,1 @@
-21/11/2022 13:48:42 : Current Status: Normal: Temp Control Off, Int Control, Main Relay Present
+14/12/2022 21:21:39 : Current Status: Alarm: Main Relay Missing

@@ -1,0 +1,854 @@
+/* ----------------------------------------------------------------------------
+*        Gulf Coast Data Concepts 2015
+* ----------------------------------------------------------------------------
+*/
+
+
+/*----------------------------------------------------------------------------
+*        Headers
+*----------------------------------------------------------------------------*/
+//#define TRACE_LEVEL TRACE_LEVEL_DEBUG
+#include <unistd.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <asm/types.h>
+#include <errno.h>	// errno
+#include <stdlib.h>	// malloc
+#include <string.h>    	//strstr function
+#include <sys/stat.h>	// stat() function
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <termios.h>
+              
+#include "atmelsam_ba.h"
+#include "lowLevelApplet3s4.h"
+#include "flashApplet3s4.h"
+
+#include "lowLevelApplet3u4.h"
+#include "flashApplet3u4.h"
+
+#include "lowLevelApplet3u2.h"
+#include "flashApplet3u2.h"
+
+#include "lowLevelApplet3u1.h"
+#include "flashApplet3u1.h"
+
+
+/*----------------------------------------------------------------------------
+*        Internal definitions
+*----------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------------------- 
+*        Local variables
+*----------------------------------------------------------------------------*/
+struct chipInfo chips[22] ={
+{ 0x28000961, "AT91SAM3U4C (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0x400E0A00},
+{ 0x280A0761, "AT91SAM3U2C (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0},
+{ 0x28090561, "AT91SAM3U1C (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0},
+{ 0x28100961, "AT91SAM3U4E (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0x400E0A00},
+{ 0x281A0761, "AT91SAM3U2E (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0},
+{ 0x28190561, "AT91SAM3U1E (Rev A)", 0x00080000, 0x400E0800, 0x400E1200, 0},
+
+{ 0x28800960, "ATSAM3S4A (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x288A0760, "ATSAM3S2A (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28890560, "ATSAM3S1A (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28900960, "ATSAM3S4B (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x289A0760, "ATSAM3S2B (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28990560, "ATSAM3S1B (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28A00960, "ATSAM3S4C (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28AA0760, "ATSAM3S2C (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28A90560, "ATSAM3S1C (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x288B0A60, "ATSAM3S8A (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x289B0A60, "ATSAM3S8B (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x28AB0A60, "ATSAM3S8C (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x298B0A60, "ATSAM3SD8A (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x299B0A60, "ATSAM3SD8B (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+{ 0x29AB0A60, "ATSAM3SD8C (Rev A)", 0x0, 0x400E0A00, 0x400E1400, 0},
+            
+{ 0x0, "Unknown", 0x0}
+};
+
+
+const uint32_t sam3uInternalSRamSize[14] = {48*1024, 1*1024, 2*1024, 6*1024, 24*1024, 4*1024, 80*1024, 160*1024, 8*1024, 16*1024, 32*1024, 64*1024, 128*1024, 256*1024};
+const uint32_t sam3sInternalSRamSize[16] = {48*1024, 1*1024, 2*1024, 6*1024, 112*1024, 4*1024, 80*1024, 160*1024, 8*1024, 16*1024, 32*1024, 64*1024, 128*1024, 256*1024, 96*1024, 512*1024};
+const uint32_t sam3uNVPSize[16] = {0*1024, 8*1024, 16*1024, 32*1024, 0*1024, 64*1024, 0*1024, 128*1024, 0*1024, 256*1024, 512*1024, 0*1024, 1024*1024, 0*1024, 2048*1024, 0*1024};
+
+const uint32_t app_addr=0x20001000;
+const uint32_t app_cmd_addr=0x20001040;
+struct termios  savetty;	// this is for restoring the tty a the end of the session, but we don't cleanly close the session, fixme someday
+
+extern int verbose_flag;
+static const unsigned char* lowLevelApplet = lowLevelApplet3s4;
+static const unsigned char* flashApplet = flashApplet3s4;
+uint32_t sizeLowLevelApplet;
+uint32_t sizeFlashApplet;
+
+/// Output arguments for the Init command. of the flash applet
+struct outputInit
+{
+	uint32_t memorySize;	/// Memory size.
+	uint32_t bufferAddress;	/// Buffer address.
+	uint32_t bufferSize;	/// Buffer size.
+	struct
+	{
+		uint16_t lockRegionSize;	/// Lock region size in byte.
+		uint16_t numbersLockBits;	/// Number of Lock Bits.
+	} memoryInfo;
+	uint32_t adjustedBufferSize;
+};
+
+struct outputInit appletParams;
+                                                                                                                                                                                        
+
+/*----------------------------------------------------------------------------
+*        Local functions
+*----------------------------------------------------------------------------*/
+int sendSamCommand(atmelsam_ba_handle *devh1, char* command);
+int sendSamCommandWaitResponse(atmelsam_ba_handle *devh1, char* command, uint8_t* response, int len, int timeout);
+int setModeBootFlash(atmelsam_ba_handle* devh1, uint32_t efcBaseAddr);
+int rebootTarget(atmelsam_ba_handle *devh1, uint32_t rstcBaseAddr);
+uint8_t* getApp(char* appName, int size);
+int getFileSize(char* filename);
+int downloadApplet(atmelsam_ba_handle *devh1, char* fname, const uint8_t* defaultApp, int defaultSize);
+int lowLevelInit(atmelsam_ba_handle *devh1);
+int flashInit(atmelsam_ba_handle* devh1);
+
+int asb_FlashWrite(atmelsam_ba_handle* devh1, uint8_t* bData, uint32_t length);
+struct chipInfo* asb_GetChipIdentifier(atmelsam_ba_handle* devh1);
+int asb_GetEmbeddedFlashDescriptor(atmelsam_ba_handle* devh1, uint32_t efcBaseAddr);
+void dumpAppletParams(void);
+
+/*----------------------------------------------------------------------------
+*        Local functions
+*----------------------------------------------------------------------------*/
+
+int sendSamCommand(atmelsam_ba_handle *devh1, char* command)
+{
+	int retval;
+	int len = strlen(command);
+//printf("%s <%s> len:%d\r\n",__FUNCTION__,command, len);
+	retval = write(devh1->fd, command,len);
+	if(retval != len)
+	{
+		printf("%s Error writing <%s>, errno %d  %d!=%d\r\n",__FUNCTION__, command,errno,retval,len);
+		return(-1);
+	}
+	return(0);
+}
+
+
+int sendSamCommandWaitResponse(atmelsam_ba_handle *devh1, char* command, uint8_t* response, int len, int maxTime)
+{
+	int rv;
+	fd_set set;
+	struct timeval timeout;
+	FD_ZERO(&set); 			// clear the set 
+	FD_SET(devh1->fd, &set); 	// add our file descriptor to the set 
+	timeout.tv_sec = 0;
+	timeout.tv_usec = 1000;	// 1 ms 
+
+	rv = select(devh1->fd + 1, &set, NULL, NULL, &timeout);
+	if(rv == -1)
+	{
+		printf("%s ",__FUNCTION__);
+		perror("select"); /* an error accured */
+		return(-1);
+	}
+	else if(rv == 0)
+	{
+//		printf("%s pre target wait timeout\r\n",__FUNCTION__); /* a timeout occured */
+	}
+	else
+	{
+		rv = read( devh1->fd, response, len ); /* there was data to read */
+	}
+
+	if(rv>0)
+	{
+		printf("%s buffer read before command, len: %d data:'%c' %02x\r\n",__FUNCTION__,rv, response[0], response[0]);
+	}
+	
+	if(sendSamCommand(devh1, command)) return(-1);
+	
+	FD_ZERO(&set); 			// clear the set 
+	FD_SET(devh1->fd, &set); 	// add our file descriptor to the set 
+	timeout.tv_sec = maxTime;
+	timeout.tv_usec = 10000;	// 10 ms min
+
+	rv = select(devh1->fd + 1, &set, NULL, NULL, &timeout);
+	if(rv == -1)
+	{
+		printf("%s ",__FUNCTION__);
+		perror("select"); /* an error accured */
+		return(-1);
+	}
+	else if(rv == 0)
+	{
+		printf("\r\n%s target response timeout\r\n",__FUNCTION__); /* a timeout occured */
+		return(-2);
+	}
+	else
+	{
+		rv = read( devh1->fd, response, len ); /* there was data to read */
+//		printf("%s resp %d '%c'\r\n",__FUNCTION__,response[0]);
+	}
+	return(0);
+}
+
+
+int asb_GetEmbeddedFlashDescriptor(atmelsam_ba_handle* devh1, uint32_t efcBaseAddr)
+{
+	uint32_t response;
+	int retval;
+//	uint32_t efcBaseAddr = 0x400E0A00; sam3s4
+//	uint32_t efcBaseAddr = 0x400E0800; sam3u4
+	char cmdString[0x20];
+	
+//	int count = 5;
+	sprintf(cmdString,"W%08X,5A000000#",efcBaseAddr+4);
+	retval = sendSamCommand(devh1, cmdString);	// EEFC_FCR <== GETD
+	if(retval)
+	{
+		printf("%s ERRROR unable write command",__FUNCTION__);
+		return(-1);
+	}
+//	while(count--)
+	{
+		sprintf(cmdString,"w%08X,#",efcBaseAddr+0x0C);
+		retval = sendSamCommandWaitResponse(devh1, cmdString,(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+		if(retval)
+		{
+			printf("%s ERROR unable read command",__FUNCTION__);
+			return(-1);
+		}
+		if(verbose_flag) printf("%s  Interface Description: %08x\n",__FUNCTION__, response);
+
+		retval = sendSamCommandWaitResponse(devh1, cmdString,(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+		if(retval)
+		{
+			printf("%s ERROR unable read command",__FUNCTION__);
+			return(-1);
+		}
+		if(verbose_flag) printf("%s  Total Size in Bytes: 0x%x (%d)\n",__FUNCTION__, response, response);
+
+		retval = sendSamCommandWaitResponse(devh1, cmdString,(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+		if(retval)
+		{
+			printf("%s ERROR unable read command",__FUNCTION__);
+			return(-1);
+		}
+		if(verbose_flag) printf("%s  Page Size in Bytes: 0x%x (%d)\n",__FUNCTION__, response, response);
+		
+		retval = sendSamCommandWaitResponse(devh1, cmdString,(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+		if(retval)
+		{
+			printf("%s ERRROR unable read command",__FUNCTION__);
+			return(-1);
+		}
+		if(verbose_flag) printf("%s  Number of planes: 0x%x\n",__FUNCTION__, response);
+
+		retval = sendSamCommandWaitResponse(devh1, cmdString,(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+		if(retval)
+		{
+			printf("%s ERROR unable read command",__FUNCTION__);
+			return(-1);
+		}
+		if(verbose_flag) printf("%s  Number of Bytes in the first plane: 0x%x (%d)\n",__FUNCTION__, response, response);
+	}
+
+	return(0);
+}
+
+
+struct chipInfo* asb_GetChipIdentifier(atmelsam_ba_handle* devh1)
+{
+	uint32_t response;
+	int retval;
+	retval = sendSamCommandWaitResponse(devh1, "w400E0740,#",(uint8_t*)&response, 0x4,1);	// EEFC_FRR
+	if(retval)
+	{
+		printf("%s ERRROR unable write command",__FUNCTION__);
+		return(NULL);
+	}
+	if(verbose_flag) printf("%s  target returned: %08X\r\n",__FUNCTION__, response);
+	struct chipInfo* pchip =  chips;
+	while(pchip->id_cidr != 0)
+	{
+		if(response == pchip->id_cidr)
+		{
+			break;	
+		}
+		pchip++;
+	}
+	return(pchip);
+}
+
+
+int setModeBootFlash(atmelsam_ba_handle* devh1, uint32_t efcBaseAddr)
+{
+	uint8_t response[0x40];
+	int retval;
+	int count = 5;
+//	uint32_t efcBaseAddr = 0x400E0A00; sam3s4
+//	uint32_t efcBaseAddr = 0x400E0800; sam3u4
+	char cmd[0x20];
+
+	sprintf(cmd, "W%08X,5A00010B#", efcBaseAddr+4);
+	retval = sendSamCommand(devh1, cmd);  // write to EEFC_VCR EEFC Flas Command Register, set GPNVM bit 0001 (GPNVM1
+	if(retval)
+	{
+		printf("%s ERRROR unable write command",__FUNCTION__);
+		return(-1);
+	}
+	while(1)
+	{
+		sprintf(cmd,"w%08X,5A00010B#", efcBaseAddr+8);	
+		retval = sendSamCommandWaitResponse(devh1, cmd, response,0x40,1);
+		if(retval)
+		{
+			printf("%s ERRROR unable write command",__FUNCTION__);
+			return(-1);
+		}
+//		printf("%s  target returned: %02x %02x %02x %02x\r\n",__FUNCTION__, response[0], response[1],response[2], response[3]);
+		if(count-- ==0) break;
+		if(response[0] == 1) break;
+	}
+	return(0);
+}
+
+
+int rebootTarget(atmelsam_ba_handle *devh1, uint32_t rstcBaseAddr)
+{
+//	uint32_t rstcBaseAddr = 0x400E1400; sam3s4
+//	uint32_t rstcBaseAddr = 0x400E1200; sam3u4
+	char cmd[0x20];
+	sprintf(cmd,"W%08X,A500000D#",rstcBaseAddr);
+	return(sendSamCommand(devh1, cmd));
+}
+
+
+uint8_t* getApp(char* appName, int size)
+{
+	uint8_t* retval = malloc(size);
+	int numRead;
+	if(!retval) return(NULL);
+	FILE* fp = fopen(appName,"r");
+	if(!fp)
+	{
+		printf("%s error opening <%s>\r\n",__FUNCTION__, appName);
+		return(NULL);
+	}
+	numRead = fread(retval,size,1,fp);
+	fclose(fp);
+	if(numRead != size)
+	{
+		printf("%s reading expected %d, got %d\r\n",__FUNCTION__, size, numRead);
+		free(retval);
+		return(NULL);
+	}
+	return(retval);
+}
+
+
+int getFileSize(char* filename)
+{
+	struct stat st;
+	int retval = stat(filename, &st);
+	if(retval)
+	{
+		printf("%s ERROR file stat() returned %d\r\n",__FUNCTION__, errno);
+		return(-1);
+	}
+	return(st.st_size);
+}
+
+
+int downloadApplet(atmelsam_ba_handle *devh1, char* app_name, const uint8_t* defaultApp, int defSize)
+{
+	char stemp[0x40];
+	int fsize;
+	uint8_t* applet;
+//	printf("%s\r\n",__FUNCTION__);
+	if(app_name)
+	{
+		// get size of applet
+		fsize = getFileSize(app_name);
+		if(fsize <=0) return(-1);
+
+		// read in applet
+		applet = getApp(app_name, fsize);
+		if(!applet) return(-2);
+	}
+	else
+	{
+		if(verbose_flag)printf("%s using default app of size 0x%x (%d) bytes\r\n",__FUNCTION__,defSize, defSize);
+		applet = (uint8_t*)defaultApp;
+		fsize = defSize;
+	}
+
+	// configure target to download applet
+	sprintf(stemp, "S%08x,%x#",app_addr,fsize);
+//printf("%s first cmd <%s>\r\n",__FUNCTION__,stemp);
+	sendSamCommand(devh1, stemp);
+
+//printf("%s writing applet of 0x%x bytes\r\n",__FUNCTION__,fsize);
+	// write applet to target
+	int numWritten = write(devh1->fd,applet,fsize);
+	if(app_name)free(applet);
+//printf("%s wrote %d expectedt %d\r\n",__FUNCTION__,numWritten,fsize);
+	if(numWritten != fsize)
+	{
+		printf("%s ERROR expected to write %d wrote %d instead\r\n",__FUNCTION__, fsize, numWritten);
+		return(-3);
+	}
+	return(0);
+}
+
+
+int lowLevelInit(atmelsam_ba_handle* devh1)
+{
+        int retval;
+	uint8_t response[0x40];
+	if(verbose_flag) printf("%s\r\n",__FUNCTION__);
+
+	retval = downloadApplet(devh1, devh1->lowLevelAppletFname, lowLevelApplet, sizeLowLevelApplet);
+	if(retval) return(retval);
+
+	// set up init parameters
+	sendSamCommand(devh1, "W20001040,0#");
+	sendSamCommand(devh1, "W20001048,0#");
+	sendSamCommand(devh1, "W2000104c,4#");
+	sendSamCommand(devh1, "W20001050,0#");
+	sendSamCommand(devh1, "W20001054,0#");
+	sendSamCommand(devh1, "W20001058,0#");
+	// start applet and wait for response
+//printf("%s Go command\r\n",__FUNCTION__); 
+	sendSamCommand(devh1,"G20001000#"); 
+	retval= sendSamCommandWaitResponse(devh1,"w20001040,4#", response, 0x40, 3);
+//printf("%s Response %d \r\n",__FUNCTION__,retval);
+	if(retval)
+	{
+		printf("%s response ERROR %d\r\n",__FUNCTION__, retval);
+		return(-1);
+	}
+	if( (response[0]!=0xFF)  || (response[1]!=0xFF) || (response[2]!=0xFF) || (response[3]!=0xFF) )
+	{
+		printf("%s  ERROR target returned: %02x %02x %02x %02x\r\n",__FUNCTION__, response[0], response[1],response[2], response[3]);
+	}
+	devh1->isLowLevelInitDone = 1;
+	return(0);
+}
+
+
+uint32_t littleEndianToHost32(uint32_t x)
+{
+#if BYTE_ORDER == BIG_ENDIAN
+	return __bswap_32(x);
+#elif BYTE_ORDER == LITTLE_ENDIAN
+	return(x);
+#else
+# error "What kind of system is this?"
+#endif
+}
+
+
+uint16_t littleEndianToHost16(uint16_t x)
+{
+#if BYTE_ORDER == BIG_ENDIAN
+	return __bswap_16(x);
+#elif BYTE_ORDER == LITTLE_ENDIAN
+	return(x);
+#else
+# error "What kind of system is this?"
+#endif
+}
+
+
+void dumpAppletParams(void)
+{
+	printf("%s\r\n",__FUNCTION__);
+	printf(" flash size: %08x\n", appletParams.memorySize);
+	printf(" buffer address: %08x, size: %08x  targetSize: %08x\n", appletParams.bufferAddress, appletParams.bufferSize, appletParams.adjustedBufferSize);
+	printf(" lock region size:: %04x(bytes), num lock bits: %04x\n", appletParams.memoryInfo.lockRegionSize, appletParams.memoryInfo.numbersLockBits);
+}
+
+
+int flashInit(atmelsam_ba_handle* devh1)
+{
+        int retval;
+	uint8_t response[0x40];
+	if(verbose_flag) printf("%s\r\n",__FUNCTION__);
+	if( devh1->isLowLevelInitDone == 0)
+	{
+	        retval = lowLevelInit(devh1);
+	        if(retval)
+	        {
+			printf("%s response ERROR\r\n",__FUNCTION__);
+			return(-1);
+                }
+        }
+
+
+	retval = downloadApplet(devh1, devh1->flashAppletFname, flashApplet, sizeFlashApplet);
+	if(retval) return(retval);
+
+	// set up init parameters
+	sendSamCommand(devh1, "W20001040,0#");	//cmd  APPLET_CMD_INIT
+	sendSamCommand(devh1, "W20001048,0#");	// comm type, USB_COM_TYPE
+	sendSamCommand(devh1, "W2000104c,4#");	// tracelevel
+	sendSamCommand(devh1, "W20001050,0#");	// bank, unused
+
+//printf("%s Go command\r\n",__FUNCTION__);
+	// start applet and wait for response
+	sendSamCommand(devh1, "G20001000#");
+
+	retval= sendSamCommandWaitResponse(devh1, "w20001040,4#", response, 0x40, 3);
+//printf("%s Wait Response %d \r\n",__FUNCTION__,retval); 
+	if(retval)
+	{
+		printf("%s response ERROR\r\n",__FUNCTION__);
+		return(-1);
+	}
+	if( (response[0]!=0xFF)  || (response[1]!=0xFF) || (response[2]!=0xFF) || (response[3]!=0xFF) )
+	{
+		printf("%s  ERROR target returned: %02x %02x %02x %02x\r\n",__FUNCTION__, response[0], response[1],response[2], response[3]);
+	}
+
+// get flash memory size	
+	uint32_t iresponse;
+	retval= sendSamCommandWaitResponse(devh1, "w20001048,4#", (uint8_t*)&iresponse, 0x40, 3);
+	if(retval)
+	{
+		printf("%s response ERROR\r\n",__FUNCTION__);
+		return(-1);
+	}
+	appletParams.memorySize = littleEndianToHost32(iresponse);	/// Flash Memory size.
+
+// get ramBuffer start address	
+	retval= sendSamCommandWaitResponse(devh1, "w2000104c,4#", (uint8_t*)&iresponse, 0x40, 3);
+	if(retval)
+	{
+		printf("%s response ERROR\r\n",__FUNCTION__);
+		return(-1);
+	}
+	appletParams.bufferAddress = littleEndianToHost32(iresponse);	/// Buffer address.
+
+//get ramBufferSize
+	retval= sendSamCommandWaitResponse(devh1, "w20001050,4#", (uint8_t*)&iresponse, 0x40, 3);
+	if(retval)
+	{
+		printf("%s response ERROR\r\n",__FUNCTION__);
+		return(-1);
+	}
+	appletParams.bufferSize = littleEndianToHost32(iresponse);	/// Buffer size.
+	appletParams.adjustedBufferSize = appletParams.bufferSize & 0xffffff00;
+	if(appletParams.adjustedBufferSize == 0)
+	{
+		printf("WARNING ram membuffer on target too small\n");
+		appletParams.adjustedBufferSize = appletParams.bufferSize;
+	}
+
+//get lock retion size and number of lock bits
+	retval= sendSamCommandWaitResponse(devh1, "w20001054,4#", (uint8_t*)&iresponse, 0x40, 3);
+	if(retval)
+	{
+		printf("%s response ERROR\r\n",__FUNCTION__);
+		return(-1);
+	}
+	appletParams.memoryInfo.lockRegionSize = littleEndianToHost16(*(uint16_t*)(&iresponse));	/// Lock region size in byte.
+	appletParams.memoryInfo.numbersLockBits = littleEndianToHost16(*((uint16_t*)(&iresponse)+1));	/// Number of Lock Bits.
+
+	if(verbose_flag) dumpAppletParams();
+	return(0);
+}
+
+
+int asb_FlashWrite(atmelsam_ba_handle* devh1, uint8_t* bData, uint32_t length)
+{
+        int retval;
+	uint8_t response[0x40];
+	char cmd[0x40];
+	if(verbose_flag)
+	{
+		printf("%s Writing 0x%X (%d) bytes at 0x%X ... ",__FUNCTION__,length, length, devh1->flashCurrentAddr);
+		fflush(stdout);
+	}
+
+	sprintf(cmd,"S%08X,%x#",appletParams.bufferAddress,length);
+	sendSamCommand(devh1, cmd);		//start read buffer
+	retval = write(devh1->fd, bData, length);	// send the buffer of data
+	if(retval != length)
+	{
+		printf("%s Write buffer to target error\r\n",__FUNCTION__);	  
+		return(-1);
+	}
+	
+	// set up init parameters
+	sendSamCommand(devh1, "W20001040,2#");		//cmd  WRITE
+
+	sprintf(cmd,"W20001048,%08X#",appletParams.bufferAddress);
+	sendSamCommand(devh1, cmd);			// buffer address
+
+	sprintf(cmd,"W2000104c,%x#",length);
+	sendSamCommand(devh1, cmd);			// buffer size
+
+	sprintf(cmd,"W20001050,%x#",devh1->flashCurrentAddr);
+	sendSamCommand(devh1, cmd);		// FLASH start write Address
+
+//printf("%s Go command\r\n",__FUNCTION__);
+	// start applet and wait for response
+	sendSamCommand(devh1, "G20001000#");
+
+	retval= sendSamCommandWaitResponse(devh1, "w20001040,4#", response, 0x40, 3);
+//	printf("%s Wait Response %d \r\n",__FUNCTION__,retval); 
+	
+	if(retval)
+	{
+		printf("%s response ERROR %d\r\n",__FUNCTION__, retval);
+		return(-1);
+	}
+	if( (response[0]!=0xFD)  || (response[1]!=0xFF) || (response[2]!=0xFF) || (response[3]!=0xFF) )
+	{
+		printf("%s  ERROR target returned: %02x %02x %02x %02x\r\n",__FUNCTION__, response[0], response[1],response[2], response[3]);
+		return(-3);
+	}
+	uint32_t bytesWritten;
+	retval= sendSamCommandWaitResponse(devh1, "w20001048,4#", response, 0x40, 3);
+#  if __BYTE_ORDER != __LITTLE_ENDIAN
+#error machine arch has problems
+#endif
+	bytesWritten = *(uint32_t*)(response);
+	if(verbose_flag)
+		printf("wrote:0x%08x (%d)\r\n",bytesWritten, bytesWritten);
+	return(bytesWritten);
+}
+
+
+
+int AtmelSam_ba_setInitAppletFilename(atmelsam_ba_handle* devh1, char* fname)
+{
+	int nameSize = strlen(fname);
+	nameSize++;
+	if( devh1->lowLevelAppletFname)
+		free(devh1->lowLevelAppletFname);
+		
+	devh1->lowLevelAppletFname = malloc(nameSize);
+	if(devh1->lowLevelAppletFname == NULL)
+		return(-1);
+		
+	memcpy(devh1->lowLevelAppletFname, fname, nameSize);
+	return(0);
+}
+
+
+int AtmelSam_ba_setFlashAppletFilename(atmelsam_ba_handle* devh1, char* fname)
+{
+	int nameSize = strlen(fname);
+	nameSize++;
+	if( devh1->flashAppletFname)
+		free(devh1->flashAppletFname);
+		
+	devh1->flashAppletFname = malloc(nameSize);
+	if(devh1->flashAppletFname == NULL)
+		return(-1);
+		
+	memcpy(devh1->flashAppletFname, fname, nameSize);
+	return(0);
+}
+
+
+// these step must be done before programing flash
+// init instance and open target
+// set target applet filenames
+// fname is the name of the .bin file to be downloaded to flash
+int AtmelSam_ba_programFlash(atmelsam_ba_handle* devh1, char* fname)
+{
+	int retval;
+
+	// open binary file to put into FLASH
+	FILE* fp = fopen(fname, "r");
+	if(fp ==NULL)
+	{
+		printf("%s unable to open file <%s>\r\n",__FUNCTION__, fname);
+		return(-1);
+	}
+	
+	
+	// set up target for FLASH work
+	retval = flashInit(devh1);
+	if(retval)
+	{
+		printf("%s ERROR %d\r\n",__FUNCTION__, retval);
+		return(-2);
+	}
+//printf("%s flash applet installed and ready\r\n",__FUNCTION__);
+
+	// temp buffer
+	uint8_t* flashBuffer = malloc(appletParams.adjustedBufferSize);
+	if(flashBuffer == NULL) return(-3);
+
+	// target FLASH destination address
+
+	int totalWritten = 0;
+// download application to FLASH
+	fseek(fp, 0L, SEEK_END);
+	int sz = ftell(fp);
+	if(verbose_flag) printf("%s filesize:%d\r\n", __FUNCTION__, sz);
+	rewind(fp);
+
+	while(1)
+	{
+		uint8_t* pBuffer = flashBuffer;
+		int numWritten;
+		int num = fread(flashBuffer,1,appletParams.adjustedBufferSize,fp);
+		if( num == 0) break;
+		while(num >0)
+		{
+		if(verbose_flag) printf("%s Writing 0x%X (%d) bytes at 0x%0X max:%d\r\n",__FUNCTION__, num, num,  devh1->flashCurrentAddr,  devh1->flashCurrentAddr + num);
+			numWritten = asb_FlashWrite(devh1, pBuffer, num);
+			if(numWritten <0)
+			{
+				return(retval);
+			}
+			totalWritten += numWritten;
+		if(verbose_flag) printf("total:%d  blocks %d\r\n", totalWritten, totalWritten/512);
+			devh1->flashCurrentAddr += numWritten;
+			pBuffer += numWritten;
+			num -= numWritten;
+		}
+		
+	}
+	if(verbose_flag) printf("done\r\n");
+	if(verbose_flag) printf("Setting boot mode to flash\r\n");
+	// set boot mode
+	setModeBootFlash(devh1, devh1->chip->efcBaseAddr);
+
+	if(verbose_flag) printf("Resetting target\r\n");
+	// reboot
+	rebootTarget(devh1, devh1->chip->rstcBaseAddr);
+	return(0);
+}
+
+
+// target is the name of the serial device to open
+atmelsam_ba_handle* AtmelSam_ba_Init(char* target)
+{
+	struct termios  tty;
+	int	rc;
+	speed_t     spd;
+	uint8_t response[0x40];
+
+	// create an initialize handle
+	atmelsam_ba_handle* devh1 = malloc(sizeof( atmelsam_ba_handle));
+	if(!devh1)
+		return(NULL);
+
+	memset(devh1,0,sizeof( atmelsam_ba_handle));
+	devh1->lowLevelAppletFname = NULL;
+	devh1->flashAppletFname = NULL;
+	devh1->flashCurrentAddr = 0;	
+	devh1->isLowLevelInitDone = 0;
+		
+	// set up hardware interface	
+	devh1->fd = open(target, O_RDWR );
+	if(devh1->fd == -1)
+	{
+		printf("%s ERROR unable to open target <%s> errno %d\r\n",__FUNCTION__, target, errno);
+		free(devh1);
+		return(NULL);
+	}
+	
+	rc = tcgetattr(devh1->fd, &tty);
+	if (rc < 0)
+	{
+		printf("%s failed to get attr: %d, %s", __FUNCTION__, rc, strerror(errno));
+		exit (-2);
+	}
+	savetty = tty;    /* preserve original settings for restoration */
+
+	spd = B115200;
+	cfsetospeed(&tty, (speed_t)spd);
+	cfsetispeed(&tty, (speed_t)spd);
+	
+	cfmakeraw(&tty);
+	              
+	tty.c_cc[VMIN] = 1;
+	tty.c_cc[VTIME] = 10;
+	    
+	tty.c_cflag &= ~CSTOPB;
+	tty.c_cflag &= ~CRTSCTS;    /* no HW flow control? */
+	tty.c_cflag |= CLOCAL | CREAD;
+	rc = tcsetattr(devh1->fd, TCSANOW, &tty);
+	if (rc < 0)
+	{
+		printf("%s failed to set attr: %d, %s", __FUNCTION__, rc, strerror(errno));
+		exit (-3);
+	}
+
+	// switch to binary command/response format
+	sendSamCommandWaitResponse(devh1,"N#",response, 0x40, 1);	// configure SAM-BA Monitor to send/receive data in binary format
+
+	sizeLowLevelApplet = sizeof(lowLevelApplet3s4);
+	sizeFlashApplet = sizeof(flashApplet3s4);
+
+	struct chipInfo* pChip = asb_GetChipIdentifier(devh1);		// returns a pointer to struct containing chip info
+	if(!pChip)
+	{
+		printf("ERROR, Unable to identifiy device\n");	
+		return(NULL);	
+	}
+	
+	if(verbose_flag) printf("%s found %08X, %s startAddr:%08X\n",__FUNCTION__, pChip->id_cidr, pChip->name, pChip->flash0_start_addr);
+//	devh1->flashCurrentAddr =  pChip->flash0_start_addr;
+	devh1->flashCurrentAddr =  0;
+	devh1->chip = pChip;
+	uint8_t arch = pChip->id_cidr>>20;
+	int8_t nvpsiz = (0x0F & (pChip->id_cidr>>8));
+	uint32_t flashSize = sam3uNVPSize[nvpsiz];
+//	int8_t nvpsiz2 = (0x0F & (pChip->id_cidr>>12));
+//	uint8_t eproc = (0x0F & (pChip->id_cidr>>5));
+	uint8_t sramsiz = 0x0F& (pChip->id_cidr>>16);
+
+	if(arch == 0x80 || arch == 0x81)
+	{ // if it is a sa3u series do the following
+		if(verbose_flag) printf("detected sam3u");
+		uint32_t ramSize = sam3uInternalSRamSize[sramsiz];
+		if(nvpsiz ==9)
+		{
+			lowLevelApplet =lowLevelApplet3u4;
+			flashApplet = flashApplet3u4;
+			sizeLowLevelApplet = sizeof(lowLevelApplet3u4);
+			sizeFlashApplet = sizeof(flashApplet3u4);
+			if(verbose_flag) printf("4 series\n");
+		}
+		else if(nvpsiz == 7)
+		{
+			lowLevelApplet =lowLevelApplet3u2;
+			flashApplet = flashApplet3u2;
+			sizeLowLevelApplet = sizeof(lowLevelApplet3u2);
+			sizeFlashApplet = sizeof(flashApplet3u2);
+			if(verbose_flag) printf("2 series\n");
+		}	
+		else if(nvpsiz == 5)
+		{
+			lowLevelApplet =lowLevelApplet3u1;
+			flashApplet = flashApplet3u1;
+			sizeLowLevelApplet = sizeof(lowLevelApplet3u1);
+			sizeFlashApplet = sizeof(flashApplet3u1);
+			if(verbose_flag) printf("1 series\n");
+
+		}	
+		if(verbose_flag) printf("%s off: %d, ram size 0x%08x (%d)  flash size 0x%08x\n", __FUNCTION__, sramsiz, ramSize, ramSize, flashSize);
+	}
+	
+	asb_GetEmbeddedFlashDescriptor(devh1, devh1->chip->efcBaseAddr);
+	if(devh1->chip->efc2BaseAddr != 0)
+	{
+		asb_GetEmbeddedFlashDescriptor(devh1, devh1->chip->efc2BaseAddr);
+	}
+	return(devh1);
+}
+

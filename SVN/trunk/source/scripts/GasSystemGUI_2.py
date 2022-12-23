@@ -10,13 +10,11 @@ from matplotlib import pyplot as plt
 from tkinter import Text
 from tkinter import *
 
-from GUI_useful_functions import *
 import time
 import sys
 import numpy as np
 from dateutil import parser
 import subprocess
-import GUI_useful_functions
 import datetime as dt
 from datetime import timedelta
 from matplotlib.dates import  DateFormatter
@@ -30,15 +28,14 @@ import re
 import smtplib
 import imghdr
 from email.message import EmailMessage
-from email_alert import *
+from gas_system_useful_functions import *
 
 
 from tkinter import Canvas
 from tkinter import ttk
 
 
-              
-                
+                             
 min_lim=0.97
 max_lim=1.05
 
@@ -54,7 +51,7 @@ a2f1 = f1.add_subplot(222)
 a3f1 = f1.add_subplot(223)
 a4f1 = f1.add_subplot(224)
 
-f = plt.figure() 
+f = plt.figure(dpi=140) 
 variable = "All Plots"
 chartLoad = True
 paneCount = 1
@@ -71,187 +68,6 @@ startFlow = 0
 config = configparser.ConfigParser()
 config.read("/home/supernemo/GasSystemGUI/GasSystemSettings.ini")
 
-def plot_all_four_graphs():
-                a1 = plt.subplot(2,2,1)
-                a2 = plt.subplot(2,2,2)
-                a3 = plt.subplot(2,2,3)
-                a4 = plt.subplot(2,2,4)
-
-                x, y = get_data("FGT1")
-                x1,y1 = get_data("FGT2")
-                x2,y2 = get_data("BPT")
-                x10, y10 = get_data("Water_Bath")
-                
-
-                x3,y3 = get_data("FRHe")
-                x4,y4 = get_data("FRAr")
-                y4_mult = [i/10 for i in y4]
-                # orginally y4_mult = [i*10 for i in y4] I believe this is wrong
-
-                a1.clear()
-                a2.clear()
-                a3.clear()
-                a4.clear()
-
-                for label in a2.xaxis.get_ticklabels():
-                    label.set_rotation(30)
-                for label in a3.xaxis.get_ticklabels():
-                    label.set_rotation(30)
-                    
-                    
-                    
-                
-                a2.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
-                a3.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
-             
-                
-                plot_data(a1, f, "Pressure")
-                
-                
-          
-                
-                
-
-                
-
-
-                # This is repeated, maybe have function to set all labels at start
-                label_ch0 = setText("23")
-                label_ch1 = setText("24")
-                label_ch2 = setText("25")
-
-                a2.plot_date(x, y, 'b-', label="FG T1 (bot)",linewidth=1.5)
-                a2.plot_date(x1, y1, 'r-', label="FG T2 (top)",linewidth=1)
-                a2.plot_date(x10, y10, 'g-',label="Water Bath",linewidth=0.5)
-                a2.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
-                          ncol=3, borderaxespad=0, prop={'size':10})
-                
-                minimum2 = min(min(y),min(y1),min(y10))
-                maximum2 = max(max(y),max(y1),max(y10))
-                
-                minimum2 = minimum2*min_lim
-                maximum2 = maximum2*max_lim
-                
-                a2.set_ylim(minimum2, maximum2)
-                a2.set_title('Secondary Bubbler Temperatures' + "\n")
-                a2.set_ylabel(setText("14") + "\n")
-                        
-                            
-                
-                label_h = setText("21")
-                label_a = setText("22")
-
-                a3.plot_date(x3, y3, 'b-', label=label_h,linewidth=1.5)
-                a3.plot_date(x4, y4_mult, 'r-', label=label_a,linewidth=1)
-                a3.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
-                          ncol=2, borderaxespad=0, prop={'size':10})
-                
-                
-                minimum3 = min(min(y3),min(y4_mult))
-                maximum3 = max(max(y3),max(y4_mult))
-                
-                minimum3 = minimum3*min_lim
-                maximum3 = maximum3*max_lim
-                
-                a3.set_ylim(minimum3, maximum3)
-                a3.set_title(setText("15") + "\n")
-                a3.set_ylabel(setText("16") + "\n") 
-                
-
-                plot_data(a4, f,"BPT")
-
-                f.subplots_adjust(left=0.10, bottom=0.15, right=0.95, top=0.90, wspace=0.3, hspace=0.6)
-                
-                
-                
-                return f
-
-def email_plot_emergency():
-                  
-                fig_save = plot_all_four_graphs()
-
-              
-                
-                fig_save.savefig('emergency_plots/plot_save.png')   # save the figure to file
-                plt.close(fig_save)
-                print('saved')
-                
-                email_alert(False,False,False,False,False)
-
-
-
-def plot_temp_data(input_file,ax11,title,fig):
-
-    year = 2021
-    year2 = 2021
-
-    month=1
-    month2=1
-
-    day=1
-    day2 = 25
-
-    hour=0
-    hour2=0
-
-    min_=0
-    min_2=0
-
-    second=0
-    second2=0
-
-    milisecond=0
-    milisecond2=0
-    
-    
-    with open(input_file) as f:
-        lines = f.readlines()
-    f.close()    
-    temp = []  
-    time = []
-    
-    precision = 10
-    
-    no_events = int(len(lines)/precision)
-    
-    for i in range(0,no_events):
-        i = i* precision
-        temp_add = (lines[i][47:56])
-        
-        try:
-            float(temp_add)
-            time_add = dt.datetime(int(lines[i][11:15]),int(lines[i][16:18]),int(lines[i][19:21]),int(lines[i][22:24]),int(lines[i][25:27]),int(lines[i][28:30]),int(lines[i][31:38]))
-            temp_add = float(temp_add)
-           # print(time_add,datetime.datetime(year, month, day,hour,min_,second,milisecond))
-            if time_add > dt.datetime(year,month,day,hour,min_,second,milisecond) and time_add<dt.datetime(year2,month2,day2,hour2,min_2,second2,milisecond2):
-            
-               
-                time = np.append(time,time_add)
-                temp = np.append(temp,temp_add)
-            
-        except ValueError:
-            continue
-            #print('error- temp: '+str(temp_add)+'     time:'+str(time_add))
-            
-        
-    
-    
-    ax11.set_title(title)
-    ax11.plot_date(time,temp,'b-',linewidth=1)
-    fig.autofmt_xdate()
-    ax11.set_ylim([min(temp)*min_lim,max(temp)*max_lim])
-    ax11.set_xlim([dt.datetime(year, month, day), dt.datetime(year2, month2, day2)])
-    
-    
-    #ax.set_yticks(np.linspace(0,no_events,10))
-    
- 
- 
- 
- 
- 
-       
- 
 
 def log_graph():
     loadChart('stop')
@@ -269,16 +85,7 @@ def log_graph():
     plot_widget = canvas.get_tk_widget()
     plot_widget.grid(row=0, column=0)
     
-    
-    
-    #loadChart('start')
-    
-                      
-              
-                
-                
-
-# Function to read config values
+ 
 def configSectionMap(section):
     dict1 = {}
     options = config.options(section)
@@ -496,6 +303,19 @@ def split(data):
     return dates, datapoints
 
 def get_status():
+ alert_text =  check_current_alerts()
+ return alert_text
+
+def set_status_title(status):
+    statusText = 'Status:'
+    status=status.rstrip()
+    title = f.suptitle(statusText +str(status), fontsize=5)
+    if status=='GOOD':
+        title.set_backgroundcolor("green")
+    else:
+        title.set_backgroundcolor("red")
+"""
+def get_status():
     with open('/home/supernemo/OverallStatus_cur.txt','r') as f:
         lines = f.readlines()
         for i in range (0, len(lines)):
@@ -527,14 +347,14 @@ def set_status_title(status):
         title.set_backgroundcolor("orange")
     elif status == "ALARM":
         title.set_backgroundcolor("red")
-
+"""
 def animate(i):
 
     global minimum
     global maximum
 
     
-    
+    time_now = datetime.datetime.now() 
     variables = ['Water_Bath','FGT1','FGT2','BPT','Pressure','FRHe','FRAr']
     for i in range(0,7):
       write_data_temporary_log(variables[i])
@@ -544,140 +364,46 @@ def animate(i):
         status = get_status()
         if paneCount == 1:
             if variable == "Pressure":
-                x, y = get_data("Pressure")
-                ymin = min(y)-0.5
-                ymax = max(y)+0.5
-                print(startPoint)
-
-                a = formatChart(ymin, ymax)
-                a.annotate(setText("44"), xy=startPoint, xytext=startPoint, arrowprops=dict(facecolor='black', shrink=0.05))
-                a.annotate(setText("45"), xy=endPoint, xytext=endPoint, arrowprops=dict(facecolor='black', shrink=0.05))
-
-                a.plot_date(x, y, '-')
-
+             
+                ax = plt.subplot()
+                plot_all_variables_sub_function(ax,chiller_status(),False,time_now-dt.timedelta(hours=5),time_now,ax,'','','','GUI')
+                ax.set_xlim(time_now-dt.timedelta(hours=3),time_now)
                 set_status_title(status)
 
-                f.subplots_adjust(left=None, bottom=0.15, right=None, top=None, wspace=None, hspace=0.6)
+                
 
             elif variable == "Secondary Bubbler Temperature":
-                x, y = get_data("FGT1")
-                x1,y1 = get_data("FGT2")
-                x2,y2 = get_data("Water_Bath")
-
-                ymin=int((min(min(y),min(y1),min(y2))))-2
-                ymax=int((max(max(y),max(y1),max(y2))))+2
-
-                a = formatChart(ymin, ymax)
-
-                label_ch0 = 'FG T1 (bot)'
-                label_ch1 = 'FG T2 (top)'
-                label_ch2 = 'Water Bath'
-                #print(x,y)
-                a.plot_date(x, y, 'b-', label=label_ch0,linewidth=1.5)
-                a.plot_date(x1, y1, 'r-', label=label_ch1,linewidth=1)
-                a.plot_date(x2, y2, 'g-', label=label_ch2,linewidth=0.5)
-                a.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=1,
-                         ncol=3, borderaxespad=0)
-                plt.xticks(fontsize = 10)
+                ax = plt.subplot()
+                plot_all_variables_sub_function(ax,chiller_status(),False,time_now-dt.timedelta(hours=5),time_now,'',ax,'','','GUI')
+                ax.set_xlim(time_now-dt.timedelta(hours=3),time_now)
+           
                 set_status_title(status)
 
             elif variable == "Flow Rate":
-                x, y = get_data("FRHe")
-                x1,y1 = get_data("FRAr")
-                
-                
-                # Convert from SCCM to SLM (1000) and multiply by 10 to see on graph
-                y1_conv = [i/10 for i in y1]
-
-                y0min = min(y)
-                y1min = min(y1_conv)
-                yminlist = []
-                yminlist.append(y0min)
-                yminlist.append(y1min)
-                ymin = min(yminlist)
-
-                y0max = max(y)
-                y1max = max(y1_conv)
-                #originally y1max = max(y1)
-                ymaxlist = []
-                ymaxlist.append(y0max)
-                ymaxlist.append(y1max)
-                ymax = min(ymaxlist)
-
-                a = formatChart(ymin, ymax)
-
-                label_h = setText("21")
-                label_a = setText("22")
-
-                a.plot_date(x, y, 'b-', label=label_h)
-                a.plot_date(x1, y1_conv, 'r-', label=label_a)
-                a.legend(bbox_to_anchor=(0, 1.02, 1, .102), loc=3,
-                         ncol=2, borderaxespad=0)
-
+               
+                ax = plt.subplot()
+                plot_all_variables_sub_function(ax,chiller_status(),False,time_now-dt.timedelta(hours=5),time_now,'','',ax,'','GUI')
+                ax.set_xlim(time_now-dt.timedelta(hours=3),time_now)
+             
                 set_status_title(status)
 
             elif variable == "BPT":
-                x, y = get_data("BPT")
-                ymin = min(y)
-                ymax = max(y)
-
-                a = formatChart(ymin, ymax)
-
-                a.plot_date(x, y, '-')
-
+ 
+                ax = plt.subplot()
+                plot_all_variables_sub_function(ax,chiller_status(),False,time_now-dt.timedelta(hours=5),time_now,'','','',ax,'GUI')
+                ax.set_xlim(time_now-dt.timedelta(hours=3),time_now)
+              
                 set_status_title(status)
                 
             elif variable == "Log Plot":
                 
                 log_graph()
-                
-         
-               
-                
 
             elif variable == "All Plots":
-                
-                plot_all_four_graphs()
-                set_status_title(status)
+                 plot_all_variables(f,chiller_status(),False,time_now-dt.timedelta(hours=5),time_now,'GUI')
 
+                 set_status_title(status)
 
-
-def plot_data(subplot, fig, variable):
-    # Function to take in the data and plot the graph
-    x, y = get_data(variable)
-    #print(x)
-    #print(y)
-    subplot.clear()
-    subplot.get_xaxis().get_major_formatter().set_useOffset(False)
-    for label in subplot.xaxis.get_ticklabels():
-        label.set_rotation(30)
-    fig.subplots_adjust(left=0.16, bottom=0.35, right=0.90, top=0.90, wspace=0.2, hspace=0)
-    interval_multples=True
-    subplot.xaxis.set_major_formatter(DateFormatter("%m-%d %H:%M"))
-    #subplot.set_xlabel(setText("12"))
-    
-    minimum = min(y)
-    maximum = max(y)
-    
-    
-    if variable == "Pressure":
-        minimum = minimum
-        maximum = maximum
-        subplot.set_title('Primary Bubbler Pressure')
-        subplot.set_ylabel(setText("11"))
-    elif variable == "BPT":
-        
-        subplot.set_title("Primary Bubbler Temperature")
-        subplot.set_ylabel(setText("14"))
-
-    if min(y,default = "EMPTY" ) < minimum:
-        minimum = (min(y))*min_lim
-
-    if max(y,default = "EMPTY") > maximum:
-        maximum = (max(y))*max_lim
-    
-    subplot.set_ylim(minimum, maximum)
-    subplot.plot_date(x, y, '-')   
 
 class GasSystemapp(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -749,11 +475,6 @@ class GasSystemapp(tk.Tk):
 
         self.frames = {}
 
-        
-       
-        
-
-        
 
         frame = PageOne(container, self)
         self.frames[PageOne] = frame
@@ -778,25 +499,7 @@ class PageOne(tk.Frame):
         setup_canvas(f, self)
         
         
-        
 
-        
-        
-        
-# Function for getting Input
-# from textbox and printing it 
-# at label widget
-  
-
-  
-# TextBox Creation
-        
-   
-  
-# Button Creation
-       
-
-        
        
 
 variables = ['Water_Bath','FGT1','FGT2','BPT','Pressure','FRHe','FRAr']
@@ -808,7 +511,7 @@ for i in range(0,7):
 app = GasSystemapp()
 app.geometry("1280x720")
 show_fig=True
-ani = animation.FuncAnimation(f, animate, interval=1000)
+ani = animation.FuncAnimation(f, animate, interval=2500)
 
 app.protocol("WM_DELETE_WINDOW", quit)
 app.mainloop()

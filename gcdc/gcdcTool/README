@@ -1,0 +1,61 @@
+
+Prerequisits
+	libusb-1.0-devel, note: this is NOT libusb which comes with most distros
+    libxml2-dev
+    build-essential
+    For example: "sudo apt install libusb-1.0-devel"
+
+After installing the above library or locating it (usually in /lib /usr/lib
+or /usr/local/lib) adjust the prefix in the Makefile to point to the
+location on your system
+	prefix=/usr/local
+
+or wherever libusb-1.0 is
+
+after that type
+	sudo make install
+and the application 
+	gcdcTool
+should be created.
+
+
+How to know that gcdcTool has been successfully installed
+
+Plug in a device 
+
+type (probably as root)
+        gcdcTool --settime
+then
+        gcdcTool --gettime
+
+Both should return without error.  The gettime command should return a
+string something like this
+
+RTC Raw Time: 0x55, 21, 15, 00, 18, 87, 09, 88, 00, 0b, 7f, 08, 80, 3f,
+00, 08, 00, 1a, 40, 
+ which is the raw time of day from the real time clock.
+
+Once you have the gcdcTool tested on your system (reads and writes time
+of day) you should be able to upload new firmware into the units.  
+
+The exact syntax for uploading the firmware is
+        gcdcTool --update somename.hex 
+
+The upload takes less than 30 sec to complete.  Once the unit has been
+updated the blue Led should start blinking again.  
+
+IMPORTANT!  Wait for the file system to finish interacting with the unit
+before attempting the upgrade (about 15sec after being mounted).  If
+there is file system activity with the unit while doing an upgrade, the
+upgrade will probably fail, and you'll have to send it back here to be
+reprogrammed.
+
+Also after running the update, the version number can be read with this
+line
+        /sbin/lsusb -v 2>/dev/null | grep -i X6
+
+should return
+ iProduct                2 GCDC X6 rev:xxx
+
+
+where xxx is the subversion control number

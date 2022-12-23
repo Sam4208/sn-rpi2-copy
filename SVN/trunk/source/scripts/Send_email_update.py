@@ -1,4 +1,4 @@
-from email_alert import *
+from gas_system_useful_functions import *
 send = True
 
 print('\n\n\nWhat time period would you like to view data entries for?\n--------------------------------------------------------------------------------------------\nFor data from the current time to a set number of days in the past - today\nFor data between 2 custom times - hist\n--------------------------------------------------------------------------------------------')
@@ -47,5 +47,5 @@ elif email_decision == 'new':
   email = input() 
 
 if send == True:
-    print('\n\nTrying to send email...\n\n')
+    print('\n\nSending Email...\n\n')
     email_alert(True,False,False,False,False,False,False,False,False,False,start_time,end_time,email)

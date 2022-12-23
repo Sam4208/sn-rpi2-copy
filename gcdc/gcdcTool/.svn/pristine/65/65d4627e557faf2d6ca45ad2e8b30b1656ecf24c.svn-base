@@ -1,0 +1,22 @@
+# gcdc device rules
+
+# this allows the serial comm ports to be open to all
+KERNEL=="ttyUSB[0-9]*",         GROUP="uucp", MODE="0666" OPTIONS="last_rule"
+KERNEL=="tty[A-Z]*",            GROUP="uucp", MODE="0666" OPTIONS="last_rule"
+
+
+# this is for old xl8r devices
+SUBSYSTEM=="usb", ACTION=="add", ENV{DEVTYPE}=="usb_device",  ATTR{idVendor}=="10c4",ATTR{idProduct}=="0200" \
+	NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", MODE="0666"
+
+# this is for the a serial com (dongles) device
+SUBSYSTEM=="usb", ACTION=="add", ENV{DEVTYPE}=="usb_device",  ATTR{idVendor}=="10c4",ATTR{idProduct}=="84d1" \
+	NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", MODE="0666"
+
+# this is for the Atmel Arm MSD/HID composite devices
+SUBSYSTEM=="usb", ACTION=="add", ENV{DEVTYPE}=="usb_device",  ATTR{idVendor}=="03eb",ATTR{idProduct}=="6135" \
+	NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", MODE="0666"
+
+# this is for the Atmel Arm MSD/HID composite devices
+SUBSYSTEM=="usb", ACTION=="add", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="03eb",ATTR{idProduct}=="6124" \
+	NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", MODE="0666"

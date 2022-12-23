@@ -1,0 +1,192 @@
+#ifndef _GCDC_INTERFACE
+#define _GCDC_INTERFACE
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <asm/types.h>
+#include <time.h>
+#include "gusb.h"
+#include "gcdc.h"
+
+//#define OLD_OS_PATCH 1
+#ifdef OLD_OS_PATCH
+# if __BYTE_ORDER == __LITTLE_ENDIAN
+#  define htobe16(x) __bswap_16 (x)
+#  define htole16(x) (x)
+#  define be16toh(x) __bswap_16 (x)
+#  define le16toh(x) (x)
+
+#  define htobe32(x) __bswap_32 (x)
+#  define htole32(x) (x)
+#  define be32toh(x) __bswap_32 (x)
+#  define le32toh(x) (x)
+
+#  define htobe64(x) __bswap_64 (x)
+#  define htole64(x) (x)
+#  define be64toh(x) __bswap_64 (x)
+#  define le64toh(x) (x)
+# else
+#  define htobe16(x) (x)
+#  define htole16(x) __bswap_16 (x)
+#  define be16toh(x) (x)
+#  define le16toh(x) __bswap_16 (x)
+
+#  define htobe32(x) (x)
+#  define htole32(x) __bswap_32 (x)
+#  define be32toh(x) (x)
+#  define le32toh(x) __bswap_32 (x)
+
+#  define htobe64(x) (x)
+#  define htole64(x) __bswap_64 (x)
+#  define be64toh(x) (x)
+#  define le64toh(x) __bswap_64 (x)
+# endif
+
+#endif
+
+
+
+int gcdcInterfaceInit(int debug_level);
+void gcdcInterfaceDeinit(void);
+
+gusb_device_handle* gcdcInterfaceConnectToSerialNumber(char* serialNumber);
+gusb_device_handle* gcdcInterfaceConnect(void);
+
+void gcdcInterfaceSetOutput(FILE* fout);
+
+int isGainHi(gusb_device_handle* devh1 );
+int isAccelOn(gusb_device_handle* devh1);
+int getAdcVals(gusb_device_handle* devh1, short* sData);
+int isSelfTest(gusb_device_handle* devh1);
+int gcdcInterfaceGainHi(gusb_device_handle* devh1);
+int gcdcInterfaceGainLow(gusb_device_handle* devh1);
+int gcdcInterfaceSelfTestOn(gusb_device_handle* devh1);
+int gcdcInterfaceSelfTestOff(gusb_device_handle* devh1);
+void selfTest(gusb_device_handle* devh1, int duration, int frequency);
+int readRealTime(gusb_device_handle* devh1);
+
+
+int gcdcInterfaceSetReport(gusb_device_handle* devh1, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize );
+int gcdcInterfaceGetReport(gusb_device_handle* devh1, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize );
+
+// set the time of the device to a value expicitly called out in srcTime
+int gcdcInterfaceSetTime(gusb_device_handle *devh, struct tm* srcTime );
+int gcdcInterfaceGetSerialNum(gusb_device_handle* devh1, char* buffer, int size);
+int gcdcInterfaceGetTime(gusb_device_handle* devh1, unsigned char* data);
+int gcdcInterfaceSetTimeSync(gusb_device_handle *devh1, int microSecOffset, int useUtc);
+void gcdcInterfaceRelease(gusb_device_handle *devh1);
+
+/* returns a list of serial numbers corresponding to devices that this interface can work with
+ctx is the underlying context (NULL for most applicatios)
+list - an array of strings to fill in
+maxEntries - size of the list
+maxSize - max size of each string
+*/
+int gcdcInterfaceGetSerialNumbers( char* list[], int maxEntries, int maxSize);
+
+
+struct tachReport
+{
+	unsigned char reportId;
+	int32_t time_sec;
+	int32_t time_usec;
+	int32_t freq;
+};
+
+struct luxReport
+{
+	unsigned char reportId;
+	int32_t time_sec;
+	int32_t time_usec;
+	int32_t lux;
+};
+
+struct pressureReport
+{
+	unsigned char reportId;
+	int32_t time_sec;
+	int32_t time_usec;
+	int32_t pressure;
+};
+
+struct humidityReport
+{
+	unsigned char reportId;
+	int32_t time_sec;
+	int32_t time_usec;
+	int32_t humidity;
+};
+
+struct temperatureReport
+{
+	unsigned char reportId;
+	int32_t time_sec;
+	int32_t time_usec;
+	int32_t temperature;
+};
+
+struct accelReport
+{
+	unsigned char reportId;
+	uint32_t  sec;
+	uint32_t usec;
+	int32_t accel[3];
+};
+
+
+struct quatReport
+{
+	unsigned char reportId;
+	uint32_t  sec;
+	uint32_t usec;
+	int32_t Qw;
+	int32_t Qx;
+	int32_t Qy;
+	int32_t Qz;
+};
+
+
+typedef struct _rptHeader
+{
+	uint8_t reportId;
+	uint8_t numValid;
+	uint8_t status;
+	uint8_t reserved;
+	struct timeval tm;
+}  __attribute__ ((packed)) rptHeader;
+
+#define MAX_PAYLOAD (64-sizeof( rptHeader))
+typedef struct _adcDataReport
+{
+	rptHeader header;
+	uint16_t sample[MAX_PAYLOAD/sizeof(uint16_t)];
+} __attribute__ ((packed)) adcDataReport;
+
+
+
+int usbInterfaceGetRealtimePressure(gusb_device_handle *devh1, struct pressureReport* pr);
+int usbInterfaceGetRealtimeHumidity(gusb_device_handle *devh1, struct humidityReport* pr);
+int usbInterfaceGetRealtimeTemperature(gusb_device_handle *devh, struct temperatureReport* pr);
+int usbInterfaceGetRealtimeLux(gusb_device_handle *devh, struct luxReport* pr);
+int usbInterfaceGetRealtimeTach(gusb_device_handle *devh, struct tachReport* pr);
+int usbInterfaceGetRealtimeAdcData(gusb_device_handle *devh, adcDataReport* dataR);
+
+int usbInterfaceGetRealtimeAcceleration(gusb_device_handle *devh, struct accelReport* accelR);
+int usbInterfaceGetRealtimeMagnetic(gusb_device_handle *devh, struct accelReport* dataR);
+int usbInterfaceGetRealtimeGyro(gusb_device_handle *devh, struct accelReport* accelG);
+int usbInterfaceGetRealtimeQuaternion(gusb_device_handle *devh, struct quatReport* dataR);
+int usbInterfaceGetRealtimeAccel2(gusb_device_handle *devh, struct accelReport* dataR);
+
+int gcdcInterfaceSmbusRead(gusb_device_handle *devh, uint8_t device, uint8_t offset, uint8_t* buffer, uint8_t len);
+int gcdcInterfaceSmbusWrite(gusb_device_handle *devh, uint8_t device, uint8_t offset, uint8_t* buffer, uint8_t len);
+
+int usbInterfaceFlushQueue(gusb_device_handle *devh, int numPackets);
+gusb_device_handle** gcdcInterfaceConnectToAvailableDevices(void);
+int gcdcInterfaceDeviceControl(gusb_device_handle *devh, char* cmd, char* buffer);
+int usbInterfaceGetPps(gusb_device_handle *devh, struct tm* dest);
+int usbInterfaceGetGps(gusb_device_handle *devh, uint8_t* raw, int len);
+int usbInterfaceGetPpg(gusb_device_handle *devh, uint8_t* raw, int len);
+int usbInterfaceGetRealtimePpg(gusb_device_handle *devh, struct accelReport* pr);
+
+#endif
+

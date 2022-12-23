@@ -6922,3 +6922,8 @@ SP1:  05.000 SP2:  0000.0
 FR1:  00.301 FR2:  0010.6 
 Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
 Scale Ch2:   0200.0  Status Ch2:   00004 
+14/12/2022 21:21:35 : 
+SP1:  04.000 SP2:  0000.0 
+FR1:  04.002 FR2:  0040.2 
+Range Ch1:  20.000 SLM Range Ch2:  2000.0 SCCM
+Scale Ch2:   0200.0  Status Ch2:   00004 

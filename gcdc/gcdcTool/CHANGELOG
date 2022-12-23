@@ -1,0 +1,36 @@
+
+
+2011-0201 svn: 59 Version numbers are now controlled by subversio
+r59 | (no author) | 2011-01-31 16:37:39 -0600 (Mon, 31 Jan 2011) | 1 line
+added support for serial (--cmd) command interface to device
+------------------------------------------------------------------------
+r58 | (no author) | 2011-01-13 12:47:04 -0600 (Thu, 13 Jan 2011) | 1 line
+type on z out
+------------------------------------------------------------------------
+r57 | (no author) | 2011-01-13 12:45:17 -0600 (Thu, 13 Jan 2011) | 1 line
+added fflush to stdout on raw outputs to make pipe and redirects work better
+------------------------------------------------------------------------
+r56 | (no author) | 2010-11-09 10:21:59 -0600 (Tue, 09 Nov 2010) | 1 line
+added usefull exit codes
+------------------------------------------------------------------------
+r55 | (no author) | 2010-11-09 10:14:05 -0600 (Tue, 09 Nov 2010) | 1 line
+added ability to connect to all devices without regard to serial number
+------------------------------------------------------------------------
+
+0.14  2010-May18  Some support for direct SMBUS control
+0.13  2010-Apr-19 Changed Temperature and Presssure report ID, added count
+for --rawb optione that allows for one sample to be output
+0.12  2010-Apr-7  Uses devices with new accel report ID.
+0.11  2010-Apr-7  merged several differences across several machines.  I see
+version control in our future
+0.8 - 2009-Sep-21 turned on warnings on compile, then fixed problems, such
+	as not supplying a return value, bad pointer type casting, unused
+	variables
+0.7 - 2009-Jul-31 added test function to measure offset, self test sens, and 
+		  noise,  also added capacity to set accelerometer gain
+0.6 - 2009-Jul-29 better diagnostics for .hex file errors
+0.5 - 2009-Jul-29 added --raw option for accelerometer users
+0.4 - 2009-Jul-24 removed unnesesary dependancies in Makefile
+0.3 - 2009-Jul-10 removed unused header files
+0.2 - 2009-Jul-2  dependancies on libhid removed
+0.1 - 2009-Jun-1  initial (beta) release

@@ -1,0 +1,1293 @@
+/*! \mainpage GcdcInterface API
+ *
+ * \section intro_sec Introduction
+ *
+ * Welcome to the GcdcInterface API documentation. Here you will find detailed descriptions of the functions within gcdcInterface.c.
+ * If you are looking for the documentation on our java code it can be found in the "docs" directory within the "gcdc-usb-accel" folder.
+ * \n\n
+ * The GcdcInterface API is usefull for Gcdc users who are interested in applications that involve realtime use of data.
+ * GcdcTool.exe is an example app that uses the GcdcInterface to display realtime acceleration or pressure data to the console as
+ * well as get and set the time on the device.
+ * \n\n
+ * The GcdcInterface works off of libusb-1.0-pbatard. If you are interested in the libusb API it can be found at http://libusb.sourceforge.net/api-1.0/ .
+ * Other libusb-1.0 information can be found on its main page at http://www.libusb.org/wiki/Libusb1.0 .
+ * You might also want to visit http://www.libusb.org/wiki/windows_backend , since this is were the windows compatable pbatard branch
+ * of libusb1.0 is located.
+*/
+
+/** \file gcdcInterface.c
+  * This file contains the entire api
+*/
+
+#include <stdio.h>
+#include <asm/types.h>
+#include <unistd.h>
+#include "gcdc.h"
+#include <stdarg.h>
+#include <stdlib.h>
+
+#include <libusb-1.0/libusb.h>
+#define BYTE __u8
+#define DWORD __s32
+#define WORD __s32
+#define BOOL bool
+#include <string.h>    //strlen
+#include "gcdcInterface.h"
+
+
+#define MAX_SIZE_EP0 0x40
+#define MAX_SIZE_EP2 0x40
+
+#ifndef HEX2BCD
+#define HEX2BCD(x) ((((x) / 10) << 4) + (x) % 10)
+#endif
+
+int mUsbTimeout = 2000;
+#define HID_IN                 (LIBUSB_REQUEST_TYPE_CLASS | LIBUSB_ENDPOINT_IN)
+#define HID_OUT                 (LIBUSB_REQUEST_TYPE_CLASS | LIBUSB_ENDPOINT_OUT)
+#define HID_SET_REPORT 		0x09            // Code for Set Report
+#define HID_GET_REPORT 		0x01            // Code for Set Report
+#define HID_RT_FEATURE 0x03
+
+
+FILE* mfout = NULL;
+//static struct libusb_device_handle *devh = NULL;
+
+int verbose_flag2 = 0;
+//! Initializes Libusb and sets debugging.
+//!	 \n   Level 0: no messages ever printed by the library (default)
+//!    \n   Level 1: error messages are printed to stderr
+//!    \n   Level 2: warning and error messages are printed to stderr
+//!    \n   Level 3: informational messages are printed to stdout, warning and error messages are printed to stderr
+/*! EXAMPLE:\n\n
+*	int verbose_flag = 0;\n
+*	r = gcdcInterfaceInit(verbose_flag);\n
+*	if (r < 0) {\n
+*	   fprintf(stderr, "failed to initialise libusb\n");\n
+*	}\n
+*/
+//!	\param debug_level the debug level that libusb will be set to
+//!	\return 0 on success
+
+int gcdcInterfaceInit(int debug_level)
+{
+	int r = 1;
+	mfout = stderr;
+	verbose_flag2 = debug_level;
+	r = libusb_init(NULL);
+	if (r < 0) {
+	fprintf(stderr, "failed to initialise libusb\n");
+	return(r);
+	}
+	if(verbose_flag2)libusb_set_debug(NULL,10);
+	else libusb_set_debug(NULL, 0);
+	return(r);
+}
+//! Deinitializes libusb
+//! calls libusb_exit(NULL);
+//!
+void gcdcInterfaceDeinit(void)
+{
+	libusb_exit(NULL);
+}
+
+inline static int perr(char const *format, ...)
+{
+	va_list args;
+	int r;
+
+	va_start (args, format);
+	r = vfprintf(stderr, format, args);
+	va_end(args);
+
+	return r;
+}
+
+#define ERR_EXIT(errcode) do { perr("   %s\n", libusb_strerror(errcode)); return -1; } while (0)
+#define CALL_CHECK(fcall) do { r=fcall; if (r < 0) ERR_EXIT(r); } while (0);
+#define usb_interface interface
+
+
+int hidIfaceNum = 0;
+int hidEndpointIn = GCDC_HID_DATA_IN;
+int hidBInterval = 10;
+int set_hidIfaceNum(struct libusb_device *dev)
+{
+        struct libusb_config_descriptor* config;
+        int r = 0;
+        int i=0;
+        const struct libusb_interface* iface;
+        int numIfaces = 0;
+        r = libusb_get_config_descriptor(dev,0, &config);
+        if (r != 0)
+        {
+                printf("%s ERROR get_config_descriptor returned %d\r\n",__FUNCTION__,r);
+                return(r);
+        }
+
+        iface = config->interface;
+        numIfaces = config->bNumInterfaces;
+//printf("%s numIfaces %d\r\n",__FUNCTION__, numIfaces);
+        for(i=0;i<numIfaces;i++)
+        {
+                if(iface[i].altsetting->bInterfaceClass == LIBUSB_CLASS_HID )
+                {
+                        hidIfaceNum = iface[i].altsetting->bInterfaceNumber;
+                        uint8_t j;
+                        uint8_t bNumEndpoints = iface[i].altsetting->bNumEndpoints;
+                        const struct libusb_endpoint_descriptor* endpoint = iface[i].altsetting->endpoint;
+                        hidEndpointIn = GCDC_HID_DATA_IN;	// default ENDPOINT
+//                        printf("%s Found hid iface at %d %d\r\n",__FUNCTION__, i, hidIfaceNum);
+                        for(j=0; j< bNumEndpoints; j++)
+                        {
+                                if( (endpoint[j].bEndpointAddress & 0x80) == LIBUSB_ENDPOINT_IN)
+                                {	// we've discovered the endpoint
+                                        hidEndpointIn = endpoint[j].bEndpointAddress;
+                                        hidBInterval = endpoint[j].bInterval;
+//printf("%s EP_in found: %04x\r\n",__FUNCTION__,hidEndpointIn);
+                                        break;
+                                }
+//                                else printf("%s Ep_in not in: %x",__FUNCTION__, endpoint[j].bEndpointAddress);
+                        }
+                        break;
+                }
+//                else printf("%s class:%d  i:%d num:%d\r\n",__FUNCTION__, iface[i].altsetting->bInterfaceClass, i, iface[i].altsetting->bInterfaceNumber);
+        }
+
+        libusb_free_config_descriptor(config);
+        return(r);
+}
+
+
+//! Claims a specific device interface
+//! on a given device handle. You must open a device before you can claim its interface.
+/*!EXAMPLE:\n\n
+*	r = libusb_open(dev, &handle);\n
+*			if (r < 0)\n
+*			{\n
+*				handle = NULL;\n
+*			}\n
+*			r = claimIface(handle,1);\n
+*			if(r<0)\n
+*			{\n
+*			    printf("%s unable to claim interface, error: %d\n",__FUNCTION__,r);\n
+*			}\n
+*/
+//!   \param handle of the device that has an interface to be claimed.
+//!	\param iface integer value of the interface number to be claimed.
+//!	\return 0 on success
+int claimHidIface(libusb_device_handle *handle)
+{
+	int r;
+#ifdef __unix__
+	// Attaching/detaching the kernel driver is only relevant for Linux
+	//int iface_detached = -1;
+#endif
+
+	r = libusb_claim_interface(handle, hidIfaceNum);
+#ifdef __unix__
+	if ((r != LIBUSB_SUCCESS) && (hidIfaceNum == 0)) {
+		// Maybe we need to detach the driver
+		perr("   Failed. Trying to detach driver...\n");
+		libusb_detach_kernel_driver(handle, hidIfaceNum);
+//		iface_detached = iface;
+		printf("   Claiming interface again...\n");
+		r = libusb_claim_interface(handle, hidIfaceNum);
+	}
+#endif
+//	if (r != LIBUSB_SUCCESS) {
+//		perr("%s Failed %d.\n",__FUNCTION__, r);
+//	}
+	return 0;
+}
+
+
+//!Convenience function for finding a device with a particular serial number. Works
+//!when you know the specific serial number of the device.
+//! \param ctx the desired context for the device. This can be null. For more info see http://libusb.sourceforge.net/api-1.0/group__lib.html#ga4ec088aa7b79c4a9599e39bf36a72833
+//! \param serialNum pointer to char array that represents the serial Number of the device
+//! \return device handle of the selected context and serial number
+libusb_device_handle* gcdcInterfaceOpenDeviceWithSerialNumber(libusb_context *ctx, char * serialNum)
+{
+	struct libusb_device **devs;
+	struct libusb_device *dev;
+	libusb_device_handle *handle = NULL;
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)    //secound occurance of warning [set_composite_device]
+		return NULL;
+	while ((dev = devs[i++]) != NULL)
+	{
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+			goto out;
+
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+		{
+			char buffer[0x80];
+			int match;
+
+			set_hidIfaceNum(dev);
+			// open device then close it to take a peek at the serial number
+			r = libusb_open(dev, &handle);
+			if (r < 0)
+			{
+				handle = NULL;
+				continue;
+			}
+			r = claimHidIface(handle);
+			if(r<0)
+			{
+			    printf("%s unable to claim interface, error: %d\n",__FUNCTION__,r);
+			    continue;
+			}
+			r = libusb_get_string_descriptor_ascii(handle,desc.iSerialNumber,(unsigned char*)(buffer),0x80);
+			if( r<0)
+			{
+				printf("%s get_string_descriptor_ascii error: %d\n",__FUNCTION__,r);
+			libusb_close(handle);
+			handle = NULL;
+				continue;
+			}
+
+			match = strncasecmp(serialNum,buffer,strlen(serialNum));
+			if(match == 0)
+			{
+				break;
+			}
+			libusb_close(handle);
+			handle = NULL;
+		}
+	}
+
+
+out:
+	libusb_free_device_list(devs, 1);
+	return handle;
+}
+
+
+//!Opens the device of a given serial number and claims the HID interface.
+//!This is a convenience funtion that does everything needed to begin working with a device of a specific serial number
+/*!EXAMPLE:\n\n
+*	libusb_device_handle* devh[MAX_DEVICES];\n
+*	for(i=0;i< numDevicesFound;i++)\n
+*	{\n
+*		// open devices\n
+*		if(verbose_flag) printf("Connecting to <%s>\n",serialNums[i]);\n
+*		devh[i] = gcdcInterfaceConnectToSerialNumber(serialNums[i]);\n
+*		if(devh[i] == NULL) goto out;\n
+*	}\n
+*/
+//! \param serialNumber pointer to char array of the device serial number
+//! \return device handle obtained by opening the device
+libusb_device_handle* gcdcInterfaceConnectToSerialNumber(char* serialNumber)
+{
+	int r=0;
+	struct libusb_device_handle* devh = NULL;
+
+	devh = gcdcInterfaceOpenDeviceWithSerialNumber(NULL, serialNumber);
+	if (!devh) {
+		fprintf(stderr, "Could not find/open <%s>\n",serialNumber);
+		goto out;
+	}
+
+	r = libusb_kernel_driver_active(devh, hidIfaceNum);
+	if (r == 1) {
+		r = libusb_detach_kernel_driver(devh, hidIfaceNum);
+		if(r<0) 
+		{
+		        if(r != LIBUSB_ERROR_NOT_FOUND)
+                        {
+        			printf("libusb_detach_kernel_driver = %d\n", r);
+	        		goto out;
+                        }
+		}
+	}
+	r = libusb_claim_interface(devh, hidIfaceNum);
+	if (r < 0) {
+	fprintf(stderr, "ERROR, usb_claim_interface libusb error number: %d\n", r);
+		goto out;
+	}
+	return(devh);
+
+out:
+	libusb_close(devh);
+	return( NULL);
+}
+
+
+libusb_device_handle* multiOpen[0x80];
+int openCount = 0;
+
+//!Opens all devices with a matching pid and vid  and claims the HID interface.
+//!This is a convenience funtion that does everything needed to begin working with a device of a specific serial number
+libusb_device_handle** gcdcInterfaceConnectToAvailableDevices(libusb_context *ctx)
+{
+//	int r=0;
+//	struct libusb_device_handle* devh = NULL;
+
+
+{	struct libusb_device **devs;
+	struct libusb_device *dev;
+	libusb_device_handle *handle = NULL;
+//	int count = 0;
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)
+	{
+	    printf("%s get device list returned error\n", __FUNCTION__);
+		return(0);
+	}
+//printf("got device list\n");
+	openCount = 0;
+	multiOpen[openCount] = NULL;
+	while ((dev = devs[i++]) != NULL)
+	{
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+		{
+		    printf("%s get device descriptor return %d\n", __FUNCTION__, r);
+			goto out;
+		}
+//printf("%s %d: vid:pid %04x:%04x\n", __FUNCTION__,i, desc.idVendor, desc.idProduct);
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+//		if (desc.idVendor == GCDC_VID && desc.idProduct == GCDC_PID)
+		{
+		        set_hidIfaceNum(dev);
+
+			r = libusb_open(dev, &handle);
+			if (r < 0)
+			{
+				printf("%s failed to open, returned %d \n", __FUNCTION__, r);
+				handle = NULL;
+				continue;
+			}
+			r= claimHidIface(handle);
+			if (r <0)
+			{
+			    libusb_close(handle);
+			    continue;
+			}
+
+			multiOpen[openCount++] = handle;
+			multiOpen[openCount] = NULL; // null out the next in the list, NULL terminate
+
+		}
+	}
+out:
+	libusb_free_device_list(devs, 1);
+//printf("%s done returning list\n",__FUNCTION__);
+	return(multiOpen);
+}
+}
+
+
+
+
+//!Releases the interface and closes the device
+//! \param devh handle of device that you a finished with
+void gcdcInterfaceRelease(libusb_device_handle *devh)
+{
+	int retval = libusb_release_interface(devh, hidIfaceNum);
+	if(retval)
+	{
+	        if(verbose_flag2) printf("%s libusb_release_interface failed: %d hidIfaceNum: %d\r\n",__FUNCTION__,retval,hidIfaceNum);
+	}
+	libusb_close(devh);
+}
+
+
+void gcdcInterfaceSetOutput(FILE* fout)
+{
+	mfout = fout;
+}
+
+
+//! sends report data to the device through libusb_control_transfer(endpoint 0).
+//! This function is used within many other gcdcInterface functions, so you may not find yourself using it.
+//! \param devh handle to device you are sending to.
+//! \param reportId determines the type of report being sent.
+//! \param dataBuffer char array that contains data being sent
+//! \param dataBufferSize size of data being sent
+//! \return 0 on no error, else value report by libusb_control_transfer
+int gcdcInterfaceSetReport(libusb_device_handle *devh, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize )
+{
+	int len = libusb_control_transfer(devh, HID_OUT, HID_SET_REPORT,
+			reportId + (HID_RT_FEATURE << 8), hidIfaceNum,
+			(unsigned char*)dataBuffer, dataBufferSize, mUsbTimeout);
+
+	if(len == dataBufferSize)
+		return(0);
+	else
+	{
+		printf("%s libusb ERROR#: %d\r\n",__FUNCTION__,len);
+		return(len);
+	}
+}
+
+
+//! gets report data from the device through libusb_control_transfer(endpoint 0).
+//! This function is used within many other gcdcInterface functions.
+//! \param devh handle of device that you are obtaining report from.
+//! \reportId this is used to determine what type of report is being retrieved.
+//! \dataBuffer the data obtained is stored in this char array.
+//! \dataBufferSize this contains the size of the data that will be recieved.
+//! \return 0 if no error else value returned by libusb_control_transfer.
+int gcdcInterfaceGetReport(libusb_device_handle *devh, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize )
+{
+//	if(devh1) devh=devh1;
+	//	handle, bmRequestType, bRequest,
+	//	wValue, wIndex,
+	//	data, wLength, timeout
+	int len = libusb_control_transfer(devh, HID_IN, HID_GET_REPORT,
+			reportId + (HID_RT_FEATURE << 8), hidIfaceNum,
+			(unsigned char*)dataBuffer, dataBufferSize, mUsbTimeout);
+
+	if(len == dataBufferSize)
+	{
+		return(0);
+	}
+	else
+	{
+		if(verbose_flag2) printf("%s libusb_control_transfer error %d\r\n",__FUNCTION__,len);
+		return(len);
+	}
+}
+
+
+//! This is used to read data from the I^2C bus.
+//! \param devh handle to the Gcdc device with the I^2C bus that is to be read.
+//! \param device this is the hardware part connected to the I^2C bus on a Gcdc Device.
+//! \param offset this is the address of the data that is to be read.
+//! \param buffer this is were the data being read is stored.
+//! \param len this is the length of the data that is to be read.
+//! \return 0 on success and error otherwise.
+int gcdcInterfaceSmbusRead(libusb_device_handle *devh, u8 device, u8 offset, u8* buffer, u8 len)
+{
+	int retval=0;
+
+	// set up and do the smbus read, leaving the result in the devices temp buffer
+	u8 tempBuffer[0x40];
+	tempBuffer[0] = SMBUS_ID;
+	tempBuffer[1] = device | 0x01;
+	tempBuffer[2] = offset;
+	tempBuffer[3] = len;
+//	retval = gcdcInterfaceSetReport(devh,SMBUS_ID,tempBuffer,4);
+	retval = gcdcInterfaceSetReport(devh,SMBUS_ID,tempBuffer,SMBUS_REPORT_COUNT);
+	if(retval)
+	{
+	        printf("%s dev:0x%02x offset:0x%02x len:0x%02x\r\n",__FUNCTION__,tempBuffer[1],tempBuffer[2],tempBuffer[3]);
+		printf("%s SetReport Error %d\n",__FUNCTION__,retval);
+		 return(retval);
+	}
+	if(verbose_flag2) printf("%s dev:0x%02x offset:0x%02x len:0x%02x\r\n",__FUNCTION__,tempBuffer[1],tempBuffer[2],tempBuffer[3]);
+
+//        then read the buffer
+	return(gcdcInterfaceGetReport(devh, SMBUS_ID,buffer,SMBUS_REPORT_COUNT));
+//	return(gcdcInterfaceGetReport(devh, SMBUS_ID,buffer,len+4));
+}
+
+
+//! This is used to send a "serial" command to the device.
+//! \param devh handle to the Gcdc device with the I^2C bus that is to be read.
+//! \param device this is the hardware part connected to the I^2C bus on a Gcdc Device.
+//! \param offset this is the address of the data that is to be read.
+//! \param buffer this is were the data being read is stored.
+//! \param len this is the length of the data that is to be read.
+//! \return 0 on success and error otherwise.
+int gcdcInterfaceDeviceControl(libusb_device_handle *devh, char* cmd, char* buffer)
+{
+	int retval=0;
+
+	// set up and do the smbus read, leaving the result in the devices temp buffer
+	u8 tempBuffer[0x40];
+	memset(tempBuffer,0,0x40);
+	tempBuffer[0] = STRING_REPORT_ID;
+	strncpy((char*)(tempBuffer+1),cmd,0x40);
+	retval = gcdcInterfaceSetReport(devh,STRING_REPORT_ID,tempBuffer,STRING_REPORT_COUNT);
+	if(retval)
+	{
+		printf("%s SetReport Error %d\n",__FUNCTION__,retval);
+		 return(retval);
+	}
+	usleep(10000);
+//printf("reading response\n");
+//        then read the buffer
+	return(gcdcInterfaceGetReport(devh, STRING_REPORT_ID,(uint8_t*)buffer,STRING_REPORT_COUNT));
+}
+
+
+//! This is used to write data to the I^2C bus.
+//! \param devh handle to the Gcdc device with the I^2C bus that is to be wrote to.
+//! \param device this is the hardware part connected to the I^2C bus on a Gcdc Device.
+//! \param offset this is the address of where the data is to be written.
+//! \param buffer this is the data that will be written.
+//! \param len this is the length of the data being written.
+//! \return 0 on success and error otherwise.
+int gcdcInterfaceSmbusWrite(libusb_device_handle *devh, u8 device, u8 offset, u8* buffer, u8 len)
+{
+	int retval=0;
+
+	// set up and do the smbus read, leaving the result in the devices temp buffer
+	u8 tempBuffer[0x40];
+	tempBuffer[0] = SMBUS_ID;
+	tempBuffer[1] = device & ~0x01;
+	tempBuffer[2] = offset;
+	tempBuffer[3] = len;
+	memcpy(&(tempBuffer[4]),buffer,len);
+	retval = gcdcInterfaceSetReport(devh,SMBUS_ID,tempBuffer,SMBUS_REPORT_COUNT);
+	if(retval)
+	{
+		printf("%s SetReport Error %d\n",__FUNCTION__,retval);
+		 return(retval);
+	}
+
+//        then read the buffer
+//        return(gcdcInterfaceGetReport(devh, SMBUS_ID,buffer,SMBUS_REPORT_COUNT));
+return retval;
+}
+
+
+//! set the time of the device to a value expicitly called out in srcTime
+//! stores the time in a char array that is passed to gcdcInterfaceSetReport.\n
+//! srcTime looks like this:\n
+/*!\n 	cmd[0] = TIME_ID;
+\n 	cmd[1] = HEX2BCD(srcTime->tm_sec);
+\n 	cmd[2] = HEX2BCD(srcTime->tm_min);
+\n 	cmd[3] = HEX2BCD(srcTime->tm_hour);
+\n 	cmd[5] = HEX2BCD(srcTime->tm_mday);
+\n 	cmd[6] = HEX2BCD(srcTime->tm_mon+1);
+\n 	cmd[6] = cmd[6] | 0x80;  this sets the century bit in the rtc
+\n 	cmd[7] = HEX2BCD(srcTime->tm_year+1900-2000);  hour epoch is 1900, but subtract 100 years for the century bit above
+	\param devh handle to the device you would like to set the time of.
+	\param srcTime pointer to structure that contains the time to be set
+	\return 0 on success
+*/
+int gcdcInterfaceSetTime(libusb_device_handle *devh, struct tm* srcTime )
+{
+	unsigned char cmd[TIME_REPORT_COUNT+1];
+
+	cmd[0] = TIME_ID;
+	cmd[1] = HEX2BCD(srcTime->tm_sec);
+	cmd[2] = HEX2BCD(srcTime->tm_min);
+	cmd[3] = HEX2BCD(srcTime->tm_hour);
+	cmd[5] = HEX2BCD(srcTime->tm_mday);
+	cmd[6] = HEX2BCD(srcTime->tm_mon+1);
+	cmd[6] = cmd[6] | 0x80; // this sets the century bit in the rtc
+	cmd[7] = HEX2BCD(srcTime->tm_year+1900-2000); // hour epoch is 1900, but subtract 100 years for the century bit above
+
+	return(gcdcInterfaceSetReport(devh, TIME_ID, (unsigned char *)(cmd), TIME_REPORT_COUNT+1));
+}
+
+#ifdef MINGW
+//! NOT IMPLEMENTED
+//!
+int gcdcInterfaceSetTimeSync(libusb_device_handle *devh, int microSecOffset)
+{
+    printf("FIXME %s not implemented\n",__FUNCTION__);
+    return(0);
+}
+#else
+//! Set the time of the device to the cpu time with an optional offset.\n
+//! Use this when you wish to set the time to real world time
+//! \param devh handle of the device you would like to set the time of
+//! \param microSecOffset integer of cpu time offset in micro secounds (optional).
+//! \return 0 on success
+int gcdcInterfaceSetTimeSync(libusb_device_handle *devh, int microSecOffset)
+{
+	struct timespec tmpTime;
+	struct tm* setTime;
+	time_t  nowsecs;
+
+	clock_gettime(CLOCK_REALTIME, &tmpTime);
+
+	nowsecs = tmpTime.tv_sec;
+	while(tmpTime.tv_sec == nowsecs)
+	{
+		clock_gettime(CLOCK_REALTIME, &tmpTime);
+		setTime = localtime(&(tmpTime.tv_sec));
+
+	}
+	usleep(microSecOffset);
+	return( gcdcInterfaceSetTime(devh, setTime ) );
+}
+#endif
+
+//! Get the time from the device real time clock
+//! \param devh handle of device you would like to know the time of.
+//! \param data unsigned char array that the time is stored in.
+//! \return 0 on success
+int gcdcInterfaceGetTime(libusb_device_handle *devh, unsigned char* data)
+{
+	data[0] =  TIME_ID;
+	gcdcInterfaceGetReport(devh, TIME_ID, data, TIME_REPORT_COUNT);
+	return(0);
+}
+
+
+//! Get the serial number of this device.\n
+//! This calls libusb_get_string_descriptor_ascii.
+/*!EXAMPLE:\n\n
+*		char snString[MAX_SERIAL_NUM];\n
+*		gcdcInterfaceGetSerialNum(NULL, snString,MAX_SERIAL_NUM);\n
+*		printf("sn <%s>\n",snString);\n
+*/
+//! \param devh handle to device that you are requesting the serial number to.
+//! \param buffer char array that the serial number is placed in.
+//! \param size The size of the serial number.
+//! \return 0 on success
+int gcdcInterfaceGetSerialNum(libusb_device_handle *devh, char* buffer, int size)
+{
+	struct libusb_device_descriptor devInfo;
+//	if(devh1) devh=devh1;
+	libusb_get_device_descriptor(libusb_get_device(devh),&devInfo);
+	return( libusb_get_string_descriptor_ascii(devh,devInfo.iSerialNumber,(unsigned char*)(buffer),size));
+}
+
+
+//! Checks the device to see if high gain is set.\n
+//! \param devh handle of device
+//! \return 0 for false and 1 for true.
+int isGainHi(libusb_device_handle *devh)
+{
+	unsigned char command[] = {GAIN_ID,0};
+	gcdcInterfaceGetReport(devh, GAIN_ID, command, GAIN_REPORT_COUNT);
+	return(command[0]);
+}
+//! Checks the device to see if Accel is set.\n
+//! \param devh handle of device
+//! \return 0 for false and 1 for true.
+int isAccelOn(libusb_device_handle *devh)
+{
+	unsigned char command[] = {ACCEL_ON_OFF_ID,0};
+	gcdcInterfaceGetReport(devh, ACCEL_ON_OFF_ID, command, ACCEL_ON_OFF_REPORT_COUNT);
+	return(command[0]);
+}
+
+
+
+//! Checkes device to see if Self Test is set.\n
+//!Self Test allows to test the mechanical and electric part of the sensor, allowing the seismic
+//!mass to be moved by means of an electrostatic test-force.
+//! \param devh device handle
+//! \return 0 for false and 1 for true.
+int isSelfTest(libusb_device_handle *devh)
+{
+	unsigned char command[] = {SELF_TEST_ID,0};
+	gcdcInterfaceGetReport(devh, SELF_TEST_ID,command, SELF_TEST_REPORT_COUNT);
+	return(command[0]);
+}
+
+//! Sets High Gain for a specific device.
+//! \param devh device handle
+//! \return 0 on success
+int gcdcInterfaceGainHi(libusb_device_handle *devh)
+{
+	unsigned char	command[] = {GAIN_ID,1};
+	return (gcdcInterfaceSetReport(devh, GAIN_ID, command, GAIN_REPORT_COUNT+1));
+}
+//! Sets Low Gain for a specific device
+//! \param devh device handle
+//! \return 0 on success
+int gcdcInterfaceGainLow(libusb_device_handle *devh)
+{
+	unsigned char command[] = {GAIN_ID,0};
+	return (gcdcInterfaceSetReport(devh, GAIN_ID, command, GAIN_REPORT_COUNT+1));
+}
+
+//! Turns Self Test on for a specific device
+//! \param devh device handle
+//! \return 0 on success
+int gcdcInterfaceSelfTestOn(libusb_device_handle *devh)
+{
+	unsigned char command[] = {SELF_TEST_ID,1};
+	return (gcdcInterfaceSetReport(devh, SELF_TEST_ID, command, SELF_TEST_REPORT_COUNT+1));
+}
+
+//! Turns Self Test off for a specific device
+//! \param devh device handle
+//! \return 0 on success
+int gcdcInterfaceSelfTestOff(libusb_device_handle *devh)
+{
+	unsigned char command[] = {SELF_TEST_ID,0};
+	return (gcdcInterfaceSetReport(devh, SELF_TEST_ID, command, SELF_TEST_REPORT_COUNT+1));
+}
+
+
+
+/*struct datum
+{
+	unsigned char reportId;
+	u_int16_t timeFsec;
+	int16_t timeFmsec;
+	int32_t datum;
+} currData;
+*/
+/*
+struct pressureReport
+{
+	unsigned char reportId;
+	u_int16_t timeFsec;
+	int16_t timeFmsec;
+	int32_t pressure;
+};
+*/
+
+
+//! Obtains a generic report from a device
+//! Reports are obtained through interrupt transfers.\n \n
+//! The return value contains the report type
+//! Error if negative\n
+//! \param devh handle of device you want to obtain pressure report from
+//! \param maxData max number of bytes to read
+//! \param buffer destination for data
+//! \return -1 if pr is null, -2 if report id != PRESSURE_REPORT_ID, and 0 when report id == PRESSURE_REPORT_ID.
+int usbInterfaceGetRaw(libusb_device_handle *devh, unsigned char *buffer, int length)
+{
+	int r;
+	int xfered;
+//printf("%s xfer\r\n",__FUNCTION__);
+	r = libusb_interrupt_transfer(devh, hidEndpointIn, buffer, length, &xfered, mUsbTimeout);
+	if (r < 0)
+	{
+	        if( r == LIBUSB_ERROR_TIMEOUT)
+        		fprintf(stderr, "libusb_interupt_transfer error %d, Operation timed out after %d msec\n", r, mUsbTimeout);
+                else
+        		fprintf(stderr, "%s libusb_interupt_transfer error %d num recieved: %d\n", __FUNCTION__, r, xfered);
+		return( r) ;
+	}
+	return(buffer[0]);
+}
+
+
+struct pressureReport* processPressureReport(unsigned char* temp, struct pressureReport* dest)
+{
+	struct pressureReport* pr = dest;
+	if(pr == NULL)
+		pr = (struct pressureReport*)malloc(sizeof(struct pressureReport));
+	pr->reportId = PRESSURE_REPORT_ID;
+	pr->time_sec = le32toh(*(u32*)(temp+5));
+	pr->time_usec = le32toh(*(u32*)(temp+9));
+	pr->pressure = le32toh(*(u32*)(temp+1));
+	return(pr);
+}
+
+adcDataReport* processAdcDataReport(unsigned char* src, adcDataReport* dest)
+{
+        int i;
+	adcDataReport* pr = dest;
+	if(pr == NULL)
+		pr = (adcDataReport*)malloc(sizeof(adcDataReport));
+        pr->header.reportId = *src;
+	pr->header.numValid = *(src+1);
+	pr->header.status = *(src+2);
+	pr->header.tm.tv_sec = le32toh(*(u32*)(src+4));
+	pr->header.tm.tv_usec = le32toh(*(u32*)(src+8));
+	for(i=0; i<pr->header.numValid; i++)
+        {
+                pr->sample[i] = le16toh(*(uint16_t*)(src+sizeof(uint16_t)*(6+i)));
+	}        
+	return(pr);
+}
+
+int usbInterfaceGetReport(libusb_device_handle *devh, void** factory)
+{
+	unsigned char temp[0x40];
+	int r;
+	r = usbInterfaceGetRaw(devh, temp, 0x40);
+	if (r < 0)
+		return( r) ;
+
+	switch(r)
+	{
+	case PRESSURE_REPORT_ID:
+		*factory = processPressureReport(temp, NULL);
+		break;
+//	case OLD_PRESSURE_REPORT_ID:
+//		pr->pressure = le32toh(*(u32*)(temp+5));
+//		pr->time_sec = le16toh(*(u16*)(temp+1));
+//		pr->time_usec = le32toh(*(u16*)(temp+3))*1000;
+//		return(0);
+//		break;
+//	case OLD_TEMPERATURE_REPORT_ID:
+//		pr->pressure = le32toh(*(u32*)(temp+5));
+//		pr->time_sec = le16toh(*(u16*)(temp+1));
+//		pr->time_usec = le32toh(*(u16*)(temp+3))*1000;
+//		break;
+	case TEMPERATURE_REPORT_ID:
+// printf("temperature %d (0x%08x)  time:%d.%06d\n",pr->pressure,pr->pressure, pr->time_sec,pr->time_usec);
+		break;
+	case PPS_TIME_REPORT_ID:
+	{
+		struct tm tm1;
+		time_t timet1;
+		tm1.tm_sec = temp[3];
+		tm1.tm_min = temp[4];
+		tm1.tm_hour = temp[5];
+		tm1.tm_mday = temp[6];
+		tm1.tm_mon = temp[7]-1;
+		tm1.tm_year = le16toh(*(u16*)(temp+8))-1900;
+		timet1 = mktime(&tm1);
+#ifndef __MINGW32__
+		{
+			struct tm tm2;
+			gmtime_r(&timet1,&tm2);
+//			printf("%s PPS tick %s",__FUNCTION__, asctime(gmtime(&timet1))); //&tm2));
+		}
+#endif
+                break;
+	}
+	case ADC_REPORT_ID:
+		*factory = processAdcDataReport(temp, *factory);
+		break;
+
+	default:
+		break;
+	}
+	return(r);
+}
+
+int usbInterfaceGetRealtimeAdcData(libusb_device_handle *devh, adcDataReport* pr)
+{	
+        void* factory = NULL;
+        int rptType = 1;
+        while(rptType > 0)
+        {
+                rptType = usbInterfaceGetReport(devh, &factory);
+                if(rptType == ADC_REPORT_ID)
+                {
+                        memcpy(pr, factory, sizeof(adcDataReport));
+                        free( factory );
+                        return(rptType);
+                }
+                free( factory );
+                factory = NULL;
+        }
+        return(rptType);
+}
+
+
+//! Obtains a Realtime Pressure report from a gcdc Barameter.
+//! Reports are obtained through interrupt transfers.\n \n
+//! This function only prints to the console when compiling with mingw 32 bit.
+//! Pressure Report structures look like this:\n
+/*!	pr->reportId = temp[0];\n
+*		pr->time_sec = le32toh(*(u32*)(temp+5));\n
+*		pr->time_usec = le32toh(*(u32*)(temp+9));\n
+*  	pr->pressure = le32toh(*(u32*)(temp+1));\n\n
+* EXAMPLE:\n\n
+*			for(i=0;i<numDevicesFound;i++)\n
+*			{\n
+*
+*				if(usbInterfaceGetRealtimePressure(devh[i],	&pr[i]))\n
+*				goto out;\n
+*			}\n
+*			\n
+*			delta[1] = pr[1].pressure-pr[0].pressure;\n
+*			delta[2]= pr[2].pressure-pr[0].pressure;\n
+*			delta[3] = pr[3].pressure-pr[0].pressure;\n
+*			printf("%d, %d, %d, %d, %d, %d, %d\n",pr[0].pressure, pr[1].pressure, pr[2].pressure, pr[3].pressure, delta[1],delta[2],delta[3]);\n
+*/
+//! \param devh handle of device you want to obtain pressure report from
+//! \param pr the pressure report is stored in this structure. This includes a time stamp.
+//! \return -1 if pr is null, -2 if report id != PRESSURE_REPORT_ID, and 0 when report id == PRESSURE_REPORT_ID.
+int usbInterfaceGetRealtimePressure(libusb_device_handle *devh, struct pressureReport* pr)
+{
+	unsigned char temp[0x40];
+	if(!pr) return(-1);
+	while(1)
+	{
+		int r;
+		r = usbInterfaceGetRaw(devh, temp, 0x40);
+		if (r < 0)
+		{
+			return( r) ;
+		}
+
+		char reportId = r;
+		pr->reportId = r;
+		pr->time_sec = le32toh(*(u32*)(temp+5));
+		pr->time_usec = le32toh(*(u32*)(temp+9));
+		pr->pressure = le32toh(*(u32*)(temp+1));
+		switch(reportId)
+		{
+		case PRESSURE_REPORT_ID:
+			return(0);
+			break;
+		case OLD_PRESSURE_REPORT_ID:
+			pr->pressure = le32toh(*(u32*)(temp+5));
+			pr->time_sec = le16toh(*(u16*)(temp+1));
+			pr->time_usec = le32toh(*(u16*)(temp+3))*1000;
+			return(0);
+			break;
+		case OLD_TEMPERATURE_REPORT_ID:
+			pr->pressure = le32toh(*(u32*)(temp+5));
+			pr->time_sec = le16toh(*(u16*)(temp+1));
+			pr->time_usec = le32toh(*(u16*)(temp+3))*1000;
+			break;
+		case TEMPERATURE_REPORT_ID:
+// printf("temperature %d (0x%08x)  time:%d.%06d\n",pr->pressure,pr->pressure, pr->time_sec,pr->time_usec);
+			break;
+		case PPS_TIME_REPORT_ID:
+		{
+			struct tm tm1;
+			time_t timet1;
+			tm1.tm_sec = temp[3];
+			tm1.tm_min = temp[4];
+			tm1.tm_hour = temp[5];
+			tm1.tm_mday = temp[6];
+			tm1.tm_mon = temp[7]-1;
+			tm1.tm_year = le16toh(*(u16*)(temp+8))-1900;
+			timet1 = mktime(&tm1);
+#ifndef __MINGW32__
+			{
+				struct tm tm2;
+				gmtime_r(&timet1,&tm2);
+//		        	printf("%s PPS tick %s",__FUNCTION__, asctime(gmtime(&timet1))); //&tm2));
+			}
+#endif
+		}
+
+		default:
+			break;
+		}
+	}
+	return(-2);
+}
+
+
+/*
+struct lisSample
+{
+	u8 reportID;
+	s16 samples[3];
+	u32 secs;
+	u32 usecs;
+	u16 num;
+	u16 denom
+};
+
+*/
+
+void dumpReport(unsigned char* data, char len)
+{
+        int i;
+        for(i=0;i<len;i++)
+        {
+                if(i%16 == 15) printf("\r\n");
+                else printf("%02x ",data[i]);
+        }
+        printf("\r\n");
+}
+
+#define MAX_MULTI_ACCEL_REPORT 8
+
+typedef struct _multiAccelUsbReport
+{
+        uint8_t id;
+        uint8_t numSamples;
+        uint32_t first_sec;
+        uint32_t first_usec;
+        uint32_t delta_usec;
+        int16_t samples[3*MAX_MULTI_ACCEL_REPORT];
+} __attribute__ ((packed)) multiAccelUsbReport;
+
+multiAccelUsbReport* pMultiData = NULL;
+
+int usbInterfaceFlushQueue(libusb_device_handle *devh, int numPackets)
+{
+	static unsigned char temp[0x40];
+	pMultiData = NULL;
+	int i;
+//printf("%s FIXME adjust timeout to be a little more than reported in bInterval for this endpoint %d\r\n",__FUNCTION__, hidBInterval);
+	for(i=0;i<numPackets;i++)
+	{
+		int r;
+		int xfered;
+		r = libusb_interrupt_transfer(devh, hidEndpointIn, temp, 0x40, &xfered, hidBInterval+1);
+		if (r < 0)
+		{
+			if( r == LIBUSB_ERROR_TIMEOUT)
+			{
+//printf("timeout on packet %d xfered %d\r\n",i,xfered);
+                                usleep((hidBInterval+1)*1000);
+				return(0);
+                        }
+			else
+				fprintf(stderr, "%s libusb_interupt_transfer error %d num recieved: %d\n", __FUNCTION__, r, xfered);
+			return( r) ;
+		}
+	}
+	return(0);
+}
+
+
+//! Obtains a realtime acceleration reports from a Gcdc Accelarometer.
+//! Acceleration reports are obtained through interrupt_transfers.\n\n
+//! Acceleration reports look like this:\n
+/*! 		accelR->reportId = ACCEL_REPORT_ID;\n
+*		 	accelR->accel[0]=  le16toh(*(s16*)(temp+1));\n
+*		 	accelR->accel[1]=  le16toh(*(s16*)(temp+3));\n
+*		 	accelR->accel[2]=  le16toh(*(s16*)(temp+5));\n
+*			accelR->sec = le32toh(*(u32*)(temp+7));\n
+*			accelR->usec = le32toh(*(u32*)(temp+11));\n\n
+* EXAMPLE: \n\n
+*	if(usbInterfaceGetRealtimeAcceleration(devh[i], &accelR))\n
+*	printf("%d, %d, %d,    ",accelR.accel[0],accelR.accel[1],accelR.accel[2]);\n
+*
+* \param devh handle to device you would like to obtain a acceleration report on.
+* \param accelR accelReport structure where the report is placed.
+* \return 0 on success. If the report ID is unexpected then the report ID is returned. returns  <0 on an error.
+*/
+int usbInterfaceGetRealtimeAcceleration(libusb_device_handle *devh, struct accelReport* accelR)
+{
+	static unsigned char temp[0x40];
+	if(pMultiData)
+	{ // get data from existing packet with multiple samples in it
+			accelR->reportId = ACCEL_REPORT_ID;
+//printf("processing old report\r\n");
+			accelR->accel[0]=  le16toh(pMultiData->samples[(MAX_MULTI_ACCEL_REPORT-pMultiData->numSamples)*3 + 0]);
+			accelR->accel[1]=  le16toh(pMultiData->samples[(MAX_MULTI_ACCEL_REPORT-pMultiData->numSamples)*3 + 1]);
+			accelR->accel[2]=  le16toh(pMultiData->samples[(MAX_MULTI_ACCEL_REPORT-pMultiData->numSamples)*3 + 2]);
+			accelR->sec = le32toh(pMultiData->first_sec);
+			accelR->usec = le32toh(pMultiData->first_usec);
+			accelR->usec += (MAX_MULTI_ACCEL_REPORT-pMultiData->numSamples) * le16toh(pMultiData->delta_usec);
+			while(accelR->usec >= 1000000L)
+			{
+			        accelR->sec++;
+			        accelR->usec -= 1000000L;
+			}
+			pMultiData->numSamples--;
+			if(pMultiData->numSamples == 0) pMultiData = NULL;
+			return(0);
+	}
+
+	if(!accelR) return(-1);
+	while(1)
+	{
+		int r;
+                r = usbInterfaceGetRaw(devh, temp, 0x40);
+                if (r < 0)
+                        return( r) ;
+
+
+		char reportId = temp[0];
+//printf("report id %d\r\n", reportId);
+		switch(reportId)
+		{
+		case ACCEL_REPORT_ID:
+			accelR->reportId = ACCEL_REPORT_ID;
+			accelR->accel[0]=  le16toh(*(s16*)(temp+1));
+			accelR->accel[1]=  le16toh(*(s16*)(temp+3));
+			accelR->accel[2]=  le16toh(*(s16*)(temp+5));
+			accelR->sec = le32toh(*(u32*)(temp+7));
+			accelR->usec = le32toh(*(u32*)(temp+11));
+
+			return(0);
+			break;
+		case MULTI_ACCEL_REPORT_ID:
+	                pMultiData = ( multiAccelUsbReport*)temp;
+//printf("Got multi accel report id \r\n");
+                        if(pMultiData->numSamples > MAX_MULTI_ACCEL_REPORT)
+                        {
+                                pMultiData = NULL;
+                                dumpReport(temp,0x40);
+                                break;
+                        }
+
+			accelR->reportId = ACCEL_REPORT_ID;
+			accelR->accel[0]=  le16toh(pMultiData->samples[0]);
+			accelR->accel[1]=  le16toh(pMultiData->samples[1]);
+			accelR->accel[2]=  le16toh(pMultiData->samples[2]);
+			accelR->sec = le32toh(pMultiData->first_sec);
+			accelR->usec = le32toh(pMultiData->first_usec);
+			pMultiData->numSamples--;
+
+			return(0);
+			break;
+		case PPS_TIME_REPORT_ID:
+                        if(verbose_flag2)
+                        {
+                        	struct tm tm1;
+                		struct tm tm2;
+        			time_t timet1;
+        			tm1.tm_sec = temp[3];
+        			tm1.tm_min = temp[4];
+        			tm1.tm_hour = temp[5];
+        			tm1.tm_mday = temp[6];
+        			tm1.tm_mon = temp[7]-1;
+        			tm1.tm_year = le16toh(*(u16*)(temp+8))-1900;
+        			timet1 = mktime(&tm1);
+        			gmtime_r(&timet1,&tm2);
+        			printf("%s PPS tick %s",__FUNCTION__, asctime(&tm2));
+                        }
+			continue;
+		default:
+			if(verbose_flag2)
+			{
+			        printf("%s() unexpected report id %d\n",__FUNCTION__,reportId);
+			        dumpReport(temp,0x40);
+                        }
+
+			continue;
+//			return(reportId);
+		}
+	}
+	return(-2);
+}
+
+//! Obtains a realtime magnetic vector from a Gcdc device
+//! Magnetic reports are obtained through interrupt_transfers.\n\n
+//! Reports look like this:\n
+/*! 		dataR->reportId = MAG_REPORT_ID;\n
+*		 	dataR->accel[0]=  le16toh(*(s16*)(temp+1));\n
+*		 	dataR->accel[1]=  le16toh(*(s16*)(temp+3));\n
+*		 	dataR->accel[2]=  le16toh(*(s16*)(temp+5));\n
+*			dataR->sec = le32toh(*(u32*)(temp+7));\n
+*			dataR->usec = le32toh(*(u32*)(temp+11));\n\n
+* EXAMPLE: \n\n
+*	if(usbInterfaceGetRealtimeMagnetic(devh[i], &dataR))\n
+*	printf("%d, %d, %d,    ",dataR.accel[0],dataR.accel[1],dataR.accel[2]);\n
+*
+* \param devh handle to device you would like to obtain a acceleration report on.
+* \param dataR dataReport structure where the report is placed.
+* \return 0 on success. If the report ID is unexpected then the report ID is returned. returns  <0 on an error.
+*/
+int usbInterfaceGetRealtimeMagnetic(libusb_device_handle *devh, struct accelReport* dataR)
+{
+	unsigned char temp[0x40];
+	if(!dataR) return(-1);
+	while(1)
+	{
+		int r;
+                r = usbInterfaceGetRaw(devh, temp, 0x40);
+                if (r < 0)
+                        return( r) ;
+
+		char reportId = temp[0];
+		switch(reportId)
+		{
+		case MAG_REPORT_ID:
+                        if(verbose_flag2)
+                                dumpReport(temp, 0x40);
+                        
+			dataR->reportId = MAG_REPORT_ID;
+			dataR->accel[0]=  le16toh(*(s16*)(temp+1));
+			dataR->accel[1]=  le16toh(*(s16*)(temp+3));
+			dataR->accel[2]=  le16toh(*(s16*)(temp+5));
+			dataR->sec = le32toh(*(u32*)(temp+7));
+			dataR->usec = le32toh(*(u32*)(temp+11));
+
+			return(0);
+			break;
+		case PPS_TIME_REPORT_ID:
+//		{
+//			struct tm tm1;
+//			struct tm tm2;
+//			time_t timet1;
+//			tm1.tm_sec = temp[3];
+//			tm1.tm_min = temp[4];
+//			tm1.tm_hour = temp[5];
+//			tm1.tm_mday = temp[6];
+//			tm1.tm_mon = temp[7]-1;
+//			tm1.tm_year = le16toh(*(u16*)(temp+8))-1900;
+//			timet1 = mktime(&tm1);
+//			gmtime_r(&timet1,&tm2);
+//			printf("%s PPS tick %s",__FUNCTION__, asctime(&tm2));
+//		}
+			continue;
+		default:
+                        if(verbose_flag2)
+			{
+				printf("%s() unexpected report id %d\n",__FUNCTION__,reportId);
+                                dumpReport(temp, 0x40);
+			}
+			continue;
+//			return(reportId);
+		}
+	}
+	return(-2);
+}
+
+
+
+//!	Obtains a list of Serial Numbers for the List of detected Gcdc devices.
+/*!EXAMPLE:\n\n
+*	for(i=0;i<MAX_DEVICES;i++)\n
+*	{\n
+*		serialNums[i] = temp[i];\n
+*	}\n
+*	numDevicesFound = gcdcInterfaceGetSerialNumbers(NULL, serialNums, MAX_DEVICES, MAX_SERIAL_NUM);\n
+*	if(numDevicesFound <1)\n
+*	{\n
+*		printf("Wasn't able to find devices %d\n",numDevicesFound);\n
+*	}\n
+*/
+//!	\param ctx is the underlying libusb context (NULL for most applicatios)
+//!	\param list - an array of strings to fill in
+//!	\param maxEntries - size of the list
+//!	\param maxSize - max size of each string
+//!   \return If successful a list of serial numbers corresponding to devices that this interface can work with will be returned
+//!	returns <0 if libusb_get_device_list() returns and error, libusb_open returns an error, or if libusb_get_string_descriptor_ascii returns an error.
+int gcdcInterfaceGetSerialNumbers(libusb_context *ctx, char* list[], int maxEntries, int maxSize)
+{
+	struct libusb_device **devs;
+	struct libusb_device *dev;
+	libusb_device_handle *handle = NULL;
+	int count = 0;
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)
+	{
+	    printf("%s get device list returned error\n", __FUNCTION__);
+		return(0);
+	}
+	while ((dev = devs[i++]) != NULL)
+	{
+
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+		{
+		    printf("%s get device descriptor return %d\n", __FUNCTION__, r);
+			goto out;
+		}
+		//printf("%s vid:pid %04x:%04x\n", __FUNCTION__, desc.idVendor, desc.idProduct);
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+//		if (desc.idVendor == GCDC_VID && desc.idProduct == GCDC_PID)
+		{
+			// open device then close it to take a peek at the serial number
+			set_hidIfaceNum(dev);
+			r = libusb_open(dev, &handle);
+			if (r < 0)
+			{
+				printf("%s failed to open, returned %d \n", __FUNCTION__, r);
+				handle = NULL;
+				continue;
+			}
+			r= claimHidIface(handle);
+			if (r <0)
+			{
+			    libusb_close(handle);
+			    continue;
+			}
+			r = libusb_get_string_descriptor_ascii(handle,desc.iSerialNumber,(unsigned char*)(list[count++]),maxSize);
+			libusb_close(handle);
+			handle = NULL;
+			if( r<0)
+			{
+				printf("%s failed to get_string_descriptor, returned %d \n", __FUNCTION__, r);
+			continue;
+			}
+			if(count >= maxEntries) break;
+		}
+	}
+out:
+	libusb_free_device_list(devs, 1);
+	return( count);
+}
+
+

@@ -1,0 +1,66 @@
+
+#include <stdio.h>
+#include <asm/types.h>
+#include <stdlib.h>
+//#include <pthread.h>
+//#include <libusb-1.0/libusb.h>
+#include "pthreadUpdater.h"
+#include "firmwareUpdater.h"
+
+extern int verbose_flag;
+
+/*struct thread_data{
+  int  thread_id;
+  libusb_device_handle* devh;
+  char* filename;
+  int retval;
+  pthread_t thread;
+  int exit_code;
+  struct thread_data* next;
+};
+
+*/
+static int tid = 0;
+
+void* updaterThread(void* threadarg)
+{
+  struct thread_data* my_args = (struct thread_data*)threadarg;
+  my_args->exit_code = firmwareUpdaterUpdateDevice(my_args->devh, my_args->filename);
+  pthread_exit(&(my_args->exit_code));
+}
+
+
+struct thread_data* createUpdateThread( libusb_device_handle* devh1, char* filename)
+{
+  struct thread_data* ptd = malloc(sizeof(struct thread_data));
+  if(!ptd) return(ptd);
+//printf("starting thread\n");
+  ptd->devh = devh1;
+  ptd->filename = filename;
+  ptd->next = NULL;
+  ptd->thread_id = tid++;
+
+  ptd->retval = pthread_create(&(ptd->thread),NULL,updaterThread, (void*)ptd);
+//printf("thread started, retval %d\n",ptd->retval);
+  return(ptd);
+}
+
+
+int waitComplete(struct thread_data* threads)
+{
+  struct thread_data* ptd = threads;
+  void* pretval;
+
+  while(ptd != NULL)
+  {
+    if(ptd->retval ==0)
+    {// if thread started ok, wait for it to complete.
+      printf("waiting for thread %d\n",ptd->thread_id);
+      pthread_join(ptd->thread,&pretval);
+//      printf("updater returned %d",**(int**)pretval);
+    }
+    ptd = ptd->next;
+  }
+  return(0);
+}
+

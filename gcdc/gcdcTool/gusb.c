@@ -1,0 +1,609 @@
+/* ----------------------------------------------------------------------------
+*        Gulf Coast Data Concepts 2014
+* ----------------------------------------------------------------------------
+*/
+/*! \mainpage GUSB API
+ *
+ * \section intro_sec Introduction
+ *
+ * Welcome to the GUSB API documentation. Here you will find detailed descriptions of the functions within gusb.c.
+ * \n\n
+ * The GUSB API is usefull is an abstraction layer for different 
+ * operating system types.  The original api was developed for libusb.  It may be extended
+ * to work different operating system usb libraries / interfaces
+ * \n\n
+ * This interface was originally developed to work with libusb-1.0-pbatard. If you are interested in the libusb API it 
+ * can be found at http://libusb.sourceforge.net/api-1.0/ .
+ * Other libusb-1.0 information can be found on its main page at http://www.libusb.org/wiki/Libusb1.0 .
+ * You might also want to visit http://www.libusb.org/wiki/windows_backend , since this is were the windows compatable pbatard branch
+ * of libusb1.0 is located.
+*/
+
+/*----------------------------------------------------------------------------
+*        Headers
+*----------------------------------------------------------------------------*/
+//#define TRACE_LEVEL TRACE_LEVEL_DEBUG
+#include "trace.h"
+#include <stdio.h>
+#include <asm/types.h>
+#include <unistd.h>
+#include "gcdc.h"
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>    //strlen
+#include <stdint.h>
+
+#include <libusb-1.0/libusb.h>
+#include "gusb.h"
+
+/*----------------------------------------------------------------------------
+*        Internal definitions
+*----------------------------------------------------------------------------*/
+#define MAX_SIZE_EP0 		0x40
+#define MAX_SIZE_EP2 		0x40
+#define HID_IN                 (LIBUSB_REQUEST_TYPE_CLASS | LIBUSB_ENDPOINT_IN)
+#define HID_OUT                 (LIBUSB_REQUEST_TYPE_CLASS | LIBUSB_ENDPOINT_OUT)
+#define HID_SET_REPORT 		0x09            // Code for Set Report
+#define HID_GET_REPORT 		0x01            // Code for Set Report
+#define HID_RT_FEATURE 		0x03
+
+#ifndef LIBUSBX_API_VERSION
+#warning libusbx_api_version not defined
+#define libusb_error_name(x) "unknown"
+#endif
+
+/*----------------------------------------------------------------------------
+*        Local variables
+*----------------------------------------------------------------------------*/
+
+// fixme promote these three variables to struct gusb_device_handle, to prevent possible
+// problem of OS assigning them differently from device to device.
+//int gusb_hidIfaceNum = 0;
+//int gusb_hidEndpointIn = GCDC_HID_DATA_IN;
+//int gusb_hidBInterval = 10;
+
+int gusb_verbosity = 0;
+int gusb_timeout = 2000;
+int gusb_rawTimeout = 120000; // 120 seconds
+
+/*----------------------------------------------------------------------------
+*        Local function prototypes
+*----------------------------------------------------------------------------*/
+int gusb_SetHidIfaceNum(struct libusb_device *dev, struct gusb_device_handle* gdev);
+int gusb_ClaimHidIface(struct gusb_device_handle* gdev);
+libusb_device_handle* gusb_OpenDeviceWithSerialNumber(libusb_context *ctx, char * serialNum, struct gusb_device_handle* gdev);
+
+/*----------------------------------------------------------------------------
+*        Local functions
+*----------------------------------------------------------------------------*/
+int gusb_SetHidIfaceNum(struct libusb_device *dev, struct gusb_device_handle* gdev)
+{
+	struct libusb_config_descriptor* config;
+	int r = 0;
+	int i=0;
+	const struct libusb_interface* iface;
+	int numIfaces = 0;
+	r = libusb_get_config_descriptor(dev,0, &config);
+	if(r != 0)
+	{
+		fprintf(stderr, "%s libusb_get_config_descriptor %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+		return(r);
+	}
+
+	iface = config->interface;
+	numIfaces = config->bNumInterfaces;
+//printf("%s numIfaces %d\r\n",__FUNCTION__, numIfaces);
+	for(i=0;i<numIfaces;i++)
+	{
+		if(iface[i].altsetting->bInterfaceClass == LIBUSB_CLASS_HID )
+		{
+			gdev->hidIfaceNum = iface[i].altsetting->bInterfaceNumber;
+			uint8_t j;
+			uint8_t bNumEndpoints = iface[i].altsetting->bNumEndpoints;
+			const struct libusb_endpoint_descriptor* endpoint = iface[i].altsetting->endpoint;
+			gdev->hidEndpointIn = GCDC_HID_DATA_IN;	// default ENDPOINT
+//                        printf("%s Found hid iface at %d %d\r\n",__FUNCTION__, i, gdev->hidIfaceNum);
+			for(j=0; j< bNumEndpoints; j++)
+			{
+				if( (endpoint[j].bEndpointAddress & 0x80) == LIBUSB_ENDPOINT_IN)
+				{	// we've discovered the endpoint
+					gdev->hidEndpointIn = endpoint[j].bEndpointAddress;
+					gdev->hidBInterval = endpoint[j].bInterval;
+//printf("%s EP_in found: %04x\r\n", __FUNCTION__, gdev->hidEndpointIn);
+					break;
+				}
+//                                else printf("%s Ep_in not in: %x",__FUNCTION__, endpoint[j].bEndpointAddress);
+			}
+			break;
+		}
+//                else printf("%s class:%d  i:%d num:%d\r\n",__FUNCTION__, iface[i].altsetting->bInterfaceClass, i, iface[i].altsetting->bInterfaceNumber);
+	}
+
+	libusb_free_config_descriptor(config);
+	return(r);
+}
+
+
+//! Claims a specific device interface
+//! on a given device handle. You must open a device before you can claim its interface.
+/*!EXAMPLE:\n\n
+*	r = libusb_open(dev, &handle);\n
+*			if (r < 0)\n
+*			{\n
+*				handle = NULL;\n
+*			}\n
+*			r = claimIface(handle,1);\n
+*			if(r<0)\n
+*			{\n
+*			    printf("%s unable to claim interface, error: %d\n",__FUNCTION__,r);\n
+*			}\n
+*/
+//!   \param devh of the device that has an interface to be claimed.
+//!	\param iface integer value of the interface number to be claimed.
+//!	\return 0 on success
+int gusb_ClaimHidIface( struct gusb_device_handle* gdev)
+{
+	int r;
+	libusb_device_handle *devh = (libusb_device_handle *)gdev->osSpecific;
+#ifdef __unix__
+	// Attaching/detaching the kernel driver is only relevant for Linux
+	//int iface_detached = -1;
+#endif
+
+	r = libusb_claim_interface(devh, gdev->hidIfaceNum);
+#ifdef __unix__
+	if ((r != LIBUSB_SUCCESS) && (gdev->hidIfaceNum == 0)) {
+		// Maybe we need to detach the driver
+		printf("   Failed. Trying to detach driver...\n");
+		libusb_detach_kernel_driver(devh, gdev->hidIfaceNum);
+//		iface_detached = iface;
+		printf("   Claiming interface again...\n");
+		r = libusb_claim_interface(devh, gdev->hidIfaceNum);
+	}
+#endif
+//	if (r != LIBUSB_SUCCESS) {
+//		perr("%s Failed %d.\n",__FUNCTION__, r);
+//	}
+	return 0;
+}
+
+
+//!Convenience function for finding a device with a particular serial number. Works
+//!when you know the specific serial number of the device.
+//! \param ctx the desired context for the device. This can be null. For more info see http://libusb.sourceforge.net/api-1.0/group__lib.html#ga4ec088aa7b79c4a9599e39bf36a72833
+//! \param serialNum pointer to char array that represents the serial Number of the device
+//! \return device handle of the selected context and serial number
+libusb_device_handle* gusb_OpenDeviceWithSerialNumber(libusb_context *ctx, char * serialNum, struct gusb_device_handle* gdev)
+{
+	struct libusb_device **devs;
+	struct libusb_device *dev;
+	libusb_device_handle *handle = NULL;
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)    //secound occurance of warning [set_composite_device]
+		return NULL;
+	while ((dev = devs[i++]) != NULL)
+	{
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+		{
+			fprintf(stderr, "%s libusb_get_device_descriptor %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+			goto out;
+		}
+
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+		{
+			char buffer[0x80];
+			int match;
+
+			gusb_SetHidIfaceNum(dev, gdev);
+			// open device then close it to take a peek at the serial number
+			r = libusb_open(dev, &handle);
+			if (r < 0)
+			{
+				fprintf(stderr, "%s libusb_open %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+				handle = NULL;
+				continue;
+			}
+			gdev->osSpecific = handle;
+			r = gusb_ClaimHidIface(gdev);
+			if(r<0)
+			{
+				fprintf(stderr, "%s claim hid iface %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+				continue;
+			}
+			r = libusb_get_string_descriptor_ascii(handle,desc.iSerialNumber,(unsigned char*)(buffer),0x80);
+			if( r<0)
+			{
+				fprintf(stderr, "%s get_string_descriptor_ascii %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+				libusb_close(handle);
+				handle = NULL;
+				continue;
+			}
+
+			match = strncasecmp(serialNum,buffer,strlen(serialNum));
+			if(match == 0)
+			{
+				break;
+			}
+			libusb_close(handle);
+			handle = NULL;
+		}
+	}
+out:
+	libusb_free_device_list(devs, 1);
+	return handle;
+}
+
+
+/*----------------------------------------------------------------------------
+*        Exported functions
+*----------------------------------------------------------------------------*/
+
+//! sends report data to the device through libusb_control_transfer(endpoint 0).
+//! This function is used within many other gcdcInterface functions, so you may not find yourself using it.
+//! \param devh handle to device you are sending to.
+//! \param reportId determines the type of report being sent.
+//! \param dataBuffer char array that contains data being sent
+//! \param dataBufferSize size of data being sent
+//! \return 0 on no error, else value report by libusb_control_transfer
+int GUSB_SetReport(gusb_device_handle *devh, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize )
+{
+        TRACE_INFO("%s(%p, 0x%x %p, %d)\n", __FUNCTION__, devh, reportId, dataBuffer, dataBufferSize);
+        TRACE_INFO_WP("dB: %x %x %x %x %x %x\n",dataBuffer[0], dataBuffer[1], dataBuffer[2], dataBuffer[3], dataBuffer[4], dataBuffer[5]);
+	int len = libusb_control_transfer(devh->osSpecific, HID_OUT, HID_SET_REPORT,
+			reportId + (HID_RT_FEATURE << 8), devh->hidIfaceNum,
+			(unsigned char*)dataBuffer, dataBufferSize, gusb_timeout);
+
+	if(len == dataBufferSize)
+		return(0);
+	else
+	{
+		printf("%s libusb ERROR#: %d\r\n",__FUNCTION__,len);
+		return(len);
+	}
+}
+
+
+//! gets report data from the device through libusb_control_transfer(endpoint 0).
+//! This function is used within many other gcdcInterface functions.
+//! \param devh handle of device that you are obtaining report from.
+//! \reportId this is used to determine what type of report is being retrieved.
+//! \dataBuffer the data obtained is stored in this char array.
+//! \dataBufferSize this contains the size of the data that will be recieved.
+//! \return 0 if no error else value returned by libusb_control_transfer.
+int GUSB_GetReport(gusb_device_handle *devh, unsigned char reportId, unsigned char* dataBuffer, int dataBufferSize )
+{
+        TRACE_INFO("%s id:%x len:%x d:%x %x\n", __FUNCTION__, reportId, dataBufferSize, dataBuffer[0], dataBuffer[1]);
+			//	handle, bmRequestType, bRequest,
+			//	wValue, wIndex,
+			//	data, wLength, timeout
+	int len = libusb_control_transfer(devh->osSpecific, HID_IN, HID_GET_REPORT,
+			reportId + (HID_RT_FEATURE << 8), devh->hidIfaceNum,
+			(unsigned char*)dataBuffer, dataBufferSize, gusb_timeout);
+
+        TRACE_INFO("%s len:%d data %x %x %x %x %x %x\n", __FUNCTION__, len, dataBuffer[0], dataBuffer[1], dataBuffer[2], dataBuffer[3], dataBuffer[4], dataBuffer[5]);
+	if(len == dataBufferSize)
+	{
+		return(0);
+	}
+	else
+	{
+		if(gusb_verbosity) printf("%s libusb_control_transfer error %d\r\n",__FUNCTION__,len);
+		return(len);
+	}
+}
+
+
+//! Get the serial number of this device.\n
+//! This calls libusb_get_string_descriptor_ascii.
+/*!EXAMPLE:\n\n
+*		char snString[MAX_SERIAL_NUM];\n
+*		gcdcInterfaceGetSerialNum(NULL, snString,MAX_SERIAL_NUM);\n
+*		printf("sn <%s>\n",snString);\n
+*/
+//! \param devh handle to device that you are requesting the serial number to.
+//! \param buffer char array that the serial number is placed in.
+//! \param size The size of the serial number.
+//! \return 0 on success
+int GUSB_GetSerialNum(gusb_device_handle *devh, char* buffer, int size)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	struct libusb_device_descriptor devInfo;
+	libusb_get_device_descriptor(libusb_get_device(devh->osSpecific),&devInfo);
+	return( libusb_get_string_descriptor_ascii(devh->osSpecific,devInfo.iSerialNumber,(unsigned char*)(buffer),size));
+}
+
+
+//! Obtains a generic report from a device
+//! Reports are obtained through interrupt transfers.\n \n
+//! The return value contains the report type
+//! Error if negative\n
+//! \param devh handle of device you want to obtain pressure report from
+//! \param maxData max number of bytes to read
+//! \param buffer destination for data
+//! \return -1 if pr is null, -2 if report id != PRESSURE_REPORT_ID, and 0 when report id == PRESSURE_REPORT_ID.
+int GUSB_GetRaw(gusb_device_handle *devh, unsigned char *buffer, int length)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	int r;
+	int xfered;
+	r = libusb_interrupt_transfer(devh->osSpecific, devh->hidEndpointIn, buffer, length, &xfered, gusb_rawTimeout);
+	if (r < 0)
+	{
+		if( r == LIBUSB_ERROR_TIMEOUT)
+			fprintf(stderr, "libusb_interupt_transfer error %d, Operation timed out after %d msec\n", r, gusb_timeout);
+		else
+			fprintf(stderr, "%s libusb_interupt_transfer error %s (%d) num recieved: %d\n", __FUNCTION__, libusb_error_name(r), r, xfered);
+		return( r) ;
+	}
+	return(buffer[0]);
+}
+
+
+int GUSB_FlushQueue(gusb_device_handle *devh, int numPackets)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	static unsigned char temp[0x40];
+	int i;
+	for(i=0;i<numPackets;i++)
+	{
+		int r;
+		int xfered;
+		r = libusb_interrupt_transfer(devh->osSpecific, devh->hidEndpointIn, temp, 0x40, &xfered, devh->hidBInterval+1);
+		if (r < 0)
+		{
+			if( r == LIBUSB_ERROR_TIMEOUT)
+			{
+				usleep((devh->hidBInterval+1)*1000);
+				return(0);
+			}
+			else
+			        fprintf(stderr, "%s libusb_interupt_transfer error %s (%d) num recieved: %d\n", __FUNCTION__, libusb_error_name(r), r, xfered);
+			return( r) ;
+		}
+	}
+	return(0);
+}
+
+
+//!Releases the interface and closes the device
+//! \param devh handle of device that you a finished with
+void GUSB_Release(gusb_device_handle *devh)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	int retval = libusb_release_interface(devh->osSpecific, devh->hidIfaceNum);
+	if(retval)
+	{
+		if(gusb_verbosity) printf("%s libusb_release_interface failed: %d gusb_hidIfaceNum: %d\r\n",__FUNCTION__,retval,devh->hidIfaceNum);
+	}
+	libusb_close(devh->osSpecific);
+	free(devh);
+}
+
+
+//!Opens the device of a given serial number and claims the HID interface.
+//!This is a convenience funtion that does everything needed to begin working with a device of a specific serial number
+/*!EXAMPLE:\n\n
+*	libusb_device_handle* devh[MAX_DEVICES];\n
+*	for(i=0;i< numDevicesFound;i++)\n
+*	{\n
+*		// open devices\n
+*		if(verbose_flag) printf("Connecting to <%s>\n",serialNums[i]);\n
+*		devh[i] = gcdcInterfaceConnectToSerialNumber(serialNums[i]);\n
+*		if(devh[i] == NULL) goto out;\n
+*	}\n
+*/
+//! \param serialNumber pointer to char array of the device serial number
+//! \return device handle obtained by opening the device
+gusb_device_handle* GUSB_ConnectToSerialNumber(char* serialNumber)
+{
+        TRACE_INFO("%s sn:%s\n", __FUNCTION__, serialNumber);
+	int r=0;
+	struct libusb_device_handle* devh = NULL;
+	gusb_device_handle* udevh =  malloc(sizeof(gusb_device_handle));
+
+	devh = gusb_OpenDeviceWithSerialNumber(NULL, serialNumber, udevh);
+	if (!devh) {
+		fprintf(stderr, "Could not find/open <%s>\n",serialNumber);
+		goto out;
+	}
+        udevh->osSpecific = devh;
+
+	r = libusb_kernel_driver_active(devh, udevh->hidIfaceNum);
+	if (r == 1)
+	{
+		r = libusb_detach_kernel_driver(devh, udevh->hidIfaceNum);
+		if(r<0)
+		{
+			if(r != LIBUSB_ERROR_NOT_FOUND)
+			{
+				printf("libusb_detach_kernel_driver = %d\n", r);
+				goto out;
+			}
+		}
+	}
+	
+	r = libusb_claim_interface(devh, udevh->hidIfaceNum);
+	if (r < 0)
+	{
+		fprintf(stderr, "%s  claim_interface %s (%d)\n", __FUNCTION__, libusb_error_name(r), r);
+		goto out;
+	}
+	return(udevh);
+
+out:
+	libusb_close(devh);
+	return( NULL);
+}
+
+
+//!Opens all devices with a matching pid and vid  and claims the HID interface.
+//!This is a convenience funtion that does everything needed to begin working with a device of a specific serial number
+gusb_device_handle** GUSB_ConnectToAvailableDevices(void)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+        libusb_context *ctx = NULL;
+        static gusb_device_handle* usb_multiOpen[0x80];
+        gusb_device_handle temphandle;
+        static int usb_openCount = 0;
+
+
+	struct libusb_device **devs;
+	struct libusb_device *dev;
+	libusb_device_handle *handle = NULL;
+	
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)
+	{
+	    printf("%s get device list returned error\n", __FUNCTION__);
+		return(0);
+	}
+	usb_openCount = 0;
+	usb_multiOpen[usb_openCount] = NULL;
+	while ((dev = devs[i++]) != NULL)
+	{
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+		{
+		    printf("%s get device descriptor return %d\n", __FUNCTION__, r);
+			goto out;
+		}
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+		{
+			gusb_SetHidIfaceNum(dev, &temphandle );
+
+			r = libusb_open(dev, &handle);
+			if (r < 0)
+			{
+				printf("%s failed to open, returned %d \n", __FUNCTION__, r);
+				handle = NULL;
+				continue;
+			}
+			temphandle.osSpecific = handle;
+			r= gusb_ClaimHidIface(&temphandle);
+			if (r <0)
+			{
+			    libusb_close(handle);
+			    continue;
+			}
+			usb_multiOpen[usb_openCount] = malloc(sizeof(gusb_device_handle));
+			usb_multiOpen[usb_openCount++]->osSpecific = handle;
+			usb_multiOpen[usb_openCount] = NULL; // null out the next in the list, NULL terminate
+
+		}
+	}
+out:
+	libusb_free_device_list(devs, 1);
+	return(usb_multiOpen);
+}
+
+
+//!	Obtains a list of Serial Numbers for the List of detected Gcdc devices.
+/*!EXAMPLE:\n\n
+*	for(i=0;i<MAX_DEVICES;i++)\n
+*	{\n
+*		serialNums[i] = temp[i];\n
+*	}\n
+*	numDevicesFound = gcdcInterfaceGetSerialNumbers(NULL, serialNums, MAX_DEVICES, MAX_SERIAL_NUM);\n
+*	if(numDevicesFound <1)\n
+*	{\n
+*		printf("Wasn't able to find devices %d\n",numDevicesFound);\n
+*	}\n
+*/
+//!	\param ctx is the underlying libusb context (NULL for most applicatios)
+//!	\param list - an array of strings to fill in
+//!	\param maxEntries - size of the list
+//!	\param maxSize - max size of each string
+//!   \return If successful a list of serial numbers corresponding to devices that this interface can work with will be returned
+//!	returns <0 if libusb_get_device_list() returns and error, libusb_open returns an error, or if libusb_get_string_descriptor_ascii returns an error.
+int GUSB_GetSerialNumbers(char* list[], int maxEntries, int maxSize)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+        libusb_context *ctx = NULL;
+	struct libusb_device **devs;
+	struct libusb_device *dev;
+//	libusb_device_handle* handle = NULL;
+	gusb_device_handle tempHandle;
+	int count = 0;
+	size_t i = 0;
+	int r;
+	if (libusb_get_device_list(ctx, &devs) < 0)
+	{
+		printf("%s get device list returned error\n", __FUNCTION__);
+		return(0);
+	}
+	while ((dev = devs[i++]) != NULL)
+	{
+		struct libusb_device_descriptor desc;
+		r = libusb_get_device_descriptor(dev, &desc);
+		if (r < 0)
+		{
+		    printf("%s get device descriptor return %d\n", __FUNCTION__, r);
+			goto out;
+		}
+		//printf("%s vid:pid %04x:%04x\n", __FUNCTION__, desc.idVendor, desc.idProduct);
+		if ( ((desc.idVendor==GCDC_VID) && (desc.idProduct==GCDC_PID)) ||  ((desc.idVendor==GCDC_VID2) && (desc.idProduct==GCDC_PID2)) )
+		{
+			// open device then close it to take a peek at the serial number
+			gusb_SetHidIfaceNum(dev, &tempHandle);
+			r = libusb_open(dev, (libusb_device_handle**)(&(tempHandle.osSpecific)) );
+			if (r < 0)
+			{
+				printf("%s failed to open, returned %d \n", __FUNCTION__, r);
+				tempHandle.osSpecific = NULL;
+				continue;
+			}
+			r= gusb_ClaimHidIface(&tempHandle);
+			if (r <0)
+			{
+			    libusb_close(tempHandle.osSpecific);
+			    continue;
+			}
+			r = libusb_get_string_descriptor_ascii(tempHandle.osSpecific,desc.iSerialNumber,(unsigned char*)(list[count++]),maxSize);
+			libusb_close(tempHandle.osSpecific);
+			tempHandle.osSpecific = NULL;
+			if( r<0)
+			{
+				printf("%s failed to get_string_descriptor, returned %d \n", __FUNCTION__, r);
+			continue;
+			}
+			if(count >= maxEntries) break;
+		}
+	}
+out:
+	libusb_free_device_list(devs, 1);
+	return( count);
+}
+
+
+//! Deinitializes libusb
+//! calls libusb_exit(NULL);
+void GUSB_Deinit(void)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	libusb_exit(NULL);
+}
+
+
+int GUSB_Init(int debug_level)
+{
+        TRACE_INFO("%s\n", __FUNCTION__);
+	int r = 1;
+	gusb_verbosity = debug_level;
+	r = libusb_init(NULL);
+	if (r < 0)
+	{
+		fprintf(stderr, "failed to initialise libusb\n");
+		return(r);
+	}
+	if(gusb_verbosity>3)
+		libusb_set_debug(NULL,10);
+	else
+		libusb_set_debug(NULL, 0);
+	return(r);
+}                                                                                                                                               
+
